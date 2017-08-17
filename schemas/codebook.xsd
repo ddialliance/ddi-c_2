@@ -924,6 +924,8 @@ These changes do not effect the namespace. 2013-11-14.
       <xs:complexContent>
          <xs:extension base="simpleTextType">
             <xs:attribute name="affiliation" type="xs:string" use="optional"/>
+            <xs:attribute name="personalID" type="xs:string" use="optional"/>
+            <xs:attribute name="typeOfPersonalID" type="xs:string" use="optional"/>
          </xs:extension>
       </xs:complexContent>
    </xs:complexType>
@@ -936,7 +938,7 @@ These changes do not effect the namespace. 2013-11-14.
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
                   <xhtml:div class="description">
-                     <xhtml:p>The person, corporate body, or agency responsible for the work's substantive and intellectual content. Repeat the element for each author, and use "affiliation" attribute if available. Invert first and last name and use commas. Author of data collection (codeBook/stdyDscr/citation/rspStmt/AuthEnty) maps to Dublin Core Creator element. Inclusion of this element in codebook is recommended. </xhtml:p>
+                     <xhtml:p>The person, corporate body, or agency responsible for the work's substantive and intellectual content. Repeat the element for each author, and use "affiliation" attribute if available. Invert first and last name and use commas. Author of data collection (codeBook/stdyDscr/citation/rspStmt/AuthEnty) maps to Dublin Core Creator element. Inclusion of this element in codebook is recommended. If the attribute "personalID" is used, "typeOfPersonalID" should also be provided.</xhtml:p>
                      <xhtml:p>The "author" in the Document Description should be the individual(s) or organization(s) directly responsible for the intellectual content of the DDI version, as distinct from the person(s) or organization(s) responsible for the intellectual content of the earlier paper or electronic edition from which the DDI edition may have been derived.</xhtml:p>
                   </xhtml:div>
                </xhtml:div>
@@ -948,6 +950,9 @@ These changes do not effect the namespace. 2013-11-14.
                      ]]></xhtml:samp>
                      <xhtml:samp class="xml_sample"><![CDATA[
                         <AuthEnty affiliation="European Commission">Rabier, Jacques-Rene</AuthEnty>
+                     ]]></xhtml:samp> 
+                     <xhtml:samp class="xml_sample"><![CDATA[
+                        <AuthEnty personalID="0000-0002-4402-9644" typeOfPersonalID="ORCID">Shepherdson, John</AuthEnty>
                      ]]></xhtml:samp> 
                   </xhtml:div>
                </xhtml:div>
@@ -1974,6 +1979,8 @@ These changes do not effect the namespace. 2013-11-14.
             <xs:attribute name="affiliation" type="xs:string"/>
             <xs:attribute name="URI" type="xs:string"/>
             <xs:attribute name="email" type="xs:string"/>
+            <xs:attribute name="personalID" type="xs:string" use="optional"/>
+            <xs:attribute name="typeOfPersonalID" type="xs:string" use="optional"/>
          </xs:extension>
       </xs:complexContent>
    </xs:complexType>
@@ -1985,7 +1992,7 @@ These changes do not effect the namespace. 2013-11-14.
                <xhtml:h1 class="element_title">Contact Persons</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Names and addresses of individuals responsible for the work. Individuals listed as contact persons will be used as resource persons regarding problems or questions raised by the user community. The URI attribute should be used to indicate a URN or URL for the homepage of  the contact individual. The email attribute is used to indicate an email address for the contact individual. </xhtml:div>
+                  <xhtml:div class="description">Names and addresses of individuals responsible for the work. Individuals listed as contact persons will be used as resource persons regarding problems or questions raised by the user community. The URI attribute should be used to indicate a URN or URL for the homepage of  the contact individual. The email attribute is used to indicate an email address for the contact individual. If the attribute "personalID" is used, "typeOfPersonalID" should also be provided.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -3141,6 +3148,8 @@ These changes do not effect the namespace. 2013-11-14.
          <xs:extension base="simpleTextType">
             <xs:attribute name="abbr" type="xs:string"/>
             <xs:attribute name="affiliation" type="xs:string"/>
+            <xs:attribute name="personalID" type="xs:string" use="optional"/>
+            <xs:attribute name="typeOfPersonalID" type="xs:string" use="optional"/>
          </xs:extension>
       </xs:complexContent>
    </xs:complexType>
@@ -3152,7 +3161,7 @@ These changes do not effect the namespace. 2013-11-14.
                <xhtml:h1 class="element_title">Depositor</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">The name of the person (or institution) who provided this work to the archive storing it. </xhtml:div>
+                  <xhtml:div class="description">The name of the person (or institution) who provided this work to the archive storing it.  If the attribute "personalID" is used, "typeOfPersonalID" should also be provided.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -3337,6 +3346,8 @@ These changes do not effect the namespace. 2013-11-14.
                <xs:element ref="depositr" minOccurs="0" maxOccurs="unbounded"/>
                <xs:element ref="depDate" minOccurs="0" maxOccurs="unbounded"/>
                <xs:element ref="distDate" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:attribute name="personalID" type="xs:string" use="optional"/>
+               <xs:attribute name="typeOfPersonalID" type="xs:string" use="optional"/>
             </xs:sequence>
          </xs:extension>
       </xs:complexContent>
@@ -3373,7 +3384,7 @@ These changes do not effect the namespace. 2013-11-14.
                <xhtml:h1 class="element_title">Distributor</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">The organization designated by the author or producer to generate copies of the particular work including any necessary editions or revisions. Names and addresses may be specified and other archives may be co-distributors. A URI attribute is included to provide an URN or URL to the ordering service or download facility on a Web site. </xhtml:div>
+                  <xhtml:div class="description">The organization designated by the author or producer to generate copies of the particular work including any necessary editions or revisions. Names and addresses may be specified and other archives may be co-distributors. A URI attribute is included to provide an URN or URL to the ordering service or download facility on a Web site. If the attribute "personalID" is used, "typeOfPersonalID" should also be provided. </xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -4056,6 +4067,8 @@ These changes do not effect the namespace. 2013-11-14.
          <xs:extension base="simpleTextType">
             <xs:attribute name="abbr" type="xs:string"/>
             <xs:attribute name="role" type="xs:string"/>
+            <xs:attribute name="personalID" type="xs:string" use="optional"/>
+            <xs:attribute name="typeOfPersonalID" type="xs:string" use="optional"/>
          </xs:extension>
       </xs:complexContent>
    </xs:complexType>
@@ -4067,7 +4080,7 @@ These changes do not effect the namespace. 2013-11-14.
                <xhtml:h1 class="element_title">Funding Agency/Sponsor</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">The source(s) of funds for production of the work. If different funding agencies sponsored different stages of the production process, use the "role" attribute to distinguish them.</xhtml:div>
+                  <xhtml:div class="description">The source(s) of funds for production of the work. If different funding agencies sponsored different stages of the production process, use the "role" attribute to distinguish them. If the attribute "personalID" is used, "typeOfPersonalID" should also be provided.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -5282,6 +5295,8 @@ These changes do not effect the namespace. 2013-11-14.
             <xs:attribute name="type" type="xs:string"/>
             <xs:attribute name="role" type="xs:string"/>
             <xs:attribute name="affiliation" type="xs:string"/>
+            <xs:attribute name="personalID" type="xs:string" use="optional"/>
+            <xs:attribute name="typeOfPersonalID" type="xs:string" use="optional"/>
          </xs:extension>
       </xs:complexContent>
    </xs:complexType>
@@ -5293,7 +5308,7 @@ These changes do not effect the namespace. 2013-11-14.
                <xhtml:h1 class="element_title">Other Identifications /Acknowledgments</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Statements of responsibility not recorded in the title and statement of responsibility areas. Indicate here the persons or bodies connected with the work, or significant persons or bodies connected with previous editions and not already named in the description. For example, the name of the person who edited the marked-up documentation might be cited in codeBook/docDscr/rspStmt/othId, using the "role" and "affiliation" attributes. Other identifications/acknowledgments for data collection (codeBook/stdyDscr/citation/rspStmt/othId) maps to Dublin Core Contributor element.</xhtml:div>
+                  <xhtml:div class="description">Statements of responsibility not recorded in the title and statement of responsibility areas. Indicate here the persons or bodies connected with the work, or significant persons or bodies connected with previous editions and not already named in the description. For example, the name of the person who edited the marked-up documentation might be cited in codeBook/docDscr/rspStmt/othId, using the "role" and "affiliation" attributes. Other identifications/acknowledgments for data collection (codeBook/stdyDscr/citation/rspStmt/othId) maps to Dublin Core Contributor element. If the attribute "personalID" is used, "typeOfPersonalID" should also be provided.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -5681,6 +5696,8 @@ These changes do not effect the namespace. 2013-11-14.
             <xs:attribute name="abbr" type="xs:string"/>
             <xs:attribute name="affiliation" type="xs:string"/>
             <xs:attribute name="role" type="xs:string"/>
+            <xs:attribute name="personalID" type="xs:string" use="optional"/>
+            <xs:attribute name="typeOfPersonalID" type="xs:string" use="optional"/>
          </xs:extension>
       </xs:complexContent>
    </xs:complexType>
@@ -5692,7 +5709,7 @@ These changes do not effect the namespace. 2013-11-14.
                <xhtml:h1 class="element_title">Producer</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">The producer is the person or organization with the financial or administrative responsibility for the physical processes whereby the document was brought into existence. Use the "role" attribute to distinguish different stages of involvement in the production process, such as original producer. Producer of data collection (codeBook/stdyDscr/citation/prodStmt/producer) maps to Dublin Core Publisher element. The "producer" in the Document Description should be the agency or person that prepared the marked-up document.</xhtml:div>
+                  <xhtml:div class="description">The producer is the person or organization with the financial or administrative responsibility for the physical processes whereby the document was brought into existence. Use the "role" attribute to distinguish different stages of involvement in the production process, such as original producer. Producer of data collection (codeBook/stdyDscr/citation/prodStmt/producer) maps to Dublin Core Publisher element. The "producer" in the Document Description should be the agency or person that prepared the marked-up document. If the attribute "personalID" is used, "typeOfPersonalID" should also be provided.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -8331,6 +8348,8 @@ These changes do not effect the namespace. 2013-11-14.
       <xs:complexContent>
          <xs:extension base="simpleTextType">
             <xs:attribute name="affiliation" type="xs:string"/>
+            <xs:attribute name="personalID" type="xs:string" use="optional"/>
+            <xs:attribute name="typeOfPersonalID" type="xs:string" use="optional"/>
          </xs:extension>
       </xs:complexContent>
    </xs:complexType>
@@ -8342,7 +8361,7 @@ These changes do not effect the namespace. 2013-11-14.
                <xhtml:h1 class="element_title">Version Responsibility Statement</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">The organization or person responsible for the version of the work.</xhtml:div>
+                  <xhtml:div class="description">The organization or person responsible for the version of the work. If the attribute "personalID" is used, "typeOfPersonalID" should also be provided.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
