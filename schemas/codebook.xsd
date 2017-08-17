@@ -3456,6 +3456,7 @@ These changes do not effect the namespace. 2013-11-14.
                <xs:element ref="biblCit" minOccurs="0" maxOccurs="unbounded"/>
                <xs:element ref="holdings" minOccurs="0" maxOccurs="unbounded"/>
                <xs:element ref="notes" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:group ref="dc:elementsAndRefinementsGroup"/>
             </xs:sequence>
             <xs:attribute name="MARCURI" type="xs:string"/>
          </xs:extension>
