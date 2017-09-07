@@ -2336,7 +2336,7 @@ These changes do not effect the namespace. 2013-11-14.
       <xs:annotation>
          <xs:documentation>
             <xhtml:div>
-               <xhtml:h1/>
+               <xhtml:h1 class="element_title">Cube Coordinate</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
                   <xhtml:div class="description">This is an empty element containing only the attributes listed below. It is used to identify the coordinates of the data item within a logical nCube describing aggregate data. CubeCoord is repeated for each dimension of the nCube giving the coordinate number ("coordNo") and coordinate value ("coordVal"). Coordinate value reference ("cordValRef") is an ID reference to the variable that carries the coordinate value. The attributes provide a complete coordinate location of a cell within the nCube.</xhtml:div>
