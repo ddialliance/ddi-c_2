@@ -2501,7 +2501,7 @@ These changes do not effect the namespace. 2013-11-14.
       <xs:annotation>
          <xs:documentation>
             <xhtml:div>
-               <xhtml:h1 class="element_title">Data Collection Methdology</xhtml:h1>
+               <xhtml:h1 class="element_title">Data Collection Methodology</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
                   <xhtml:div class="description">Information about the methodology employed in a data collection.</xhtml:div>
