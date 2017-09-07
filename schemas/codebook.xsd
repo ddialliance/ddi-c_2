@@ -2980,7 +2980,7 @@ These changes do not effect the namespace. 2013-11-14.
       <xs:annotation>
          <xs:documentation>
             <xhtml:div>
-               <xhtml:h1/>
+               <xhtml:h1 class="element_title">Data Item</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
                   <xhtml:div class="description">Identifies a physical storage location for an individual data entry, serving as a link between the physical location and the logical content description of each data item. The attribute "varRef" is an IDREF that points to a discrete variable description. If the data item is located within an nCube (aggregate data), use the attribute "nCubeRef" (IDREF) to point to the appropriate nCube and the element CubeCoord to identify the coordinates of the data item within the nCube.</xhtml:div>
@@ -5466,7 +5466,7 @@ These changes do not effect the namespace. 2013-11-14.
       <xs:annotation>
          <xs:documentation>
             <xhtml:div>
-               <xhtml:h1/>
+               <xhtml:h1 class="element_title">Physical Location</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
                   <xhtml:div class="description">
@@ -5746,7 +5746,7 @@ These changes do not effect the namespace. 2013-11-14.
       <xs:annotation>
          <xs:documentation>
             <xhtml:div>
-               <xhtml:h1/>
+               <xhtml:h1 class="element_title">Purose</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
                   <xhtml:div class="description">Explains the purpose for which a particular nCube was created.</xhtml:div>
