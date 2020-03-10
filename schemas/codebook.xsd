@@ -4596,6 +4596,39 @@ These changes do not effect the namespace. 2013-11-14.
          </xs:documentation>
       </xs:annotation>
    </xs:element>
+
+   <xs:complexType name="languageType" mixed="true">
+      <xs:complexContent>
+         <xs:extension base="simpleTextType">
+            <xs:attribute name="languageCode" type="xs:string"/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   
+   <xs:element name="language" type="languageType">
+      <xs:annotation>
+         <xs:documentation>
+            <xhtml:div>
+               <xhtml:h1 class="element_title">Language</xhtml:h1>
+               <xhtml:div>
+                  <xhtml:h2 class="section_header">Description</xhtml:h2>
+                  <xhtml:div class="description">A brief textual identification of the language of the cited object. Use attribute languageCode to specify language code used. DDI strongly recommend the use of language codes supported by xs:language which include the 2 and 3 character and extended structures defined by RFC4646 or its successors. Repeat for multiple languages.</xhtml:div>
+               </xhtml:div>
+               <xhtml:div>
+                  <xhtml:h2 class="section_header">Example</xhtml:h2>
+                  <xhtml:div class="example">
+                     <xhtml:samp class="xml_sample"><![CDATA[
+                        <language languageCode="RFC4646">en-ca</language>
+                     ]]></xhtml:samp>
+                     <xhtml:samp class="xml_sample"><![CDATA[
+                        <language  languageCode="RFC4646">fr-ca</language>
+                     ]]></xhtml:samp>
+                  </xhtml:div>
+               </xhtml:div>
+            </xhtml:div>
+         </xs:documentation>
+      </xs:annotation>
+   </xs:element>
    
    <xs:complexType name="locMapType">
       <xs:complexContent>
@@ -5664,6 +5697,7 @@ These changes do not effect the namespace. 2013-11-14.
       <xs:complexContent>
          <xs:extension base="baseElementType">
             <xs:sequence>
+               <xs:element ref="language" minOccurs="0" maxOccurs="unbounded"/>
                <xs:element ref="producer" minOccurs="0" maxOccurs="unbounded"/>
                <xs:element ref="copyright" minOccurs="0" maxOccurs="unbounded"/>
                <xs:element ref="prodDate" minOccurs="0" maxOccurs="unbounded"/>
