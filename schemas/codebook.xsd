@@ -5830,6 +5830,14 @@ These changes do not effect the namespace. 2013-11-14.
                      <xs:enumeration value="datetime"/>
                      <xs:enumeration value="geographic"/>
                      <xs:enumeration value="multiple"/>
+                     <xs:enumeration value="geographicLocationCode"/>
+                     <xs:enumeration value="geographicStructureCode"/>
+                     <xs:enumeration value="scale"/>
+                     <xs:enumeration value="externalCategory"/>
+                     <xs:enumeration value="nominal"/>
+                     <xs:enumeration value="location"/>
+                     <xs:enumeration value="ranking"/>
+                     <xs:enumeration value="distribution"/>
                      <xs:enumeration value="other"/>
                   </xs:restriction>
                </xs:simpleType>
@@ -8146,6 +8154,8 @@ These changes do not effect the namespace. 2013-11-14.
                      <xs:enumeration value="numeric"/>
                      <xs:enumeration value="code"/>
                      <xs:enumeration value="datetime"/>
+                     <xs:enumeration value="geographicLocationCode"/>
+                     <xs:enumeration value="geographicStructureCode"/>
                      <xs:enumeration value="other"/>
                   </xs:restriction>
                </xs:simpleType>
