@@ -4333,6 +4333,7 @@ These changes do not effect the namespace. 2013-11-14.
       <xs:complexContent>
          <xs:extension base="simpleTextType">
             <xs:attribute name="agency" type="xs:string"/>
+            <xs:attribute name="isPersistentIdentifier" type="xs:boolean"/>
             <xs:attribute name="level">
                <xs:simpleType>
                   <xs:restriction base="xs:NMTOKEN">
@@ -4353,7 +4354,7 @@ These changes do not effect the namespace. 2013-11-14.
                <xhtml:h1 class="element_title">Identification Number</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Unique string or number (producer's or archive's number). An "agency" attribute is supplied. Identification Number of data collection maps to Dublin Core Identifier element. </xhtml:div>
+                  <xhtml:div class="description">Unique string or number (producer's or archive's number). An "agency" attribute is supplied to indicate the managing agency for the identifier. The "level" attribute allows specification of the level (study, file, or project) to which the identification number applies. If the identification number is a persistent identifer, set the attribute isPersistentIdentifier to "true". Identification Number of data collection maps to Dublin Core Identifier element.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -4363,6 +4364,9 @@ These changes do not effect the namespace. 2013-11-14.
                      ]]></xhtml:samp>
                      <xhtml:samp class="xml_sample"><![CDATA[
                         <IDNo agency="ZA">2010</IDNo>
+                     ]]></xhtml:samp>
+                     <xhtml:samp class="xml_sample"><![CDATA[
+                        <IDNo agency="DOI" isPersistentIdentifier="true" level="project">10.18128/D010.V7.0</IDNo>
                      ]]></xhtml:samp>
                   </xhtml:div>
                </xhtml:div>
