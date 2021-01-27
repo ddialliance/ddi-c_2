@@ -3346,9 +3346,9 @@ These changes do not effect the namespace. 2013-11-14.
                <xs:element ref="depositr" minOccurs="0" maxOccurs="unbounded"/>
                <xs:element ref="depDate" minOccurs="0" maxOccurs="unbounded"/>
                <xs:element ref="distDate" minOccurs="0" maxOccurs="unbounded"/>
-               <xs:attribute name="personalID" type="xs:string" use="optional"/>
-               <xs:attribute name="typeOfPersonalID" type="xs:string" use="optional"/>
             </xs:sequence>
+            <xs:attribute name="personalID" type="xs:string" use="optional"/>
+            <xs:attribute name="typeOfPersonalID" type="xs:string" use="optional"/>
          </xs:extension>
       </xs:complexContent>
    </xs:complexType>
