@@ -4604,6 +4604,7 @@ These changes do not effect the namespace. 2013-11-14.
    <xs:complexType name="languageType" mixed="true">
       <xs:complexContent>
          <xs:extension base="simpleTextType">
+            <xs:attribute name="typeOfLanguageCode" type="xs:string"/>
             <xs:attribute name="languageCode" type="xs:string"/>
          </xs:extension>
       </xs:complexContent>
@@ -4616,16 +4617,16 @@ These changes do not effect the namespace. 2013-11-14.
                <xhtml:h1 class="element_title">Language</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">A brief textual identification of the language of the cited object. Use attribute languageCode to specify language code used. DDI strongly recommend the use of language codes supported by xs:language which include the 2 and 3 character and extended structures defined by RFC4646 or its successors. Repeat for multiple languages.</xhtml:div>
+                  <xhtml:div class="description">A brief textual identification of the language of the cited object. Use attributes typeOfLanguageCode to specify the type of language code used and languageCode to specify the code value. DDI strongly recommend the use of language codes supported by xs:language which include the 2 and 3 character and extended structures defined by RFC5646 or its successors. Repeat for multiple languages.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
                   <xhtml:div class="example">
                      <xhtml:samp class="xml_sample"><![CDATA[
-                        <language languageCode="RFC4646">en-ca</language>
+                        <language typeOfLanguageCode="RFC5646" languageCode="en-CA">English as used in Canada</language>
                      ]]></xhtml:samp>
                      <xhtml:samp class="xml_sample"><![CDATA[
-                        <language  languageCode="RFC4646">fr-ca</language>
+                        <language typeOfLanguageCode="RFC5646" languageCode="fr-CA">French as used in Canada</language>
                      ]]></xhtml:samp>
                   </xhtml:div>
                </xhtml:div>
