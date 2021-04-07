@@ -5099,6 +5099,9 @@ These changes do not effect the namespace. 2013-11-14.
    <xs:complexType name="nationType" mixed="true">
       <xs:complexContent>
          <xs:extension base="conceptualTextType">
+            <xs:attribute name="vocab" type="xs:string"/>
+            <xs:attribute name="vocabURI" type="xs:string"/>
+            <xs:attribute name="vocabInstanceURI" type="xs:string"/>
             <xs:attribute name="abbr" type="xs:string"/>
          </xs:extension>
       </xs:complexContent>
@@ -5111,13 +5114,16 @@ These changes do not effect the namespace. 2013-11-14.
                <xhtml:h1 class="element_title">Country</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Indicates the country or countries covered in the file. Attribute "abbr" may be used to list common abbreviations; use of ISO country codes is recommended. Maps to Dublin Core Coverage element. Inclusion of this element is recommended. For forward-compatibility, DDI 3 XHTML tags may be used in this element.</xhtml:div>
+                  <xhtml:div class="description">Indicates the country or countries covered in the file. Attribute "abbr" may be used to list common abbreviations; use of ISO country codes is recommended. Use vocab, vocabURI, and vocabInstanceURI to identify the use of a controlled vocabulary. Maps to Dublin Core Coverage element. Inclusion of this element is recommended. For forward-compatibility, DDI 3 XHTML tags may be used in this element.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
                   <xhtml:div class="example">
                      <xhtml:samp class="xml_sample"><![CDATA[
-                        <nation abbr="GB">United Kingdom</nation>
+                        <nation vocab=”ISO 3166-1 alpha-2” vocabURI=”http://www.iso.org/ISO_3166-1/alpha-2” vocabInstanceURI=”http://www.iso.org/ISO_3166-1/alpha-2#FI” abbr=”FI” xml:lang= ”en”>Finland</nation>
+                     ]]></xhtml:samp> 
+                     <xhtml:samp class="xml_sample"><![CDATA[
+                        <nation vocab=”ISO 3166-1 alpha-2” vocabURI=”http://www.iso.org/ISO_3166-1/alpha-2” vocabInstanceURI=”http://www.iso.org/ISO_3166-1/alpha-2#FI” abbr=”FI” xml:lang= ”fi”>Suomi</nation>
                      ]]></xhtml:samp> 
                   </xhtml:div>
                </xhtml:div>
