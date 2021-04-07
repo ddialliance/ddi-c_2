@@ -4801,6 +4801,7 @@ These changes do not effect the namespace. 2013-11-14.
       <xs:complexContent>
          <xs:extension base="baseElementType">
             <xs:sequence>
+               <xs:element name="typeOfCodingInstruction" type="conceptType" minOccurs="0" maxOccurs="unbounded"/>
                <xs:element ref="txt" minOccurs="0" maxOccurs="unbounded"/>
                <xs:element ref="command" minOccurs="0" maxOccurs="unbounded"/>
             </xs:sequence>
@@ -4817,13 +4818,14 @@ These changes do not effect the namespace. 2013-11-14.
                <xhtml:h1 class="element_title">Coding Instructions</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Describe specific coding instructions used in data processing, cleaning, assession, or tabulation. Element relatedProcesses allows linking a coding instruction to one or more processes such as dataProcessing, dataAppr, cleanOps, etc. Use the txt element to describe instructions in a human readable form.</xhtml:div>
+                  <xhtml:div class="description">Describe specific coding instructions used in data processing, cleaning, assession, or tabulation. Element relatedProcesses allows linking a coding instruction to one or more processes such as dataProcessing, dataAppr, cleanOps, etc. Use the txt element to describe instructions in a human readable form. The type attribute has been DEPRECATED. Use the typeOfCodingInstruction to indicate the type of instruction with or without the use of a controlled vocabulary.</xhtml:div>
                </xhtml:div>
 						<xhtml:div>
 							<xhtml:h2 class="section_header">Example</xhtml:h2>
 							<xhtml:div class="example">
 								<xhtml:samp class="xml_sample"><![CDATA[
-<codingInstructions relatedProcesses="cleanOps_7334" type="recode">
+<codingInstructions relatedProcesses="cleanOps_7334">
+<typeOfCodingInstruction>recode</typeOfCodingInstruction>
 <txt>recode undocumented/wild codes to missing, i.e., 0.</txt>
 <command formalLanguage="SPSS">RECODE V1 TO V100 (10 THROUGH HIGH = 0)</command>
 </codingInstructions>
@@ -5397,6 +5399,7 @@ These changes do not effect the namespace. 2013-11-14.
          <xs:extension base="baseElementType">
             <xs:choice>
                <xs:sequence>
+                  <xs:element name="typeOfSetAvailability" type="conceptType" minOccurs="0" maxOccurs="unbounded"/>
                   <xs:element ref="labl" minOccurs="0" maxOccurs="unbounded"/>
                   <xs:element ref="txt" minOccurs="0" maxOccurs="unbounded"/>
                   <xs:element ref="notes" minOccurs="0" maxOccurs="unbounded"/>
@@ -5420,7 +5423,7 @@ These changes do not effect the namespace. 2013-11-14.
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
                   <xhtml:div class="description">
-                     <xhtml:p>This section allows for the inclusion of other materials that are related to the study as identified and labeled by the DTD/Schema users (encoders). The' materials may be entered as PCDATA (ASCII text) directly into the document (through use of the "txt" element). This ection may also serve as a "container" for other electronic materials such as setup files by providing a brief description of the study-related materials accompanied by the attributes "type" and "level" defining the material further. The "URI" attribute may be used to indicate the location of the other study-related materials.</xhtml:p>
+                     <xhtml:p>This section allows for the inclusion of other materials that are related to the study as identified and labeled by the DTD/Schema users (encoders). The' materials may be entered as PCDATA (ASCII text) directly into the document (through use of the "txt" element). This ection may also serve as a "container" for other electronic materials such as setup files by providing a brief description of the study-related materials accompanied by the attributes "type" and "level" defining the material further.  Note that the use of the attribute "type" has been DEPRECATED and the element "typeOfOtherMaterial" should be used instead. This element provide support for the use of a controlled vocabulary. The "URI" attribute may be used to indicate the location of the other study-related materials.</xhtml:p>
                      <xhtml:p>Other Study-Related Materials may include: questionnaires, coding notes, SPSS/SAS/Stata setup files (and others), user manuals, continuity guides, sample computer software programs, glossaries of terms, interviewer/project instructions, maps, database schema, data dictionaries, show cards, coding information, interview schedules, missing values information, frequency files, variable maps, etc.</xhtml:p>
                      <xhtml:p>The "level" attribute is used to clarify the relationship of the other materials to components of the study. Suggested values for level include specifications of the item level to which the element applies: e.g., level= data; level=datafile; level=studydsc; level=study. The URI attribute need not be used in every case; it is intended for capturing references to other materials separate from the codebook itself. In Section 5, Other Material is recursively defined.</xhtml:p>
                   </xhtml:div>
@@ -6497,6 +6500,7 @@ These changes do not effect the namespace. 2013-11-14.
       <xs:complexContent>
          <xs:extension base="baseElementType">
             <xs:sequence>
+               <xs:element name="typeOfSetAvailability" type="conceptType" minOccurs="0" maxOccurs="unbounded"/>
                <xs:element ref="accsPlac" minOccurs="0" maxOccurs="unbounded"/>
                <xs:element ref="origArch" minOccurs="0" maxOccurs="unbounded"/>
                <xs:element ref="avlStatus" minOccurs="0" maxOccurs="unbounded"/>
@@ -6520,7 +6524,7 @@ These changes do not effect the namespace. 2013-11-14.
                <xhtml:h1 class="element_title">Data Set Availability</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Information on availability and storage of the collection. The "media" attribute may be used in combination with any of the subelements. See Location of Data Collection.</xhtml:div>
+                  <xhtml:div class="description">Information on availability and storage of the collection. The "media" attribute may be used in combination with any of the subelements. See Location of Data Collection. Use of the "type" attribute has been DEPRECATED. Use the element typeOfSetAvailability.</xhtml:div>
                </xhtml:div>
             </xhtml:div>
          </xs:documentation>
@@ -6905,6 +6909,7 @@ These changes do not effect the namespace. 2013-11-14.
       <xs:complexContent>
          <xs:extension base="baseElementType">
             <xs:sequence>
+               <xs:element name="typeOfDevelopmentActivity" type="conceptType" minOccurs="0" maxOccurs="unbounded"/>
                <xs:element name="description" type="simpleTextType" minOccurs="0" maxOccurs="unbounded"/>
                <xs:element ref="participant" minOccurs="0" maxOccurs="unbounded"/>
                <xs:element ref="resource" minOccurs="0" maxOccurs="unbounded"/>
@@ -6915,7 +6920,19 @@ These changes do not effect the namespace. 2013-11-14.
       </xs:complexContent>
    </xs:complexType>
 
-   <xs:element name="developmentActivity" type="developmentActivityType"/>
+   <xs:element name="developmentActivity" type="developmentActivityType">
+      <xs:annotation>
+         <xs:documentation>
+            <xhtml:div>
+               <xhtml:h1 class="element_title">Development Activity</xhtml:h1>
+               <xhtml:div>
+                  <xhtml:h2 class="section_header">Description</xhtml:h2>
+                  <xhtml:div class="description">Information on the development activity including a description, set of participants, resoruces used, and outcomes. Use of the "type" attribute has been DEPRECATED. Use the element typeOfSetAvailability.</xhtml:div>
+               </xhtml:div>
+            </xhtml:div>
+         </xs:documentation>
+      </xs:annotation>
+   </xs:element>
 
    <xs:complexType name="participantType">
       <xs:simpleContent>
@@ -7195,6 +7212,7 @@ These changes do not effect the namespace. 2013-11-14.
       <xs:complexContent>
          <xs:extension base="baseElementType">
             <xs:sequence>
+               <xs:element name="typeOfExPostEvaluation" type="conceptType" minOccurs="0" maxOccurs="unbounded"/>
                <xs:element ref="evaluator" minOccurs="0" maxOccurs="unbounded"/>
                <xs:element ref="evaluationProcess" minOccurs="0" maxOccurs="unbounded"/>
                <xs:element ref="outcomes" minOccurs="0" maxOccurs="unbounded"/>
@@ -7212,13 +7230,14 @@ These changes do not effect the namespace. 2013-11-14.
                <xhtml:h1 class="element_title">Post Evaluation Procedures</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Use this section to describe evaluation procedures not address in data evaluation processes. These may include issues such as timing of the study, sequencing issues, cost/budget issues, relevance, instituional or legal arrangments etc. of the study. The completionDate attribute holds the date the evaluation was completed. The type attribute is an optional type to identify the type of evaluation with or without the use of a controlled vocabulary.</xhtml:div>
+                  <xhtml:div class="description">Use this section to describe evaluation procedures not address in data evaluation processes. These may include issues such as timing of the study, sequencing issues, cost/budget issues, relevance, instituional or legal arrangments etc. of the study. The completionDate attribute holds the date the evaluation was completed. The type attribute has been DEPRECATED. Use the element typeOfExPostEvaluation to identify the type of evaluation with or without the use of a controlled vocabulary.</xhtml:div>
                </xhtml:div>
 					<xhtml:div>
 						<xhtml:h2 class="section_header">Example</xhtml:h2>
 						<xhtml:div class="example">
 							<xhtml:samp class="xml_sample"><![CDATA[
 <exPostEvaluation date="2003" type="comprehensive">
+<typeOfExPostEvaluation>comprehensive</typeOfExPostEvaluation>
 <evaluator affiliation="United Nations" abbr="UNSD" role="consultant">United Nations Statistical Division</evaluator>
 <evaluationProcess>In-depth review of pre-collection and collection procedures</evaluationProcess>
 <outcomes>The following steps were highly effective in increasing response rates, and should be repeated in the next collection cycle...</outcomes>
