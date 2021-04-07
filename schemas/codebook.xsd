@@ -2389,7 +2389,7 @@ These changes do not effect the namespace. 2013-11-14.
    
    <xs:complexType name="dataApprType" mixed="true">
       <xs:complexContent>
-         <xs:extension base="simpleTextType">
+         <xs:extension base="conceptualTextType">
             <xs:attribute name="type" type="xs:string" use="optional"/>
          </xs:extension>
       </xs:complexContent>
@@ -2402,13 +2402,13 @@ These changes do not effect the namespace. 2013-11-14.
                <xhtml:h1 class="element_title">Other Forms of Data Appraisal</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Other issues pertaining to data appraisal. Describe here issues such as response variance, nonresponse rate and testing for bias, interviewer and response bias, confidence levels, question bias, etc. Attribute type allows for optional typing of data appraisal processes and option for controlled vocabulary.</xhtml:div>
+                  <xhtml:div class="description">Other issues pertaining to data appraisal. Describe here issues such as response variance, nonresponse rate and testing for bias, interviewer and response bias, confidence levels, question bias, etc. The use of the attribute "type" as a means of specifiying a controlled vocabulary concept is DEPRECATED. To specify the use of a Controlled Vocabulary or standard concept use the internal element <concept>. If multiple concepts are needed the parent element should be replicated. Internal text related to each concept should be allocated to accompany the relevent concept.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
                   <xhtml:div class="example">
                      <xhtml:samp class="xml_sample"><![CDATA[
-                        <dataAppr>These data files were obtained from the United States House of Representatives, who received them from the Census Bureau accompanied by the following caveats: "The numbers contained herein are not official 1990 decennial Census counts. The numbers represent estimates of the population based on a statistical adjustment method applied to the official 1990 Census figures using a sample survey intended to measure overcount or undercount in the Census results. On July 15, 1991, the Secretary of Commerce decided not to adjust the official 1990 decennial Census counts (see 56 Fed. Reg. 33582, July 22, 1991). In reaching his decision, the Secretary determined that there was not sufficient evidence that the adjustment method accurately distributed the population across and within states. The numbers contained in these tapes, which had to be produced prior to the Secretary's decision, are now known to be biased. Moreover, the tapes do not satisfy standards for the publication of Federal statistics, as established in Statistical Policy Directive No. 2, 1978, Office of Federal Statistical Policy and Standards. Accordingly, the Department of Commerce deems that these numbers cannot be used for any purpose that legally requires use of data from the decennial Census and assumes no responsibility for the accuracy of the data for any purpose whatsoever. The Department will provide no assistance in interpretation or use of these numbers."</dataAppr>
+                        <dataAppr><concept vocab="IPUMS">ProducerAppraised</concept>These data files were obtained from the United States House of Representatives, who received them from the Census Bureau accompanied by the following caveats: "The numbers contained herein are not official 1990 decennial Census counts. The numbers represent estimates of the population based on a statistical adjustment method applied to the official 1990 Census figures using a sample survey intended to measure overcount or undercount in the Census results. On July 15, 1991, the Secretary of Commerce decided not to adjust the official 1990 decennial Census counts (see 56 Fed. Reg. 33582, July 22, 1991). In reaching his decision, the Secretary determined that there was not sufficient evidence that the adjustment method accurately distributed the population across and within states. The numbers contained in these tapes, which had to be produced prior to the Secretary's decision, are now known to be biased. Moreover, the tapes do not satisfy standards for the publication of Federal statistics, as established in Statistical Policy Directive No. 2, 1978, Office of Federal Statistical Policy and Standards. Accordingly, the Department of Commerce deems that these numbers cannot be used for any purpose that legally requires use of data from the decennial Census and assumes no responsibility for the accuracy of the data for any purpose whatsoever. The Department will provide no assistance in interpretation or use of these numbers."</dataAppr>
                      ]]></xhtml:samp>
                   </xhtml:div>
                </xhtml:div>
@@ -2789,7 +2789,7 @@ These changes do not effect the namespace. 2013-11-14.
 	</xs:element>
    <xs:complexType name="instrumentDevelopmentType" mixed="true">
       <xs:complexContent>
-         <xs:extension base="simpleTextType">
+         <xs:extension base="conceptualTextType">
             <xs:attribute name="type" type="xs:string" use="optional"/>
          </xs:extension>
       </xs:complexContent>
@@ -2802,13 +2802,13 @@ These changes do not effect the namespace. 2013-11-14.
                <xhtml:h1 class="element_title">Instrument Development</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Describe any development work on the data collection instrument. Type attribute allows for the optional use of a defined development type with or without use of a controlled vocabulary.</xhtml:div>
+                  <xhtml:div class="description">Describe any development work on the data collection instrument. The use of the attribute "type" as a means of specifiying a controlled vocabulary concept is DEPRECATED. To specify the use of a Controlled Vocabulary or standard concept use the internal element <concept>. If multiple concepts are needed the parent element should be replicated. Internal text related to each concept should be allocated to accompany the relevent concept.</xhtml:div>
                </xhtml:div>
 					<xhtml:div>
 						<xhtml:h2 class="section_header">Example</xhtml:h2>
 						<xhtml:div class="example">
 							<xhtml:samp class="xml_sample"><![CDATA[
-<instrumentDevelopment type="pretesting">The questionnaire was pre-tested with split-panel tests, as well as an analysis of non-response rates for individual items, and response distributions.</instrumentDevelopment>
+<instrumentDevelopment><concept vocab="123surveys" vocabURI="http://123surveys.com/internal/developmentProtocal" vocabInstanceURI="http://123surveys.com/internal/developmentProtocal#Pretest.SplitPanel">Pretest.SplitPanel</conceptThe questionnaire was pre-tested with split-panel tests, as well as an analysis of non-response rates for individual items, and response distributions.</instrumentDevelopment>
 ]]>
 							</xhtml:samp>
 						</xhtml:div>
@@ -2875,7 +2875,7 @@ These changes do not effect the namespace. 2013-11-14.
    
    <xs:complexType name="collectorTrainingType" mixed="true">
       <xs:complexContent>
-         <xs:extension base="simpleTextType">
+         <xs:extension base="conceptualTextType">
             <xs:attribute name="type" type="xs:string" use="optional"/>
          </xs:extension>
       </xs:complexContent>
@@ -2888,13 +2888,13 @@ These changes do not effect the namespace. 2013-11-14.
 					<xhtml:h1 class="element_title">Collector Training</xhtml:h1>
 					<xhtml:div>
 						<xhtml:h2 class="section_header">Description</xhtml:h2>
-						<xhtml:div class="description">Describes the training provided to data collectors including internviewer training, process testing, compliance with standards etc. This is repeatable for language and to capture different aspects of the training process. The type attribute allows specification of the type of training being described.</xhtml:div>
+						<xhtml:div class="description">Describes the training provided to data collectors including internviewer training, process testing, compliance with standards etc. This is repeatable for language and to capture different aspects of the training process. The use of the attribute "type" as a means of specifiying a controlled vocabulary concept is DEPRECATED. To specify the use of a Controlled Vocabulary or standard concept use the internal element <concept>. If multiple concepts are needed the parent element should be replicated. Internal text related to each concept should be allocated to accompany the relevent concept.</xhtml:div>
 					</xhtml:div>
 					<xhtml:div>
 						<xhtml:h2 class="section_header">Example</xhtml:h2>
 						<xhtml:div class="example">
 							<xhtml:samp class="xml_sample"><![CDATA[
-<collectorTraining type="interviewer training">Describe research project, describe population and sample, suggest methods and language for approaching subjects, explain questions and key terms of survey instrument.</collectorTraining>
+<collectorTraining><concept vocab="TrainingObject" vocabURI="http://xyzdatacollection.org/vocabularies/TrainingObject" vocabURI="http://xyzdatacollection.org/vocabularies/TrainingObject#InterviewerTraining">InterviewerTraining</concept>Describe research project, describe population and sample, suggest methods and language for approaching subjects, explain questions and key terms of survey instrument.</collectorTraining>
 ]]>
 							</xhtml:samp>
 						</xhtml:div>
@@ -4032,7 +4032,7 @@ These changes do not effect the namespace. 2013-11-14.
 
    <xs:complexType name="frequencType" mixed="true">
       <xs:complexContent>
-         <xs:extension base="simpleTextType">
+         <xs:extension base="conceptualTextType">
             <xs:attribute name="freq" type="xs:string"/>
          </xs:extension>
       </xs:complexContent>
@@ -4045,7 +4045,7 @@ These changes do not effect the namespace. 2013-11-14.
                <xhtml:h1 class="element_title">Frequency of Data Collection</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">For data collected at more than one point in time, the frequency with which the data were collected. The "freq" attribute is included to permit the development of a controlled vocabulary for this element.</xhtml:div>
+                  <xhtml:div class="description">For data collected at more than one point in time, the frequency with which the data were collected. The use of the attribute "freq" as a means of specifiying a controlled vocabulary concept is DEPRECATED. To specify the use of a Controlled Vocabulary or standard concept use the internal element <concept>. If multiple concepts are needed the parent element should be replicated. Internal text related to each concept should be allocated to accompany the relevent concept.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -4867,7 +4867,7 @@ These changes do not effect the namespace. 2013-11-14.
    
    <xs:complexType name="dataProcessingType" mixed="true">
       <xs:complexContent>
-         <xs:extension base="simpleTextType">
+         <xs:extension base="conceptualTextType">
             <xs:attribute name="type" type="xs:string" use="optional"/>
          </xs:extension>
       </xs:complexContent>
@@ -4880,13 +4880,13 @@ These changes do not effect the namespace. 2013-11-14.
 						<xhtml:h1 class="element_title">Data Processing</xhtml:h1>
 						<xhtml:div>
 							<xhtml:h2 class="section_header">Description</xhtml:h2>
-							<xhtml:div class="description">Describes various data processing procedures not captured elsewhere in the documentation, such as topcoding, recoding, suppression, tabulation, etc. The "type" attribute supports better classification of this activity, including the optional use of a controlled vocabulary.</xhtml:div>
+							<xhtml:div class="description">Describes various data processing procedures not captured elsewhere in the documentation, such as topcoding, recoding, suppression, tabulation, etc. The use of the attribute "type" as a means of specifiying a controlled vocabulary concept is DEPRECATED. To specify the use of a Controlled Vocabulary or standard concept use the internal element <concept>. If multiple concepts are needed the parent element should be replicated. Internal text related to each concept should be allocated to accompany the relevent concept.</xhtml:div>
 						</xhtml:div>
 						<xhtml:div>
 							<xhtml:h2 class="section_header">Example</xhtml:h2>
 							<xhtml:div class="example">
 								<xhtml:samp class="xml_sample"><![CDATA[
-<dataProcessing type="topcoding">The income variables in this study (RESP_INC, HHD_INC, and SS_INC) were topcoded to protect confidentiality.</dataProcessing>
+<dataProcessing><concept>topcoding</concept>The income variables in this study (RESP_INC, HHD_INC, and SS_INC) were topcoded to protect confidentiality.</dataProcessing>
 ]]>
 								</xhtml:samp>
 							</xhtml:div>
@@ -6198,13 +6198,13 @@ These changes do not effect the namespace. 2013-11-14.
                <xhtml:h1 class="element_title">Type of Research Instrument</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">The type of data collection instrument used. "Structured" indicates an instrument in which all respondents are asked the same questions/tests, possibly with precoded answers. If a small portion of such a questionnaire includes open-ended questions, provide appropriate comments. "Semi-structured" indicates that the research instrument contains mainly open-ended questions. "Unstructured" indicates that in-depth interviews were conducted. The "type" attribute is included to permit the development of a controlled vocabulary for this element.</xhtml:div>
+                  <xhtml:div class="description">The type of data collection instrument used. "Structured" indicates an instrument in which all respondents are asked the same questions/tests, possibly with precoded answers. If a small portion of such a questionnaire includes open-ended questions, provide appropriate comments. "Semi-structured" indicates that the research instrument contains mainly open-ended questions. "Unstructured" indicates that in-depth interviews were conducted. The use of the attribute "type" as a means of specifiying a controlled vocabulary concept is DEPRECATED. To specify the use of a Controlled Vocabulary or standard concept use the internal element <concept>. If multiple concepts are needed the parent element should be replicated. Internal text related to each concept should be allocated to accompany the relevent concept.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
                   <xhtml:div class="example">
                      <xhtml:samp class="xml_sample"><![CDATA[
-                        <resInstru>structured</resInstru>
+                        <resInstru><concept vocab="TypeOfInstrument" vocabURI="http://www.ddialiance.org/Specification/DDI-CV/TypeOfInstruent_1.1.html" vocabInstanceURI"http://www.ddialiance.org/Specification/DDI-CV/TypeOfInstruent_1.1.html#Questionnaire.Structured">Questionnaire.Structured</concept>structured</resInstru>
                      ]]></xhtml:samp>
                   </xhtml:div>
                </xhtml:div>
@@ -6790,7 +6790,7 @@ These changes do not effect the namespace. 2013-11-14.
    
    <xs:complexType name="stdyClasType" mixed="true">
       <xs:complexContent>
-         <xs:extension base="simpleTextType">
+         <xs:extension base="conceptualTextType">
             <xs:attribute name="type" type="xs:string" use="optional"/>
          </xs:extension>
       </xs:complexContent>
@@ -6803,19 +6803,19 @@ These changes do not effect the namespace. 2013-11-14.
                <xhtml:h1 class="element_title">Class of the Study</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Generally used to give the data archive's class or study status number, which indicates the processing status of the study. May also be used as a text field to describe processing status. This element may be repeated to support multiple language expressions of the content.</xhtml:div>
+                  <xhtml:div class="description">Generally used to give the data archive's class or study status number, which indicates the processing status of the study. May also be used as a text field to describe processing status. This element may be repeated to support multiple language expressions of the content. The use of the attribute "type" as a means of specifiying a controlled vocabulary concept is DEPRECATED. To specify the use of a Controlled Vocabulary or standard concept use the internal element <concept>. If multiple concepts are needed the parent element should be replicated. Internal text related to each concept should be allocated to accompany the relevent concept.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
                   <xhtml:div class="example">
                      <xhtml:samp class="xml_sample"><![CDATA[
-                        <stdyClas>ICPSR Class II</stdyClas>
+                        <stdyClas><concept vocab="ICPSR" vocabURI="http://icpar.umich.edu/ICPSRvocabularies/StudyClass" vocabInstanceURI="http://icpar.umich.edu/ICPSRvocabularies/StudyClass#Class_II">Class_II</concept>ICPSR Class II</stdyClas>
                      ]]></xhtml:samp>
                      <xhtml:samp class="xml_sample"><![CDATA[
-                        <stdyClas>DDA Class C</stdyClas>
+                        <stdyClas><concept vocab="DDA-StudyClass" vocabURI="http://dda.dk/DDAvocabularies/StudyClass" vocabInstanceURI="http://dda.dk/DDAvocabularies/StudyClass#Class_C"</concept>DDA Class C</stdyClas>
                      ]]></xhtml:samp>
                      <xhtml:samp class="xml_sample"><![CDATA[
-                        <stdyClas>Available from the DDA. Being processed. </stdyClas>
+                        <stdyClas><concept vocab="DDA-Processing" vocabURI="http://dda.dk/DDAvocabularies/Processing" vocabInstanceURI="http://dda.dk/DDAvocabularies/Processing#inProcess">inProcess</concept>Available from the DDA. Being processed.</stdyClas>
                      ]]></xhtml:samp> 
                   </xhtml:div>
                </xhtml:div>
@@ -7625,22 +7625,22 @@ These changes do not effect the namespace. 2013-11-14.
                <xhtml:h1 class="element_title">Time Method</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">The time method or time dimension of the data collection. The "method" attribute is included to permit the development of a controlled vocabulary for this element. For forward-compatibility, DDI 3 XHTML tags may be used in this element.</xhtml:div>
+                  <xhtml:div class="description">The time method or time dimension of the data collection. The use of the attribute "method" as a means of specifiying a controlled vocabulary concept is DEPRECATED. To specify the use of a Controlled Vocabulary or standard concept use the internal element <concept>. If multiple concepts are needed the parent element should be replicated. Internal text related to each concept should be allocated to accompany the relevent concept. For forward-compatibility, DDI 3 XHTML tags may be used in this element.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
                   <xhtml:div class="example">
                      <xhtml:samp class="xml_sample"><![CDATA[
-                        <timeMeth>panel survey</timeMeth>
+                        <timeMeth><concept vocab="TimeMethod" vocabURI="http://www.ddialliance.org/Specification/DDI-CV/TimeMethod_1.2_Genericode1.0_DDI-CVProfile1.0.xml" vocabInstanceURI="http://www.ddialliance.org/Specification/DDI-CV/TimeMethod_1.2_Genericode1.0_DDI-CVProfile1.0#Longitudinal.Panel">Longitudinal.Panel</concept>panel survey</timeMeth>
                      ]]></xhtml:samp>
                      <xhtml:samp class="xml_sample"><![CDATA[
-                        <timeMeth>cross-section</timeMeth>
+                        <timeMeth><concept vocab="TimeMethod" vocabURI="http://www.ddialliance.org/Specification/DDI-CV/TimeMethod_1.2_Genericode1.0_DDI-CVProfile1.0.xml" vocabInstanceURI="http://www.ddialliance.org/Specification/DDI-CV/TimeMethod_1.2_Genericode1.0_DDI-CVProfile1.0#CrossSection">CrossSection</concept>cross-section</timeMeth>
                      ]]></xhtml:samp>
                      <xhtml:samp class="xml_sample"><![CDATA[
-                        <timeMeth>trend study</timeMeth>
+                        <timeMeth><concept vocab="TimeMethod" vocabURI="http://www.ddialliance.org/Specification/DDI-CV/TimeMethod_1.2_Genericode1.0_DDI-CVProfile1.0.xml" vocabInstanceURI="http://www.ddialliance.org/Specification/DDI-CV/TimeMethod_1.2_Genericode1.0_DDI-CVProfile1.0#Longitudinal.TrendRepeatedCrossSection">Longitudinal.TrendRepeatedCrossSection</concept>trend study</timeMeth>
                      ]]></xhtml:samp>
                      <xhtml:samp class="xml_sample"><![CDATA[
-                        <timeMeth>time-series</timeMeth>
+                        <timeMeth><concept vocab="TimeMethod" vocabURI="http://www.ddialliance.org/Specification/DDI-CV/TimeMethod_1.2_Genericode1.0_DDI-CVProfile1.0.xml" vocabInstanceURI="http://www.ddialliance.org/Specification/DDI-CV/TimeMethod_1.2_Genericode1.0_DDI-CVProfile1.0#TimeSeries">TimeSeries</concept>time-series</timeMeth>
                      ]]></xhtml:samp>
                   </xhtml:div>
                </xhtml:div>
