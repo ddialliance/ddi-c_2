@@ -2910,6 +2910,8 @@ These changes do not effect the namespace. 2013-11-14.
             <xs:attribute name="abbr" type="xs:string"/>
             <xs:attribute name="affiliation" type="xs:string"/>
             <xs:attribute name="role" type="xs:string" use="optional"/>
+            <xs:attribute name="personalID" type="xs:string" use="optional"/>
+            <xs:attribute name="typeOfPersonalID" type="xs:string" use="optional"/>
          </xs:extension>
       </xs:complexContent>
    </xs:complexType>
@@ -6921,6 +6923,8 @@ These changes do not effect the namespace. 2013-11-14.
             <xs:attribute name="affiliation" type="xs:string" use="optional"/>
             <xs:attribute name="abbr" type="xs:string" use="optional"/>
             <xs:attribute name="role" type="xs:string" use="optional"/>
+            <xs:attribute name="personalID" type="xs:string" use="optional"/>
+            <xs:attribute name="typeOfPersonalID" type="xs:string" use="optional"/>
          </xs:extension>
       </xs:simpleContent>
    </xs:complexType>
@@ -7234,6 +7238,8 @@ These changes do not effect the namespace. 2013-11-14.
             <xs:attribute name="affiliation" type="xs:string" use="optional"/>
             <xs:attribute name="abbr" type="xs:string" use="optional"/>
             <xs:attribute name="role" type="xs:string" use="optional"/>
+            <xs:attribute name="personalID" type="xs:string" use="optional"/>
+            <xs:attribute name="typeOfPersonalID" type="xs:string" use="optional"/>
          </xs:extension>
       </xs:simpleContent>
    </xs:complexType>
