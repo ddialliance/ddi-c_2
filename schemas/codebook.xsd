@@ -2787,6 +2787,29 @@ These changes do not effect the namespace. 2013-11-14.
 			</xs:documentation>
 		</xs:annotation>
 	</xs:element>
+
+   <xs:element name="generalDataFormat" type="conceptType">
+      <xs:annotation>
+         <xs:documentation>
+            <xhtml:div>
+               <xhtml:h1 class="element_title">General Data Format</xhtml:h1>
+               <xhtml:div>
+                  <xhtml:h2 class="section_header">Description</xhtml:h2>
+                  <xhtml:div class="description"></xhtml:div>
+               </xhtml:div>
+               <xhtml:div>
+                  <xhtml:h2 class="section_header">Example</xhtml:h2>
+                  <xhtml:div class="example">
+                     <xhtml:samp class="xml_sample"><![CDATA[
+                        <generalDataFormat vocab="GeneralDataFormat" vocabURI="https://ddialliance.org/Specification/DDI-CV/GeneralDataFormat_2.0_Genericode1.0_DDI-CVProfile1.0.xml" vocabInstanceURI="https://ddialliance.org/Specification/DDI-CV/GeneralDataFormat_2.0_Genericode1.0_DDI-CVProfile1.0#Geospatial">Geospatial</generalDataFormat>
+                     ]]></xhtml:samp>
+                  </xhtml:div>
+               </xhtml:div>
+            </xhtml:div>
+         </xs:documentation>
+       </xs:annotation>
+     </xs:element>  
+
    <xs:complexType name="instrumentDevelopmentType" mixed="true">
       <xs:complexContent>
          <xs:extension base="conceptualTextType">
@@ -3008,13 +3031,13 @@ These changes do not effect the namespace. 2013-11-14.
                <xhtml:h1 class="element_title">Kind of Data</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">The type of data included in the file: survey data, census/enumeration data, aggregate data, clinical data, event/transaction data, program source code, machine-readable text, administrative records data, experimental data, psychological test, textual data, coded textual, coded documents, time budget diaries, observation data/ratings, process-produced data, etc. This element maps to Dublin Core Type element. The type attribute can be used for forward-compatibility with DDI 3, by providing a type for use of controlled vocabulary, as this is descriptive in DDI 2 and CodeValue in DDI 3.</xhtml:div>
+                  <xhtml:div class="description">The type of data included in the file: survey data, census/enumeration data, aggregate data, clinical data, event/transaction data, program source code, machine-readable text, administrative records data, experimental data, psychological test, textual data, coded textual, coded documents, time budget diaries, observation data/ratings, process-produced data, etc. This element maps to Dublin Core Type element. The type attribute has been DEPRECATED. For consistant use of conceptualTextType use the included content <concept> and related attributes to provide a reference to a controlled vocabulary.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
                   <xhtml:div class="example">
                      <xhtml:samp class="xml_sample"><![CDATA[
-                        <dataKind type="numeric">survey data</dataKind>
+                        <dataKind>survey data</dataKind>
                      ]]></xhtml:samp>
                   </xhtml:div>
                </xhtml:div>
@@ -7416,6 +7439,7 @@ These changes do not effect the namespace. 2013-11-14.
                <xs:element ref="anlyUnit" minOccurs="0" maxOccurs="unbounded"/>
                <xs:element ref="universe" minOccurs="0" maxOccurs="unbounded"/>
                <xs:element ref="dataKind" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element ref="generalDataFormat" minOccurs="0" maxOccurs="unbounded"/>
             </xs:sequence>
          </xs:extension>
       </xs:complexContent>
