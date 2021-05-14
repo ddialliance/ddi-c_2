@@ -6786,6 +6786,7 @@ for more details.
          <xs:extension base="baseElementType">
             <xs:choice>
                <xs:sequence>
+                  <xs:element name="typeOfDataSrc" type="conceptType" minOccurs="0"/>
                   <xs:element ref="dataSrc" minOccurs="0" maxOccurs="unbounded"/>
                   <xs:element ref="sourceCitation" minOccurs="0" maxOccurs="unbounded"/>
                   <xs:element ref="srcOrig" minOccurs="0" maxOccurs="unbounded"/>
@@ -6805,7 +6806,7 @@ for more details.
                <xhtml:h1 class="element_title">Sources Statement</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Description of sources used for the data collection. The element is nestable so that the sources statement might encompass a series of discrete source statements, each of which could contain the facts about an individual source. This element maps to Dublin Core Source element.</xhtml:div>
+                  <xhtml:div class="description">Description of sources used for the data collection. The element is nestable so that the sources statement might encompass a series of discrete source statements, each of which could contain the facts about an individual source. Provides the type of data source used such as Register Records Accounts, Research Data, Biological Samples, etc. Use of an external controlled vocabulary is recommended. DDI provides Data Source Type. This element maps to Dublin Core Source element.</xhtml:div>
                </xhtml:div>
             </xhtml:div>
          </xs:documentation>
@@ -7134,6 +7135,7 @@ for more details.
       <xs:complexContent>
          <xs:extension base="baseElementType">
             <xs:sequence>
+               <xs:element name="typeOfDataSrc" type="conceptType" minOccurs="0"/>
                <xs:element name="dataSrc" type="simpleTextType" minOccurs="0" maxOccurs="unbounded"/>
                <xs:element ref="srcOrig" minOccurs="0" maxOccurs="unbounded"/>
                <xs:element ref="srcChar" minOccurs="0" maxOccurs="unbounded"/>
