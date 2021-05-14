@@ -3217,6 +3217,7 @@ for more details.
       <xs:complexContent>
          <xs:extension base="baseElementType">
             <xs:sequence>
+               <xs:element ref="varRange" minOccurs="0" maxOccurs="unbounded"/>
                <xs:element ref="drvdesc" minOccurs="0" maxOccurs="unbounded"/>
                <xs:element ref="drvcmd" minOccurs="0" maxOccurs="unbounded"/>
             </xs:sequence>
@@ -3232,7 +3233,7 @@ for more details.
                <xhtml:h1 class="element_title">Derivation</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Used only in the case of a derived variable, this element provides both a description of how the derivation was performed and the command used to generate the derived variable, as well as a specification of the other variables in the study used to generate the derivation. The "var" attribute provides the ID values of the other variables in the study used to generate this derived variable.</xhtml:div>
+                  <xhtml:div class="description">Used only in the case of a derived variable, this element provides both a description of how the derivation was performed and the command used to generate the derived variable, as well as a specification of the other variables in the study used to generate the derivation. The "var" attribute provides the ID values of the other variables in the study used to generate this derived variable. Alternatively the variables may be expressed as a range using the varRange element. Note that use of varRange is implementation dependent. Since the order of variables can change during the execution of a script, it is computationally difficult to identify which variables belong to a variable range.  It has been provided to support the automated creation of derivation information. Order should be determined by the physical order expressed in location as opposed to the order expressed in the metadata document. varRange should only be used when the physical order of variables is available and machine-actionable.</xhtml:div>
                </xhtml:div>
             </xhtml:div>
          </xs:documentation>
@@ -3732,6 +3733,146 @@ for more details.
       </xs:annotation>
    </xs:element>
 
+
+	<xs:element name="fileCommand" type="fileCommandType">
+        <xs:annotation>
+           <xs:documentation>
+              <xhtml:div>
+                 <xhtml:h1 class="element_title">File Command</xhtml:h1>
+                 <xhtml:div>
+                    <xhtml:h2 class="section_header">Description</xhtml:h2>
+                    <xhtml:div class="description">
+                       <xhtml:p>The element allows for the the description of the file command by capturing a textual description of the command including the capture of pseudo code in "drvdesc" as well as the specific command using "drvcmd". Follow the same convention as the variable derivation; source=producer holds original and source=archive holds the SDTD.</xhtml:p>
+                       <xhtml:p>Provided linkage to source and target variables that were involved in this derivation command in "fileDerivationVars". Basically, any dropped variable from the source will only be identified and referenced here. A variable that is kept and unchanged, will have a deriviation pointing to it source, but the specific command which led to its retention will only be identified here at the file level. Variables created by a file level command will be linked here, and their derivation elements will repeat the command.</xhtml:p>
+                       <xhtml:p>If applicable, use the values "add" or "drop" in the attribute "fileDerivationCases" if this command added or dropped cases from the referenced source files.</xhtml:p>
+                    </xhtml:div>
+                 </xhtml:div>
+              </xhtml:div>
+           </xs:documentation>
+        </xs:annotation>
+     </xs:element>
+	
+	<xs:complexType name="fileCommandType">
+		<xs:complexContent>
+			<xs:extension base="baseElementType">
+				<xs:sequence>
+		                   <xs:element ref="drvdesc" minOccurs="0"/>
+                                   <xs:element ref="drvcmd" minOccurs="1" maxOccurs="unbounded"/>
+				</xs:sequence>
+                                <xs:attribute name="fileDerivationCasesType">
+                                   <xs:simpleType>
+                                     <xs:restriction base="xs:NMTOKEN">
+                                       <xs:enumeration value="add"/>
+                                       <xs:enumeration value="drop"/>
+                                     </xs:restriction>
+                                   </xs:simpleType>
+                                </xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:element name="fileDerivation" type="fileDerivationType">
+        <xs:annotation>
+           <xs:documentation>
+              <xhtml:div>
+                 <xhtml:h1 class="element_title">File Derivation</xhtml:h1>
+                 <xhtml:div>
+                    <xhtml:h2 class="section_header">Description</xhtml:h2>
+                    <xhtml:div class="description">
+                       <xhtml:p>The element allows for the the description of the file commands used to creation the file deriviation. The attribute "sourceFiles" is used to provide a space delimited list of the "fileTxt" IDs used as the source(s) of the derivation.</xhtml:p>
+                    </xhtml:div>
+                 </xhtml:div>
+                 <xhtml:div>
+                    <xhtml:h2 class="section_header">Example</xhtml:h2>
+                    <xhtml:div class="example">
+                       <xhtml:samp class="xml_sample"><![CDATA[
+                          	<fileDerivation sourceFiles="F1">
+			  		<fileCommand>
+			  	        <drvdesc>Delete AGE, MARITAL from the dataset.</drvdesc>
+			  	        <drvcmd source="producer" syntax="spss">delete variables AGE MARITAL.</drvcmd>
+			  	        <drvcmd source="archive" syntax="sdtl-pojo">{
+			    "$type" : "DeleteVariables",
+			    "command" : "delete",
+			    "sourceInformation" : {
+			      "lineNumberStart" : 3,
+			      "lineNumberEnd" : 3,
+			      "sourceStartIndex" : 70,
+			      "sourceStopIndex" : 98,
+			      "originalSourceText" : "delete variables AGE MARITAL."
+			    },
+			    "unknownProperties" : [ ],
+			    "canChangeData" : false,
+			    "variables" : [ {
+			      "$type" : "VariableSymbolExpression",
+			      "unknownProperties" : [ ],
+			      "variableName" : "AGE"
+			    }, {
+			      "$type" : "VariableSymbolExpression",
+			      "unknownProperties" : [ ],
+			      "variableName" : "MARITAL"
+			    } ],
+			    "$type" : "DeleteVariables"
+			  }</drvcmd>
+			  			<fileDerivationVars>
+			  				<drop>AGE MARITAL</drop>
+			  			</fileDerivationVars>
+			  		</fileCommand>
+			  	</fileDerivation>
+                       ]]></xhtml:samp>
+                    </xhtml:div>
+                 </xhtml:div>
+              </xhtml:div>
+           </xs:documentation>
+        </xs:annotation>
+     </xs:element>
+	
+	<xs:complexType name="fileDerivationType">
+		<xs:complexContent>
+			<xs:extension base="baseElementType">
+				<xs:sequence>
+					<xs:element ref="fileCommand" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+				<xs:attribute name="sourceFiles" type="xs:IDREFS" use="required"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:element name="fileDerivationVars" type="fileDerivationVarsType">
+        <xs:annotation>
+           <xs:documentation>
+              <xhtml:div>
+                 <xhtml:h1 class="element_title">File Derivation Variables</xhtml:h1>
+                 <xhtml:div>
+                    <xhtml:h2 class="section_header">Description</xhtml:h2>
+                    <xhtml:div class="description">
+                       <xhtml:p>"keep" - space delimited ID references to the target variables that were kept as part of this file level command.</xhtml:p>
+                       <xhtml:p>"drop" - space delimited ID references to the source variables that were dropped as part of this file level command</xhtml:p>
+                       <xhtml:p>"add" - space delimited ID references to the target variables that were created as part of this file level command</xhtml:p>
+                    </xhtml:div>
+                 </xhtml:div>
+                 <xhtml:div>
+                    <xhtml:h2 class="section_header">Example</xhtml:h2>
+                    <xhtml:div class="example">
+                       <xhtml:samp class="xml_sample"><![CDATA[
+                          <keep>V1 V2 V5</keep>
+                          <drop>V3</drop>
+                          <add>V16</add>
+                       ]]></xhtml:samp>
+                    </xhtml:div>
+                 </xhtml:div>
+              </xhtml:div>
+           </xs:documentation>
+        </xs:annotation>
+     </xs:element>
+
+	<xs:complexType name="fileDerivationVarsType">
+		<xs:sequence>
+			<xs:element name="keep" type="xs:IDREFS" minOccurs="0"/>
+			<xs:element name="drop" type="xs:IDREFS" minOccurs="0"/>
+			<xs:element name="add" type="xs:IDREFS" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+
    <xs:element name="fileCont" type="simpleTextType">
       <xs:annotation>
          <xs:documentation>
@@ -3759,6 +3900,7 @@ for more details.
          <xs:extension base="baseElementType">
             <xs:sequence>
                <xs:element ref="fileTxt" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element ref="fileDerivation" minOccurs="0"/>
                <xs:element ref="locMap" minOccurs="0"/>
                <xs:element ref="notes" minOccurs="0" maxOccurs="unbounded"/>
             </xs:sequence>
@@ -8210,6 +8352,7 @@ for more details.
                      <xs:enumeration value="datetime"/>
                      <xs:enumeration value="geographicLocationCode"/>
                      <xs:enumeration value="geographicStructureCode"/>
+                     <xs:enumeration value="scale"/>
                      <xs:enumeration value="other"/>
                   </xs:restriction>
                </xs:simpleType>
@@ -8420,6 +8563,39 @@ for more details.
       </xs:annotation>
    </xs:element>
 
+
+	<xs:complexType name="varRangeType">
+		<xs:complexContent>
+			<xs:extension base="baseElementType">
+				<xs:attribute name="start" type="xs:IDREF" use="optional"/>
+				<xs:attribute name="end" type="xs:IDREF" use="optional"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+<xs:element name="varRange" type="varRangeType">
+      <xs:annotation>
+         <xs:documentation>
+            <xhtml:div>
+               <xhtml:h1 class="element_title">Variable Range</xhtml:h1>
+               <xhtml:div>
+                  <xhtml:h2 class="section_header">Description</xhtml:h2>
+                  <xhtml:div class="description">
+                     <xhtml:p>Reference to the ID of the first and last variable (start and end) of the range of variables used by the derivation.</xhtml:p>
+                  </xhtml:div>
+               </xhtml:div>
+               <xhtml:div>
+                  <xhtml:h2 class="section_header">Example</xhtml:h2>
+                  <xhtml:div class="example">
+                     <xhtml:samp class="xml_sample"><![CDATA[
+                        <varRange start="V1" end="V3"/>
+                     ]]></xhtml:samp>
+                  </xhtml:div>
+               </xhtml:div>
+            </xhtml:div>
+         </xs:documentation>
+      </xs:annotation>
+   </xs:element>
    <xs:element name="varQnty" type="simpleTextType">
       <xs:annotation>
          <xs:documentation>
