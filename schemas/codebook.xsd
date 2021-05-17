@@ -2379,6 +2379,7 @@ for more details.
       <xs:complexContent>
          <xs:extension base="baseElementType">
             <xs:sequence>
+	           <xs:element name="typeOfAccess" type="conceptType" minOccurs="0"/>
                <xs:element ref="setAvail" minOccurs="0" maxOccurs="unbounded"/>
                <xs:element ref="useStmt" minOccurs="0" maxOccurs="unbounded"/>
                <xs:element ref="notes" minOccurs="0" maxOccurs="unbounded"/>
@@ -2394,7 +2395,7 @@ for more details.
                <xhtml:h1 class="element_title">Data Access</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">This section describes access conditions and terms of use for the data collection. In cases where access conditions differ across individual files or variables, multiple access conditions can be specified. The access conditions applying to a study, file, variable group, or variable can be indicated by an IDREF attribute on the study, file, variable group, or variable elements called "access".</xhtml:div>
+                  <xhtml:div class="description">This section describes access conditions and terms of use for the data collection. In cases where access conditions differ across individual files or variables, multiple access conditions can be specified. In cases where access conditions differ across individual files, variables, or categories multiple access conditions can be specified. The access conditions applying to a study, file, variable group, variable or category can be indicated by an IDREF attribute on the study, file, variable group, nCube group, variable, category, or data item elements called "access". "typeOfAccss" is provided in order to provide a specific type of access. Use of a external controlled vocabulary is strongly recommended.</xhtml:div>
                </xhtml:div>
             </xhtml:div>
          </xs:documentation>
@@ -4809,7 +4810,37 @@ for more details.
          </xs:documentation>
       </xs:annotation>
    </xs:element>
+  
+  <xs:complexType name="licenseType" mixed="true">
+      <xs:complexContent>
+         <xs:extension base="simpleTextType">
+            <xs:attribute name="URI" type="xs:string" use="optional"/>
+            <xs:attribute name="type" use="optional">
+              <xs:simpleType>
+                <xs:restriction base="xs:NMTOKEN">
+                  <xs:enumeration value="data"/>
+                  <xs:enumeration value="metadata"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
    
+   <xs:element name="license" type="licenseType">
+      <xs:annotation>
+         <xs:documentation>
+            <xhtml:div>
+               <xhtml:h1 class="element_title">License</xhtml:h1>
+               <xhtml:div>
+                  <xhtml:h2 class="section_header">Description</xhtml:h2>
+                  <xhtml:div class="description">A legal document giving official permission to something with the resource. Recommendation is to provide the license document URI. equates to https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/license/</xhtml:div>
+               </xhtml:div>
+            </xhtml:div>
+         </xs:documentation>
+      </xs:annotation>
+   </xs:element>
+     
    <xs:complexType name="locMapType">
       <xs:complexContent>
          <xs:extension base="baseElementType">
@@ -4943,6 +4974,32 @@ for more details.
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
                   <xhtml:div class="description">The element measure indicates the measurement features of the cell content: type of aggregation used, measurement unit, and measurement scale. An origin point is recorded for anchored scales, to be used in determining relative movement along the scale. Additivity indicates whether an aggregate is a stock (like the population at a given point in time) or a flow (like the number of births or deaths over a certain period of time). The non-additive flag is to be used for measures that for logical reasons cannot be aggregated to a higher level - for instance, data that only make sense at a certain level of aggregation, like a classification. Two nCubes may be identical except for their measure - for example, a count of persons by age and percent of persons by age. Measure is an empty element that includes the following attributes: "varRef" is an IDREF; "aggrMeth" indicates the type of aggregation method used, for example 'sum', 'average', 'count'; "measUnit" records the measurement unit, for example 'km', 'miles', etc.; "scale" records unit of scale, for example 'x1', 'x1000'; "origin" records the point of origin for anchored scales;"additivity" records type of additivity such as 'stock', 'flow', 'non-additive'. If a value of "other" is used for the aggrMeth attribute, a term from a controlled vocabulary should be placed in the "otherAggrMeth" attribute, and a the complex element controlledVocabUsed should be used to specify the controlled vocabulary.</xhtml:div>
+               </xhtml:div>
+            </xhtml:div>
+         </xs:documentation>
+      </xs:annotation>
+   </xs:element>
+
+   <xs:complexType name="metadataAccsType">
+      <xs:complexContent>
+         <xs:extension base="baseElementType">
+            <xs:sequence>
+	       <xs:element name="typeOfAccess" type="conceptType" minOccurs="0"/>
+               <xs:element ref="useStmt" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element ref="notes" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   
+   <xs:element name="metadataAccs" type="metadataAccsType">
+      <xs:annotation>
+         <xs:documentation>
+            <xhtml:div>
+               <xhtml:h1 class="element_title">Metadata Access</xhtml:h1>
+               <xhtml:div>
+                  <xhtml:h2 class="section_header">Description</xhtml:h2>
+                  <xhtml:div class="description">This section describes access conditions and terms of use for the metadata. In cases where access conditions differ across individual files, variables, or categories multiple access conditions can be specified. The access conditions applying to a study, file, variable group, variable or category can be indicated by an IDREF attribute on the study, file, variable group, nCube group, variable, category, or data item elements called "access". "typeOfAccss" is provided in order to provide a specific type of access. Use of a external controlled vocabulary is strongly recommended. </xhtml:div>
                </xhtml:div>
             </xhtml:div>
          </xs:documentation>
@@ -5889,6 +5946,7 @@ for more details.
                <xs:element ref="language" minOccurs="0" maxOccurs="unbounded"/>
                <xs:element ref="producer" minOccurs="0" maxOccurs="unbounded"/>
                <xs:element ref="copyright" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element ref="license" minOccurs="0" maxOccurs="unbounded"/>
                <xs:element ref="prodDate" minOccurs="0" maxOccurs="unbounded"/>
                <xs:element ref="prodPlac" minOccurs="0" maxOccurs="unbounded"/>
                <xs:element ref="software" minOccurs="0" maxOccurs="unbounded"/>
@@ -7029,6 +7087,7 @@ for more details.
                <xs:element ref="studyDevelopment" minOccurs="0" maxOccurs="unbounded"/>
                <xs:element ref="method" minOccurs="0" maxOccurs="unbounded"/>
                <xs:element ref="dataAccs" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element ref="metadataAccs" minOccurs="0" maxOccurs="unbounded"/>
                <xs:element ref="othrStdyMat" minOccurs="0" maxOccurs="unbounded"/>
                <xs:element ref="notes" minOccurs="0" maxOccurs="unbounded"/>
             </xs:sequence>
