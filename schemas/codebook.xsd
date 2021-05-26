@@ -1,41 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 
-Copyright (c) 2012 DDI Alliance, DDI 2.5, 2012-01-17
+Copyright (c) 2020 DDI Alliance, DDI-Codebook 2.6 draft, 2020-12-14
 
-This file is part of DDI 2.5 XML Schema.
+This file is part of DDI-Codebook 2.6 XML Schema. BETA for internal review
 
-DDI 2.5 XML Schema is free software: you can redistribute it and/or modify
-it under the terms of the GNU Lesser General Public License as published by the
-Free Software Foundation, either version 3 of the License, or (at your
-option) any later version.
+DDI-Codebook 2.6 XML Schema is licenced under the terms of the Creative Commons Attribution 4.0 International (CC BY 4.0) License.
 
-DDI 2.5 XML Schema is distributed in the hope that it will be useful, but
+This is a human-readable summary of (and not a substitute for) the license (https://creativecommons.org/licenses/by/4.0/legalcode) 
+
+You are free to:
+
+    Share — copy and redistribute the material in any medium or format
+	
+    Adapt — remix, transform, and build upon the material
+    for any purpose, even commercially.
+
+    The licensor cannot revoke these freedoms as long as you follow the license terms.
+
+Under the following terms:
+
+    Attribution — You must give appropriate credit, provide a link to the license, and indicate if changes were made. 
+	You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.
+
+    No additional restrictions — You may not apply legal terms or technological measures that legally restrict others 
+	from doing anything the license permits.
+
+Notices:
+
+    You do not have to comply with the license for elements of the material in the public domain or where your use is permitted 
+	by an applicable exception or limitation.
+    
+	No warranties are given. The license may not give you all of the permissions necessary for your intended use. 
+	For example, other rights such as publicity, privacy, or moral rights may limit how you use the material.
+
+DDI-Codebook 2.6 XML Schema is distributed in the hope that it will be useful, but
 WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
 or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License
 for more details.
-
-You should have received a copy of the GNU Lesser General Public License along
-with DDI 2.5 XML Schema. If not, see <http://www.gnu.org/licenses/>.
-
--->
-<!--
-DDI 2.5.1 XML Schema modifies DDI 2.5 by easing cardinality on many text 
-entries to better support multi-language content. It provides the element 
-dataFingerprint within fileTxt as a sub-minor, backward compatible bug correction. 
-This element was intended to be included in DDI 2.5. Documentation of new objects
-was expanded.
-
-These changes do not effect the namespace. 2013-11-14.
 
 -->
 <xs:schema xmlns:xhtml="http://www.w3.org/1999/xhtml"
            xmlns:fn="http://www.w3.org/2005/xpath-functions"
            xmlns:xs="http://www.w3.org/2001/XMLSchema"
            xmlns:saxon="http://xml.apache.org/xslt"
-           xmlns="ddi:codebook:2_5"
+           xmlns="ddi:codebook:2_6"
            xmlns:dc="http://purl.org/dc/terms/"
-           targetNamespace="ddi:codebook:2_5"
+           targetNamespace="ddi:codebook:2_6"
            elementFormDefault="qualified"
            attributeFormDefault="unqualified">
    <xs:annotation>
@@ -1253,6 +1264,7 @@ These changes do not effect the namespace. 2013-11-14.
             <xs:attribute name="wgt-var" type="xs:IDREFS" use="optional"/>
             <xs:attribute name="weight" type="xs:IDREFS" use="optional"/>
             <xs:attribute name="sdatrefs" type="xs:IDREFS" use="optional"/>
+            <xs:attribute name="access" type="xs:IDREFS" use="optional"/>
          </xs:extension>
       </xs:complexContent>
    </xs:complexType>
@@ -1264,7 +1276,7 @@ These changes do not effect the namespace. 2013-11-14.
                <xhtml:h1 class="element_title">Category Level Statistic</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">May include frequencies, percentages, or crosstabulation results. This field can contain one of the following: 1. textual information (e.g., PCDATA), or 2. non-parseable character data (e.g., the statistics), or 3. some other form of external information (table, image, etc.) In case 1, the tag can be used to mark up character data; tables can also be included in the actual markup. In cases 2 or 3, the element can be left empty and the "URI" attribute used to refer to the external object containing the information. The attribute "type" indicates the type of statistics presented - frequency, percent, or crosstabulation. If a value of "other" is used for this attribute, the "otherType" attribute should take a value from a controlled vocabulary. This option should only be used when applying a controlled vocabulary to this attribute. Use the complex element controlledVocabUsed to identify the controlled vocabulary to which the selected term belongs.</xhtml:div>
+                  <xhtml:div class="description">May include frequencies, percentages, or crosstabulation results. This field can contain one of the following: 1. textual information (e.g., PCDATA), or 2. non-parseable character data (e.g., the statistics), or 3. some other form of external information (table, image, etc.) In case 1, the tag can be used to mark up character data; tables can also be included in the actual markup. In cases 2 or 3, the element can be left empty and the "URI" attribute used to refer to the external object containing the information. The attribute "type" indicates the type of statistics presented - frequency, percent, or crosstabulation. If a value of "other" is used for this attribute, the "otherType" attribute should take a value from a controlled vocabulary. This option should only be used when applying a controlled vocabulary to this attribute. Use the complex element controlledVocabUsed to identify the controlled vocabulary to which the selected term belongs. The attribute "access" records the ID values of all elements in the Data Access and Metadata Access section that describe access conditions.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -1367,6 +1379,7 @@ These changes do not effect the namespace. 2013-11-14.
             <xs:attribute name="missType" type="xs:string" use="optional"/>
             <xs:attribute name="country" type="xs:string" use="optional"/>
             <xs:attribute name="sdatrefs" type="xs:IDREFS" use="optional"/>
+            <xs:attribute name="access" type="xs:IDREFS" use="optional"/>
             <xs:attribute name="excls" default="true">
                <xs:simpleType>
                   <xs:restriction base="xs:NMTOKEN">
@@ -1394,6 +1407,7 @@ These changes do not effect the namespace. 2013-11-14.
                      <xhtml:p>The attribute "missType" is used to specify the type of missing data, e.g., inap., don't know, no answer, etc. </xhtml:p>
                      <xhtml:p>The attribute "country" allows for the denotation of country-specific category values.</xhtml:p>
                      <xhtml:p>The "sdatrefs" attribute records the ID values of all elements within the  summary data description that apply to this category. </xhtml:p>
+                     <xhtml:p>The "access" attribute records the ID values of all elements within the Data Access and etadata Access sections description that apply to this category. </xhtml:p>
                      <xhtml:p>The exclusiveness attribute ("excls") should be set to "false" if the category can appear in more than one place in the classification hierarchy.</xhtml:p>
                      <xhtml:p>The attribute "catgry" is an IDREF referencing any child categories of this category element. Used to capture nested hierarchies of categories.</xhtml:p>
                      <xhtml:p>The attribute "level" is an IDREF referencing the catLevel ID in which this category exists.</xhtml:p>
@@ -2365,6 +2379,7 @@ These changes do not effect the namespace. 2013-11-14.
       <xs:complexContent>
          <xs:extension base="baseElementType">
             <xs:sequence>
+	           <xs:element name="typeOfAccess" type="conceptType" minOccurs="0"/>
                <xs:element ref="setAvail" minOccurs="0" maxOccurs="unbounded"/>
                <xs:element ref="useStmt" minOccurs="0" maxOccurs="unbounded"/>
                <xs:element ref="notes" minOccurs="0" maxOccurs="unbounded"/>
@@ -2380,7 +2395,7 @@ These changes do not effect the namespace. 2013-11-14.
                <xhtml:h1 class="element_title">Data Access</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">This section describes access conditions and terms of use for the data collection. In cases where access conditions differ across individual files or variables, multiple access conditions can be specified. The access conditions applying to a study, file, variable group, or variable can be indicated by an IDREF attribute on the study, file, variable group, or variable elements called "access".</xhtml:div>
+                  <xhtml:div class="description">This section describes access conditions and terms of use for the data collection. In cases where access conditions differ across individual files or variables, multiple access conditions can be specified. In cases where access conditions differ across individual files, variables, or categories multiple access conditions can be specified. The access conditions applying to a study, file, variable group, variable or category can be indicated by an IDREF attribute on the study, file, variable group, nCube group, variable, category, or data item elements called "access". "typeOfAccss" is provided in order to provide a specific type of access. Use of a external controlled vocabulary is strongly recommended.</xhtml:div>
                </xhtml:div>
             </xhtml:div>
          </xs:documentation>
@@ -2998,6 +3013,7 @@ These changes do not effect the namespace. 2013-11-14.
             </xs:sequence>
             <xs:attribute name="varRef" type="xs:IDREF"/>
             <xs:attribute name="nCubeRef" type="xs:IDREF"/>
+            <xs:attribute name="access" type="xs:IDREFS" use="optional"/>
          </xs:extension>
       </xs:complexContent>
    </xs:complexType>
@@ -3009,7 +3025,7 @@ These changes do not effect the namespace. 2013-11-14.
                <xhtml:h1 class="element_title">Data Item</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Identifies a physical storage location for an individual data entry, serving as a link between the physical location and the logical content description of each data item. The attribute "varRef" is an IDREF that points to a discrete variable description. If the data item is located within an nCube (aggregate data), use the attribute "nCubeRef" (IDREF) to point to the appropriate nCube and the element CubeCoord to identify the coordinates of the data item within the nCube.</xhtml:div>
+                  <xhtml:div class="description">Identifies a physical storage location for an individual data entry, serving as a link between the physical location and the logical content description of each data item. The attribute "varRef" is an IDREF that points to a discrete variable description. If the data item is located within an nCube (aggregate data), use the attribute "nCubeRef" (IDREF) to point to the appropriate nCube and the element CubeCoord to identify the coordinates of the data item within the nCube. The attribute "access" records the ID values of all elements in the Data Access and Metadata Access section that describe access conditions for this cell.</xhtml:div>
                </xhtml:div>
             </xhtml:div>
          </xs:documentation>
@@ -3206,6 +3222,7 @@ These changes do not effect the namespace. 2013-11-14.
       <xs:complexContent>
          <xs:extension base="baseElementType">
             <xs:sequence>
+               <xs:element ref="varRange" minOccurs="0" maxOccurs="unbounded"/>
                <xs:element ref="drvdesc" minOccurs="0" maxOccurs="unbounded"/>
                <xs:element ref="drvcmd" minOccurs="0" maxOccurs="unbounded"/>
             </xs:sequence>
@@ -3221,7 +3238,7 @@ These changes do not effect the namespace. 2013-11-14.
                <xhtml:h1 class="element_title">Derivation</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Used only in the case of a derived variable, this element provides both a description of how the derivation was performed and the command used to generate the derived variable, as well as a specification of the other variables in the study used to generate the derivation. The "var" attribute provides the ID values of the other variables in the study used to generate this derived variable.</xhtml:div>
+                  <xhtml:div class="description">Used only in the case of a derived variable, this element provides both a description of how the derivation was performed and the command used to generate the derived variable, as well as a specification of the other variables in the study used to generate the derivation. The "var" attribute provides the ID values of the other variables in the study used to generate this derived variable. Alternatively the variables may be expressed as a range using the varRange element. Note that use of varRange is implementation dependent. Since the order of variables can change during the execution of a script, it is computationally difficult to identify which variables belong to a variable range.  It has been provided to support the automated creation of derivation information. Order should be determined by the physical order expressed in location as opposed to the order expressed in the metadata document. varRange should only be used when the physical order of variables is available and machine-actionable.</xhtml:div>
                </xhtml:div>
             </xhtml:div>
          </xs:documentation>
@@ -3721,6 +3738,146 @@ These changes do not effect the namespace. 2013-11-14.
       </xs:annotation>
    </xs:element>
 
+
+	<xs:element name="fileCommand" type="fileCommandType">
+        <xs:annotation>
+           <xs:documentation>
+              <xhtml:div>
+                 <xhtml:h1 class="element_title">File Command</xhtml:h1>
+                 <xhtml:div>
+                    <xhtml:h2 class="section_header">Description</xhtml:h2>
+                    <xhtml:div class="description">
+                       <xhtml:p>The element allows for the the description of the file command by capturing a textual description of the command including the capture of pseudo code in "drvdesc" as well as the specific command using "drvcmd". Follow the same convention as the variable derivation; source=producer holds original and source=archive holds the SDTD.</xhtml:p>
+                       <xhtml:p>Provided linkage to source and target variables that were involved in this derivation command in "fileDerivationVars". Basically, any dropped variable from the source will only be identified and referenced here. A variable that is kept and unchanged, will have a deriviation pointing to it source, but the specific command which led to its retention will only be identified here at the file level. Variables created by a file level command will be linked here, and their derivation elements will repeat the command.</xhtml:p>
+                       <xhtml:p>If applicable, use the values "add" or "drop" in the attribute "fileDerivationCases" if this command added or dropped cases from the referenced source files.</xhtml:p>
+                    </xhtml:div>
+                 </xhtml:div>
+              </xhtml:div>
+           </xs:documentation>
+        </xs:annotation>
+     </xs:element>
+	
+	<xs:complexType name="fileCommandType">
+		<xs:complexContent>
+			<xs:extension base="baseElementType">
+				<xs:sequence>
+		                   <xs:element ref="drvdesc" minOccurs="0"/>
+                                   <xs:element ref="drvcmd" minOccurs="1" maxOccurs="unbounded"/>
+				</xs:sequence>
+                                <xs:attribute name="fileDerivationCasesType">
+                                   <xs:simpleType>
+                                     <xs:restriction base="xs:NMTOKEN">
+                                       <xs:enumeration value="add"/>
+                                       <xs:enumeration value="drop"/>
+                                     </xs:restriction>
+                                   </xs:simpleType>
+                                </xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:element name="fileDerivation" type="fileDerivationType">
+        <xs:annotation>
+           <xs:documentation>
+              <xhtml:div>
+                 <xhtml:h1 class="element_title">File Derivation</xhtml:h1>
+                 <xhtml:div>
+                    <xhtml:h2 class="section_header">Description</xhtml:h2>
+                    <xhtml:div class="description">
+                       <xhtml:p>The element allows for the the description of the file commands used to creation the file deriviation. The attribute "sourceFiles" is used to provide a space delimited list of the "fileTxt" IDs used as the source(s) of the derivation.</xhtml:p>
+                    </xhtml:div>
+                 </xhtml:div>
+                 <xhtml:div>
+                    <xhtml:h2 class="section_header">Example</xhtml:h2>
+                    <xhtml:div class="example">
+                       <xhtml:samp class="xml_sample"><![CDATA[
+                          	<fileDerivation sourceFiles="F1">
+			  		<fileCommand>
+			  	        <drvdesc>Delete AGE, MARITAL from the dataset.</drvdesc>
+			  	        <drvcmd source="producer" syntax="spss">delete variables AGE MARITAL.</drvcmd>
+			  	        <drvcmd source="archive" syntax="sdtl-pojo">{
+			    "$type" : "DeleteVariables",
+			    "command" : "delete",
+			    "sourceInformation" : {
+			      "lineNumberStart" : 3,
+			      "lineNumberEnd" : 3,
+			      "sourceStartIndex" : 70,
+			      "sourceStopIndex" : 98,
+			      "originalSourceText" : "delete variables AGE MARITAL."
+			    },
+			    "unknownProperties" : [ ],
+			    "canChangeData" : false,
+			    "variables" : [ {
+			      "$type" : "VariableSymbolExpression",
+			      "unknownProperties" : [ ],
+			      "variableName" : "AGE"
+			    }, {
+			      "$type" : "VariableSymbolExpression",
+			      "unknownProperties" : [ ],
+			      "variableName" : "MARITAL"
+			    } ],
+			    "$type" : "DeleteVariables"
+			  }</drvcmd>
+			  			<fileDerivationVars>
+			  				<drop>AGE MARITAL</drop>
+			  			</fileDerivationVars>
+			  		</fileCommand>
+			  	</fileDerivation>
+                       ]]></xhtml:samp>
+                    </xhtml:div>
+                 </xhtml:div>
+              </xhtml:div>
+           </xs:documentation>
+        </xs:annotation>
+     </xs:element>
+	
+	<xs:complexType name="fileDerivationType">
+		<xs:complexContent>
+			<xs:extension base="baseElementType">
+				<xs:sequence>
+					<xs:element ref="fileCommand" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+				<xs:attribute name="sourceFiles" type="xs:IDREFS" use="required"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:element name="fileDerivationVars" type="fileDerivationVarsType">
+        <xs:annotation>
+           <xs:documentation>
+              <xhtml:div>
+                 <xhtml:h1 class="element_title">File Derivation Variables</xhtml:h1>
+                 <xhtml:div>
+                    <xhtml:h2 class="section_header">Description</xhtml:h2>
+                    <xhtml:div class="description">
+                       <xhtml:p>"keep" - space delimited ID references to the target variables that were kept as part of this file level command.</xhtml:p>
+                       <xhtml:p>"drop" - space delimited ID references to the source variables that were dropped as part of this file level command</xhtml:p>
+                       <xhtml:p>"add" - space delimited ID references to the target variables that were created as part of this file level command</xhtml:p>
+                    </xhtml:div>
+                 </xhtml:div>
+                 <xhtml:div>
+                    <xhtml:h2 class="section_header">Example</xhtml:h2>
+                    <xhtml:div class="example">
+                       <xhtml:samp class="xml_sample"><![CDATA[
+                          <keep>V1 V2 V5</keep>
+                          <drop>V3</drop>
+                          <add>V16</add>
+                       ]]></xhtml:samp>
+                    </xhtml:div>
+                 </xhtml:div>
+              </xhtml:div>
+           </xs:documentation>
+        </xs:annotation>
+     </xs:element>
+
+	<xs:complexType name="fileDerivationVarsType">
+		<xs:sequence>
+			<xs:element name="keep" type="xs:IDREFS" minOccurs="0"/>
+			<xs:element name="drop" type="xs:IDREFS" minOccurs="0"/>
+			<xs:element name="add" type="xs:IDREFS" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+
    <xs:element name="fileCont" type="simpleTextType">
       <xs:annotation>
          <xs:documentation>
@@ -3748,6 +3905,7 @@ These changes do not effect the namespace. 2013-11-14.
          <xs:extension base="baseElementType">
             <xs:sequence>
                <xs:element ref="fileTxt" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element ref="fileDerivation" minOccurs="0"/>
                <xs:element ref="locMap" minOccurs="0"/>
                <xs:element ref="notes" minOccurs="0" maxOccurs="unbounded"/>
             </xs:sequence>
@@ -3769,7 +3927,7 @@ These changes do not effect the namespace. 2013-11-14.
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
                   <xhtml:div class="description">
                      <xhtml:p>Information about the data file(s) that comprises a collection. This section can be repeated for collections with multiple files. </xhtml:p>
-                     <xhtml:p>The "URI" attribute may be a URN or a URL that can be used to retrieve the file. The "sdatrefs" are summary data description references that record the ID values of all elements within the summary data description section of the Study Description that might apply to the file. These elements include: time period covered, date of collection, nation or country, geographic coverage, geographic unit, unit of analysis, universe, and kind of data. The "methrefs" are methodology and processing references that record the ID values of all elements within the study methodology and processing section of the Study Description that might apply to the file. These elements include information on data collection and data appraisal (e.g., sampling, sources, weighting, data cleaning, response rates, and sampling error estimates). The "pubrefs" attribute provides a link to publication/citation references and records the ID values of all citations elements within Other Study Description Materials or Other Study-Related Materials that pertain to this file. "Access" records the ID values of all elements in the Data Access section that describe access conditions for this file.</xhtml:p>
+                     <xhtml:p>The "URI" attribute may be a URN or a URL that can be used to retrieve the file. The "sdatrefs" are summary data description references that record the ID values of all elements within the summary data description section of the Study Description that might apply to the file. These elements include: time period covered, date of collection, nation or country, geographic coverage, geographic unit, unit of analysis, universe, and kind of data. The "methrefs" are methodology and processing references that record the ID values of all elements within the study methodology and processing section of the Study Description that might apply to the file. These elements include information on data collection and data appraisal (e.g., sampling, sources, weighting, data cleaning, response rates, and sampling error estimates). The "pubrefs" attribute provides a link to publication/citation references and records the ID values of all citations elements within Other Study Description Materials or Other Study-Related Materials that pertain to this file. "Access" records the ID values of all elements in the Data Access or Metadata Access section that describe access conditions for this file.</xhtml:p>
                      <xhtml:p>Remarks: When a codebook documents two different physical instantiations of a data file, e.g., logical record length (or OSIRIS) and card-image version, the Data File Description should be repeated to describe the two separate files. An ID should be assigned to each file so that in the Variable section the location of each variable on the two files can be distinguished using the unique file IDs.</xhtml:p>
                   </xhtml:div>
                </xhtml:div>
@@ -4436,6 +4594,7 @@ These changes do not effect the namespace. 2013-11-14.
                <xs:element ref="key" minOccurs="0" maxOccurs="unbounded"/>
                <xs:element ref="notes" minOccurs="0" maxOccurs="unbounded"/>
             </xs:sequence>
+            <xs:attribute name="access" type="xs:IDREFS" use="optional"/>
          </xs:extension>
       </xs:complexContent>
    </xs:complexType>
@@ -4447,7 +4606,7 @@ These changes do not effect the namespace. 2013-11-14.
                <xhtml:h1 class="element_title">Range of Invalid Data Values</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Values for a particular variable that represent   missing data, not applicable responses, etc.</xhtml:div>
+                  <xhtml:div class="description">Values for a particular variable that represent   missing data, not applicable responses, etc. The attribute "access" records the ID values of all elements in the Data Access and Metadata Access section that describe access conditions for this range.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -4651,7 +4810,37 @@ These changes do not effect the namespace. 2013-11-14.
          </xs:documentation>
       </xs:annotation>
    </xs:element>
+  
+  <xs:complexType name="licenseType" mixed="true">
+      <xs:complexContent>
+         <xs:extension base="simpleTextType">
+            <xs:attribute name="URI" type="xs:string" use="optional"/>
+            <xs:attribute name="type" use="optional">
+              <xs:simpleType>
+                <xs:restriction base="xs:NMTOKEN">
+                  <xs:enumeration value="data"/>
+                  <xs:enumeration value="metadata"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
    
+   <xs:element name="license" type="licenseType">
+      <xs:annotation>
+         <xs:documentation>
+            <xhtml:div>
+               <xhtml:h1 class="element_title">License</xhtml:h1>
+               <xhtml:div>
+                  <xhtml:h2 class="section_header">Description</xhtml:h2>
+                  <xhtml:div class="description">A legal document giving official permission to something with the resource. Recommendation is to provide the license document URI. equates to https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/license/</xhtml:div>
+               </xhtml:div>
+            </xhtml:div>
+         </xs:documentation>
+      </xs:annotation>
+   </xs:element>
+     
    <xs:complexType name="locMapType">
       <xs:complexContent>
          <xs:extension base="baseElementType">
@@ -4785,6 +4974,32 @@ These changes do not effect the namespace. 2013-11-14.
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
                   <xhtml:div class="description">The element measure indicates the measurement features of the cell content: type of aggregation used, measurement unit, and measurement scale. An origin point is recorded for anchored scales, to be used in determining relative movement along the scale. Additivity indicates whether an aggregate is a stock (like the population at a given point in time) or a flow (like the number of births or deaths over a certain period of time). The non-additive flag is to be used for measures that for logical reasons cannot be aggregated to a higher level - for instance, data that only make sense at a certain level of aggregation, like a classification. Two nCubes may be identical except for their measure - for example, a count of persons by age and percent of persons by age. Measure is an empty element that includes the following attributes: "varRef" is an IDREF; "aggrMeth" indicates the type of aggregation method used, for example 'sum', 'average', 'count'; "measUnit" records the measurement unit, for example 'km', 'miles', etc.; "scale" records unit of scale, for example 'x1', 'x1000'; "origin" records the point of origin for anchored scales;"additivity" records type of additivity such as 'stock', 'flow', 'non-additive'. If a value of "other" is used for the aggrMeth attribute, a term from a controlled vocabulary should be placed in the "otherAggrMeth" attribute, and a the complex element controlledVocabUsed should be used to specify the controlled vocabulary.</xhtml:div>
+               </xhtml:div>
+            </xhtml:div>
+         </xs:documentation>
+      </xs:annotation>
+   </xs:element>
+
+   <xs:complexType name="metadataAccsType">
+      <xs:complexContent>
+         <xs:extension base="baseElementType">
+            <xs:sequence>
+	       <xs:element name="typeOfAccess" type="conceptType" minOccurs="0"/>
+               <xs:element ref="useStmt" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element ref="notes" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   
+   <xs:element name="metadataAccs" type="metadataAccsType">
+      <xs:annotation>
+         <xs:documentation>
+            <xhtml:div>
+               <xhtml:h1 class="element_title">Metadata Access</xhtml:h1>
+               <xhtml:div>
+                  <xhtml:h2 class="section_header">Description</xhtml:h2>
+                  <xhtml:div class="description">This section describes access conditions and terms of use for the metadata. In cases where access conditions differ across individual files, variables, or categories multiple access conditions can be specified. The access conditions applying to a study, file, variable group, variable or category can be indicated by an IDREF attribute on the study, file, variable group, nCube group, variable, category, or data item elements called "access". "typeOfAccss" is provided in order to provide a specific type of access. Use of a external controlled vocabulary is strongly recommended. </xhtml:div>
                </xhtml:div>
             </xhtml:div>
          </xs:documentation>
@@ -5012,7 +5227,7 @@ These changes do not effect the namespace. 2013-11-14.
                      <xhtml:p>The "sdatrefs" are summary data description references which record the ID values of all elements within the summary data description section of the Study Description which might apply to the nCube. These elements include: time period covered, date of collection, nation or country, geographic coverage, geographic unit, unit of analysis, universe, and kind of data.</xhtml:p>
                      <xhtml:p>The "methrefs" are methodology and processing references which record the ID values of all elements within the study methodology and processing section of the Study Description which might apply to the nCube. These elements include information on data collection and data appraisal (e.g., sampling, sources, weighting, data cleaning, response rates, and sampling error estimates).</xhtml:p>
                      <xhtml:p>The "pubrefs" attribute provides a link to publication/citation references and records the ID values of all citations elements in Other Study Description Materials or Other Study-Related Materials that pertain to this nCube.</xhtml:p>
-                     <xhtml:p>The "access" attribute records the ID values of all elements in the Data Access section that describe access conditions for this nCube. The "dmnsQnty" attribute notes the number of dimensions in the nCube. The "cellQnty" attribute indicates the total number of cells in the nCube.</xhtml:p>
+                     <xhtml:p>The "access" attribute records the ID values of all elements in the Data Access or Metadata Access section that describe access conditions for this nCube. The "dmnsQnty" attribute notes the number of dimensions in the nCube. The "cellQnty" attribute indicates the total number of cells in the nCube.</xhtml:p>
                   </xhtml:div>
                </xhtml:div>
             </xhtml:div>
@@ -5088,7 +5303,7 @@ These changes do not effect the namespace. 2013-11-14.
                      <xhtml:p>The "sdatrefs" are summary data description references that record the ID values of all elements within the summary data description section of the Study Description that might apply to the group. These elements include: time period covered, date of collection, nation or country, geographic coverage, geographic unit, unit of analysis, universe, and kind of data.</xhtml:p>
                      <xhtml:p>The "methrefs" are methodology and processing references which record the ID values of all elements within the study methodology and processing section of the Study Description which might apply to the group. These elements include information on data collection and data appraisal (e.g., sampling, sources, weighting, data cleaning, response rates, and sampling error estimates).</xhtml:p>
                      <xhtml:p>The "pubrefs" attribute provides a link to publication/citation references and records the ID values of all citations elements within Section codeBook/stdyDscr/othrStdyMat or codeBook/otherMat that pertain to this nCube group.</xhtml:p>
-                     <xhtml:p>The "access" attribute records the ID values of all elements in codeBook/stdyDscr/dataAccs of the document that describe access conditions for this nCube group.</xhtml:p>
+                     <xhtml:p>The "access" attribute records the ID values of all elements in codeBook/stdyDscr/dataAccs or codeBook/stdyDscr/metadataAccs of the document that describe access conditions for this nCube group.</xhtml:p>
                   </xhtml:div>
                </xhtml:div>
             </xhtml:div>
@@ -5731,6 +5946,7 @@ These changes do not effect the namespace. 2013-11-14.
                <xs:element ref="language" minOccurs="0" maxOccurs="unbounded"/>
                <xs:element ref="producer" minOccurs="0" maxOccurs="unbounded"/>
                <xs:element ref="copyright" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element ref="license" minOccurs="0" maxOccurs="unbounded"/>
                <xs:element ref="prodDate" minOccurs="0" maxOccurs="unbounded"/>
                <xs:element ref="prodPlac" minOccurs="0" maxOccurs="unbounded"/>
                <xs:element ref="software" minOccurs="0" maxOccurs="unbounded"/>
@@ -6633,6 +6849,7 @@ These changes do not effect the namespace. 2013-11-14.
          <xs:extension base="baseElementType">
             <xs:choice>
                <xs:sequence>
+                  <xs:element name="typeOfDataSrc" type="conceptType" minOccurs="0"/>
                   <xs:element ref="dataSrc" minOccurs="0" maxOccurs="unbounded"/>
                   <xs:element ref="sourceCitation" minOccurs="0" maxOccurs="unbounded"/>
                   <xs:element ref="srcOrig" minOccurs="0" maxOccurs="unbounded"/>
@@ -6652,7 +6869,7 @@ These changes do not effect the namespace. 2013-11-14.
                <xhtml:h1 class="element_title">Sources Statement</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Description of sources used for the data collection. The element is nestable so that the sources statement might encompass a series of discrete source statements, each of which could contain the facts about an individual source. This element maps to Dublin Core Source element.</xhtml:div>
+                  <xhtml:div class="description">Description of sources used for the data collection. The element is nestable so that the sources statement might encompass a series of discrete source statements, each of which could contain the facts about an individual source. Provides the type of data source used such as Register Records Accounts, Research Data, Biological Samples, etc. Use of an external controlled vocabulary is recommended. DDI provides Data Source Type. This element maps to Dublin Core Source element.</xhtml:div>
                </xhtml:div>
             </xhtml:div>
          </xs:documentation>
@@ -6795,6 +7012,7 @@ These changes do not effect the namespace. 2013-11-14.
       <xs:complexContent>
          <xs:extension base="simpleTextAndDateType">
             <xs:attribute name="URI" type="xs:string"/>
+            <xs:attribute name="access" type="xs:IDREFS" use="optional"/>
          </xs:extension>
       </xs:complexContent>
    </xs:complexType>
@@ -6806,7 +7024,7 @@ These changes do not effect the namespace. 2013-11-14.
                <xhtml:h1 class="element_title">Standard Categories</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Standard category codes used in the variable, like industry codes, employment codes, or social class codes. The attribute "date" is provided to indicate the version of the code in place at the time of the study. The attribute "URI" is provided to indicate a URN or URL that can be used to obtain an electronic list of the category codes.</xhtml:div>
+                  <xhtml:div class="description">Standard category codes used in the variable, like industry codes, employment codes, or social class codes. The attribute "date" is provided to indicate the version of the code in place at the time of the study. The attribute "URI" is provided to indicate a URN or URL that can be used to obtain an electronic list of the category codes. The attribute "access" records the ID values of all elements in the Data Access and Metadata Access section that describe access conditions.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -6869,6 +7087,7 @@ These changes do not effect the namespace. 2013-11-14.
                <xs:element ref="studyDevelopment" minOccurs="0" maxOccurs="unbounded"/>
                <xs:element ref="method" minOccurs="0" maxOccurs="unbounded"/>
                <xs:element ref="dataAccs" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element ref="metadataAccs" minOccurs="0" maxOccurs="unbounded"/>
                <xs:element ref="othrStdyMat" minOccurs="0" maxOccurs="unbounded"/>
                <xs:element ref="notes" minOccurs="0" maxOccurs="unbounded"/>
             </xs:sequence>
@@ -6981,6 +7200,7 @@ These changes do not effect the namespace. 2013-11-14.
       <xs:complexContent>
          <xs:extension base="baseElementType">
             <xs:sequence>
+               <xs:element name="typeOfDataSrc" type="conceptType" minOccurs="0"/>
                <xs:element name="dataSrc" type="simpleTextType" minOccurs="0" maxOccurs="unbounded"/>
                <xs:element ref="srcOrig" minOccurs="0" maxOccurs="unbounded"/>
                <xs:element ref="srcChar" minOccurs="0" maxOccurs="unbounded"/>
@@ -7493,6 +7713,7 @@ These changes do not effect the namespace. 2013-11-14.
                   </xs:restriction>
                </xs:simpleType>
             </xs:attribute>
+            <xs:attribute name="access" type="xs:IDREFS" use="optional"/>
             <xs:attribute name="otherType" type="xs:NMTOKEN" use="optional"/>
          </xs:extension>
       </xs:complexContent>
@@ -7507,7 +7728,7 @@ These changes do not effect the namespace. 2013-11-14.
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
                   <xhtml:div class="description">
                      <xhtml:p>One or more statistical measures that describe the responses to a particular variable and may include one or more standard summaries, e.g., minimum and maximum values, median, mode, etc. The attribute "wgtd" indicates whether the statistics are weighted or not. The "weight" attribute is an IDREF(S) to the weight element(s) in the study description.</xhtml:p>
-                     <xhtml:p>The attribute "type" denotes the type of statistics being shown: mean, median, mode, valid cases, invalid cases, minimum, maximum, or standard deviation. If a value of "other" is used here, a value taken from a controlled vocabulary should be put in the "otherType" attribute. This option should only be used when applying a controlled vocabulary to this attribute. Use the complex element controlledVocabUsed to identify the controlled vocabulary to which the selected term belongs.</xhtml:p>
+                     <xhtml:p>The attribute "type" denotes the type of statistics being shown: mean, median, mode, valid cases, invalid cases, minimum, maximum, or standard deviation. If a value of "other" is used here, a value taken from a controlled vocabulary should be put in the "otherType" attribute. This option should only be used when applying a controlled vocabulary to this attribute. Use the complex element controlledVocabUsed to identify the controlled vocabulary to which the selected term belongs. The attribute "access" records the ID values of all elements in the Data Access and Metadata Access section that describe access conditions for this statistic.</xhtml:p>
                   </xhtml:div>
                </xhtml:div>
                <xhtml:div>
@@ -8036,7 +8257,8 @@ These changes do not effect the namespace. 2013-11-14.
                <xs:element ref="key" minOccurs="0" maxOccurs="unbounded"/>
                <xs:element ref="notes" minOccurs="0" maxOccurs="unbounded"/>
             </xs:sequence>
-         </xs:extension>
+             <xs:attribute name="access" type="xs:IDREFS" use="optional"/>
+        </xs:extension>
       </xs:complexContent>
    </xs:complexType>
    
@@ -8047,7 +8269,7 @@ These changes do not effect the namespace. 2013-11-14.
                <xhtml:h1 class="element_title">Range of Valid Data Values</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Values for a particular variable that represent legitimate responses.</xhtml:div>
+                  <xhtml:div class="description">Values for a particular variable that represent legitimate responses. The attribute "access" records the ID values of all elements in the Data Access and Metadata Access section that describe access conditions for this range.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -8199,6 +8421,7 @@ These changes do not effect the namespace. 2013-11-14.
                      <xs:enumeration value="datetime"/>
                      <xs:enumeration value="geographicLocationCode"/>
                      <xs:enumeration value="geographicStructureCode"/>
+                     <xs:enumeration value="scale"/>
                      <xs:enumeration value="other"/>
                   </xs:restriction>
                </xs:simpleType>
@@ -8229,7 +8452,7 @@ These changes do not effect the namespace. 2013-11-14.
                      <xhtml:p>The "sdatrefs" are summary data description references which record the ID values of all elements within the summary data description section of the Study Description which might apply to the variable. These elements include: time period covered, date of collection, nation or country, geographic coverage, geographic unit, unit of analysis, universe, and kind of data. </xhtml:p>
                      <xhtml:p>The "methrefs" are methodology and processing references which record the ID values of all elements within the study methodology and processing section of the Study Description which might apply to the variable. These elements include information on data collection and data appraisal (e.g., sampling, sources, weighting, data cleaning, response rates, and sampling error estimates). </xhtml:p>
                      <xhtml:p>The "pubrefs" attribute provides a link to publication/citation references and records the ID values of all citations elements within Other Study Description Materials or Other Study-Related Materials that pertain to this variable. </xhtml:p>
-                     <xhtml:p>The attribute "access" records the ID values of all elements in the Data Access section that describe access conditions for this variable. </xhtml:p>
+                     <xhtml:p>The attribute "access" records the ID values of all elements in the Data Access and Metadata Access section that describe access conditions for this variable. </xhtml:p>
                      <xhtml:p>The "aggrMeth" attribute indicates the type of aggregation method used, for example 'sum', 'average', 'count'. If a value of "other" is given a term from a controlled vocabulary should be used in the "otherAggrMeth" attribute.</xhtml:p>
                      <xhtml:p>The "otherAggrMeth" attribute holds a value from a controlled vocabulary when the aggrMeth attribute has a value of "other".This option should only be used when applying a controlled vocabulary to this attribute. Use the complex element controlledVocabUsed to identify the controlled vocabulary to which the selected term belongs.</xhtml:p>
                      <xhtml:p>The attribute "measUnit" records the measurement unit, for example 'km', 'miles', etc. </xhtml:p>
@@ -8400,7 +8623,7 @@ These changes do not effect the namespace. 2013-11-14.
                      <xhtml:p>The "sdatrefs" are summary data description references that record the ID values of all elements within the summary data description section of the Study Description that might apply to the group. These elements include: time period covered, date of collection, nation or country, geographic coverage, geographic unit, unit of analysis, universe, and kind of data.</xhtml:p>
                      <xhtml:p>The "methrefs" are methodology and processing references which record the ID values of all elements within the study methodology and processing section of the Study Description which might apply to the group. These elements include information on data collection and data appraisal (e.g., sampling, sources, weighting, data cleaning, response rates, and sampling error estimates).</xhtml:p>
                      <xhtml:p>The "pubrefs" attribute provides a link to publication/citation references and records the ID values of all citations elements within codeBook/stdyDscr/othrStdyMat or codeBook/otherMat that pertain to this variable group. </xhtml:p>
-                     <xhtml:p>The "access" attribute records the ID values of all elements in codeBook/stdyDscr/dataAccs of the document that describe access conditions for this variable group.</xhtml:p>
+                     <xhtml:p>The "access" attribute records the ID values of all elements in codeBook/stdyDscr/dataAccs or codeBook/stdyDscr/metadataAccs of the document that describe access conditions for this variable group.</xhtml:p>
                      <xhtml:p>The attribute "nCube" was included in 2.0 and subsequent versions in ERROR. DO NOT USE THIS ATTRIBUTE. It is retained only for purposes of backward-compatibility.</xhtml:p>
                   </xhtml:div>
                </xhtml:div>
@@ -8409,6 +8632,39 @@ These changes do not effect the namespace. 2013-11-14.
       </xs:annotation>
    </xs:element>
 
+
+	<xs:complexType name="varRangeType">
+		<xs:complexContent>
+			<xs:extension base="baseElementType">
+				<xs:attribute name="start" type="xs:IDREF" use="optional"/>
+				<xs:attribute name="end" type="xs:IDREF" use="optional"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+<xs:element name="varRange" type="varRangeType">
+      <xs:annotation>
+         <xs:documentation>
+            <xhtml:div>
+               <xhtml:h1 class="element_title">Variable Range</xhtml:h1>
+               <xhtml:div>
+                  <xhtml:h2 class="section_header">Description</xhtml:h2>
+                  <xhtml:div class="description">
+                     <xhtml:p>Reference to the ID of the first and last variable (start and end) of the range of variables used by the derivation.</xhtml:p>
+                  </xhtml:div>
+               </xhtml:div>
+               <xhtml:div>
+                  <xhtml:h2 class="section_header">Example</xhtml:h2>
+                  <xhtml:div class="example">
+                     <xhtml:samp class="xml_sample"><![CDATA[
+                        <varRange start="V1" end="V3"/>
+                     ]]></xhtml:samp>
+                  </xhtml:div>
+               </xhtml:div>
+            </xhtml:div>
+         </xs:documentation>
+      </xs:annotation>
+   </xs:element>
    <xs:element name="varQnty" type="simpleTextType">
       <xs:annotation>
          <xs:documentation>
