@@ -2417,7 +2417,7 @@ for more details.
                <xhtml:h1 class="element_title">Other Forms of Data Appraisal</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Other issues pertaining to data appraisal. Describe here issues such as response variance, nonresponse rate and testing for bias, interviewer and response bias, confidence levels, question bias, etc. The use of the attribute "type" as a means of specifiying a controlled vocabulary concept is DEPRECATED. To specify the use of a Controlled Vocabulary or standard concept use the internal element <concept>. If multiple concepts are needed the parent element should be replicated. Internal text related to each concept should be allocated to accompany the relevent concept.</xhtml:div>
+                  <xhtml:div class="description">Other issues pertaining to data appraisal. Describe here issues such as response variance, nonresponse rate and testing for bias, interviewer and response bias, confidence levels, question bias, etc. The use of the attribute "type" as a means of specifiying a controlled vocabulary concept is DEPRECATED. To specify the use of a Controlled Vocabulary or standard concept use the internal element "concept". If multiple concepts are needed the parent element should be replicated. Internal text related to each concept should be allocated to accompany the relevent concept.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -2840,7 +2840,7 @@ for more details.
                <xhtml:h1 class="element_title">Instrument Development</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Describe any development work on the data collection instrument. The use of the attribute "type" as a means of specifiying a controlled vocabulary concept is DEPRECATED. To specify the use of a Controlled Vocabulary or standard concept use the internal element <concept>. If multiple concepts are needed the parent element should be replicated. Internal text related to each concept should be allocated to accompany the relevent concept.</xhtml:div>
+                  <xhtml:div class="description">Describe any development work on the data collection instrument. The use of the attribute "type" as a means of specifiying a controlled vocabulary concept is DEPRECATED. To specify the use of a Controlled Vocabulary or standard concept use the internal element "concept". If multiple concepts are needed the parent element should be replicated. Internal text related to each concept should be allocated to accompany the relevent concept.</xhtml:div>
                </xhtml:div>
 					<xhtml:div>
 						<xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -2926,7 +2926,7 @@ for more details.
 					<xhtml:h1 class="element_title">Collector Training</xhtml:h1>
 					<xhtml:div>
 						<xhtml:h2 class="section_header">Description</xhtml:h2>
-						<xhtml:div class="description">Describes the training provided to data collectors including internviewer training, process testing, compliance with standards etc. This is repeatable for language and to capture different aspects of the training process. The use of the attribute "type" as a means of specifiying a controlled vocabulary concept is DEPRECATED. To specify the use of a Controlled Vocabulary or standard concept use the internal element <concept>. If multiple concepts are needed the parent element should be replicated. Internal text related to each concept should be allocated to accompany the relevent concept.</xhtml:div>
+						<xhtml:div class="description">Describes the training provided to data collectors including internviewer training, process testing, compliance with standards etc. This is repeatable for language and to capture different aspects of the training process. The use of the attribute "type" as a means of specifiying a controlled vocabulary concept is DEPRECATED. To specify the use of a Controlled Vocabulary or standard concept use the internal element "concept". If multiple concepts are needed the parent element should be replicated. Internal text related to each concept should be allocated to accompany the relevent concept.</xhtml:div>
 					</xhtml:div>
 					<xhtml:div>
 						<xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -5122,7 +5122,7 @@ for more details.
 						<xhtml:h1 class="element_title">Data Processing</xhtml:h1>
 						<xhtml:div>
 							<xhtml:h2 class="section_header">Description</xhtml:h2>
-							<xhtml:div class="description">Describes various data processing procedures not captured elsewhere in the documentation, such as topcoding, recoding, suppression, tabulation, etc. The use of the attribute "type" as a means of specifiying a controlled vocabulary concept is DEPRECATED. To specify the use of a Controlled Vocabulary or standard concept use the internal element <concept>. If multiple concepts are needed the parent element should be replicated. Internal text related to each concept should be allocated to accompany the relevent concept.</xhtml:div>
+							<xhtml:div class="description">Describes various data processing procedures not captured elsewhere in the documentation, such as topcoding, recoding, suppression, tabulation, etc. The use of the attribute "type" as a means of specifiying a controlled vocabulary concept is DEPRECATED. To specify the use of a Controlled Vocabulary or standard concept use the internal element "concept". If multiple concepts are needed the parent element should be replicated. Internal text related to each concept should be allocated to accompany the relevent concept.</xhtml:div>
 						</xhtml:div>
 						<xhtml:div>
 							<xhtml:h2 class="section_header">Example</xhtml:h2>
