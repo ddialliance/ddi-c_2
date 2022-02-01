@@ -5545,7 +5545,7 @@ for more details.
       </xs:annotation>
    </xs:element>
 
-   <xs:element name="origArch" type="simpleTextType">
+   <xs:element name="origArch" type="origArchType">
       <xs:annotation>
          <xs:documentation>
             <xhtml:div>
@@ -5558,7 +5558,7 @@ for more details.
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
                   <xhtml:div class="example">
                      <xhtml:samp class="xml_sample"><![CDATA[
-                        <origArch>Zentralarchiv fuer empirische Sozialforschung</origArch>
+                        <origArch abbr="GESIS" URI="gesis.org">GESIS Leibniz-Institut für Sozialwissenschaften/origArch>
                      ]]></xhtml:samp>
                   </xhtml:div>
                </xhtml:div>
@@ -5566,6 +5566,14 @@ for more details.
          </xs:documentation>
       </xs:annotation>
    </xs:element>
+   <xs:complexType name="origArchType" mixed="true">
+      <xs:complexContent>
+         <xs:extension base="simpleTextType">
+   	    <xs:attribute name="abbr" type="xs:string" use="optional"/>
+            <xs:attribute name="URI" type="xs:string"/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
 
    <xs:complexType name="othIdType" mixed="true">
       <xs:complexContent>
