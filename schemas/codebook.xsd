@@ -5545,7 +5545,7 @@ for more details.
       </xs:annotation>
    </xs:element>
 
-   <xs:element name="origArch" type="simpleTextType">
+   <xs:element name="origArch" type="origArchType">
       <xs:annotation>
          <xs:documentation>
             <xhtml:div>
@@ -5558,7 +5558,7 @@ for more details.
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
                   <xhtml:div class="example">
                      <xhtml:samp class="xml_sample"><![CDATA[
-                        <origArch>Zentralarchiv fuer empirische Sozialforschung</origArch>
+                        <origArch abbr="GESIS" URI="gesis.org">GESIS Leibniz-Institut für Sozialwissenschaften/origArch>
                      ]]></xhtml:samp>
                   </xhtml:div>
                </xhtml:div>
@@ -5566,6 +5566,14 @@ for more details.
          </xs:documentation>
       </xs:annotation>
    </xs:element>
+   <xs:complexType name="origArchType" mixed="true">
+      <xs:complexContent>
+         <xs:extension base="simpleTextType">
+   	    <xs:attribute name="abbr" type="xs:string" use="optional"/>
+            <xs:attribute name="URI" type="xs:string"/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
 
    <xs:complexType name="othIdType" mixed="true">
       <xs:complexContent>
@@ -8816,7 +8824,7 @@ for more details.
       </xs:annotation>
    </xs:element>
 
-   <xs:element name="weight" type="simpleTextType">
+   <xs:element name="weight" type="conceptualTextType">
       <xs:annotation>
          <xs:documentation>
             <xhtml:div>
@@ -8830,6 +8838,9 @@ for more details.
                   <xhtml:div class="example">
                      <xhtml:samp class="xml_sample"><![CDATA[
                         <weight>The 1996 NES dataset includes two final person-level analysis weights which incorporate sampling, nonresponse, and post-stratification factors. One weight (variable #4) is for longitudinal micro-level analysis using the 1996 NES Panel. The other weight (variable #3) is for analysis of the 1996 NES combined sample (Panel component cases plus Cross-section supplement cases). In addition, a Time Series Weight (variable #5) which corrects for Panel attrition was constructed. This weight should be used in analyses which compare the 1996 NES to earlier unweighted National Election Study data collections.</weight>
+                     ]]></xhtml:samp>
+                     <xhtml:samp class="xml_sample"><![CDATA[
+                        <weight><concept>PropensityWeighting</concept>The weight was determined using the online opt-in sample, the entire population of a synthetic dataset, and a statistical model to estimate the probability of a case occuring in either the sythetic or opt-in dataset.</weight>
                      ]]></xhtml:samp>
                   </xhtml:div>
                </xhtml:div>
