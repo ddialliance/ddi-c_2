@@ -4167,20 +4167,20 @@ for more details.
       </xs:annotation>
    </xs:element>
    
-   <xs:element name="format" type="simpleTextType">
+   <xs:element name="format" type="conceptType">
       <xs:annotation>
          <xs:documentation>
             <xhtml:div>
                <xhtml:h1 class="element_title">Data Format</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Physical format of the data file: Logical record length format, card-image format (i.e., data with multiple records per case), delimited format, free format, etc. The element may be repeated to support multiple language expressions of the content.</xhtml:div>
+                  <xhtml:div class="description">Physical format of the data file: Logical record length format, card-image format (i.e., data with multiple records per case), delimited format, free format, etc. The element may be repeated to support multiple language expressions of the content. The use of a controlled vocabulary is supported with the use of attributes "vocabName", "vocabURI", and "vocabInstanceURI".</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
                   <xhtml:div class="example">
                      <xhtml:samp class="xml_sample"><![CDATA[
-                        <format>comma-delimited</format>
+                        <format vocabName="EU Vocabularies: File Type" vocabURI="http://publications.europa.eu/resource/authority/file-type” vocabINstanceURI="http://publications.europa.eu/resource/authority/file-type/CSV">CSV</format>
                      ]]></xhtml:samp> 
                   </xhtml:div>
                </xhtml:div>
