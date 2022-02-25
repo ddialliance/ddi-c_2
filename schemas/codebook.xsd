@@ -2432,14 +2432,14 @@ for more details.
       </xs:annotation>
    </xs:element>
    
-   <xs:element name="dataChck" type="simpleTextType">
+   <xs:element name="dataChck" type="conceptualTextType">
       <xs:annotation>
          <xs:documentation>
             <xhtml:div>
                <xhtml:h1 class="element_title">Extent of Processing Checks</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Indicate here, at the file level, the types of checks and operations performed on the data file. A controlled vocabulary may be developed for this element in the future. The following examples are based on ICPSR's Extent of Processing scheme:</xhtml:div>
+                  <xhtml:div class="description">Indicate here, at the file level, the types of checks and operations performed on the data file. Use the internal "concept" to make use of a controlled vocabulary The following examples, except for the last, are based on ICPSR's Extent of Processing scheme:</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -2479,6 +2479,9 @@ for more details.
                      ]]></xhtml:samp>
                      <xhtml:samp class="xml_sample"><![CDATA[
                         <dataChck>Checks for undocumented codes were performed by the archive.</dataChck>
+                     ]]></xhtml:samp>
+                     <xhtml:samp class="xml_sample"><![CDATA[
+                        <dataChck><concept vocabName="EOSDIS" vocabURI="https://ghrc.nsstc.nasa.gov/uso/proc_level.html">2</concept>Derived geophysical variables at the same resolution and location as the Level 1 source data.</dataChck>
                      ]]></xhtml:samp>
                   </xhtml:div>
                </xhtml:div>
@@ -2694,7 +2697,7 @@ for more details.
 
    <xs:complexType name="unitTypeType">
       <xs:simpleContent>
-         <xs:extension base="stringType">
+         <xs:extension base="conceptualTextType">
             <xs:attribute name="numberOfUnits" type="xs:integer" use="optional"/>
          </xs:extension>
       </xs:simpleContent>
@@ -2709,14 +2712,14 @@ for more details.
 
 					<xhtml:div>
 						<xhtml:h2 class="section_header">Description</xhtml:h2>
-						<xhtml:div class="description">Describes the type of sampling frame unit. The attribute "numberOfUnits" provides the number of units in the sampling frame.</xhtml:div>
+						<xhtml:div class="description">Describes the type of sampling frame unit using a conceptualText structure supporting a description and the use of an external controlled Vocabulary. The attribute "numberOfUnits" provides the number of units in the sampling frame.</xhtml:div>
 					</xhtml:div>
 
 					<xhtml:div>
 						<xhtml:h2 class="section_header">Example</xhtml:h2>
 						<xhtml:div class="example">
 							<xhtml:samp class="xml_sample"><![CDATA[
-<unitType numberOfUnits=150000">Primary listed owners of published phone numbers in the City of St. Paul</unitType>
+<unitType numberOfUnits=150000"><concept vocabName="SampleFrame_UnitType">telephoneNumber</concept>Primary listed owners of published phone numbers in the City of St. Paul</unitType>
 ]]>
 							</xhtml:samp>
 						</xhtml:div>
@@ -7543,14 +7546,22 @@ for more details.
       </xs:annotation>
    </xs:element>
    
-   <xs:element name="evaluationProcess" type="simpleTextType">
+   <xs:element name="evaluationProcess" type="conceptualTextType">
       <xs:annotation>
          <xs:documentation>
             <xhtml:div>
                <xhtml:h1 class="element_title">Evaluation Process</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Describes the evaluation process followed.</xhtml:div>
+                  <xhtml:div class="description">Describes the evaluation process followed. Use the contained "concept" element when a controlled vocaublary is used. </xhtml:div>
+               <xhtml:div>
+                  <xhtml:h2 class="section_header">Example</xhtml:h2>
+                  <xhtml:div class="example">
+                     <xhtml:samp class="xml_sample"><![CDATA[
+                        <evaluationProcess><concept>meta-evaluation</concept>An evaluation of the quality of this series of evaluations and its adherence to established good practice in evaluation. It is based on and presents summaries of existing evaluations of each instrument.</evaluationProcess>
+                     ]]></xhtml:samp> 
+                  </xhtml:div>
+               </xhtml:div>                  
                </xhtml:div>
             </xhtml:div>
          </xs:documentation>
