@@ -935,6 +935,7 @@ for more details.
       <xs:complexContent>
          <xs:extension base="simpleTextType">
             <xs:attribute name="affiliation" type="xs:string" use="optional"/>
+            <xs:attribute name="abbr" type="xs:string" use="optional"/>
             <xs:attribute name="personalID" type="xs:string" use="optional"/>
             <xs:attribute name="typeOfPersonalID" type="xs:string" use="optional"/>
          </xs:extension>
@@ -949,7 +950,7 @@ for more details.
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
                   <xhtml:div class="description">
-                     <xhtml:p>The person, corporate body, or agency responsible for the work's substantive and intellectual content. Repeat the element for each author, and use "affiliation" attribute if available. Invert first and last name and use commas. Author of data collection (codeBook/stdyDscr/citation/rspStmt/AuthEnty) maps to Dublin Core Creator element. Inclusion of this element in codebook is recommended. If the attribute "personalID" is used, "typeOfPersonalID" should also be provided.</xhtml:p>
+                     <xhtml:p>The person, corporate body, or agency responsible for the work's substantive and intellectual content. Repeat the element for each author, and use "abbr" and/or "affiliation" attribute if available. Invert first and last name and use commas. Author of data collection (codeBook/stdyDscr/citation/rspStmt/AuthEnty) maps to Dublin Core Creator element. Inclusion of this element in codebook is recommended. If the attribute "personalID" is used, "typeOfPersonalID" should also be provided.</xhtml:p>
                      <xhtml:p>The "author" in the Document Description should be the individual(s) or organization(s) directly responsible for the intellectual content of the DDI version, as distinct from the person(s) or organization(s) responsible for the intellectual content of the earlier paper or electronic edition from which the DDI edition may have been derived.</xhtml:p>
                   </xhtml:div>
                </xhtml:div>
@@ -958,6 +959,9 @@ for more details.
                   <xhtml:div class="example">
                      <xhtml:samp class="xml_sample"><![CDATA[
                         <AuthEnty>United States Department of Commerce. Bureau of the Census</AuthEnty>
+                     ]]></xhtml:samp>
+                     <xhtml:samp class="xml_sample"><![CDATA[
+                        <AuthEnty abbr="Insee">National Institute of Statistics and Economic Studies</AuthEnty>
                      ]]></xhtml:samp>
                      <xhtml:samp class="xml_sample"><![CDATA[
                         <AuthEnty affiliation="European Commission">Rabier, Jacques-Rene</AuthEnty>
@@ -2432,14 +2436,14 @@ for more details.
       </xs:annotation>
    </xs:element>
    
-   <xs:element name="dataChck" type="simpleTextType">
+   <xs:element name="dataChck" type="conceptualTextType">
       <xs:annotation>
          <xs:documentation>
             <xhtml:div>
                <xhtml:h1 class="element_title">Extent of Processing Checks</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Indicate here, at the file level, the types of checks and operations performed on the data file. A controlled vocabulary may be developed for this element in the future. The following examples are based on ICPSR's Extent of Processing scheme:</xhtml:div>
+                  <xhtml:div class="description">Indicate here, at the file level, the types of checks and operations performed on the data file. Use the internal "concept" to make use of a controlled vocabulary The following examples, except for the last, are based on ICPSR's Extent of Processing scheme:</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -2479,6 +2483,9 @@ for more details.
                      ]]></xhtml:samp>
                      <xhtml:samp class="xml_sample"><![CDATA[
                         <dataChck>Checks for undocumented codes were performed by the archive.</dataChck>
+                     ]]></xhtml:samp>
+                     <xhtml:samp class="xml_sample"><![CDATA[
+                        <dataChck><concept vocabName="EOSDIS" vocabURI="https://ghrc.nsstc.nasa.gov/uso/proc_level.html">2</concept>Derived geophysical variables at the same resolution and location as the Level 1 source data.</dataChck>
                      ]]></xhtml:samp>
                   </xhtml:div>
                </xhtml:div>
@@ -2694,7 +2701,7 @@ for more details.
 
    <xs:complexType name="unitTypeType">
       <xs:simpleContent>
-         <xs:extension base="stringType">
+         <xs:extension base="conceptualTextType">
             <xs:attribute name="numberOfUnits" type="xs:integer" use="optional"/>
          </xs:extension>
       </xs:simpleContent>
@@ -2709,14 +2716,14 @@ for more details.
 
 					<xhtml:div>
 						<xhtml:h2 class="section_header">Description</xhtml:h2>
-						<xhtml:div class="description">Describes the type of sampling frame unit. The attribute "numberOfUnits" provides the number of units in the sampling frame.</xhtml:div>
+						<xhtml:div class="description">Describes the type of sampling frame unit using a conceptualText structure supporting a description and the use of an external controlled Vocabulary. The attribute "numberOfUnits" provides the number of units in the sampling frame.</xhtml:div>
 					</xhtml:div>
 
 					<xhtml:div>
 						<xhtml:h2 class="section_header">Example</xhtml:h2>
 						<xhtml:div class="example">
 							<xhtml:samp class="xml_sample"><![CDATA[
-<unitType numberOfUnits=150000">Primary listed owners of published phone numbers in the City of St. Paul</unitType>
+<unitType numberOfUnits=150000"><concept vocabName="SampleFrame_UnitType">telephoneNumber</concept>Primary listed owners of published phone numbers in the City of St. Paul</unitType>
 ]]>
 							</xhtml:samp>
 						</xhtml:div>
@@ -2884,6 +2891,9 @@ for more details.
          <xs:extension base="stringType">
             <xs:attribute name="affiliation" type="xs:string" use="optional"/>
             <xs:attribute name="abbr" type="xs:string" use="optional"/>
+            <xs:attribute name="role" type="xs:string" use="optional"/>
+            <xs:attribute name="personalID" type="xs:string" use="optional"/>
+            <xs:attribute name="typeOfPersonalID" type="xs:string" use="optional"/>
          </xs:extension>
       </xs:simpleContent>
    </xs:complexType>
@@ -2895,15 +2905,12 @@ for more details.
 					<xhtml:h1 class="element_title">Custodian</xhtml:h1>
 					<xhtml:div>
 						<xhtml:h2 class="section_header">Description</xhtml:h2>
-						<xhtml:div class="description">Custodian identifies the agency or individual who is responsible for creating or maintaining the sample frame. Attribute affiliation provides the affiliation of the custodian with an agency or organization. Attribute abbr provides an abbreviation for the custodian.</xhtml:div>
+						<xhtml:div class="description">Custodian identifies the agency or individual who is responsible for creating or maintaining the sample frame. Attribute affiliation provides the affiliation of the custodian with an agency or organization. Attribute abbr provides an abbreviation for the custodian. Use role to specify role of differentiate between multiple custodians. If the attribute "personalID" is used, "typeOfPersonalID" should also be provided.</xhtml:div>
 					</xhtml:div>
 					<xhtml:div>
 						<xhtml:h2 class="section_header">Example</xhtml:h2>
 						<xhtml:div class="example">
-							<xhtml:samp class="xml_sample"><![CDATA[
-<custodian>DEX Publications</custodian>
-]]>
-							</xhtml:samp>
+							<xhtml:samp class="xml_sample"><![CDATA[<custodian>DEX Publications</custodian>]]></xhtml:samp>
 						</xhtml:div>
 					</xhtml:div>
 				</xhtml:div>
@@ -3390,8 +3397,6 @@ for more details.
                <xs:element ref="depDate" minOccurs="0" maxOccurs="unbounded"/>
                <xs:element ref="distDate" minOccurs="0" maxOccurs="unbounded"/>
             </xs:sequence>
-            <xs:attribute name="personalID" type="xs:string" use="optional"/>
-            <xs:attribute name="typeOfPersonalID" type="xs:string" use="optional"/>
          </xs:extension>
       </xs:complexContent>
    </xs:complexType>
@@ -3416,6 +3421,8 @@ for more details.
             <xs:attribute name="abbr" type="xs:string"/>
             <xs:attribute name="affiliation" type="xs:string"/>
             <xs:attribute name="URI" type="xs:string"/>
+            <xs:attribute name="personalID" type="xs:string" use="optional"/>
+            <xs:attribute name="typeOfPersonalID" type="xs:string" use="optional"/>
          </xs:extension>
       </xs:complexContent>
    </xs:complexType>
@@ -3434,6 +3441,9 @@ for more details.
                   <xhtml:div class="example">
                      <xhtml:samp class="xml_sample"><![CDATA[
                         <distrbtr abbr="ICPSR" affiliation="Institute for Social Research" URI="http://www.icpsr.umich.edu">Ann Arbor, MI: Inter-university Consortium for Political and Social Research</distrbtr>
+                     ]]></xhtml:samp>
+                     <xhtml:samp class="xml_sample"><![CDATA[
+                        <distrbtr abbr="UMICH" URI="https://www.umich.edu/" personalID="grid.214458.e" typeOfPersonalID="GRID">University of Michigan - Ann Arbor</distrbtr>
                      ]]></xhtml:samp>
                   </xhtml:div>
                </xhtml:div>
@@ -4157,20 +4167,20 @@ for more details.
       </xs:annotation>
    </xs:element>
    
-   <xs:element name="format" type="simpleTextType">
+   <xs:element name="format" type="conceptType">
       <xs:annotation>
          <xs:documentation>
             <xhtml:div>
                <xhtml:h1 class="element_title">Data Format</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Physical format of the data file: Logical record length format, card-image format (i.e., data with multiple records per case), delimited format, free format, etc. The element may be repeated to support multiple language expressions of the content.</xhtml:div>
+                  <xhtml:div class="description">Physical format of the data file: Logical record length format, card-image format (i.e., data with multiple records per case), delimited format, free format, etc. The element may be repeated to support multiple language expressions of the content. The use of a controlled vocabulary is supported with the use of attributes "vocabName", "vocabURI", and "vocabInstanceURI".</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
                   <xhtml:div class="example">
                      <xhtml:samp class="xml_sample"><![CDATA[
-                        <format>comma-delimited</format>
+                        <format vocabName="EU Vocabularies: File Type" vocabURI="http://publications.europa.eu/resource/authority/file-type” vocabINstanceURI="http://publications.europa.eu/resource/authority/file-type/CSV">CSV</format>
                      ]]></xhtml:samp> 
                   </xhtml:div>
                </xhtml:div>
@@ -4249,6 +4259,7 @@ for more details.
    <xs:complexType name="fundAgType" mixed="true">
       <xs:complexContent>
          <xs:extension base="simpleTextType">
+            <xs:attribute name="affiliation" type="xs:string" use="optional"/>
             <xs:attribute name="abbr" type="xs:string"/>
             <xs:attribute name="role" type="xs:string"/>
             <xs:attribute name="personalID" type="xs:string" use="optional"/>
@@ -4264,13 +4275,16 @@ for more details.
                <xhtml:h1 class="element_title">Funding Agency/Sponsor</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">The source(s) of funds for production of the work. If different funding agencies sponsored different stages of the production process, use the "role" attribute to distinguish them. If the attribute "personalID" is used, "typeOfPersonalID" should also be provided.</xhtml:div>
+                  <xhtml:div class="description">The source(s) of funds for production of the work including abbreviation and affiliation. If different funding agencies sponsored different stages of the production process, use the "role" attribute to distinguish them. If the attribute "personalID" is used, "typeOfPersonalID" should also be provided.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
                   <xhtml:div class="example">
                      <xhtml:samp class="xml_sample"><![CDATA[
                         <fundAg abbr="NSF" role="infrastructure">National Science Foundation</fundAg>
+                     ]]></xhtml:samp>
+                     <xhtml:samp class="xml_sample"><![CDATA[
+                        <fundAg abbr="NICHD" affiliation="NIH" role="infrastructure">Eunice Kennedy Shriver Institute for Child Health and Human Development</fundAg>
                      ]]></xhtml:samp>
                      <xhtml:samp class="xml_sample"><![CDATA[
                         <fundAg abbr="SUN" role="equipment">Sun Microsystems</fundAg>
@@ -5545,6 +5559,17 @@ for more details.
       </xs:annotation>
    </xs:element>
 
+   <xs:complexType name="origArchType">
+      <xs:simpleContent>
+         <xs:extension base="simpleTextType">
+            <xs:attribute name="affiliation" type="xs:string" use="optional"/>
+            <xs:attribute name="abbr" type="xs:string" use="optional"/>
+            <xs:attribute name="URI" type="xs:string"/>
+            <xs:attribute name="personalID" type="xs:string" use="optional"/>
+            <xs:attribute name="typeOfPersonalID" type="xs:string" use="optional"/>
+         </xs:extension>
+      </xs:simpleContent>
+   </xs:complexType>
    <xs:element name="origArch" type="origArchType">
       <xs:annotation>
          <xs:documentation>
@@ -5552,13 +5577,13 @@ for more details.
                <xhtml:h1 class="element_title">Archive Where Study Originally Stored</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Archive from which the data collection was obtained; the originating archive. </xhtml:div>
+                  <xhtml:div class="description">Archive from which the data collection was obtained; the originating archive. May provide "abbr", "affiliation", "URI", and "personalID" to aid in identification. If "personalID" is used "typeOfPersonalID" should be used.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
                   <xhtml:div class="example">
                      <xhtml:samp class="xml_sample"><![CDATA[
-                        <origArch abbr="GESIS" URI="gesis.org">GESIS Leibniz-Institut für Sozialwissenschaften/origArch>
+                        <origArch abbr="GESIS" URI="gesis.org" personalID="018afyw53" typeOfPersonalID="ROR">GESIS Leibniz-Institut für Sozialwissenschaften/origArch>
                      ]]></xhtml:samp>
                   </xhtml:div>
                </xhtml:div>
@@ -5566,20 +5591,13 @@ for more details.
          </xs:documentation>
       </xs:annotation>
    </xs:element>
-   <xs:complexType name="origArchType" mixed="true">
-      <xs:complexContent>
-         <xs:extension base="simpleTextType">
-   	    <xs:attribute name="abbr" type="xs:string" use="optional"/>
-            <xs:attribute name="URI" type="xs:string"/>
-         </xs:extension>
-      </xs:complexContent>
-   </xs:complexType>
 
    <xs:complexType name="othIdType" mixed="true">
       <xs:complexContent>
          <xs:extension base="simpleTextType">
             <xs:attribute name="type" type="xs:string"/>
             <xs:attribute name="role" type="xs:string"/>
+            <xs:attribute name="abbr" type="xs:string" use="optional"/>
             <xs:attribute name="affiliation" type="xs:string"/>
             <xs:attribute name="personalID" type="xs:string" use="optional"/>
             <xs:attribute name="typeOfPersonalID" type="xs:string" use="optional"/>
@@ -5594,7 +5612,7 @@ for more details.
                <xhtml:h1 class="element_title">Other Identifications /Acknowledgments</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Statements of responsibility not recorded in the title and statement of responsibility areas. Indicate here the persons or bodies connected with the work, or significant persons or bodies connected with previous editions and not already named in the description. For example, the name of the person who edited the marked-up documentation might be cited in codeBook/docDscr/rspStmt/othId, using the "role" and "affiliation" attributes. Other identifications/acknowledgments for data collection (codeBook/stdyDscr/citation/rspStmt/othId) maps to Dublin Core Contributor element. If the attribute "personalID" is used, "typeOfPersonalID" should also be provided.</xhtml:div>
+                  <xhtml:div class="description">Statements of responsibility not recorded in the title and statement of responsibility areas. Indicate here the persons or bodies connected with the work, or significant persons or bodies connected with previous editions and not already named in the description. For example, the name of the person who edited the marked-up documentation might be cited in codeBook/docDscr/rspStmt/othId, using the "role", "abbr", and "affiliation" attributes. Other identifications/acknowledgments for data collection (codeBook/stdyDscr/citation/rspStmt/othId) maps to Dublin Core Contributor element. If the attribute "personalID" is used, "typeOfPersonalID" should also be provided. The use of "type" has been deprecated as the use of this attribute has never been documented.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -7262,6 +7280,8 @@ for more details.
          <xs:extension base="stringType">
             <xs:attribute name="affiliation" type="xs:string" use="optional"/>
             <xs:attribute name="abbr" type="xs:string" use="optional"/>
+            <xs:attribute name="personalID" type="xs:string" use="optional"/>
+            <xs:attribute name="typeOfPersonalID" type="xs:string" use="optional"/>
          </xs:extension>
       </xs:simpleContent>
    </xs:complexType>
@@ -7273,7 +7293,7 @@ for more details.
 						<xhtml:h1 class="element_title">Authorizing Agency</xhtml:h1>
 						<xhtml:div>
 							<xhtml:h2 class="section_header">Description</xhtml:h2>
-							<xhtml:div class="description">Name of the agent or agency that authorized the study. The "affiliation" attribute indicates the institutional affiliation of the authorizing agent or agency. The "abbr" attribute holds the abbreviation of the authorizing agent's or agency's name.</xhtml:div>
+							<xhtml:div class="description">Name of the agent or agency that authorized the study. The "affiliation" attribute indicates the institutional affiliation of the authorizing agent or agency. The "abbr" attribute holds the abbreviation of the authorizing agent's or agency's name. If the attribute "personalID" is used, "typeOfPersonalID" should also be provided.</xhtml:div>
 						</xhtml:div>
 						<xhtml:div>
 							<xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -7543,14 +7563,22 @@ for more details.
       </xs:annotation>
    </xs:element>
    
-   <xs:element name="evaluationProcess" type="simpleTextType">
+   <xs:element name="evaluationProcess" type="conceptualTextType">
       <xs:annotation>
          <xs:documentation>
             <xhtml:div>
                <xhtml:h1 class="element_title">Evaluation Process</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Describes the evaluation process followed.</xhtml:div>
+                  <xhtml:div class="description">Describes the evaluation process followed. Use the contained "concept" element when a controlled vocaublary is used. </xhtml:div>
+               <xhtml:div>
+                  <xhtml:h2 class="section_header">Example</xhtml:h2>
+                  <xhtml:div class="example">
+                     <xhtml:samp class="xml_sample"><![CDATA[
+                        <evaluationProcess><concept>meta-evaluation</concept>An evaluation of the quality of this series of evaluations and its adherence to established good practice in evaluation. It is based on and presents summaries of existing evaluations of each instrument.</evaluationProcess>
+                     ]]></xhtml:samp> 
+                  </xhtml:div>
+               </xhtml:div>                  
                </xhtml:div>
             </xhtml:div>
          </xs:documentation>
