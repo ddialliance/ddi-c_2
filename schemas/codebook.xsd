@@ -2485,7 +2485,7 @@ for more details.
                         <dataChck>Checks for undocumented codes were performed by the archive.</dataChck>
                      ]]></xhtml:samp>
                      <xhtml:samp class="xml_sample"><![CDATA[
-                        <dataChck><concept vocabName="EOSDIS" vocabURI="https://ghrc.nsstc.nasa.gov/uso/proc_level.html">2</concept>Derived geophysical variables at the same resolution and location as the Level 1 source data.</dataChck>
+                        <dataChck><concept vocab="EOSDIS" vocabURI="https://ghrc.nsstc.nasa.gov/uso/proc_level.html">2</concept>Derived geophysical variables at the same resolution and location as the Level 1 source data.</dataChck>
                      ]]></xhtml:samp>
                   </xhtml:div>
                </xhtml:div>
@@ -2723,8 +2723,8 @@ for more details.
 						<xhtml:h2 class="section_header">Example</xhtml:h2>
 						<xhtml:div class="example">
 							<xhtml:samp class="xml_sample"><![CDATA[
-<unitType numberOfUnits=150000"><concept vocabName="SampleFrame_UnitType">telephoneNumber</concept>Primary listed owners of published phone numbers in the City of St. Paul</unitType>
-]]>
+                               <unitType numberOfUnits=150000"><concept vocab="SampleFrame_UnitType">telephoneNumber</concept>Primary listed owners of published phone numbers in the City of St. Paul</unitType>
+                            ]]>
 							</xhtml:samp>
 						</xhtml:div>
 					</xhtml:div>
@@ -4174,13 +4174,13 @@ for more details.
                <xhtml:h1 class="element_title">Data Format</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Physical format of the data file: Logical record length format, card-image format (i.e., data with multiple records per case), delimited format, free format, etc. The element may be repeated to support multiple language expressions of the content. The use of a controlled vocabulary is supported with the use of attributes "vocabName", "vocabURI", and "vocabInstanceURI".</xhtml:div>
+                  <xhtml:div class="description">Physical format of the data file: Logical record length format, card-image format (i.e., data with multiple records per case), delimited format, free format, etc. The element may be repeated to support multiple language expressions of the content. The use of a controlled vocabulary is supported with the use of attributes "vocab", "vocabURI", and "vocabInstanceURI".</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
                   <xhtml:div class="example">
                      <xhtml:samp class="xml_sample"><![CDATA[
-                        <format vocabName="EU Vocabularies: File Type" vocabURI="http://publications.europa.eu/resource/authority/file-type” vocabINstanceURI="http://publications.europa.eu/resource/authority/file-type/CSV">CSV</format>
+                        <format vocab="EU Vocabularies: File Type" vocabURI="http://publications.europa.eu/resource/authority/file-type” vocabInstanceURI="http://publications.europa.eu/resource/authority/file-type/CSV">CSV</format>
                      ]]></xhtml:samp> 
                   </xhtml:div>
                </xhtml:div>
