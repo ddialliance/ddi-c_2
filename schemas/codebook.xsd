@@ -356,7 +356,7 @@ for more details.
                <xhtml:h1 class="element_title">External Link</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">This element permits encoders to provide links from any arbitrary element containing ExtLink as a subelement to electronic resources outside the codebook.</xhtml:div>
+                  <xhtml:div class="description">This element permits encoders to provide links from any arbitrary element containing ExtLink as a subelement to electronic resources outside the codebook. The use of ths element has be deprecated and the use of various othrMat types is recommended. A parent element can frequently use sdatrefs, methrefs, or pubrefs to refer to the appropriate other material type with which can hold the title, description, and URI for the external source.</xhtml:div>
                </xhtml:div>
             </xhtml:div>
          </xs:documentation>
@@ -380,7 +380,7 @@ for more details.
                <xhtml:h1 class="element_title">Link</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">This element permits encoders to provide links from any arbitrary element containing Link as a subelement to other elements in the codebook.</xhtml:div>
+                  <xhtml:div class="description">This element permits encoders to provide links from any arbitrary element containing Link as a subelement to other elements in the codebook. The use of ths element has be deprecated and the use of provided object references such as varRefs, sdatrefs, methrefs, and pubrefs is recommended. Internal references within texts in structured content can be done with xhml options.</xhtml:div>
                </xhtml:div>
             </xhtml:div>
          </xs:documentation>
@@ -773,14 +773,14 @@ for more details.
                <xhtml:h1 class="element_title">Abstract</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">An unformatted summary describing the purpose, nature, and scope of the data collection, special characteristics of its contents, major subject areas covered, and what questions the PIs attempted to answer when they conducted the study. A listing of major variables in the study is important here. In cases where a codebook contains more than one abstract (for example, one might be supplied by the data producer and another prepared by the data archive where the data are deposited), the "source" and "date" attributes may be used to distinguish the abstract versions. Maps to Dublin Core Description element. Inclusion of this element in the codebook is recommended. The "date" attribute should follow ISO convention of YYYY-MM-DD. The contentType attribute provides forward-compatibility with DDI 3 by describing where the content fits in that structure, or if is mixed in terms of what is contained.</xhtml:div>
+                  <xhtml:div class="description">An unformatted summary describing the purpose, nature, and scope of the data collection, special characteristics of its contents, major subject areas covered, and what questions the PIs attempted to answer when they conducted the study. A listing of major variables in the study is important here. In cases where a codebook contains more than one abstract (for example, one might be supplied by the data producer and another prepared by the data archive where the data are deposited), the "source" and "date" attributes may be used to distinguish the abstract versions. Maps to Dublin Core Description element. Inclusion of this element in the codebook is recommended. The "date" attribute should follow ISO convention of YYYY-MM-DD. The contentType attribute provides forward-compatibility with DDI Lifecycle by describing where the content fits in that structure, or if is mixed  [abstract | purpose | mixed] in terms of what is contained.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
                   <xhtml:div class="example">
                      <xhtml:samp class="xml_sample"><![CDATA[
-                        <abstract date="1999-01-28" source="ICPSR"> Data on labor force activity for the week prior to the survey are supplied in this collection. Information is available on the employment status, occupation, and industry of persons 15 years old and over. Demographic variables such as age, sex, race, marital status, veteran status, household relationship, educational background, and Hispanic origin are included. In addition to providing these core data, the May survey also contains a supplement on work schedules for all applicable persons aged 15 years and older who were employed at the time of the survey. This supplement focuses on shift work, flexible hours, and work at home for both main and second jobs.</abstract>
-                     ]]></xhtml:samp>
+                        <abstract date="1999-01-28" source="ICPSR" contentType="abstract"> Data on labor force activity for the week prior to the survey are supplied in this collection. Information is available on the employment status, occupation, and industry of persons 15 years old and over. Demographic variables such as age, sex, race, marital status, veteran status, household relationship, educational background, and Hispanic origin are included. In addition to providing these core data, the May survey also contains a supplement on work schedules for all applicable persons aged 15 years and older who were employed at the time of the survey. This supplement focuses on shift work, flexible hours, and work at home for both main and second jobs.</abstract>
+                     ]]></xhtml:samp> 
                   </xhtml:div>
                </xhtml:div>
             </xhtml:div>
@@ -804,6 +804,14 @@ for more details.
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
                   <xhtml:div class="description">Location where the data collection is currently stored. Use the URI attribute to provide a URN or URL for the storage site or the actual address from which the data may be downloaded.</xhtml:div>
+               </xhtml:div>
+               <xhtml:div>
+                  <xhtml:h2 class="section_header">Example</xhtml:h2>
+                  <xhtml:div class="example">
+                     <xhtml:samp class="xml_sample"><![CDATA[
+                        <accsPlac URI="https://international.ipums.org">IPUMS International</accsPlac>
+                     ]]></xhtml:samp> 
+                  </xhtml:div>
                </xhtml:div>
             </xhtml:div>
          </xs:documentation>
@@ -841,6 +849,14 @@ for more details.
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
                   <xhtml:div class="description">A title by which the work is commonly referred, or an abbreviation of the title.</xhtml:div>
                </xhtml:div>
+               <xhtml:div>
+                  <xhtml:h2 class="section_header">Example</xhtml:h2>
+                  <xhtml:div class="example">
+                     <xhtml:samp class="xml_sample"><![CDATA[
+                        <altTitl>PISA</altTitl>
+                     ]]></xhtml:samp> 
+                  </xhtml:div>
+               </xhtml:div>
             </xhtml:div>
          </xs:documentation>
       </xs:annotation>
@@ -867,6 +883,14 @@ for more details.
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
                   <xhtml:div class="description">Information on data appraisal.</xhtml:div>
                </xhtml:div>
+               <xhtml:div>
+                  <xhtml:h2 class="section_header">Example</xhtml:h2>
+                  <xhtml:div class="example">
+                     <xhtml:samp class="xml_sample"><![CDATA[
+                        <anlyInfo>Data meets FAIR criteria.</anlyInfo>
+                     ]]></xhtml:samp> 
+                  </xhtml:div>
+               </xhtml:div>
             </xhtml:div>
          </xs:documentation>
       </xs:annotation>
@@ -887,13 +911,16 @@ for more details.
                <xhtml:h1 class="element_title">Unit of Analysis</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Basic unit of analysis or observation that the file describes: individuals, families/households, groups, institutions/organizations, administrative units, etc. The "unit" attribute is included to permit the development of a controlled vocabulary for this element.</xhtml:div>
+                  <xhtml:div class="description">Basic unit of analysis or observation that the file describes: individuals, families/households, groups, institutions/organizations, administrative units, etc. The "unit" attribute is included to permit the development of a controlled vocabulary for this element. This element has been changed into a conceptualTextType supporting the use of exernal controlled vocabularies. The use of attribute "unit" has been deprecated. Use the internal concept element to reference a controlled vocabulary.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
                   <xhtml:div class="example">
                      <xhtml:samp class="xml_sample"><![CDATA[
                         <anlyUnit>individuals</anlyUnit>
+                     ]]></xhtml:samp> 
+                     <xhtml:samp class="xml_sample"><![CDATA[
+                        <anlyUnt><concept vocabURI="urn:ddi.cv:analysisunit:1.0">Individual<anlyUnit>
                      ]]></xhtml:samp> 
                   </xhtml:div>
                </xhtml:div>
@@ -1280,17 +1307,25 @@ for more details.
                <xhtml:h1 class="element_title">Category Level Statistic</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">May include frequencies, percentages, or crosstabulation results. This field can contain one of the following: 1. textual information (e.g., PCDATA), or 2. non-parseable character data (e.g., the statistics), or 3. some other form of external information (table, image, etc.) In case 1, the tag can be used to mark up character data; tables can also be included in the actual markup. In cases 2 or 3, the element can be left empty and the "URI" attribute used to refer to the external object containing the information. The attribute "type" indicates the type of statistics presented - frequency, percent, or crosstabulation. If a value of "other" is used for this attribute, the "otherType" attribute should take a value from a controlled vocabulary. This option should only be used when applying a controlled vocabulary to this attribute. Use the complex element controlledVocabUsed to identify the controlled vocabulary to which the selected term belongs. The attribute "access" records the ID values of all elements in the Data Access and Metadata Access section that describe access conditions.</xhtml:div>
+                  <xhtml:div class="description">
+                  <xhtml:p>May include frequencies, percentages, or crosstabulation results. This field can contain one of the following:</xhtml:p>
+                  <xhtml:p>1. textual information (e.g., PCDATA), or </xhtml:p>
+                  <xhtml:p>2. non-parseable character data (e.g., the statistics), or </xhtml:p>
+                  <xhtml:p>3. some other form of external information (table, image, etc.) </xhtml:p>
+                  <xhtml:p>In case 1, the tag can be used to mark up character data; tables can also be included in the actual markup. In cases 2 or 3, the element can be left empty and the "URI" attribute used to refer to the external object containing the information. </xhtml:p>
+                  <xhtml:p>The attribute "type" indicates the type of statistics presented - frequency, percent, or crosstabulation. If a value of "other" is used for this attribute, the "otherType" attribute should take a value from a controlled vocabulary. This option should only be used when applying a controlled vocabulary to this attribute. Use the complex element controlledVocabUsed to identify the controlled vocabulary to which the selected term belongs. </xhtml:p>
+                  <xhtml:p>The attribute "access" records the ID values of all elements in the Data Access and Metadata Access section that describe access conditions. </xhtml:p>
+                  <xhtml:p>The following attributes attributes provide information on the weighting used in creating the statistic: </xhtml:p>
+                  <xhtml:p>"wgtd" expressed as wgtd or not-wgtd, </xhtml:p>
+                  <xhtml:p>"wgt-var" a reference to the variable containing the weight used or </xhtml:p>
+                  <xhtml:p>"wgt" the value of a standard weight.</xhtml:p>
+                  </xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
                   <xhtml:div class="example">
-                     <xhtml:samp class="xml_sample"><![CDATA[
-                        <var>
-                           <catgryGrp>
-                              <catStat type="freq">256</catStat>
-                           </catgryGrp>
-                        </var>
+                     <xhtml:samp class="xml_sample"><![CDATA[ 
+                        <catStat type="freq" wgtd="not-wgtd">256</catStat>
                      ]]></xhtml:samp> 
                   </xhtml:div>
                </xhtml:div>
@@ -1306,17 +1341,15 @@ for more details.
                <xhtml:h1 class="element_title">Category Value</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">The explicit response.</xhtml:div>
+                  <xhtml:div class="description">The explicit response option for a category.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
                   <xhtml:div class="example">
                      <xhtml:samp class="xml_sample"><![CDATA[
-                        <var>
                            <catgry missing="Y" missType="inap">
-                              <catValu>9</catValu> 
+                              <catValu>9</catValu>
                            </catgry>
-                        </var>
                      ]]></xhtml:samp> 
                   </xhtml:div>
                </xhtml:div>
@@ -1341,20 +1374,20 @@ for more details.
                <xhtml:h1 class="element_title">Category Level</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Used to describe the levels of the category hierarchy. Note that we do not indicate nesting levels or roll-up structures here. This is done to be able to support ragged hierarchies. A category level may be linked to one or more maps of the variable content. This id done by referencing the IDs of the appropriate geoMap elements in the attribute <xhtml:code>geoMap</xhtml:code>.</xhtml:div>
+                  <xhtml:div class="description">Used to describe the levels of the category hierarchy. Note that we do not indicate nesting levels or roll-up structures here. This is done to be able to support ragged hierarchies. The attribute "levelnm" provides the levelname.  A category level may be linked to one or more maps of the variable content using "geoMap". This is done by referencing the IDs of the appropriate geoMap elements in the attribute "geoMap".</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
                   <xhtml:div class="example">
                      <xhtml:samp class="xml_sample"><![CDATA[
                         <catlevel ID="Level1" levelnm="Broader sectors"/>
-                     ]]></xhtml:samp>
+                     ]]></xhtml:samp> 
                      <xhtml:samp class="xml_sample"><![CDATA[
                         <catlevel ID="Level2" levelnm="Narrower sectors"/>
-                     ]]></xhtml:samp>
+                     ]]></xhtml:samp> 
                      <xhtml:samp class="xml_sample"><![CDATA[
-                        <catlevel ID="Level3" levelnm="Occupations" geoMap="GEO_1 GEO_2"/>
-                     ]]></xhtml:samp>                  
+                        <catlevel ID="Level3" levelnm="Occupations" geoMap="GEO_1 GEO_2"/>                  
+                     ]]></xhtml:samp> 
                   </xhtml:div>
                </xhtml:div>
             </xhtml:div>
@@ -1566,8 +1599,14 @@ for more details.
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
                   <xhtml:div class="description">
-                     <xhtml:p>This element encodes the bibliographic information for the work at the level specified: (1) Document Description, Citation (of Marked-up Document), (2) Document Description, Citation (of Marked-up Document Source), (3) Study Description, Citation (of Study), (4) Study Description, Other Material, and (5) Other Material for the study itself. Bibliographic information includes title information, statement of responsibility, production and distribution information, series and version information, text of a preferred bibliographic citation, and notes (if any). </xhtml:p>
-                     <xhtml:p>A MARCURI attribute is provided to link to the MARC record for the citation.</xhtml:p>
+                  <xhtml:p>This element encodes the bibliographic information for the work at the level specified: </xhtml:p>
+                  <xhtml:p>(1) Document Description, Citation (of Marked-up Document), </xhtml:p>
+                  <xhtml:p>(2) Document Description, Citation (of Marked-up Document Source), </xhtml:p>
+                  <xhtml:p>(3) Study Description, Citation (of Study), </xhtml:p>
+                  <xhtml:p>(4) Study Description, Other Material, and </xhtml:p>
+                  <xhtml:p>(5) Other Material for the study itself. </xhtml:p>
+                  <xhtml:p>The elements sourceCitation and fileCitation use this structure to provide citations for a source or data file respectively. Bibliographic information includes title information, statement of responsibility, production and distribution information, series and version information, text of a preferred bibliographic citation, and notes (if any). </xhtml:p>
+                  <xhtml:p>A MARCURI attribute is provided to link to the MARC record for the citation.</xhtml:p>
                   </xhtml:div>
                </xhtml:div>
             </xhtml:div>
@@ -1596,8 +1635,8 @@ for more details.
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
                   <xhtml:div class="example">
                      <xhtml:samp class="xml_sample"><![CDATA[
-                        <cleanOps>Checks for undocumented codes were performed, and data were subsequently revised in consultation with the principal investigator.</cleanOps>
-                     ]]></xhtml:samp>
+                        <cleanOps agency="NHGIS">Checks for undocumented codes were performed, and data were subsequently revised in consultation with the principal investigator.</cleanOps>
+                     ]]></xhtml:samp> 
                   </xhtml:div>
                </xhtml:div>
             </xhtml:div>
@@ -1657,14 +1696,14 @@ for more details.
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
                   <xhtml:div class="description">
-                     <xhtml:p>Every element in the DDI DTD/Schema has the following attributes:</xhtml:p>
-                     <xhtml:p>ID - This uniquely identifies each element.</xhtml:p>
-                     <xhtml:p>xml-lang - Use of this attribute is deprecated, and it will no longer be supported in the next major version of the DDI specification. For newly created XML documents, please use xml:lang.</xhtml:p>
-                     <xhtml:p>xml:lang - This attribute specifies the language used in the contents and attribute values of any element in the XML document. Use of ISO (<xhtml:a href="http://www.iso.org/">www.iso.org</xhtml:a>) language codes is recommended.</xhtml:p>
-                     <xhtml:p>source - This attribute identifies the source that provided information in the element. If the documentation contains two differing sets of information on Sampling Procedure -- one provided by the data producer and one by the archive where the data is deposited -- this information can be distinguished through the use of the source attribute.</xhtml:p>
-                     <xhtml:p>Note also that the DDI contains a linking mechanism permitting arbitrary links between internal elements (See Link) and from internal elements to external sources (See ExtLink).</xhtml:p>
-                     <xhtml:p>The top-level element, codeBook, also includes a version attribute to specify the version number of the DDI specification.</xhtml:p>
-                     <xhtml:p>codeBookAgency - This attribute holds the agency name of the creator or maintainer of the codeBook instance as a whole, and is designed to support forward compatibility with DDI-Lifecycle. Recommend the agency name as filed with the DDI Agency ID Registry with optional additional sub-agency extensions.</xhtml:p>
+                  <xhtml:p>Every element in the DDI DTD/Schema has the following attributes:</xhtml:p>
+                  <xhtml:p>ID - This uniquely identifies each element.</xhtml:p>
+                  <xhtml:p>xml-lang - Use of this attribute is deprecated, and it will no longer be supported in the next major version of the DDI specification. For newly created XML documents, please use xml:lang.</xhtml:p>
+                  <xhtml:p>xml:lang - This attribute specifies the language used in the contents and attribute values of any element in the XML document. Use of ISO (<xhtml:a href="http://www.iso.org/">www.iso.org</xhtml:a>) language codes is recommended.</xhtml:p>
+                  <xhtml:p>source - This attribute identifies the source that provided information in the element. If the documentation contains two differing sets of information on Sampling Procedure -- one provided by the data producer and one by the archive where the data is deposited -- this information can be distinguished through the use of the source attribute.</xhtml:p>
+                  <xhtml:p>Note also that the DDI contains a linking mechanism permitting arbitrary links between internal elements (See Link) and from internal elements to external sources (See ExtLink). Note that the use of these two elements has be DEPRECATED in version 2.6.</xhtml:p>
+                  <xhtml:p>The top-level element, codeBook, also includes a version attribute to specify the version number of the DDI specification.</xhtml:p>
+                  <xhtml:p>codeBookAgency - This attribute holds the agency name of the creator or maintainer of the codeBook instance as a whole, and is designed to support forward compatibility with DDI-Lifecycle. Recommend the agency name as filed with the DDI Agency ID Registry with optional additional sub-agency extensions.</xhtml:p>
                   </xhtml:div>
                </xhtml:div>
             </xhtml:div>
@@ -1754,23 +1793,23 @@ for more details.
                <xhtml:h1 class="element_title">Mode of Data Collection</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">The method used to collect the data; instrumentation characteristics. XHTML formatting may be used in the txt element for forward-compatibility with DDI 3.</xhtml:div>
+                  <xhtml:div class="description">The method used to collect the data; instrumentation characteristics. As of version 2.6 this element is a conceptualtext type and supports the use of a controlled vocabulary. XHTML formatting may be used in the txt element for forward-compatibility with DDI Lifecycle.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
                   <xhtml:div class="example">
                      <xhtml:samp class="xml_sample"><![CDATA[
                         <collMode>telephone interviews</collMode>
-                     ]]></xhtml:samp>
+                     ]]></xhtml:samp> 
                      <xhtml:samp class="xml_sample"><![CDATA[
-                        <collMode>face-to-face interviews</collMode>
-                     ]]></xhtml:samp>
+                        <collMode><concept vocab="ModeOfCollection" vocabURI="urn:ddi:int.ddi.cv:ModeOfCollection:3.0">Interview.FaceToFace</concept>face-to-face interviews</collMode>
+                     ]]></xhtml:samp> 
                      <xhtml:samp class="xml_sample"><![CDATA[
                         <collMode>mail questionnaires</collMode>
-                     ]]></xhtml:samp>
+                     ]]></xhtml:samp> 
                      <xhtml:samp class="xml_sample"><![CDATA[
                         <collMode>computer-aided telephone interviews (CATI)</collMode>
-                     ]]></xhtml:samp>
+                     ]]></xhtml:samp> 
                   </xhtml:div>
                </xhtml:div>
             </xhtml:div>
@@ -1981,10 +2020,10 @@ for more details.
                   <xhtml:div class="example">
                      <xhtml:samp class="xml_sample"><![CDATA[
                         <confDec formNo="1">To download this dataset, the user must sign a declaration of confidentiality.</confDec>
-                     ]]></xhtml:samp>
+                     ]]></xhtml:samp> 
                      <xhtml:samp class="xml_sample"><![CDATA[
-                        <confDec URI="http://www.icpsr.umich.edu/HMCA/CTSform/contents.html"> To obtain this dataset, the user must complete a Restricted Data Use Agreement.</confDec>
-                     ]]></xhtml:samp>
+                        <confDec URI="http://www.icpsr.umich.edu/HMCA/CTSform/contents.html" required="yes"> To obtain this dataset, the user must complete a Restricted Data Use Agreement.</confDec>
+                     ]]></xhtml:samp> 
                   </xhtml:div>
                </xhtml:div>
             </xhtml:div>
@@ -2017,8 +2056,8 @@ for more details.
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
                   <xhtml:div class="example">
                      <xhtml:samp class="xml_sample"><![CDATA[
-                        <contact affiliation="University of Wisconsin" email="jsmith@...">Jane Smith</contact>
-                     ]]></xhtml:samp>
+                        <contact affiliation="University of Wisconsin" email="jsmith@wisc.edu" URI="wisc.edu" personalID="0000-0003-1294-0000" typeOfPersonalID="orchid">Jane Smith</contact>
+                     ]]></xhtml:samp> 
                   </xhtml:div>
                </xhtml:div>
             </xhtml:div>
@@ -2047,8 +2086,8 @@ for more details.
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
                   <xhtml:div class="example">
                      <xhtml:samp class="xml_sample"><![CDATA[
-                        <ConOps source="ICPSR">Ten percent of data entry forms were reentered to check for accuracy.</ConOps>
-                     ]]></xhtml:samp>
+                        <ConOps source="archive" agency="ICPSR">Ten percent of data entry forms were reentered to check for accuracy.</ConOps>
+                     ]]></xhtml:samp> 
                   </xhtml:div>
                </xhtml:div>
             </xhtml:div>
@@ -2079,7 +2118,7 @@ for more details.
                <xhtml:h1 class="element_title">Controlled Vocabulary Used</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Provides a code value, as well as a reference to the code list from which the value is taken. Note that the CodeValue can be restricted to reference an enumeration.</xhtml:div>
+                  <xhtml:div class="description">Provides information on the use of a controlled vocabulary by the DDI instance. The controlled vocabualry is identified by a codelistID, codelistName, codelistAgencyName, codelistVersionID, codelistURN, and codelistSchemeURN. The use of the controlled vocabulary is defined by the usage element.</xhtml:div>
                </xhtml:div>
             </xhtml:div>
          </xs:documentation>
@@ -2093,17 +2132,17 @@ for more details.
                <xhtml:h1 class="element_title">Code List ID</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Identifies the code list that the value is taken from.</xhtml:div>
+                  <xhtml:div class="description">Identifies the code list that the value is taken from.  If this is a URN or URI place in codeListURN.</xhtml:div>
                </xhtml:div>
-					<xhtml:div>
-						<xhtml:h2 class="section_header">Example</xhtml:h2>
-						<xhtml:div class="example">
-							<xhtml:samp class="xml_sample"><![CDATA[
-<codeListID>TimeMethod</codeListID>
-]]>
-							</xhtml:samp>
-						</xhtml:div>
-					</xhtml:div>            </xhtml:div>
+               <xhtml:div>
+                  <xhtml:h2 class="section_header">Example</xhtml:h2>
+                  <xhtml:div class="example">
+                     <xhtml:samp class="xml_sample"><![CDATA[
+                        <codeListID>TimeMethod</codeListID>
+                     ]]></xhtml:samp> 
+                  </xhtml:div>
+               </xhtml:div>
+            </xhtml:div>
          </xs:documentation>
       </xs:annotation>
    </xs:element>
@@ -2137,16 +2176,16 @@ for more details.
                <xhtml:h1 class="element_title">Code List Agency Name</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Agency maintaining the code list.</xhtml:div>
+                  <xhtml:div class="description">Agency maintaining the code list. This name should be registered in the DDI Agency Registry.</xhtml:div>
                </xhtml:div>
-					<xhtml:div>
-						<xhtml:h2 class="section_header">Example</xhtml:h2>
-						<xhtml:div class="example">
-							<xhtml:samp class="xml_sample"><![CDATA[
-<codeListAgencyName>DDI Alliance</codeListAgencyName>]]>
-							</xhtml:samp>
-						</xhtml:div>
-					</xhtml:div>
+               <xhtml:div>
+                  <xhtml:h2 class="section_header">Example</xhtml:h2>
+                  <xhtml:div class="example">
+                     <xhtml:samp class="xml_sample"><![CDATA[
+                        <codeListAgencyName>DDI Alliance</codeListAgencyName>
+                     ]]></xhtml:samp> 
+                  </xhtml:div>
+               </xhtml:div>
             </xhtml:div>
          </xs:documentation>
       </xs:annotation>
@@ -2358,19 +2397,19 @@ for more details.
                <xhtml:h1 class="element_title">Cube Coordinate</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">This is an empty element containing only the attributes listed below. It is used to identify the coordinates of the data item within a logical nCube describing aggregate data. CubeCoord is repeated for each dimension of the nCube giving the coordinate number ("coordNo") and coordinate value ("coordVal"). Coordinate value reference ("cordValRef") is an ID reference to the variable that carries the coordinate value. The attributes provide a complete coordinate location of a cell within the nCube.</xhtml:div>
+                  <xhtml:div class="description">This is an empty element containing only the attributes listed below. It is used to identify the coordinates of the data item within a logical nCube describing aggregate data. CubeCoord is repeated for each dimension of the nCube giving the "coordNo" and "coordVal". The attribute "cordValRef" is an ID reference to the variable that carries the coordinate value. The attributes provide a complete coordinate location of a cell within the nCube.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
                   <xhtml:div class="example">
                      <xhtml:samp class="xml_sample"><![CDATA[
                         <CubeCoord coordNo="1" coordVal="3"/>
-                     ]]></xhtml:samp>
+                     ]]></xhtml:samp> 
                      <xhtml:samp class="xml_sample"><![CDATA[
                         <CubeCoord coordNo="2" coordVal="7"/>
-                     ]]></xhtml:samp>
+                     ]]></xhtml:samp> 
                      <xhtml:samp class="xml_sample"><![CDATA[
-                        <CubeCoord coordNo="3" coordVal="2"/>
+                        <CubeCoord coordNo="3" coordVal="2" cordVarRef="AGE-3"/> 
                      ]]></xhtml:samp> 
                   </xhtml:div>
                </xhtml:div>
@@ -2817,20 +2856,20 @@ for more details.
                <xhtml:h1 class="element_title">General Data Format</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description"></xhtml:div>
+                  <xhtml:div class="description">Expresses the variety of data formats covered i.e. Numeric, Text, Audio, Visual, Geospatial, StillImage, Software, 3D, other. Supports the use of an external controlled vocabulary. The DDI Alliance has provided a controlled vocabulary (GeneralDataFormat) to support this element at http://www.ddialliance.org/controlled-vocabularies</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
                   <xhtml:div class="example">
                      <xhtml:samp class="xml_sample"><![CDATA[
-                        <generalDataFormat vocab="GeneralDataFormat" vocabURI="https://ddialliance.org/Specification/DDI-CV/GeneralDataFormat_2.0_Genericode1.0_DDI-CVProfile1.0.xml" vocabInstanceURI="https://ddialliance.org/Specification/DDI-CV/GeneralDataFormat_2.0_Genericode1.0_DDI-CVProfile1.0#Geospatial">Geospatial</generalDataFormat>
-                     ]]></xhtml:samp>
+                        <generalDataFormat vocab="GeneralDataFormat" vocabURI="urn:ddi:int.ddi.cv:GeneralDataFormat:2.0" vocabInstanceURI="urn:ddi:int.ddi.cv:GeneralDataFormat:2.0">Geospatial</generalDataFormat>
+                     ]]></xhtml:samp> 
                   </xhtml:div>
                </xhtml:div>
             </xhtml:div>
          </xs:documentation>
-       </xs:annotation>
-     </xs:element>  
+      </xs:annotation>
+   </xs:element>
 
    <xs:complexType name="instrumentDevelopmentType" mixed="true">
       <xs:complexContent>
@@ -2901,19 +2940,21 @@ for more details.
    <xs:element name="custodian" type="custodianType">
       <xs:annotation>
          <xs:documentation>
-				<xhtml:div>
-					<xhtml:h1 class="element_title">Custodian</xhtml:h1>
-					<xhtml:div>
-						<xhtml:h2 class="section_header">Description</xhtml:h2>
-						<xhtml:div class="description">Custodian identifies the agency or individual who is responsible for creating or maintaining the sample frame. Attribute affiliation provides the affiliation of the custodian with an agency or organization. Attribute abbr provides an abbreviation for the custodian. Use role to specify role of differentiate between multiple custodians. If the attribute "personalID" is used, "typeOfPersonalID" should also be provided.</xhtml:div>
-					</xhtml:div>
-					<xhtml:div>
-						<xhtml:h2 class="section_header">Example</xhtml:h2>
-						<xhtml:div class="example">
-							<xhtml:samp class="xml_sample"><![CDATA[<custodian>DEX Publications</custodian>]]></xhtml:samp>
-						</xhtml:div>
-					</xhtml:div>
-				</xhtml:div>
+            <xhtml:div>
+               <xhtml:h1 class="element_title">Custodian</xhtml:h1>
+               <xhtml:div>
+                  <xhtml:h2 class="section_header">Description</xhtml:h2>
+                  <xhtml:div class="description">Custodian identifies the agency or individual who is responsible for creating or maintaining the sample frame. Attribute affiliation provides the affiliation of the custodian with an agency or organization. Attribute abbr provides an abbreviation for the custodian.</xhtml:div>
+               </xhtml:div>
+               <xhtml:div>
+                  <xhtml:h2 class="section_header">Example</xhtml:h2>
+                  <xhtml:div class="example">
+                     <xhtml:samp class="xml_sample"><![CDATA[
+                        <custodian abbr="DEX">DEX Publications</custodian>
+                     ]]></xhtml:samp> 
+                  </xhtml:div>
+               </xhtml:div>
+            </xhtml:div>
          </xs:documentation>
       </xs:annotation>
    </xs:element>
@@ -2968,14 +3009,14 @@ for more details.
                <xhtml:h1 class="element_title">Data Collector</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">The entity (individual, agency, or institution) responsible for administering the questionnaire or interview or compiling the data. This refers to the entity collecting the data, not to the entity producing the documentation. Attribute "abbr" may be used to list common abbreviations given to agencies, etc. Attribute "affiliation" may be used to record affiliation of the data collector. The role attribute specifies the role of person in the data collection process.</xhtml:div>
+                  <xhtml:div class="description">The entity (individual, agency, or institution) responsible for administering the questionnaire or interview or compiling the data. This refers to the entity collecting the data, not to the entity producing the documentation. Attribute "abbr" may be used to list common abbreviations given to agencies, etc. Attribute "affiliation" may be used to record affiliation of the data collector. The "role" attribute specifies the role of person in the data collection process.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
                   <xhtml:div class="example">
                      <xhtml:samp class="xml_sample"><![CDATA[
                         <dataCollector abbr="SRC" affiliation="University of Michigan" role="questionnaire administration">Survey Research Center</dataCollector>
-                     ]]></xhtml:samp>
+                     ]]></xhtml:samp> 
                   </xhtml:div>
                </xhtml:div>
             </xhtml:div>
@@ -3034,10 +3075,28 @@ for more details.
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
                   <xhtml:div class="description">Identifies a physical storage location for an individual data entry, serving as a link between the physical location and the logical content description of each data item. The attribute "varRef" is an IDREF that points to a discrete variable description. If the data item is located within an nCube (aggregate data), use the attribute "nCubeRef" (IDREF) to point to the appropriate nCube and the element CubeCoord to identify the coordinates of the data item within the nCube. The attribute "access" records the ID values of all elements in the Data Access and Metadata Access section that describe access conditions for this cell.</xhtml:div>
                </xhtml:div>
+               <xhtml:div>
+                  <xhtml:h2 class="section_header">Example</xhtml:h2>
+                  <xhtml:div class="example">
+                     <xhtml:samp class="xml_sample"><![CDATA[
+                        <dataItem varRef="AGE_2" access="restricition_1">
+                           <physLoc recRef="Rec_1" startPos="5" width="4" endPos="8"/>
+                        </dataItem>
+                     ]]></xhtml:samp> 
+                     <xhtml:samp class="xml_sample"><![CDATA[
+                        <dataItem nCubeRef="AGE_SEX" access="restricition_1">
+                            <CubeCoord coordNo="1" coordVal="3"/>
+                            <CubeCoord coordNo="2" coordVal="1"/>
+                            <physLoc recRef="Rec_3" startPos="5" width="4" endPos="8"/>
+                        </dataItem>
+                     ]]></xhtml:samp> 
+                  </xhtml:div>
+               </xhtml:div>
             </xhtml:div>
          </xs:documentation>
       </xs:annotation>
    </xs:element>
+
 
    <xs:complexType name="dataKindType" mixed="true">
       <xs:complexContent>
@@ -3060,8 +3119,8 @@ for more details.
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
                   <xhtml:div class="example">
                      <xhtml:samp class="xml_sample"><![CDATA[
-                        <dataKind>survey data</dataKind>
-                     ]]></xhtml:samp>
+                        <dataKind><concept vocab="KindOfData" vocabURI="urn:ddi:int.ddi.cv:KindOfData:1.0">Survey</concept>survey data</dataKind>
+                     ]]></xhtml:samp> 
                   </xhtml:div>
                </xhtml:div>
             </xhtml:div>
@@ -3155,14 +3214,14 @@ for more details.
                <xhtml:h1 class="element_title">Date of Deposit</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">The date that the work was deposited with the archive that originally received it. The ISO standard for dates (YYYY-MM-DD) is recommended for use with the "date" attribute.</xhtml:div>
+                  <xhtml:div class="description">The date that the work was deposited with the archive that originally received it. The ISO standard for dates (YYYY-MM-DD) is recommended for use with the "date" attribute. The term “archive that originally received it” differentiates between the designated depository and any locally held copies obtained to support local use.”</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
                   <xhtml:div class="example">
                      <xhtml:samp class="xml_sample"><![CDATA[
                         <depDate date="1999-01-25">January 25, 1999</depDate>
-                     ]]></xhtml:samp>
+                     ]]></xhtml:samp> 
                   </xhtml:div>
                </xhtml:div>
             </xhtml:div>
@@ -3210,14 +3269,14 @@ for more details.
                <xhtml:h1 class="element_title">Depositor</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">The name of the person (or institution) who provided this work to the archive storing it.  If the attribute "personalID" is used, "typeOfPersonalID" should also be provided.</xhtml:div>
+                  <xhtml:div class="description">The name of the person (or institution) who provided this work to the archive storing it. Attributes "abbr" and "affiliation" can be used to provide and abbreviation and affiliation of the depositor. If the attribute "personalID" is used, "typeOfPersonalID" should also be provided.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
                   <xhtml:div class="example">
                      <xhtml:samp class="xml_sample"><![CDATA[
                         <depositr abbr="BJS" affiliation="U.S. Department of Justice">Bureau of Justice Statistics</depositr>
-                     ]]></xhtml:samp>
+                     ]]></xhtml:samp> 
                   </xhtml:div>
                </xhtml:div>
             </xhtml:div>
@@ -3246,6 +3305,17 @@ for more details.
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
                   <xhtml:div class="description">Used only in the case of a derived variable, this element provides both a description of how the derivation was performed and the command used to generate the derived variable, as well as a specification of the other variables in the study used to generate the derivation. The "var" attribute provides the ID values of the other variables in the study used to generate this derived variable. Alternatively the variables may be expressed as a range using the varRange element. Note that use of varRange is implementation dependent. Since the order of variables can change during the execution of a script, it is computationally difficult to identify which variables belong to a variable range.  It has been provided to support the automated creation of derivation information. Order should be determined by the physical order expressed in location as opposed to the order expressed in the metadata document. varRange should only be used when the physical order of variables is available and machine-actionable.</xhtml:div>
+               </xhtml:div>
+               <xhtml:div>
+                  <xhtml:h2 class="section_header">Example</xhtml:h2>
+                  <xhtml:div class="example">
+                     <xhtml:samp class="xml_sample"><![CDATA[
+                        <derivation var="V4 V9">
+                           <drvdesc>Taxible Income (V10) expressed as a combinaton of wage and salary income (V4) plus interest income (V9)</drvdesc>
+                           <drvcmd synta="SPSS">V10=V4+V9</drvcmd>
+                        </derivation>
+                     ]]></xhtml:samp> 
+                  </xhtml:div>
                </xhtml:div>
             </xhtml:div>
          </xs:documentation>
@@ -3336,7 +3406,8 @@ for more details.
                <xhtml:h1 class="element_title">File Dimensions</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Dimensions of the overall file.</xhtml:div>
+                  <xhtml:div class="description">Dimensions of the overall file. Including the case quantity, variable quantity, logical record length, records per case, and total number of records.</xhtml:div>
+               </xhtml:div>
                </xhtml:div>
             </xhtml:div>
          </xs:documentation>
@@ -3408,7 +3479,7 @@ for more details.
                <xhtml:h1 class="element_title">Distributor Statement</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Distribution statement for the work at the appropriate level: marked-up document; marked-up document source; study; study description, other material; other material for study.</xhtml:div>
+                  <xhtml:div class="description">Distribution statement for the work at the appropriate level: marked-up document; marked-up document source; study; study description, other material; other material for study. Includes information on the distributor, contact, depositor, deposit date, and distribution date.</xhtml:div>
                </xhtml:div>
             </xhtml:div>
          </xs:documentation>
@@ -3434,17 +3505,17 @@ for more details.
                <xhtml:h1 class="element_title">Distributor</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">The organization designated by the author or producer to generate copies of the particular work including any necessary editions or revisions. Names and addresses may be specified and other archives may be co-distributors. A URI attribute is included to provide an URN or URL to the ordering service or download facility on a Web site. If the attribute "personalID" is used, "typeOfPersonalID" should also be provided. </xhtml:div>
+                  <xhtml:div class="description">The organization designated by the author or producer to generate copies of the particular work including any necessary editions or revisions. Names and addresses may be specified and other archives may be co-distributors. The attributes "abbr" and "affiliation" are provided and URI attribute is included to provide an URN or URL to the ordering service or download facility on a Web site. If the attribute "personalID" is used, "typeOfPersonalID" should also be provided.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
                   <xhtml:div class="example">
                      <xhtml:samp class="xml_sample"><![CDATA[
                         <distrbtr abbr="ICPSR" affiliation="Institute for Social Research" URI="http://www.icpsr.umich.edu">Ann Arbor, MI: Inter-university Consortium for Political and Social Research</distrbtr>
-                     ]]></xhtml:samp>
+                     ]]></xhtml:samp> 
                      <xhtml:samp class="xml_sample"><![CDATA[
                         <distrbtr abbr="UMICH" URI="https://www.umich.edu/" personalID="grid.214458.e" typeOfPersonalID="GRID">University of Michigan - Ann Arbor</distrbtr>
-                     ]]></xhtml:samp>
+                     ]]></xhtml:samp> 
                   </xhtml:div>
                </xhtml:div>
             </xhtml:div>
@@ -3472,6 +3543,16 @@ for more details.
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
                   <xhtml:div class="description">This element defines a variable as a dimension of the nCube, and should be repeated to describe each of the cube's dimensions. The attribute "rank" is used to define the coordinate order (rank="1", rank="2", etc.) The attribute "varRef" is an IDREF that points to the variable that makes up this dimension of the nCube.</xhtml:div>
+               </xhtml:div>
+               <xhtml:div>
+                  <xhtml:h2 class="section_header">Example</xhtml:h2>
+                  <xhtml:div class="example">
+                     <xhtml:samp class="xml_sample"><![CDATA[
+                        <dmns rank="3" varRef="V24">
+                           <cohort catRef="CV24_1" value="1"/>
+                        </dmns> 
+                     ]]></xhtml:samp> 
+                  </xhtml:div>
                </xhtml:div>
             </xhtml:div>
          </xs:documentation>
@@ -3631,6 +3712,14 @@ for more details.
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
                   <xhtml:div class="description">The easternmost coordinate delimiting the geographic extent of the dataset. A valid range of values, expressed in decimal degrees (positive east and positive north), is: -180,0 &lt;= East Bounding Longitude Value &lt;= 180,0</xhtml:div>
+               </xhtml:div>
+               <xhtml:div>
+                  <xhtml:h2 class="section_header">Example</xhtml:h2>
+                  <xhtml:div class="example">
+                     <xhtml:samp class="xml_sample"><![CDATA[
+                        <eastBL>33.637497</eastBL>
+                     ]]></xhtml:samp> 
+                  </xhtml:div>
                </xhtml:div>
             </xhtml:div>
          </xs:documentation>
@@ -3986,7 +4075,7 @@ for more details.
                <xhtml:h1 class="element_title">Place of File Production</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Indicates whether the file was produced at an archive or produced elsewhere.</xhtml:div>
+                  <xhtml:div class="description">Indicates where the file was produced. In the case of an added format version this could be the archive.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -4100,42 +4189,41 @@ for more details.
    
    <xs:element name="fileCitation" type="citationType">
 		<xs:annotation>
-			<xs:documentation>
-				<xhtml:div>
-
-					<xhtml:h1 class="element_title">File Citation</xhtml:h1>
-
-					<xhtml:div>
-						<xhtml:h2 class="section_header">Description</xhtml:h2>
-						<xhtml:div class="description">The complex element fileCitation provides for a full bibliographic citation option for each data file described in fileDscr. To support accurate citation of a data file the minimum element set includes: titl, IDNo, authEnty, producer, and prodDate. If a DOI is available for the data file enter this in the IDNo (this element is repeatable). If a hash value (digital fingerprint) has been created for the data file enter the information regarding its value and algorithm specification in digitalFingerprint.</xhtml:div>
-					</xhtml:div>
-
-					<xhtml:div>
-						<xhtml:h2 class="section_header">Example</xhtml:h2>
-						<xhtml:div class="example">
-							<xhtml:samp class="xml_sample"><![CDATA[
-<fileCitation>
-<titlStmt>
-<titl>ABC News/Washington Post Monthly Poll, December 2010</titl>
-<IDNo>http://dx.doi.org/10.3886/ICPSR32547.v1</IDNo>
-</titlStmt>
-<rspStmt>
-<AuthEnty>ABC News</AuthEnty>
-<AuthEnty>The Washington Post</AuthEnty>
-</rspStmt>
-<prodStmt>
-<producer>ABC News</producer>
-<prodDate>2011</prodDate>
-</prodStmt>
-</fileCitation>
-]]>
-							</xhtml:samp>
-						</xhtml:div>
-					</xhtml:div>
-				</xhtml:div>
-			</xs:documentation>
-		</xs:annotation>
-</xs:element>
+   <xs:element name="fileCitation" type="citationType">
+     <xs:annotation>
+        <xs:documentation>
+           <xhtml:div>
+              <xhtml:h1 class="element_title">File Citation</xhtml:h1>
+              <xhtml:div>
+                 <xhtml:h2 class="section_header">Description</xhtml:h2>
+                 <xhtml:div class="description">The complex element fileCitation provides for a full bibliographic citation option for each data file described in fileDscr. To support accurate citation of a data file the minimum element set includes: titl, IDNo, authEnty, producer, and prodDate. If a DOI is available for the data file enter this in the IDNo (this element is repeatable). If a hash value (digital fingerprint) has been created for the data file enter the information regarding its value and algorithm specification in digitalFingerprint.</xhtml:div>
+              </xhtml:div>
+              <xhtml:div>
+                 <xhtml:h2 class="section_header">Example</xhtml:h2>
+                 <xhtml:div class="example">
+                    <xhtml:samp class="xml_sample"><![CDATA[
+                       <fileCitation>
+                          <titlStmt>
+                             <titl>ABC News/Washington Post Monthly Poll, December 2010</titl>
+                             <IDNo>http://dx.doi.org/10.3886/ICPSR32547.v1</IDNo>
+                          </titlStmt>
+                          <rspStmt>
+                             <AuthEnty>ABC News</AuthEnty>
+                             <AuthEnty>The Washington Post</AuthEnty>
+                          </rspStmt>
+                          <prodStmt>
+                             <producer>ABC News</producer>
+                             <prodDate>2011</prodDate>
+                          </prodStmt>
+                       </fileCitation>
+                    ]]>
+                    </xhtml:samp>
+                 </xhtml:div>
+              </xhtml:div>
+           </xhtml:div>
+        </xs:documentation>
+     </xs:annotation>
+   </xs:element>
    
    <xs:complexType name="fileTypeType" mixed="true">
       <xs:complexContent>
@@ -4369,6 +4457,14 @@ for more details.
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
                   <xhtml:div class="description">This element is used to point, using a "URI" attribute, to an external map that displays the geography in question. The "levelno" attribute indicates the level of the geographic hierarchy relayed in the map. The "mapformat" attribute indicates the format of the map.</xhtml:div>
                </xhtml:div>
+               <xhtml:div>
+                  <xhtml:h2 class="section_header">Example</xhtml:h2>
+                  <xhtml:div class="example">
+                     <xhtml:samp class="xml_sample"><![CDATA[
+                        <geoMap URI="https://www.dol.gov/agencies/wb/data/lfp-rate-sex-state-county" mapormat="raster" levelno="050"/>
+                     ]]></xhtml:samp> 
+                  </xhtml:div>
+               </xhtml:div>
             </xhtml:div>
          </xs:documentation>
       </xs:annotation>
@@ -4458,6 +4554,14 @@ for more details.
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
                   <xhtml:div class="description">Latitude (y coordinate) of a point. Valid range   expressed in decimal degrees is as follows: -90,0 to 90,0 degrees (latitude)</xhtml:div>
                </xhtml:div>
+               <xhtml:div>
+                  <xhtml:h2 class="section_header">Example</xhtml:h2>
+                  <xhtml:div class="example">
+                     <xhtml:samp class="xml_sample"><![CDATA[
+                        <gringLat>35.00208499998</gringLat>
+                     ]]></xhtml:samp> 
+                  </xhtml:div>
+               </xhtml:div>
             </xhtml:div>
          </xs:documentation>
       </xs:annotation>
@@ -4471,6 +4575,14 @@ for more details.
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
                   <xhtml:div class="description">Longitude (x coordinate) of a point. Valid range expressed in decimal degrees is as follows: -180,0 to 180,0 degrees (longitude)</xhtml:div>
+               </xhtml:div>
+               <xhtml:div>
+                  <xhtml:h2 class="section_header">Example</xhtml:h2>
+                  <xhtml:div class="example">
+                     <xhtml:samp class="xml_sample"><![CDATA[
+                        <gringLon>-114.039663</gringLon>
+                     ]]></xhtml:samp> 
+                  </xhtml:div>
                </xhtml:div>
             </xhtml:div>
          </xs:documentation>
@@ -4626,13 +4738,13 @@ for more details.
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
                   <xhtml:div class="example">
                      <xhtml:samp class="xml_sample"><![CDATA[
-                        <invalrng>
-                           <range UNITS="INT" min="98" max="99"/> 
+                        <invalrng access="DA_4">
+                           <range UNITS="INT" min="98" max="99"/>
                            <key> 
-                     			98 DK 
-                     			99 Inappropriate
-                     		</key> 
-                        </invalrng>
+                              98 DK 
+                              99 Inappropriate
+                           </key>
+                        </invalrng> 
                      ]]></xhtml:samp> 
                   </xhtml:div>
                </xhtml:div>
@@ -4664,18 +4776,25 @@ for more details.
                <xhtml:h1 class="element_title">Value Item</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">The counterpart to Range; used to encode individual values. This is an empty element consisting only of its attributes. The "UNITS" attribute permits the specification of integer/real numbers. The "VALUE" attribute specifies the actual value.</xhtml:div>
+                  <xhtml:div class="description">The counterpart to Range; used to encode individual values when the values cannot be expressed as a min/max range or when specification of the values is desired. This is an empty element consisting only of its attributes. The "UNITS" attribute permits the specification of integer/real numbers. The "VALUE" attribute specifies the actual value.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
                   <xhtml:div class="example">
                      <xhtml:samp class="xml_sample"><![CDATA[
                         <valrng>
+                           <item UNITS="INT" VALUE="10"/>
+                           <item UNITS="INT" VALUE="15"/>
+                           <item UNITS="INT" VALUE="22"/>
+                        </valrng>
+                     ]]></xhtml:samp> 
+                     <xhtml:samp class="xml_sample"><![CDATA[
+                        <valrng>
                            <item VALUE="1"/>
                            <item VALUE="2"/>
-                           <item VALUE="3"/> 
+                           <item VALUE="3"/>
                         </valrng>
-                     ]]></xhtml:samp>
+                     ]]></xhtml:samp> 
                   </xhtml:div>
                </xhtml:div>
             </xhtml:div>
@@ -4723,14 +4842,20 @@ for more details.
                   <xhtml:div class="example">
                      <xhtml:samp class="xml_sample"><![CDATA[
                         <valrng>
-                           <range UNITS="INT" maxExclusive="95" min="05" max="80"> </range> 
+                           <range UNITS="INT" min="05" max="80"/>
                            <key>
-                        		05 (PSU) Parti Socialiste Unifie et extreme gauche (Lutte Ouvriere) [United Socialists and extreme left (Workers Struggle)] 
-                        		50 Les Verts [Green Party] 
-                        		80 (FN) Front National et extreme droite [National Front and extreme right] 
-                     		</key>
-                        </valrng>
-                     ]]></xhtml:samp>
+                              05 (PSU) Parti Socialiste Unifie et extreme gauche (Lutte Ouvriere) [United Socialists and extreme left (Workers Struggle)] 
+                              50 Les Verts [Green Party] 
+                              80 (FN) Front National et extreme droite [National Front and extreme right]
+                            </key>
+                          </valrng>
+                     ]]></xhtml:samp> 
+                     <xhtml:samp class="xml_sample"><![CDATA[
+                          <valrng>
+                             <range UNITS="REAL" minExlusive="0" maxExclusive="10"/>
+                             <key>Responses fall between 0 and 10 but may not include those two values.</key>
+                          </valrng>
+                     ]]></xhtml:samp> 
                   </xhtml:div>
                </xhtml:div>
             </xhtml:div>
@@ -4785,6 +4910,19 @@ for more details.
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
                   <xhtml:div class="description">A short description of the parent element. In the variable label, the length of this phrase may depend on the statistical analysis system used (e.g., some versions of SAS permit 40-character labels, while some versions of SPSS permit 120 characters), although the DDI itself imposes no restrictions on the number of characters allowed. A "level" attribute is included to permit coding of the level to which the label applies, i.e. record group, variable group, variable, category group, category, nCube group, nCube, or other study-related materials. The "vendor" attribute was provided to allow for specification of different labels for use with different vendors' software. The attribute "country" allows for the denotation of country-specific labels. The "sdatrefs" attribute records the ID values of all elements within the Summary Data Description section of the Study Description that might apply to the label. These elements include: time period covered, date of collection, nation or country, geographic coverage, geographic unit, unit of analysis, universe, and kind of data.</xhtml:div>
+               </xhtml:div>
+               <xhtml:div>
+                  <xhtml:h2 class="section_header">Example</xhtml:h2>
+                  <xhtml:div class="example">
+                     <xhtml:samp class="xml_sample"><![CDATA[
+                        <labl level="catgry" country="US">Pharmacist</labl>
+                        <labl level="catgry" country="CA">Chemist</labl>
+                     ]]></xhtml:samp> 
+                     <xhtml:samp class="xml_sample"><![CDATA[
+                        <labl level="nCube" vendor="SAS">Employment. race, age, sex, age 16-64</labl>
+                        <labl level="nCube" vendor="SPSS">Employment status by race by age by gender for persons ages 16 to 64 years of age</labl>
+                     ]]></xhtml:samp> 
+                  </xhtml:div>
                </xhtml:div>
             </xhtml:div>
          </xs:documentation>
@@ -4848,7 +4986,15 @@ for more details.
                <xhtml:h1 class="element_title">License</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">A legal document giving official permission to something with the resource. Recommendation is to provide the license document URI. equates to https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/license/</xhtml:div>
+                  <xhtml:div class="description">A legal document giving official permission to something with the resource. Recommendation is to provide the license document URI. Attrbute type allows for specification of the licensing target [data | metadata]. Equates to https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/license/</xhtml:div>
+               </xhtml:div>
+               <xhtml:div>
+                  <xhtml:h2 class="section_header">Example</xhtml:h2>
+                  <xhtml:div class="example">
+                     <xhtml:samp class="xml_sample"><![CDATA[
+                        <license type="metadata" URI="https://creativecommons.org/licenses/by/4.0/legalcode">CC by 4.0</license>
+                     ]]></xhtml:samp> 
+                  </xhtml:div>
                </xhtml:div>
             </xhtml:div>
          </xs:documentation>
@@ -4872,7 +5018,18 @@ for more details.
                <xhtml:h1 class="element_title">Location Map</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">This element maps individual data entries to one or more physical storage locations. It is used to describe the physical location of aggregate/tabular data in cases where the nCube model is employed.</xhtml:div>
+                  <xhtml:div class="description">This element maps individual data entries to one or more physical storage locations. It is used to describe the physical location of aggregate/tabular data in cases where the nCube model is employed. May also be used for var location description and is useful when the physical location of a key variable is located in different positions in different record types or when the file contains a mixture of variable and nCube description. Always use the ID attribute to support the reference from the var or nCube.</xhtml:div>
+               </xhtml:div>
+               <xhtml:div>
+                  <xhtml:h2 class="section_header">Example</xhtml:h2>
+                  <xhtml:div class="example">
+                     <xhtml:samp class="xml_sample"><![CDATA[
+                        <locMap ID="LM_1">
+                           <dataItem>...</dataItem>
+                           <dataItem>...</dataItem>
+                        </locMap>
+                     ]]></xhtml:samp> 
+                  </xhtml:div>
                </xhtml:div>
             </xhtml:div>
          </xs:documentation>
@@ -4989,6 +5146,14 @@ for more details.
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
                   <xhtml:div class="description">The element measure indicates the measurement features of the cell content: type of aggregation used, measurement unit, and measurement scale. An origin point is recorded for anchored scales, to be used in determining relative movement along the scale. Additivity indicates whether an aggregate is a stock (like the population at a given point in time) or a flow (like the number of births or deaths over a certain period of time). The non-additive flag is to be used for measures that for logical reasons cannot be aggregated to a higher level - for instance, data that only make sense at a certain level of aggregation, like a classification. Two nCubes may be identical except for their measure - for example, a count of persons by age and percent of persons by age. Measure is an empty element that includes the following attributes: "varRef" is an IDREF; "aggrMeth" indicates the type of aggregation method used, for example 'sum', 'average', 'count'; "measUnit" records the measurement unit, for example 'km', 'miles', etc.; "scale" records unit of scale, for example 'x1', 'x1000'; "origin" records the point of origin for anchored scales;"additivity" records type of additivity such as 'stock', 'flow', 'non-additive'. If a value of "other" is used for the aggrMeth attribute, a term from a controlled vocabulary should be placed in the "otherAggrMeth" attribute, and a the complex element controlledVocabUsed should be used to specify the controlled vocabulary.</xhtml:div>
                </xhtml:div>
+               <xhtml:div>
+                  <xhtml:h2 class="section_header">Example</xhtml:h2>
+                  <xhtml:div class="example">
+                     <xhtml:samp class="xml_sample"><![CDATA[
+                        <measure source="producer" measUnit="Persons" varRef="V_PER" scale="x1" additivity="stock" aggrMeth="count"/>
+                     ]]></xhtml:samp> 
+                  </xhtml:div>
+               </xhtml:div>
             </xhtml:div>
          </xs:documentation>
       </xs:annotation>
@@ -5042,7 +5207,7 @@ for more details.
                <xhtml:h1 class="element_title">Methodology and Processing</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">This section describes the methodology and processing involved in a data collection.</xhtml:div>
+                  <xhtml:div class="description">This section describes the methodology and processing involved in a data collection. This includes use of methods such as survey, experiment, secondary analysis, field research, sampling methods, etc. Processing covers the data collection processes, aggregation, imputation, and other post-collection data processing.</xhtml:div>
                </xhtml:div>
             </xhtml:div>
          </xs:documentation>
@@ -5070,23 +5235,22 @@ for more details.
                <xhtml:h1 class="element_title">Coding Instructions</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Describe specific coding instructions used in data processing, cleaning, assession, or tabulation. Element relatedProcesses allows linking a coding instruction to one or more processes such as dataProcessing, dataAppr, cleanOps, etc. Use the txt element to describe instructions in a human readable form. The type attribute has been DEPRECATED. Use the typeOfCodingInstruction to indicate the type of instruction with or without the use of a controlled vocabulary.</xhtml:div>
+                  <xhtml:div class="description">Describe specific coding instructions used in data processing, cleaning, assession, or tabulation. The attribute "relatedProcesses" allows linking a coding instruction to one or more processes such as dataProcessing, dataAppr, cleanOps, etc. Use the txt element to describe instructions in a human readable form. The type attribute has been DEPRECATED. Use the typeOfCodingInstruction to indicate the type of instruction with or without the use of a controlled vocabulary.</xhtml:div>
                </xhtml:div>
-						<xhtml:div>
-							<xhtml:h2 class="section_header">Example</xhtml:h2>
-							<xhtml:div class="example">
-								<xhtml:samp class="xml_sample"><![CDATA[
-<codingInstructions relatedProcesses="cleanOps_7334">
-<typeOfCodingInstruction>recode</typeOfCodingInstruction>
-<txt>recode undocumented/wild codes to missing, i.e., 0.</txt>
-<command formalLanguage="SPSS">RECODE V1 TO V100 (10 THROUGH HIGH = 0)</command>
-</codingInstructions>
-]]>
-								</xhtml:samp>
-							</xhtml:div>
-						</xhtml:div>
+               <xhtml:div>
+                  <xhtml:h2 class="section_header">Example</xhtml:h2>
+                  <xhtml:div class="example">
+                     <xhtml:samp class="xml_sample"><![CDATA[
+                        <codingInstructions relatedProcesses="cleanOps_7334">
+                           <typeOfCodingInstruction>recode</typeOfCodingInstruction>
+                           <txt>recode undocumented/wild codes to missing, i.e., 0.</txt>
+                           <command formalLanguage="SPSS">RECODE V1 TO V100 (10 THROUGH HIGH = 0)</command>
+                        </codingInstructions>
+                     ]]></xhtml:samp> 
+                  </xhtml:div>
+               </xhtml:div>
             </xhtml:div>
-         .</xs:documentation>
+         </xs:documentation>
       </xs:annotation>
    </xs:element>
    
@@ -5167,7 +5331,15 @@ for more details.
                <xhtml:h1 class="element_title">Mathematical Identifier</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Token element containing the smallest unit in the mrow that carries meaning.</xhtml:div>
+                  <xhtml:div class="description">Token element containing the smallest unit in the mrow that carries meaning expressed by the attribute varRef. This is an element taked from MathML.</xhtml:div>
+               </xhtml:div>
+               <xhtml:div>
+                  <xhtml:h2 class="section_header">Example</xhtml:h2>
+                  <xhtml:div class="example">
+                     <xhtml:samp class="xml_sample"><![CDATA[
+                        <mi varRef="STATE"/>
+                     ]]></xhtml:samp> 
+                  </xhtml:div>
                </xhtml:div>
             </xhtml:div>
          </xs:documentation>
@@ -5191,7 +5363,22 @@ for more details.
                <xhtml:h1 class="element_title">Mathematical Row</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">This element is a wrapper containing the presentation expression mi. It creates a single string without spaces consisting of the individual elements described within it. It can be used to create a single variable by concatenating other variables into a single string. It is used to create linking variables composed of multiple non-contiguous parts, or to define unique strings for various category values of a single variable.</xhtml:div>
+                  <xhtml:div class="description">This element is a wrapper containing the presentation expression mi. It creates a single string without spaces consisting of the individual elements described within it. It can be used to create a single variable by concatenating other variables into a single string. It is used to create linking variables composed of multiple non-contiguous parts, or to define unique strings for various category values of a single variable. This is an element taked from MathML. The example shows the use of mrow in the context of a code based on two separate variables.</xhtml:div>
+               </xhtml:div>
+               <xhtml:div>
+                  <xhtml:h2 class="section_header">Example</xhtml:h2>
+                  <xhtml:div class="example">
+                     <xhtml:samp class="xml_sample"><![CDATA[
+                        <catgry>
+                           <labl>Unique county code</labl>
+                           <txt>Complete county code including the content of the variables STATE (2ch) and COUNTY (3ch) creating a unique identifying code for an individual county</txt>
+                           <mrow>
+                              <mi varRef="STATE"/>
+                              <mi varRef="CNTY"/>
+                           </mrow>
+                        </catgy>
+                     ]]></xhtml:samp> 
+                  </xhtml:div>
                </xhtml:div>
             </xhtml:div>
          </xs:documentation>
@@ -5343,16 +5530,16 @@ for more details.
                <xhtml:h1 class="element_title">Country</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Indicates the country or countries covered in the file. Attribute "abbr" may be used to list common abbreviations; use of ISO country codes is recommended. Use vocab, vocabURI, and vocabInstanceURI to identify the use of a controlled vocabulary. Maps to Dublin Core Coverage element. Inclusion of this element is recommended. For forward-compatibility, DDI 3 XHTML tags may be used in this element.</xhtml:div>
+                  <xhtml:div class="description">Indicates the country or countries covered in the file. Attribute "abbr" may be used to list common abbreviations; use of ISO country codes is recommended. Use vocab, vocabURI, and vocabInstanceURI to identify the use of a controlled vocabulary. Maps to Dublin Core Coverage element. Inclusion of this element is recommended. For forward-compatibility, DDI Lifecycle XHTML tags may be used in this element.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
                   <xhtml:div class="example">
                      <xhtml:samp class="xml_sample"><![CDATA[
-                        <nation vocab=”ISO 3166-1 alpha-2” vocabURI=”http://www.iso.org/ISO_3166-1/alpha-2” vocabInstanceURI=”http://www.iso.org/ISO_3166-1/alpha-2#FI” abbr=”FI” xml:lang= ”en”>Finland</nation>
+                        <nation vocab="ISO 3166-1 alpha-2" vocabURI="http://www.iso.org/ISO_3166-1/alpha-2" vocabInstanceURI="http://www.iso.org/ISO_3166-1/alpha-2#FI"abbr="FI"xml:lang= "en">Finland</nation>
                      ]]></xhtml:samp> 
                      <xhtml:samp class="xml_sample"><![CDATA[
-                        <nation vocab=”ISO 3166-1 alpha-2” vocabURI=”http://www.iso.org/ISO_3166-1/alpha-2” vocabInstanceURI=”http://www.iso.org/ISO_3166-1/alpha-2#FI” abbr=”FI” xml:lang= ”fi”>Suomi</nation>
+                        <nation vocab="ISO 3166-1 alpha-2" vocabURI="http://www.iso.org/ISO_3166-1/alpha-2" vocabInstanceURI="http://www.iso.org/ISO_3166-1/alpha-2#FI"abbr="FI" xml:lang= "fi">Suomi</nation> 
                      ]]></xhtml:samp> 
                   </xhtml:div>
                </xhtml:div>
@@ -5369,6 +5556,14 @@ for more details.
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
                   <xhtml:div class="description">The northernmost coordinate delimiting the geographic extent of the dataset. A valid range of values, expressed in decimal degrees (positive east and positive north), is: -90,0 &lt;= North Bounding Latitude Value &lt;= 90,0 ; North Bounding Latitude Value = South Bounding Latitude Value</xhtml:div>
+               </xhtml:div>
+               <xhtml:div>
+                  <xhtml:h2 class="section_header">Example</xhtml:h2>
+                  <xhtml:div class="example">
+                     <xhtml:samp class="xml_sample"><![CDATA[
+                        <northBL>80.76416</northBL>
+                     ]]></xhtml:samp> 
+                  </xhtml:div>
                </xhtml:div>
             </xhtml:div>
          </xs:documentation>
@@ -5612,13 +5807,13 @@ for more details.
                <xhtml:h1 class="element_title">Other Identifications /Acknowledgments</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Statements of responsibility not recorded in the title and statement of responsibility areas. Indicate here the persons or bodies connected with the work, or significant persons or bodies connected with previous editions and not already named in the description. For example, the name of the person who edited the marked-up documentation might be cited in codeBook/docDscr/rspStmt/othId, using the "role", "abbr", and "affiliation" attributes. Other identifications/acknowledgments for data collection (codeBook/stdyDscr/citation/rspStmt/othId) maps to Dublin Core Contributor element. If the attribute "personalID" is used, "typeOfPersonalID" should also be provided. The use of "type" has been deprecated as the use of this attribute has never been documented.</xhtml:div>
+                  <xhtml:div class="description">Statements of responsibility not recorded in the title and statement of responsibility areas (collaborators). Indicate here the persons or bodies connected with the work, or significant persons or bodies connected with previous editions and not already named in the description. For example, the name of the person who edited the marked-up documentation might be cited in codeBook/docDscr/rspStmt/othId, using the "role" and "affiliation" attributes. Other identifications/acknowledgments for data collection (codeBook/stdyDscr/citation/rspStmt/othId) maps to Dublin Core Contributor element. If the attribute "personalID" is used, "typeOfPersonalID" should also be provided.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
                   <xhtml:div class="example">
                      <xhtml:samp class="xml_sample"><![CDATA[
-                        <othId role="editor" affiliation="INRA">Jane Smith</othId>
+                         <othId role="editor" affiliation="INRA" personalID="0000-0003-1294-0000" typeOfPersonalID="orchid">Jane Smith</othId>
                      ]]></xhtml:samp> 
                   </xhtml:div>
                </xhtml:div>
@@ -5649,13 +5844,24 @@ for more details.
                <xhtml:h1 class="element_title">Other References Notes</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Indicates other pertinent references. Can take the form of bibliographic citations. </xhtml:div>
+                  <xhtml:div class="description">Indicates other pertinent references. Can take the form of bibliographic citations.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
                   <xhtml:div class="example">
-                     <xhtml:samp class="xml_sample"><![CDATA[
+                     <xhtml:samp class="xml_sample"><![CDATA[ 
                         <othRefs>Part II of the documentation, the Field Representative's Manual, is provided in hardcopy form only.</othRefs>
+                     ]]></xhtml:samp> 
+                     <xhtml:samp class="xml_sample"><![CDATA[ 
+                        <othRefs>
+                           <citation>
+                              <titlStmt>
+                                 <titl>Work flows - Data Discovery and Dissemination: User Perspective</titl>
+                                 <IDNo agency="DOI">10.3886/DDIBestPractices02</IDNo>
+                              </titlStmt>
+                              <biblCit>Work flows - Data Discovery and Dissemination: User Perspective. Dinkelmann, Karl, Michelle Edwards, Jane Fry, Chuck Humphrey, Ron Nakao, and Wendy Thomas.</biblCit>
+                           </citation>
+                        </othRefs>
                      ]]></xhtml:samp> 
                   </xhtml:div>
                </xhtml:div>
@@ -5815,6 +6021,14 @@ for more details.
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
                   <xhtml:div class="description">0-dimensional geometric primitive, representing a position, but not having extent. In this declaration, point is limited to a longitude/latitude coordinate system.</xhtml:div>
                </xhtml:div>
+               <xhtml:div>
+                  <xhtml:h2 class="section_header">Example</xhtml:h2>
+                  <xhtml:div class="example">
+                     <xhtml:samp class="xml_sample"><![CDATA[
+                        <point><gridLat>-15.8</gridLat><gridLon>24.0</gridLon></point>
+                     ]]></xhtml:samp> 
+                  </xhtml:div>
+               </xhtml:div>
             </xhtml:div>
          </xs:documentation>
       </xs:annotation>
@@ -5838,6 +6052,31 @@ for more details.
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
                   <xhtml:div class="description">The minimum polygon that covers a geographical area, and is delimited by at least 4 points (3 sides), in which the last point coincides with the first point.</xhtml:div>
+               </xhtml:div>
+               <xhtml:div>
+                  <xhtml:h2 class="section_header">Example</xhtml:h2>
+                  <xhtml:div class="example">
+                     <xhtml:samp class="xml_sample"><![CDATA[
+                        <polygon>
+                           <point>
+                              <gridLat>-15.8</gridLat>
+                              <gridLon>24.0</gridLon>
+                           </point>
+                           <point>
+                              <gridLat>-41.0</gridLat>
+                              <gridLon>10.8</gridLon>
+                           </point>
+                           <point>
+                              <gridLat>-15.8</gridLat>
+                              <gridLon>10.8</gridLon>
+                           </point>
+                           <point>
+                              <gridLat>-15.8</gridLat>
+                              <gridLon>24.0</gridLon>
+                           </point>
+                        </polygon>
+                     ]]></xhtml:samp> 
+                  </xhtml:div>
                </xhtml:div>
             </xhtml:div>
          </xs:documentation>
@@ -5990,7 +6229,7 @@ for more details.
                <xhtml:h1 class="element_title">Production Statement</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Production statement for the work at the appropriate level: marked-up document; marked-up document source; study; study description, other material; other material for study.</xhtml:div>
+                  <xhtml:div class="description">Part of citation including language, producer, copyright, license, prodDate, prodPlac, software, fundAg, and grantNo. Production statement for the work at the appropriate level: marked-up document; marked-up document source; study; study description, other material; other material for study.</xhtml:div>
                </xhtml:div>
             </xhtml:div>
          </xs:documentation>
@@ -6242,7 +6481,7 @@ for more details.
                <xhtml:h1 class="element_title">Dimensions (of record)</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Information about the physical characteristics of the record. The "level" attribute on this element should be set to "record".</xhtml:div>
+                  <xhtml:div class="description">Information about the physical characteristics of the record including the numer of variable (varQnty), number of cases (caseQnty), and record length (logRecL).  The "level" attribute on this element should be set to "record".</xhtml:div>
                </xhtml:div>
             </xhtml:div>
          </xs:documentation>
@@ -6616,7 +6855,7 @@ for more details.
                <xhtml:h1 class="element_title">Responsibility Statement</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Responsibility for the creation of the work at the appropriate level: marked-up document; marked-up document source; study; study description, other material; other material for study.</xhtml:div>
+                  <xhtml:div class="description">Part of citation covering author (AuthEnty) and collaborators (othID). Responsibility for the creation of the work at the appropriate level: marked-up document; marked-up document source; study; study description, other material; other material for study.</xhtml:div>
                </xhtml:div>
             </xhtml:div>
          </xs:documentation>
@@ -6906,31 +7145,28 @@ for more details.
 			<xs:annotation>
 				<xs:documentation>
 					<xhtml:div>
-
 						<xhtml:h1 class="element_title">Source Citation</xhtml:h1>
-
 						<xhtml:div>
 							<xhtml:h2 class="section_header">Description</xhtml:h2>
 							<xhtml:div class="description">This complex element allows the inclusion of a standard citation for the sources used in collecting and creating the dataset.</xhtml:div>
 						</xhtml:div>
-
 						<xhtml:div>
 							<xhtml:h2 class="section_header">Example</xhtml:h2>
 							<xhtml:div class="example">
 								<xhtml:samp class="xml_sample"><![CDATA[
-<sourceCitation>
-<titlStmt>
-<titl>Tenth Decennial Census of the United States, 1880. Volume I. Statistics of the Population of the United States at the Tenth Census.</titl>
-</titlStmt>
-<rspStmt>
-<AuthEnty affiliation="U.S. Department of Commerce">United States Census Bureau</AuthEnty>
-</rspStmt>
-<prodStmt>
-<producer>Government Printing Office</producer>
-<prodDate>1883</prodDate>
-</prodStmt>
-</sourceCitation>
-]]>
+                                   <sourceCitation>
+                                      <titlStmt>
+                                         <titl>Tenth Decennial Census of the United States, 1880. Volume I. Statistics of the Population of the United States at the Tenth Census.</titl>
+                                      </titlStmt>
+                                      <rspStmt>
+                                         <AuthEnty affiliation="U.S. Department of Commerce">United States Census Bureau</AuthEnty>
+                                      </rspStmt>
+                                      <prodStmt>
+                                         <producer>Government Printing Office</producer>
+                                         <prodDate>1883</prodDate>
+                                      </prodStmt>
+                                   </sourceCitation>
+                                ]]>
 								</xhtml:samp>
 							</xhtml:div>
 						</xhtml:div>
@@ -6947,6 +7183,14 @@ for more details.
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
                   <xhtml:div class="description">The southernmost coordinate delimiting the geographic extent of the dataset. A valid range of values, expressed in decimal degrees (positive east and positive north), is: -90,0 &lt;=South Bounding Latitude Value &lt;= 90,0 ; South Bounding Latitude Value &lt;= North Bounding Latitude Value</xhtml:div>
+               </xhtml:div>
+               <xhtml:div>
+                  <xhtml:h2 class="section_header">Example</xhtml:h2>
+                  <xhtml:div class="example">
+                     <xhtml:samp class="xml_sample"><![CDATA[
+                        <southBL>57.987915</southBL>
+                     ]]></xhtml:samp> 
+                  </xhtml:div>
                </xhtml:div>
             </xhtml:div>
          </xs:documentation>
@@ -7000,6 +7244,14 @@ for more details.
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
                   <xhtml:div class="description">Assessment of characteristics and quality of source material. May not be relevant to survey data. This element may be repeated to support multiple language expressions of the content.</xhtml:div>
+               </xhtml:div>
+               <xhtml:div>
+                  <xhtml:h2 class="section_header">Example</xhtml:h2>
+                  <xhtml:div class="example">
+                     <xhtml:samp class="xml_sample"><![CDATA[
+                        <srcChar>Print source document. Page 26 torn causing loss of some definitional material. Related sources were used to make up for this loss.</srcChar>
+                     ]]></xhtml:samp> 
+                  </xhtml:div>
                </xhtml:div>
             </xhtml:div>
          </xs:documentation>
@@ -7202,6 +7454,30 @@ for more details.
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
                   <xhtml:div class="description">Information on the development activity including a description, set of participants, resoruces used, and outcomes. Use of the "type" attribute has been DEPRECATED. Use the element typeOfSetAvailability.</xhtml:div>
+               </xhtml:div>
+               <xhtml:div>
+                  <xhtml:h2 class="section_header">Example</xhtml:h2>
+                  <xhtml:div class="example">
+                     <xhtml:samp class="xml_sample"><![CDATA[
+                        <developmentActivity>
+                           <typeOfDevelopmentActivity vocab="LifecycleEventType" vocabURI="https://www.ddialliance.org/Specification/DDI-CV/LifecycleEventType_1.0.html">QuestionnaireTranslation</typeOfDevelopmentActivity>
+                           <typeOfDevelopmentActivity vocab="DIME Questionnaire Translation" vocabURI="https://dimewiki.worldbank.org/index.php?title=Questionnaire_Translation&oldid=8152">Forward Translation</typeOfDevelopentActivity>
+                           <description>Translation from language A to language B of question and response text. Language experts are used. Translation is tested through round-trip translation practices. Translated question will be tested for response consistency with original language text.</description>
+                           <participant affiliation="ISRDI" role="language exert">Ragi Yousef</participant>
+                           <resource>
+                              <srcCitation>
+                                 <titlStmt>
+                                    <titl>Labor Force Survey 2017-2018</titl>
+                                 </titlStmt>
+                                 <holding>
+                                    <URI>https://www.ilo.org/surveyLib/index.php/catalog/2549/related-materials</URI>
+                                 </holding>
+                              </srcCitation>
+                           </resource>
+                           <outcome>Translated question resulted in valid replication of original language in the round trip test. Translated question resulted in statistically similar results as original language question folling testing.</outcome>
+                         </developmentActivity>
+                     ]]></xhtml:samp> 
+                  </xhtml:div>
                </xhtml:div>
             </xhtml:div>
          </xs:documentation>
@@ -7547,17 +7823,16 @@ for more details.
                <xhtml:h1 class="element_title">Evaluator Type</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">The evaluator element identifies persons or organizations involved in the evaluation. The affiliation attribute contains the affiliation of the individual or organization. The abbr attribute holds an abbreviation for the individual or organization. The role attribute indicates the role played by the individual or organization in the evaluation process.</xhtml:div>
+                  <xhtml:div class="description">The evaluator element identifies persons or organizations involved in the evaluation. The affiliation attribute contains the affiliation of the individual or organization. The abbr attribute holds an abbreviation for the individual or organization. The role attribute indicates the role played by the individual or organization in the evaluation process. If the attribute "personalID" is used, "typeOfPersonalID" should also be provided.</xhtml:div>
                </xhtml:div>
-					<xhtml:div>
-						<xhtml:h2 class="section_header">Example</xhtml:h2>
-						<xhtml:div class="example">
-							<xhtml:samp class="xml_sample"><![CDATA[
-<evaluator affiliation="United Nations" abbr="UNSD" role="consultant">United Nations Statistical Division</evaluator>
-]]>
-							</xhtml:samp>
-						</xhtml:div>
-					</xhtml:div>
+               <xhtml:div>
+                  <xhtml:h2 class="section_header">Example</xhtml:h2>
+                  <xhtml:div class="example">
+                     <xhtml:samp class="xml_sample"><![CDATA[
+                        <evaluator affiliation="United Nations" abbr="UNSD" role="consultant">United Nations Statistical Division</evaluator>
+                     ]]></xhtml:samp> 
+                  </xhtml:div>
+               </xhtml:div>
             </xhtml:div>
          </xs:documentation>
       </xs:annotation>
@@ -7570,15 +7845,15 @@ for more details.
                <xhtml:h1 class="element_title">Evaluation Process</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Describes the evaluation process followed. Use the contained "concept" element when a controlled vocaublary is used. </xhtml:div>
+                  <xhtml:div class="description">Describes the evaluation process followed.</xhtml:div>
+               </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
                   <xhtml:div class="example">
                      <xhtml:samp class="xml_sample"><![CDATA[
-                        <evaluationProcess><concept>meta-evaluation</concept>An evaluation of the quality of this series of evaluations and its adherence to established good practice in evaluation. It is based on and presents summaries of existing evaluations of each instrument.</evaluationProcess>
+                        <evaluationProcess>In-depth review of pre-collection and collection procedures</evaluationProcess>
                      ]]></xhtml:samp> 
                   </xhtml:div>
-               </xhtml:div>                  
                </xhtml:div>
             </xhtml:div>
          </xs:documentation>
@@ -7680,7 +7955,7 @@ for more details.
                <xhtml:h1 class="element_title">Subject Information</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Subject information describing the data collection's intellectual content.</xhtml:div>
+                  <xhtml:div class="description">Subject information describing the data collection's intellectual content. Supports the use of a list of keyword and a list of topic classifications.</xhtml:div>
                </xhtml:div>
             </xhtml:div>
          </xs:documentation>
@@ -8052,7 +8327,8 @@ for more details.
                <xhtml:h1 class="element_title">Title Statement</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Title statement for the work at the appropriate level: marked-up document; marked-up document source; study; study description, other materials; other materials for study.</xhtml:div>
+                  <xhtml:div class="description">Title statement covers title (titl), aubtitle (subTitl), alternative title (altTitl), parallel title (parTitl), and ID Number (IDNo). Title statement for the work at the appropriate level: marked-up document; marked-up document source; study; study description, other materials; other materials for study.</xhtml:div>
+               </xhtml:div>
                </xhtml:div>
             </xhtml:div>
          </xs:documentation>
@@ -8885,6 +9161,14 @@ for more details.
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
                   <xhtml:div class="description">The westernmost coordinate delimiting the geographic extent of the dataset. A valid range of values, expressed in decimal degrees (positive east and positive north), is: -180,0 &lt;=West Bounding Longitude Value &lt;= 180,0</xhtml:div>
+               </xhtml:div>
+               <xhtml:div>
+                  <xhtml:h2 class="section_header">Example</xhtml:h2>
+                  <xhtml:div class="example">
+                     <xhtml:samp class="xml_sample"><![CDATA[
+                        <westBL>4.789583</westBL>
+                     ]]></xhtml:samp> 
+                  </xhtml:div>
                </xhtml:div>
             </xhtml:div>
          </xs:documentation>
