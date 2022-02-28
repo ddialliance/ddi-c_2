@@ -773,7 +773,7 @@ for more details.
                <xhtml:h1 class="element_title">Abstract</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">An unformatted summary describing the purpose, nature, and scope of the data collection, special characteristics of its contents, major subject areas covered, and what questions the PIs attempted to answer when they conducted the study. A listing of major variables in the study is important here. In cases where a codebook contains more than one abstract (for example, one might be supplied by the data producer and another prepared by the data archive where the data are deposited), the "source" and "date" attributes may be used to distinguish the abstract versions. Maps to Dublin Core Description element. Inclusion of this element in the codebook is recommended. The "date" attribute should follow ISO convention of YYYY-MM-DD. The contentType attribute provides forward-compatibility with DDI 3 by describing where the content fits in that structure, or if is mixed in terms of what is contained.</xhtml:div>
+                  <xhtml:div class="description">An unformatted summary describing the purpose, nature, and scope of the data collection, special characteristics of its contents, major subject areas covered, and what questions the PIs attempted to answer when they conducted the study. A listing of major variables in the study is important here. In cases where a codebook contains more than one abstract (for example, one might be supplied by the data producer and another prepared by the data archive where the data are deposited), the "source" and "date" attributes may be used to distinguish the abstract versions. Maps to Dublin Core Description element. Inclusion of this element in the codebook is recommended. The "date" attribute should follow ISO convention of YYYY-MM-DD. The contentType attribute provides forward-compatibility with DDI Lifecycle by describing where the content fits in that structure, or if is mixed in terms of what is contained.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -1754,7 +1754,7 @@ for more details.
                <xhtml:h1 class="element_title">Mode of Data Collection</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">The method used to collect the data; instrumentation characteristics. XHTML formatting may be used in the txt element for forward-compatibility with DDI 3.</xhtml:div>
+                  <xhtml:div class="description">The method used to collect the data; instrumentation characteristics. XHTML formatting may be used in the txt element for forward-compatibility with DDI Lifecycle.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -3259,7 +3259,7 @@ for more details.
                <xhtml:h1 class="element_title">Major Deviations from the Sample Design</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Information indicating correspondence as well as discrepancies between the sampled units (obtained) and available statistics for the population (age, sex-ratio, marital status, etc.) as a whole. XHTML formatting may be used in this element for forward-compatibility with DDI 3. </xhtml:div>
+                  <xhtml:div class="description">Information indicating correspondence as well as discrepancies between the sampled units (obtained) and available statistics for the population (age, sex-ratio, marital status, etc.) as a whole. XHTML formatting may be used in this element for forward-compatibility with DDI Lifecycle. </xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -4381,7 +4381,7 @@ for more details.
                <xhtml:h1 class="element_title">Geographic Coverage</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Information on the geographic coverage of the data. Includes the total geographic scope of the data, and any additional levels of geographic coding provided in the variables. Maps to Dublin Core Coverage element. Inclusion of this element in the codebook is recommended. Fpor forward-compatibility, DDI 3 XHTML tags may be used in this element.</xhtml:div>
+                  <xhtml:div class="description">Information on the geographic coverage of the data. Includes the total geographic scope of the data, and any additional levels of geographic coding provided in the variables. Maps to Dublin Core Coverage element. Inclusion of this element in the codebook is recommended. Fpor forward-compatibility, DDI Lifecycle XHTML tags may be used in this element.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -5343,7 +5343,7 @@ for more details.
                <xhtml:h1 class="element_title">Country</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Indicates the country or countries covered in the file. Attribute "abbr" may be used to list common abbreviations; use of ISO country codes is recommended. Use vocab, vocabURI, and vocabInstanceURI to identify the use of a controlled vocabulary. Maps to Dublin Core Coverage element. Inclusion of this element is recommended. For forward-compatibility, DDI 3 XHTML tags may be used in this element.</xhtml:div>
+                  <xhtml:div class="description">Indicates the country or countries covered in the file. Attribute "abbr" may be used to list common abbreviations; use of ISO country codes is recommended. Use vocab, vocabURI, and vocabInstanceURI to identify the use of a controlled vocabulary. Maps to Dublin Core Coverage element. Inclusion of this element is recommended. For forward-compatibility, DDI Lifecycle XHTML tags may be used in this element.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -5399,8 +5399,8 @@ for more details.
                   <xhtml:div class="description">
                      <xhtml:p>For clarifying information/annotation regarding the parent element.</xhtml:p>
                      <xhtml:p>The attributes for notes permit a controlled vocabulary to be developed ("type" and "subject"), indicate the "level" of the DDI to which the note applies (study, file, variable, etc.), and identify the author of the note ("resp").</xhtml:p>
-                     <xhtml:p>The parent attribute is used to support capturing information obtained while preparing files for translation to DDI 3. It provides the ID(s) of the element this note is related to.</xhtml:p>
-                     <xhtml:p>The sameNote attribute is used to support capturing information obtained while preparing files for translation to DDI 3. If the same note is used multiple times all the parent IDs can be captured in a single note and all duplicate notes can reference the note containing the related to references in the attribute sameNote.</xhtml:p>
+                     <xhtml:p>The parent attribute is used to support capturing information obtained while preparing files for translation to DDI Lifecycle. It provides the ID(s) of the element this note is related to.</xhtml:p>
+                     <xhtml:p>The sameNote attribute is used to support capturing information obtained while preparing files for translation to DDI Lifecycle. If the same note is used multiple times all the parent IDs can be captured in a single note and all duplicate notes can reference the note containing the related to references in the attribute sameNote.</xhtml:p>
                   </xhtml:div>
                </xhtml:div>
                <xhtml:div>
@@ -6127,7 +6127,7 @@ for more details.
                <xhtml:h1 class="element_title">Question</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">The question element may have mixed content. The element itself may contain text for the question, with the subelements being used to provide further information about the question. Alternatively, the question element may be empty and only the subelements used. The element has a unique question ID attribute which can be used to link a variable with other variables where the same question has been asked. This would allow searching for all variables that share the same question ID, perhaps because the questions was asked several times in a panel design. The "ID" attribute contains a unique identifier for the question. "Var" references the ID(s) of the variable(s) relating to the question. The attribute "seqNo" refers to the sequence number of the question. The attribute "sdatrefs" may be used to reference elements in the summary data description section of the Study Description which might apply to this question. These elements include: time period covered, date of collection, nation or country, geographic coverage, geographic unit, unit of analysis, universe, and kind of data. The responseDomainType attribute was added to capture the specific DDI 3 response domain type to facilitate translation between DDI 2 and DDI 3. If this is given a value of "other" then a term from a controlled vocabulary should be put into the "otherResponseDomainType" attribute.</xhtml:div>
+                  <xhtml:div class="description">The question element may have mixed content. The element itself may contain text for the question, with the subelements being used to provide further information about the question. Alternatively, the question element may be empty and only the subelements used. The element has a unique question ID attribute which can be used to link a variable with other variables where the same question has been asked. This would allow searching for all variables that share the same question ID, perhaps because the questions was asked several times in a panel design. The "ID" attribute contains a unique identifier for the question. "Var" references the ID(s) of the variable(s) relating to the question. The attribute "seqNo" refers to the sequence number of the question. The attribute "sdatrefs" may be used to reference elements in the summary data description section of the Study Description which might apply to this question. These elements include: time period covered, date of collection, nation or country, geographic coverage, geographic unit, unit of analysis, universe, and kind of data. The responseDomainType attribute was added to capture the specific DDI Lifecycle response domain type to facilitate translation between DDI 2 and DDI Lifecycle. If this is given a value of "other" then a term from a controlled vocabulary should be put into the "otherResponseDomainType" attribute.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -7615,7 +7615,7 @@ for more details.
                <xhtml:h1 class="element_title">Study Budget</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Describe the budget of the project in as much detail as needed. Use XHTML structure elements to identify discrete pieces of information in a way that facilitates direct transfer of information on the study budget between DDI 2 and DDI 3 structures.</xhtml:div>
+                  <xhtml:div class="description">Describe the budget of the project in as much detail as needed. Use XHTML structure elements to identify discrete pieces of information in a way that facilitates direct transfer of information on the study budget between DDI 2 and DDI Lifecycle structures.</xhtml:div>
                </xhtml:div>
 					<xhtml:div>
 						<xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -7937,7 +7937,7 @@ for more details.
                <xhtml:h1 class="element_title">Time Method</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">The time method or time dimension of the data collection. The use of the attribute "method" as a means of specifiying a controlled vocabulary concept is DEPRECATED. To specify the use of a Controlled Vocabulary or standard concept use the internal element "concept". If multiple concepts are needed the parent element should be replicated. Internal text related to each concept should be allocated to accompany the relevent concept. For forward-compatibility, DDI 3 XHTML tags may be used in this element.</xhtml:div>
+                  <xhtml:div class="description">The time method or time dimension of the data collection. The use of the attribute "method" as a means of specifiying a controlled vocabulary concept is DEPRECATED. To specify the use of a Controlled Vocabulary or standard concept use the internal element "concept". If multiple concepts are needed the parent element should be replicated. Internal text related to each concept should be allocated to accompany the relevent concept. For forward-compatibility, DDI Lifecycle XHTML tags may be used in this element.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -8233,7 +8233,7 @@ for more details.
                <xhtml:h1 class="element_title">Universe</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">The group of persons or other elements that are the object of research and to which any analytic results refer. Age,nationality, and residence commonly help to delineate a given universe, but any of a number of factors may be involved, such as sex, race, income, veteran status, criminal convictions, etc. The universe may consist of elements other than persons, such as housing units, court cases, deaths, countries, etc. In general, it should be possible to tell from the description of the universe whether a given individual or element (hypothetical or real) is a member of the population under study. A "level" attribute is included to permit coding of the level to which universe applies, i.e., the study level, the file level (if different from study), the record group, the variable group, the nCube group, the variable, or the nCube level. The "clusion" attribute provides for specification of groups included (I) in or excluded (E) from the universe. If all the variables/nCubes described in the data documentation relate to the same population, e.g., the same set of survey respondents, this element would be unnecessary at data description level. In this case, universe can be fully described at the study level. For forward-compatibility, DDI 3 XHTML tags may be used in this element. This element may be repeated only to support multiple language expressions of the content.</xhtml:div>
+                  <xhtml:div class="description">The group of persons or other elements that are the object of research and to which any analytic results refer. Age,nationality, and residence commonly help to delineate a given universe, but any of a number of factors may be involved, such as sex, race, income, veteran status, criminal convictions, etc. The universe may consist of elements other than persons, such as housing units, court cases, deaths, countries, etc. In general, it should be possible to tell from the description of the universe whether a given individual or element (hypothetical or real) is a member of the population under study. A "level" attribute is included to permit coding of the level to which universe applies, i.e., the study level, the file level (if different from study), the record group, the variable group, the nCube group, the variable, or the nCube level. The "clusion" attribute provides for specification of groups included (I) in or excluded (E) from the universe. If all the variables/nCubes described in the data documentation relate to the same population, e.g., the same set of survey respondents, this element would be unnecessary at data description level. In this case, universe can be fully described at the study level. For forward-compatibility, DDI Lifecycle XHTML tags may be used in this element. This element may be repeated only to support multiple language expressions of the content.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -8502,7 +8502,7 @@ for more details.
                      <xhtml:p>The "geog" attribute indicates whether the variable relays geographic information.</xhtml:p>
                      <xhtml:p>The attribute "geoVocab" records the coding scheme used in the variable.</xhtml:p>
                      <xhtml:p>The attribute "catQnty" records the number of categories found in the variable, and is used primarily for aggregate data files for verifying cell counts in nCubes.</xhtml:p>
-                     <xhtml:p>The "representationType" attribute was added to capture the specific DDI 3 representation type to facilitate translation between DDI 2 and DDI 3. If the "other" value is used, a term from a controlled vocabulary may be supplied in the otherRepresentationType attribute.</xhtml:p>
+                     <xhtml:p>The "representationType" attribute was added to capture the specific DDI Lifecycle representation type to facilitate translation between DDI 2 and DDI Lifecycle. If the "other" value is used, a term from a controlled vocabulary may be supplied in the otherRepresentationType attribute.</xhtml:p>
                      <xhtml:p>The "otherRepresentationType" attribute should be used when the representationType attribute has a value of "other". This option should only be used when applying a controlled vocabulary to this attribute. Use the complex element controlledVocabUsed to identify the controlled vocabulary to which the selected term belongs.</xhtml:p>
                   </xhtml:div>
                </xhtml:div>
