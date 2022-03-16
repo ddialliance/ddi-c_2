@@ -773,7 +773,7 @@ for more details.
                <xhtml:h1 class="element_title">Abstract</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">An unformatted summary describing the purpose, nature, and scope of the data collection, special characteristics of its contents, major subject areas covered, and what questions the PIs attempted to answer when they conducted the study. A listing of major variables in the study is important here. In cases where a codebook contains more than one abstract (for example, one might be supplied by the data producer and another prepared by the data archive where the data are deposited), the "source" and "date" attributes may be used to distinguish the abstract versions. Maps to Dublin Core Description element. Inclusion of this element in the codebook is recommended. The "date" attribute should follow ISO convention of YYYY-MM-DD. The contentType attribute provides forward-compatibility with DDI Lifecycle by describing where the content fits in that structure, or if is mixed in terms of what is contained.</xhtml:div>
+                  <xhtml:div class="description">An unformatted summary describing the purpose, nature, and scope of the data collection, special characteristics of its contents, major subject areas covered, and what questions the PIs attempted to answer when they conducted the study. A listing of major variables in the study is important here. In cases where a codebook contains more than one abstract (for example, one might be supplied by the data producer and another prepared by the data archive where the data are deposited), the "source" and "date" attributes may be used to distinguish the abstract versions. Maps to Dublin Core Description element. Inclusion of this element in the codebook is recommended. The "date" attribute should follow ISO convention of YYYY-MM-DD. The contentType attribute provides forward-compatibility with DDI Lifecycle by describing where the content fits in that structure, or if is mixed  [abstract | purpose | mixed] in terms of what is contained.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -1754,7 +1754,7 @@ for more details.
                <xhtml:h1 class="element_title">Mode of Data Collection</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">The method used to collect the data; instrumentation characteristics. XHTML formatting may be used in the txt element for forward-compatibility with DDI Lifecycle.</xhtml:div>
+                  <xhtml:div class="description">The method used to collect the data; instrumentation characteristics. As of version 2.6 this element is a conceptualtext type and supports the use of a controlled vocabulary. XHTML formatting may be used in the txt element for forward-compatibility with DDI Lifecycle.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
