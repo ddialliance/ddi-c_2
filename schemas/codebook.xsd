@@ -7989,7 +7989,37 @@ for more details.
                <xhtml:h1 class="element_title">Summary Data Description</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Information about the and geographic coverage of the study and unit of analysis.</xhtml:div>
+                  <xhtml:div class="description">
+                     <xhtml:p>Information about the and geographic coverage of the study and unit of analysis.</xhtml:p>
+                     <xhtml:p>Replication of the element geoBndBox is NOT recommended. The purpose of a bounding box is to support high level geographic point search systems. Most search systems of this type do not handle multiple instances of a bounding box. The bounding box should represent the full geographic coverage extent of the of the overall datasets being described by the Codebook instance. If there is a desire to provide the equivilent of a bounding box for each of multiple summary descriptions, use of the boundPoly is recommended. First provide a geoBndBox for the full area covered by the study. Then provide a boundPoly for each geographic area defined with a separate sumDscr. Note that when describing a bounding box using a boundPoly description the four corner points are described. The starting point and end point should match (closing the polygon).</xhtml:p>
+                     <xhtml:p>Replication of sumDscr is useful when bundling specifics like timePrd, nation, and universe for specific samples within a larger project. A clear example of this is description for the various IPUMS project that harmonize multiple samples of census, health, and related data. IPUMS identified the coverage of individual samples within a project using a combination of these three elements to be able to differentiate between samples.</xhtml:p>
+                  </xhtml:div>
+               <xhtml:div>
+                  <xhtml:h2 class="section_header">Example</xhtml:h2>
+                  <xhtml:div class="example">
+                     <xhtml:samp class="xml_sample"><![CDATA[
+                        <sumDscr>
+                           <timeProd date="2014">2014</timeProd>
+                           <nation>Burkino Faso</nation>
+                           <universe>Women</universe>
+                        </sumDscr>	
+                        <sumDscr>
+                           <timeProd date="2014">2014</timeProd>
+                           <nation>Burkino Faso</nation>
+                           <universe>Children</universe>
+                        </sumDscr>	
+                        <sumDscr>
+                           <timeProd date="2018">2018</timeProd>
+                           <nation>Burkino Faso</nation>
+                           <universe>Women</universe>
+                        </sumDscr>	
+                        <sumDscr>
+                           <timeProd date="2018">2018</timeProd>
+                           <nation>India</nation>
+                           <universe>Women</universe>
+                        </sumDscr>
+                     ]]></xhtml:samp> 
+                  </xhtml:div>
                </xhtml:div>
             </xhtml:div>
          </xs:documentation>
