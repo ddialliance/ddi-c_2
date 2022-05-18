@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 
-Copyright (c) 2020 DDI Alliance, DDI-Codebook 2.6 draft, 2020-12-14
+Copyright (c) 2022 DDI Alliance, DDI-Codebook 2.6 draft, 2022-05-12
 
-This file is part of DDI-Codebook 2.6 XML Schema. BETA for internal review
+This file is part of DDI-Codebook 2.6 XML Schema. Public Review Edition for public review
 
 DDI-Codebook 2.6 XML Schema is licenced under the terms of the Creative Commons Attribution 4.0 International (CC BY 4.0) License.
 
@@ -2739,11 +2739,11 @@ for more details.
 	</xs:element>
 
    <xs:complexType name="unitTypeType">
-      <xs:simpleContent>
+      <xs:complexContent>
          <xs:extension base="conceptualTextType">
             <xs:attribute name="numberOfUnits" type="xs:integer" use="optional"/>
          </xs:extension>
-      </xs:simpleContent>
+      </xs:complexContent>
    </xs:complexType>
 
    <xs:element name="unitType" type="unitTypeType">
@@ -3407,7 +3407,6 @@ for more details.
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
                   <xhtml:div class="description">Dimensions of the overall file. Including the case quantity, variable quantity, logical record length, records per case, and total number of records.</xhtml:div>
-               </xhtml:div>
                </xhtml:div>
             </xhtml:div>
          </xs:documentation>
@@ -4187,8 +4186,6 @@ for more details.
       </xs:annotation>
    </xs:element>
    
-   <xs:element name="fileCitation" type="citationType">
-		<xs:annotation>
    <xs:element name="fileCitation" type="citationType">
      <xs:annotation>
         <xs:documentation>
@@ -5755,7 +5752,7 @@ for more details.
    </xs:element>
 
    <xs:complexType name="origArchType">
-      <xs:simpleContent>
+      <xs:complexContent>
          <xs:extension base="simpleTextType">
             <xs:attribute name="affiliation" type="xs:string" use="optional"/>
             <xs:attribute name="abbr" type="xs:string" use="optional"/>
@@ -5763,7 +5760,7 @@ for more details.
             <xs:attribute name="personalID" type="xs:string" use="optional"/>
             <xs:attribute name="typeOfPersonalID" type="xs:string" use="optional"/>
          </xs:extension>
-      </xs:simpleContent>
+      </xs:complexContent>
    </xs:complexType>
    <xs:element name="origArch" type="origArchType">
       <xs:annotation>
@@ -7993,8 +7990,9 @@ for more details.
                      <xhtml:p>Information about the and geographic coverage of the study and unit of analysis.</xhtml:p>
                      <xhtml:p>Replication of the element geoBndBox is NOT recommended. The purpose of a bounding box is to support high level geographic point search systems. Most search systems of this type do not handle multiple instances of a bounding box. The bounding box should represent the full geographic coverage extent of the of the overall datasets being described by the Codebook instance. If there is a desire to provide the equivilent of a bounding box for each of multiple summary descriptions, use of the boundPoly is recommended. First provide a geoBndBox for the full area covered by the study. Then provide a boundPoly for each geographic area defined with a separate sumDscr. Note that when describing a bounding box using a boundPoly description the four corner points are described. The starting point and end point should match (closing the polygon).</xhtml:p>
                      <xhtml:p>Replication of sumDscr is useful when bundling specifics like timePrd, nation, and universe for specific samples within a larger project. A clear example of this is description for the various IPUMS project that harmonize multiple samples of census, health, and related data. IPUMS identified the coverage of individual samples within a project using a combination of these three elements to be able to differentiate between samples.</xhtml:p>
-                  </xhtml:div>
-               <xhtml:div>
+                   </xhtml:div>
+                </xhtml:div>
+                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
                   <xhtml:div class="example">
                      <xhtml:samp class="xml_sample"><![CDATA[
@@ -8358,7 +8356,6 @@ for more details.
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
                   <xhtml:div class="description">Title statement covers title (titl), aubtitle (subTitl), alternative title (altTitl), parallel title (parTitl), and ID Number (IDNo). Title statement for the work at the appropriate level: marked-up document; marked-up document source; study; study description, other materials; other materials for study.</xhtml:div>
-               </xhtml:div>
                </xhtml:div>
             </xhtml:div>
          </xs:documentation>
