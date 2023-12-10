@@ -40,7 +40,6 @@ or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License
 for more details.
 
 -->
-<!--TESTING-->
 <xs:schema xmlns:xhtml="http://www.w3.org/1999/xhtml"
            xmlns:fn="http://www.w3.org/2005/xpath-functions"
            xmlns:xs="http://www.w3.org/2001/XMLSchema"
