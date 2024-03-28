@@ -123,7 +123,7 @@ for more details.
 					<xhtml:h1 class="element_title">Abstract Text Type</xhtml:h1>
 					<xhtml:div>
 						<xhtml:h2 class="section_header">Description</xhtml:h2>
-						<xhtml:div class="description">This type forms the basis for all textual elements. Textual elements may contain text or a mix of select elements. This type is abstract and is refined by more specific types which will limit the allowable elements and attributes. Any textual element will be a subset of this type and can be processed as such.</xhtml:div>
+						<xhtml:div class="description">This type forms the basis for all textual elements. Textual elements may contain text or a mix of select elements. This type is abstract and is refined by more specific types which will limit the allowable elements and attributes. Any textual element will be a subset of this type and can be processed as such. The following attributes are available on all text elements: "isTranslated" indicates whether content is a translation (true) or an original (false). "isTranslatable" indicates whether content is translatable (true) or not (false). An example of something that is not translatable would be a MNEMONIC of an object or a number. "translationSourceLanguage" allows you to list the language or language codes in a space delimited array. The language original may or may not be provided in this bundle of language specific strings. "translationDate" provides the date the content was translated. Provision of translation date allows user to verify if translation was available during data collection or other time linked activity.</xhtml:div>
 					</xhtml:div>
 				</xhtml:div>         
          </xs:documentation>
@@ -134,6 +134,10 @@ for more details.
                <xs:any namespace="##targetNamespace http://www.w3.org/1999/xhtml" minOccurs="0"
                        maxOccurs="unbounded"/>
             </xs:sequence>
+            <xs:attribute name="isTranslated" type="xs:boolean" default="false"/>
+			<xs:attribute name="isTranslatable" type="xs:boolean" default="true"/>
+			<xs:attribute name="translationSourceLanguage" type="xs:string" use="optional"/>
+			<xs:attribute name="translationDate" type="xs:date" use="optional"/>
             <xs:anyAttribute namespace="##local"/>
          </xs:extension>
       </xs:complexContent>
@@ -963,8 +967,17 @@ for more details.
          <xs:extension base="simpleTextType">
             <xs:attribute name="affiliation" type="xs:string" use="optional"/>
             <xs:attribute name="abbr" type="xs:string" use="optional"/>
-            <xs:attribute name="personalID" type="xs:string" use="optional"/>
-            <xs:attribute name="typeOfPersonalID" type="xs:string" use="optional"/>
+            <xs:attribute name="agentIdentifier" type="xs:string" use="optional"/>
+            <xs:attribute name="typeOfAgentIdentifier" type="xs:string" use="optional"/>
+            <xs:attribute name="isPersistantIdentifier" type="xs:boolean" use="optional"/>
+            <xs:attribute name="agentType" use="optional">
+                <xs:simpleType>
+                   <xs:restriction base="xs:NMTOKEN">
+                        <xs:enumeration value="organization"/>
+                        <xs:enumeration value="individual"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
          </xs:extension>
       </xs:complexContent>
    </xs:complexType>
@@ -977,7 +990,7 @@ for more details.
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
                   <xhtml:div class="description">
-                     <xhtml:p>The person, corporate body, or agency responsible for the work's substantive and intellectual content. Repeat the element for each author, and use "abbr" and/or "affiliation" attribute if available. Invert first and last name and use commas. Author of data collection (codeBook/stdyDscr/citation/rspStmt/AuthEnty) maps to Dublin Core Creator element. Inclusion of this element in codebook is recommended. If the attribute "personalID" is used, "typeOfPersonalID" should also be provided.</xhtml:p>
+                     <xhtml:p>The person, corporate body, or agency responsible for the work's substantive and intellectual content. Repeat the element for each author, and use "abbr" and/or "affiliation" attribute if available. Invert first and last name and use commas. Author of data collection (codeBook/stdyDscr/citation/rspStmt/AuthEnty) maps to Dublin Core Creator element. Inclusion of this element in codebook is recommended. If the attribute "agentIdentifier" is used, "typeOfAgentIdentifier" should also be provided. An agent may be an organization or individual. Use "isPersistantIdentifier" (true|false) to indicate if this is intended to be a persistant identifier. Use "agentType" to indicate if the agent is an organization or an individual.</xhtml:p>
                      <xhtml:p>The "author" in the Document Description should be the individual(s) or organization(s) directly responsible for the intellectual content of the DDI version, as distinct from the person(s) or organization(s) responsible for the intellectual content of the earlier paper or electronic edition from which the DDI edition may have been derived.</xhtml:p>
                   </xhtml:div>
                </xhtml:div>
@@ -1684,6 +1697,7 @@ for more details.
             </xs:sequence>
             <xs:attribute name="version" type="xs:string" fixed="2.5"/>
             <xs:attribute name="codeBookAgency" type="xs:NCName" use="optional"/>
+            <xs:attribute name="access" type="xs:IDREFS"/>
          </xs:extension>
       </xs:complexContent>
    </xs:complexType>
@@ -1704,6 +1718,7 @@ for more details.
                   <xhtml:p>Note also that the DDI contains a linking mechanism permitting arbitrary links between internal elements (See Link) and from internal elements to external sources (See ExtLink). Note that the use of these two elements has be DEPRECATED in version 2.6.</xhtml:p>
                   <xhtml:p>The top-level element, codeBook, also includes a version attribute to specify the version number of the DDI specification.</xhtml:p>
                   <xhtml:p>codeBookAgency - This attribute holds the agency name of the creator or maintainer of the codeBook instance as a whole, and is designed to support forward compatibility with DDI-Lifecycle. Recommend the agency name as filed with the DDI Agency ID Registry with optional additional sub-agency extensions.</xhtml:p>
+                  <xhtml:p>The attribute "access" records the ID values of all elements in the Data Access and Metadata Access section that describe access conditions for this codebook instance. </xhtml:p>
                   </xhtml:div>
                </xhtml:div>
             </xhtml:div>
@@ -2043,8 +2058,17 @@ for more details.
             <xs:attribute name="affiliation" type="xs:string"/>
             <xs:attribute name="URI" type="xs:string"/>
             <xs:attribute name="email" type="xs:string"/>
-            <xs:attribute name="personalID" type="xs:string" use="optional"/>
-            <xs:attribute name="typeOfPersonalID" type="xs:string" use="optional"/>
+            <xs:attribute name="agentIdentifier" type="xs:string" use="optional"/>
+            <xs:attribute name="typeOfAgentIdentifier" type="xs:string" use="optional"/>
+            <xs:attribute name="isPersistantIdentifier" type="xs:boolean" use="optional"/>
+            <xs:attribute name="agentType" use="optional">
+                <xs:simpleType>
+                   <xs:restriction base="xs:NMTOKEN">
+                        <xs:enumeration value="organization"/>
+                        <xs:enumeration value="individual"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
          </xs:extension>
       </xs:complexContent>
    </xs:complexType>
@@ -2056,7 +2080,7 @@ for more details.
                <xhtml:h1 class="element_title">Contact Persons</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Names and addresses of individuals responsible for the work. Individuals listed as contact persons will be used as resource persons regarding problems or questions raised by the user community. The URI attribute should be used to indicate a URN or URL for the homepage of  the contact individual. The email attribute is used to indicate an email address for the contact individual. If the attribute "personalID" is used, "typeOfPersonalID" should also be provided.</xhtml:div>
+                  <xhtml:div class="description">Names and addresses of individuals responsible for the work. Individuals listed as contact persons will be used as resource persons regarding problems or questions raised by the user community. The URI attribute should be used to indicate a URN or URL for the homepage of  the contact individual. The email attribute is used to indicate an email address for the contact individual. If the attribute "agentIdentifier" is used, "typeOfAgentIdentifier" should also be provided. An agent may be an organization or individual. Use "isPersistantIdentifier" (true|false) to indicate if this is intended to be a persistant identifier. Use "agentType" to indicate if the agent is an organization or an individual.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -2939,8 +2963,17 @@ for more details.
             <xs:attribute name="affiliation" type="xs:string" use="optional"/>
             <xs:attribute name="abbr" type="xs:string" use="optional"/>
             <xs:attribute name="role" type="xs:string" use="optional"/>
-            <xs:attribute name="personalID" type="xs:string" use="optional"/>
-            <xs:attribute name="typeOfPersonalID" type="xs:string" use="optional"/>
+            <xs:attribute name="agentIdentifier" type="xs:string" use="optional"/>
+            <xs:attribute name="typeOfAgentIdentifier" type="xs:string" use="optional"/>
+            <xs:attribute name="isPersistantIdentifier" type="xs:boolean" use="optional"/>
+            <xs:attribute name="agentType" use="optional">
+                <xs:simpleType>
+                   <xs:restriction base="xs:NMTOKEN">
+                        <xs:enumeration value="organization"/>
+                        <xs:enumeration value="individual"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
          </xs:extension>
       </xs:simpleContent>
    </xs:complexType>
@@ -3004,8 +3037,17 @@ for more details.
             <xs:attribute name="abbr" type="xs:string"/>
             <xs:attribute name="affiliation" type="xs:string"/>
             <xs:attribute name="role" type="xs:string" use="optional"/>
-            <xs:attribute name="personalID" type="xs:string" use="optional"/>
-            <xs:attribute name="typeOfPersonalID" type="xs:string" use="optional"/>
+            <xs:attribute name="agentIdentifier" type="xs:string" use="optional"/>
+            <xs:attribute name="typeOfAgentIdentifier" type="xs:string" use="optional"/>
+            <xs:attribute name="isPersistantIdentifier" type="xs:boolean" use="optional"/>
+            <xs:attribute name="agentType" use="optional">
+                <xs:simpleType>
+                   <xs:restriction base="xs:NMTOKEN">
+                        <xs:enumeration value="organization"/>
+                        <xs:enumeration value="individual"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
          </xs:extension>
       </xs:complexContent>
    </xs:complexType>
@@ -3042,6 +3084,7 @@ for more details.
                <xs:element ref="nCube" minOccurs="0" maxOccurs="unbounded"/>
                <xs:element ref="notes" minOccurs="0" maxOccurs="unbounded"/>
             </xs:sequence>
+            <xs:attribute name="access" type="xs:IDREFS"/>
          </xs:extension>
       </xs:complexContent>
    </xs:complexType>
@@ -3053,7 +3096,7 @@ for more details.
                <xhtml:h1 class="element_title">Variable Description</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Description of variables.</xhtml:div>
+                  <xhtml:div class="description">Description of variables, variable groups, nCubes, and nCube groups. The attribute "access" records the ID values of all elements in the Data Access and Metadata Access section that describe access conditions for this description of the data.</xhtml:div>
                </xhtml:div>
             </xhtml:div>
          </xs:documentation>
@@ -3264,8 +3307,17 @@ for more details.
          <xs:extension base="simpleTextType">
             <xs:attribute name="abbr" type="xs:string"/>
             <xs:attribute name="affiliation" type="xs:string"/>
-            <xs:attribute name="personalID" type="xs:string" use="optional"/>
-            <xs:attribute name="typeOfPersonalID" type="xs:string" use="optional"/>
+            <xs:attribute name="agentIdentifier" type="xs:string" use="optional"/>
+            <xs:attribute name="typeOfAgentIdentifier" type="xs:string" use="optional"/>
+            <xs:attribute name="isPersistantIdentifier" type="xs:boolean" use="optional"/>
+            <xs:attribute name="agentType" use="optional">
+                <xs:simpleType>
+                   <xs:restriction base="xs:NMTOKEN">
+                        <xs:enumeration value="organization"/>
+                        <xs:enumeration value="individual"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
          </xs:extension>
       </xs:complexContent>
    </xs:complexType>
@@ -3277,7 +3329,7 @@ for more details.
                <xhtml:h1 class="element_title">Depositor</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">The name of the person (or institution) who provided this work to the archive storing it. Attributes "abbr" and "affiliation" can be used to provide and abbreviation and affiliation of the depositor. If the attribute "personalID" is used, "typeOfPersonalID" should also be provided.</xhtml:div>
+                  <xhtml:div class="description">The name of the person (or institution) who provided this work to the archive storing it. Attributes "abbr" and "affiliation" can be used to provide and abbreviation and affiliation of the depositor. If the attribute "agentIdentifier" is used, "typeOfAgentIdentifier" should also be provided. An agent may be an organization or individual. Use "isPersistantIdentifier" (true|false) to indicate if this is intended to be a persistant identifier. Use "agentType" to indicate if the agent is an organization or an individual.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -3499,8 +3551,17 @@ for more details.
             <xs:attribute name="abbr" type="xs:string"/>
             <xs:attribute name="affiliation" type="xs:string"/>
             <xs:attribute name="URI" type="xs:string"/>
-            <xs:attribute name="personalID" type="xs:string" use="optional"/>
-            <xs:attribute name="typeOfPersonalID" type="xs:string" use="optional"/>
+            <xs:attribute name="agentIdentifier" type="xs:string" use="optional"/>
+            <xs:attribute name="typeOfAgentIdentifier" type="xs:string" use="optional"/>
+            <xs:attribute name="isPersistantIdentifier" type="xs:boolean" use="optional"/>
+            <xs:attribute name="agentType" use="optional">
+                <xs:simpleType>
+                   <xs:restriction base="xs:NMTOKEN">
+                        <xs:enumeration value="organization"/>
+                        <xs:enumeration value="individual"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
          </xs:extension>
       </xs:complexContent>
    </xs:complexType>
@@ -3512,7 +3573,7 @@ for more details.
                <xhtml:h1 class="element_title">Distributor</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">The organization designated by the author or producer to generate copies of the particular work including any necessary editions or revisions. Names and addresses may be specified and other archives may be co-distributors. The attributes "abbr" and "affiliation" are provided and URI attribute is included to provide an URN or URL to the ordering service or download facility on a Web site. If the attribute "personalID" is used, "typeOfPersonalID" should also be provided.</xhtml:div>
+                  <xhtml:div class="description">The organization designated by the author or producer to generate copies of the particular work including any necessary editions or revisions. Names and addresses may be specified and other archives may be co-distributors. The attributes "abbr" and "affiliation" are provided and URI attribute is included to provide an URN or URL to the ordering service or download facility on a Web site. If the attribute "agentIdentifier" is used, "typeOfAgentIdentifier" should also be provided. An agent may be an organization or individual. Use "isPersistantIdentifier" (true|false) to indicate if this is intended to be a persistant identifier. Use "agentType" to indicate if the agent is an organization or an individual.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -3577,6 +3638,7 @@ for more details.
                <xs:element ref="controlledVocabUsed" minOccurs="0" maxOccurs="unbounded"/>
                <xs:element ref="notes" minOccurs="0" maxOccurs="unbounded"/>
             </xs:sequence>
+            <xs:attribute name="access" type="xs:IDREFS"/>
          </xs:extension>
       </xs:complexContent>
    </xs:complexType>
@@ -3588,7 +3650,7 @@ for more details.
                <xhtml:h1 class="element_title">Document Description</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">The Document Description consists of bibliographic information describing the DDI-compliant document itself as a whole. This Document Description can be considered the wrapper or header whose elements uniquely describe the full contents of the compliant DDI file. Since the Document Description section is used to identify the DDI-compliant file within an electronic resource discovery environment, this section should be as complete as possible. The author in the Document Description should be the individual(s) or organization(s) directly responsible for the intellectual content of the DDI version, as distinct from the person(s) or organization(s) responsible for the intellectual content of the earlier paper or electronic edition from which the DDI edition may have been derived. The producer in the Document Description should be the agency or person that prepared the marked-up document. Note that the Document Description section contains a Documentation Source subsection consisting of information about the source of the DDI-compliant file-- that is, the hardcopy or electronic codebook that served as the source for the marked-up codebook. These sections allow the creator of the DDI file to produce version, responsibility, and other descriptions relating to both the creation of that DDI file as a separate and reformatted version of source materials (either print or electronic) and the original source materials themselves. </xhtml:div>
+                  <xhtml:div class="description">The Document Description consists of bibliographic information describing the DDI-compliant document itself as a whole. This Document Description can be considered the wrapper or header whose elements uniquely describe the full contents of the compliant DDI file. Since the Document Description section is used to identify the DDI-compliant file within an electronic resource discovery environment, this section should be as complete as possible. The author in the Document Description should be the individual(s) or organization(s) directly responsible for the intellectual content of the DDI version, as distinct from the person(s) or organization(s) responsible for the intellectual content of the earlier paper or electronic edition from which the DDI edition may have been derived. The producer in the Document Description should be the agency or person that prepared the marked-up document. Note that the Document Description section contains a Documentation Source subsection consisting of information about the source of the DDI-compliant file-- that is, the hardcopy or electronic codebook that served as the source for the marked-up codebook. These sections allow the creator of the DDI file to produce version, responsibility, and other descriptions relating to both the creation of that DDI file as a separate and reformatted version of source materials (either print or electronic) and the original source materials themselves. The attribute "access" records the ID values of all elements in the Data Access and Metadata Access section that describe access conditions for this document description. </xhtml:div>
                </xhtml:div>
             </xhtml:div>
          </xs:documentation>
@@ -3855,7 +3917,7 @@ for more details.
                     <xhtml:div class="description">
                        <xhtml:p>The element allows for the the description of the file command by capturing a textual description of the command including the capture of pseudo code in "drvdesc" as well as the specific command using "drvcmd". Follow the same convention as the variable derivation; source="producer" holds original and source="archive" holds the SDTD.</xhtml:p>
                        <xhtml:p>Provide linkage to source and target variables that were involved in this derivation command in "fileDerivationVars". Basically, any dropped variable from the source will only be identified and referenced here. A variable that is kept and unchanged, will have a derivation pointing to it source, but the specific command which led to its retention will only be identified here at the file level. Variables created by a file level command will be linked here, and their derivation elements will repeat the command.</xhtml:p>
-                       <xhtml:p>If applicable, use the values "add" or "drop" in the attribute "fileDerivationCases" if this command added or dropped cases from the referenced source files.</xhtml:p>
+                       <xhtml:p>If applicable, use the values "add" or "drop" in the attribute "fileDerivationCasesAction" if this command added or dropped cases from the referenced source files.</xhtml:p>
                     </xhtml:div>
                  </xhtml:div>
               </xhtml:div>
@@ -3869,8 +3931,9 @@ for more details.
 				<xs:sequence>
 		                   <xs:element ref="drvdesc" minOccurs="0"/>
                                    <xs:element ref="drvcmd" minOccurs="1" maxOccurs="unbounded"/>
+                                   <xs:element ref="fileDerivationVars" minOccurs="0"/>
 				</xs:sequence>
-                                <xs:attribute name="fileDerivationCasesType">
+                                <xs:attribute name="fileDerivationCasesAction">
                                    <xs:simpleType>
                                      <xs:restriction base="xs:NMTOKEN">
                                        <xs:enumeration value="add"/>
@@ -3924,9 +3987,7 @@ for more details.
 			    } ],
 			    "$type" : "DeleteVariables"
 			  }</drvcmd>
-			  			<fileDerivationVars>
-			  				<drop>AGE MARITAL</drop>
-			  			</fileDerivationVars>
+			  			<fileDerivationVars drop="AGE MARITAL"/>
 			  		</fileCommand>
 			  	</fileDerivation>
                        ]]></xhtml:samp>
@@ -3965,9 +4026,9 @@ for more details.
                     <xhtml:h2 class="section_header">Example</xhtml:h2>
                     <xhtml:div class="example">
                        <xhtml:samp class="xml_sample"><![CDATA[
-                          <keep>V1 V2 V5</keep>
-                          <drop>V3</drop>
-                          <add>V16</add>
+                          <fileCommand>
+                              <fileDerivationsVars keep="V1 V2 V5" drop="V3" add="V16"/>
+                          </fileCommand>
                        ]]></xhtml:samp>
                     </xhtml:div>
                  </xhtml:div>
@@ -3977,11 +4038,9 @@ for more details.
      </xs:element>
 
 	<xs:complexType name="fileDerivationVarsType">
-		<xs:sequence>
-			<xs:element name="keep" type="xs:IDREFS" minOccurs="0"/>
-			<xs:element name="drop" type="xs:IDREFS" minOccurs="0"/>
-			<xs:element name="add" type="xs:IDREFS" minOccurs="0"/>
-		</xs:sequence>
+			<xs:attribute name="keep" type="xs:IDREFS" use="optional"/>
+			<xs:attribute name="drop" type="xs:IDREFS" use="optional"/>
+			<xs:attribute name="add" type="xs:IDREFS" use="optional"/>
 	</xs:complexType>
 
    <xs:element name="fileCont" type="simpleTextType">
@@ -4176,6 +4235,7 @@ for more details.
                <xs:element ref="software" minOccurs="0" maxOccurs="unbounded"/>
                <xs:element ref="verStmt" minOccurs="0" maxOccurs="unbounded"/>
             </xs:sequence>
+            <xs:attribute name="mimeType" type="xs:string" use="optional"/>
          </xs:extension>
       </xs:complexContent>
    </xs:complexType>
@@ -4187,7 +4247,7 @@ for more details.
                <xhtml:h1 class="element_title">File-by-File Description</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Provides descriptive information about the data file. A file name and a full bibliographic citation for the file may be entered, as well as a data fingerprint, if available. Information about the physical properties of the data file is also supported. Make sure to fill out topcClass for the study as these can be used by the data file. Note coverage constraints in fileCont.</xhtml:div>
+                  <xhtml:div class="description">Provides descriptive information about the data file. A file name and a full bibliographic citation for the file may be entered, as well as a data fingerprint, if available. Information about the physical properties of the data file is also supported. Make sure to fill out topcClass for the study as these can be used by the data file. Note coverage constraints in fileCont. Indicate the MIME type of the file in the attribute "mimeType".</xhtml:div>
                </xhtml:div>
             </xhtml:div>
          </xs:documentation>
@@ -4355,8 +4415,17 @@ for more details.
             <xs:attribute name="affiliation" type="xs:string" use="optional"/>
             <xs:attribute name="abbr" type="xs:string"/>
             <xs:attribute name="role" type="xs:string"/>
-            <xs:attribute name="personalID" type="xs:string" use="optional"/>
-            <xs:attribute name="typeOfPersonalID" type="xs:string" use="optional"/>
+            <xs:attribute name="agentIdentifier" type="xs:string" use="optional"/>
+            <xs:attribute name="typeOfAgentIdentifier" type="xs:string" use="optional"/>
+            <xs:attribute name="isPersistantIdentifier" type="xs:boolean" use="optional"/>
+            <xs:attribute name="agentType" use="optional">
+                <xs:simpleType>
+                   <xs:restriction base="xs:NMTOKEN">
+                        <xs:enumeration value="organization"/>
+                        <xs:enumeration value="individual"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
          </xs:extension>
       </xs:complexContent>
    </xs:complexType>
@@ -4368,7 +4437,7 @@ for more details.
                <xhtml:h1 class="element_title">Funding Agency/Sponsor</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">The source(s) of funds for production of the work including abbreviation and affiliation. If different funding agencies sponsored different stages of the production process, use the "role" attribute to distinguish them. If the attribute "personalID" is used, "typeOfPersonalID" should also be provided.</xhtml:div>
+                  <xhtml:div class="description">The source(s) of funds for production of the work including abbreviation and affiliation. If different funding agencies sponsored different stages of the production process, use the "role" attribute to distinguish them. If the attribute "agentIdentifier" is used, "typeOfAgentIdentifier" should also be provided. An agent may be an organization or individual. Use "isPersistantIdentifier" (true|false) to indicate if this is intended to be a persistant identifier. Use "agentType" to indicate if the agent is an organization or an individual.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -5778,8 +5847,17 @@ for more details.
             <xs:attribute name="affiliation" type="xs:string" use="optional"/>
             <xs:attribute name="abbr" type="xs:string" use="optional"/>
             <xs:attribute name="URI" type="xs:string"/>
-            <xs:attribute name="personalID" type="xs:string" use="optional"/>
-            <xs:attribute name="typeOfPersonalID" type="xs:string" use="optional"/>
+            <xs:attribute name="agentIdentifier" type="xs:string" use="optional"/>
+            <xs:attribute name="typeOfAgentIdentifier" type="xs:string" use="optional"/>
+            <xs:attribute name="isPersistantIdentifier" type="xs:boolean" use="optional"/>
+            <xs:attribute name="agentType" use="optional">
+                <xs:simpleType>
+                   <xs:restriction base="xs:NMTOKEN">
+                        <xs:enumeration value="organization"/>
+                        <xs:enumeration value="individual"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
          </xs:extension>
       </xs:complexContent>
    </xs:complexType>
@@ -5790,7 +5868,7 @@ for more details.
                <xhtml:h1 class="element_title">Archive Where Study Originally Stored</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Archive from which the data collection was obtained; the originating archive. May provide "abbr", "affiliation", "URI", and "personalID" to aid in identification. If "personalID" is used "typeOfPersonalID" should be used.</xhtml:div>
+                  <xhtml:div class="description">Archive from which the data collection was obtained; the originating archive. May provide "abbr", "affiliation", "URI", and "agentIdentifier" to aid in identification. If "agentIdentifier" is used "typeOfAgentIdentifier" should be used. An agent may be an organization or individual. Use "isPersistantIdentifier" (true|false) to indicate if this is intended to be a persistant identifier. Use "agentType" to indicate if the agent is an organization or an individual.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -5812,8 +5890,17 @@ for more details.
             <xs:attribute name="role" type="xs:string"/>
             <xs:attribute name="abbr" type="xs:string" use="optional"/>
             <xs:attribute name="affiliation" type="xs:string"/>
-            <xs:attribute name="personalID" type="xs:string" use="optional"/>
-            <xs:attribute name="typeOfPersonalID" type="xs:string" use="optional"/>
+            <xs:attribute name="agentIdentifier" type="xs:string" use="optional"/>
+            <xs:attribute name="typeOfAgentIdentifier" type="xs:string" use="optional"/>
+            <xs:attribute name="isPersistantIdentifier" type="xs:boolean" use="optional"/>
+            <xs:attribute name="agentType" use="optional">
+                <xs:simpleType>
+                   <xs:restriction base="xs:NMTOKEN">
+                        <xs:enumeration value="organization"/>
+                        <xs:enumeration value="individual"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
          </xs:extension>
       </xs:complexContent>
    </xs:complexType>
@@ -5825,7 +5912,7 @@ for more details.
                <xhtml:h1 class="element_title">Other Identifications /Acknowledgments</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Statements of responsibility not recorded in the title and statement of responsibility areas (collaborators). Indicate here the persons or bodies connected with the work, or significant persons or bodies connected with previous editions and not already named in the description. For example, the name of the person who edited the marked-up documentation might be cited in codeBook/docDscr/rspStmt/othId, using the "role" and "affiliation" attributes. Other identifications/acknowledgments for data collection (codeBook/stdyDscr/citation/rspStmt/othId) maps to Dublin Core Contributor element. If the attribute "personalID" is used, "typeOfPersonalID" should also be provided.</xhtml:div>
+                  <xhtml:div class="description">Statements of responsibility not recorded in the title and statement of responsibility areas (collaborators). Indicate here the persons or bodies connected with the work, or significant persons or bodies connected with previous editions and not already named in the description. For example, the name of the person who edited the marked-up documentation might be cited in codeBook/docDscr/rspStmt/othId, using the "role" and "affiliation" attributes. Other identifications/acknowledgments for data collection (codeBook/stdyDscr/citation/rspStmt/othId) maps to Dublin Core Contributor element. If the attribute "agentIdentifier" is used, "typeOfAgentIdentifier" should also be provided. An agent may be an organization or individual. Use "isPersistantIdentifier" (true|false) to indicate if this is intended to be a persistant identifier. Use "agentType" to indicate if the agent is an organization or an individual.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -5893,7 +5980,7 @@ for more details.
          <xs:extension base="baseElementType">
             <xs:choice>
                <xs:sequence>
-                  <xs:element name="typeOfSetAvailability" type="conceptType" minOccurs="0" maxOccurs="unbounded"/>
+                  <xs:element name="typeOfOtherMaterial" type="conceptType" minOccurs="0" maxOccurs="unbounded"/>
                   <xs:element ref="labl" minOccurs="0" maxOccurs="unbounded"/>
                   <xs:element ref="txt" minOccurs="0" maxOccurs="unbounded"/>
                   <xs:element ref="notes" minOccurs="0" maxOccurs="unbounded"/>
@@ -6260,8 +6347,17 @@ for more details.
             <xs:attribute name="abbr" type="xs:string"/>
             <xs:attribute name="affiliation" type="xs:string"/>
             <xs:attribute name="role" type="xs:string"/>
-            <xs:attribute name="personalID" type="xs:string" use="optional"/>
-            <xs:attribute name="typeOfPersonalID" type="xs:string" use="optional"/>
+            <xs:attribute name="agentIdentifier" type="xs:string" use="optional"/>
+            <xs:attribute name="typeOfAgentIdentifier" type="xs:string" use="optional"/>
+            <xs:attribute name="isPersistantIdentifier" type="xs:boolean" use="optional"/>
+            <xs:attribute name="agentType" use="optional">
+                <xs:simpleType>
+                   <xs:restriction base="xs:NMTOKEN">
+                        <xs:enumeration value="organization"/>
+                        <xs:enumeration value="individual"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
          </xs:extension>
       </xs:complexContent>
    </xs:complexType>
@@ -6273,7 +6369,7 @@ for more details.
                <xhtml:h1 class="element_title">Producer</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">The producer is the person or organization with the financial or administrative responsibility for the physical processes whereby the document was brought into existence. Use the "role" attribute to distinguish different stages of involvement in the production process, such as original producer. Producer of data collection (codeBook/stdyDscr/citation/prodStmt/producer) maps to Dublin Core Publisher element. The "producer" in the Document Description should be the agency or person that prepared the marked-up document. If the attribute "personalID" is used, "typeOfPersonalID" should also be provided.</xhtml:div>
+                  <xhtml:div class="description">The producer is the person or organization with the financial or administrative responsibility for the physical processes whereby the document was brought into existence. Use the "role" attribute to distinguish different stages of involvement in the production process, such as original producer. Producer of data collection (codeBook/stdyDscr/citation/prodStmt/producer) maps to Dublin Core Publisher element. The "producer" in the Document Description should be the agency or person that prepared the marked-up document. If the attribute "agentIdentifier" is used, "typeOfAgentIdentifier" should also be provided. An agent may be an organization or individual. Use "isPersistantIdentifier" (true|false) to indicate if this is intended to be a persistant identifier. Use "agentType" to indicate if the agent is an organization or an individual.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -6349,6 +6445,7 @@ for more details.
             <xs:attribute name="var" type="xs:IDREFS"/>
             <xs:attribute name="seqNo" type="xs:string"/>
             <xs:attribute name="sdatrefs" type="xs:IDREFS"/>
+            <xs:attribute name="access" type="xs:IDREFS"/>
             <xs:attribute name="responseDomainType" use="optional">
                <xs:simpleType>
                   <xs:restriction base="xs:NMTOKEN">
@@ -6383,7 +6480,7 @@ for more details.
                <xhtml:h1 class="element_title">Question</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">The question element may have mixed content. The element itself may contain text for the question, with the subelements being used to provide further information about the question. Alternatively, the question element may be empty and only the subelements used. The element has a unique question ID attribute which can be used to link a variable with other variables where the same question has been asked. This would allow searching for all variables that share the same question ID, perhaps because the questions was asked several times in a panel design. The "ID" attribute contains a unique identifier for the question. "Var" references the ID(s) of the variable(s) relating to the question. The attribute "seqNo" refers to the sequence number of the question. The attribute "sdatrefs" may be used to reference elements in the summary data description section of the Study Description which might apply to this question. These elements include: time period covered, date of collection, nation or country, geographic coverage, geographic unit, unit of analysis, universe, and kind of data. The responseDomainType attribute was added to capture the specific DDI Lifecycle response domain type to facilitate translation between DDI 2 and DDI Lifecycle. If this is given a value of "other" then a term from a controlled vocabulary should be put into the "otherResponseDomainType" attribute.</xhtml:div>
+                  <xhtml:div class="description">The question element may have mixed content. The element itself may contain text for the question, with the subelements being used to provide further information about the question. Alternatively, the question element may be empty and only the subelements used. The element has a unique question ID attribute which can be used to link a variable with other variables where the same question has been asked. This would allow searching for all variables that share the same question ID, perhaps because the questions was asked several times in a panel design. The "ID" attribute contains a unique identifier for the question. "Var" references the ID(s) of the variable(s) relating to the question. The attribute "seqNo" refers to the sequence number of the question. The attribute "sdatrefs" may be used to reference elements in the summary data description section of the Study Description which might apply to this question. The attribute "access" records the ID values of all elements in the Data Access and Metadata Access section that describe access conditions for this question. These elements include: time period covered, date of collection, nation or country, geographic coverage, geographic unit, unit of analysis, universe, and kind of data. The responseDomainType attribute was added to capture the specific DDI Lifecycle response domain type to facilitate translation between DDI 2 and DDI Lifecycle. If this is given a value of "other" then a term from a controlled vocabulary should be put into the "otherResponseDomainType" attribute.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -7507,8 +7604,17 @@ for more details.
             <xs:attribute name="affiliation" type="xs:string" use="optional"/>
             <xs:attribute name="abbr" type="xs:string" use="optional"/>
             <xs:attribute name="role" type="xs:string" use="optional"/>
-            <xs:attribute name="personalID" type="xs:string" use="optional"/>
-            <xs:attribute name="typeOfPersonalID" type="xs:string" use="optional"/>
+            <xs:attribute name="agentIdentifier" type="xs:string" use="optional"/>
+            <xs:attribute name="typeOfAgentIdentifier" type="xs:string" use="optional"/>
+            <xs:attribute name="isPersistantIdentifier" type="xs:boolean" use="optional"/>
+            <xs:attribute name="agentType" use="optional">
+                <xs:simpleType>
+                   <xs:restriction base="xs:NMTOKEN">
+                        <xs:enumeration value="organization"/>
+                        <xs:enumeration value="individual"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
          </xs:extension>
       </xs:simpleContent>
    </xs:complexType>
@@ -7573,8 +7679,17 @@ for more details.
          <xs:extension base="stringType">
             <xs:attribute name="affiliation" type="xs:string" use="optional"/>
             <xs:attribute name="abbr" type="xs:string" use="optional"/>
-            <xs:attribute name="personalID" type="xs:string" use="optional"/>
-            <xs:attribute name="typeOfPersonalID" type="xs:string" use="optional"/>
+            <xs:attribute name="agentIdentifier" type="xs:string" use="optional"/>
+            <xs:attribute name="typeOfAgentIdentifier" type="xs:string" use="optional"/>
+            <xs:attribute name="isPersistantIdentifier" type="xs:boolean" use="optional"/>
+            <xs:attribute name="agentType" use="optional">
+                <xs:simpleType>
+                   <xs:restriction base="xs:NMTOKEN">
+                        <xs:enumeration value="organization"/>
+                        <xs:enumeration value="individual"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
          </xs:extension>
       </xs:simpleContent>
    </xs:complexType>
@@ -7586,7 +7701,7 @@ for more details.
 						<xhtml:h1 class="element_title">Authorizing Agency</xhtml:h1>
 						<xhtml:div>
 							<xhtml:h2 class="section_header">Description</xhtml:h2>
-							<xhtml:div class="description">Name of the agent or agency that authorized the study. The "affiliation" attribute indicates the institutional affiliation of the authorizing agent or agency. The "abbr" attribute holds the abbreviation of the authorizing agent's or agency's name. If the attribute "personalID" is used, "typeOfPersonalID" should also be provided.</xhtml:div>
+							<xhtml:div class="description">Name of the agent or agency that authorized the study. The "affiliation" attribute indicates the institutional affiliation of the authorizing agent or agency. The "abbr" attribute holds the abbreviation of the authorizing agent's or agency's name. If the attribute "agentIdentifier" is used, "typeOfAgentIdentifier" should also be provided. An agent may be an organization or individual. Use "isPersistantIdentifier" (true|false) to indicate if this is intended to be a persistant identifier. Use "agentType" to indicate if the agent is an organization or an individual.</xhtml:div>
 						</xhtml:div>
 						<xhtml:div>
 							<xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -7827,8 +7942,17 @@ for more details.
             <xs:attribute name="affiliation" type="xs:string" use="optional"/>
             <xs:attribute name="abbr" type="xs:string" use="optional"/>
             <xs:attribute name="role" type="xs:string" use="optional"/>
-            <xs:attribute name="personalID" type="xs:string" use="optional"/>
-            <xs:attribute name="typeOfPersonalID" type="xs:string" use="optional"/>
+            <xs:attribute name="agentIdentifier" type="xs:string" use="optional"/>
+            <xs:attribute name="typeOfAgentIdentifier" type="xs:string" use="optional"/>
+            <xs:attribute name="isPersistantIdentifier" type="xs:boolean" use="optional"/>
+            <xs:attribute name="agentType" use="optional">
+                <xs:simpleType>
+                   <xs:restriction base="xs:NMTOKEN">
+                        <xs:enumeration value="organization"/>
+                        <xs:enumeration value="individual"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
          </xs:extension>
       </xs:simpleContent>
    </xs:complexType>
@@ -7840,7 +7964,7 @@ for more details.
                <xhtml:h1 class="element_title">Evaluator Type</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">The evaluator element identifies persons or organizations involved in the evaluation. The affiliation attribute contains the affiliation of the individual or organization. The abbr attribute holds an abbreviation for the individual or organization. The role attribute indicates the role played by the individual or organization in the evaluation process. If the attribute "personalID" is used, "typeOfPersonalID" should also be provided.</xhtml:div>
+                  <xhtml:div class="description">The evaluator element identifies persons or organizations involved in the evaluation. The affiliation attribute contains the affiliation of the individual or organization. The abbr attribute holds an abbreviation for the individual or organization. The role attribute indicates the role played by the individual or organization in the evaluation process. If the attribute "agentIdentifier" is used, "typeOfAgentIdentifier" should also be provided. An agent may be an organization or individual. Use "isPersistantIdentifier" (true|false) to indicate if this is intended to be a persistant identifier. Use "agentType" to indicate if the agent is an organization or an individual.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -9054,8 +9178,17 @@ for more details.
       <xs:complexContent>
          <xs:extension base="simpleTextType">
             <xs:attribute name="affiliation" type="xs:string"/>
-            <xs:attribute name="personalID" type="xs:string" use="optional"/>
-            <xs:attribute name="typeOfPersonalID" type="xs:string" use="optional"/>
+            <xs:attribute name="agentIdentifier" type="xs:string" use="optional"/>
+            <xs:attribute name="typeOfAgentIdentifier" type="xs:string" use="optional"/>
+            <xs:attribute name="isPersistantIdentifier" type="xs:boolean" use="optional"/>
+            <xs:attribute name="agentType" use="optional">
+                <xs:simpleType>
+                   <xs:restriction base="xs:NMTOKEN">
+                        <xs:enumeration value="organization"/>
+                        <xs:enumeration value="individual"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
          </xs:extension>
       </xs:complexContent>
    </xs:complexType>
@@ -9067,7 +9200,7 @@ for more details.
                <xhtml:h1 class="element_title">Version Responsibility Statement</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">The organization or person responsible for the version of the work. If the attribute "personalID" is used, "typeOfPersonalID" should also be provided.</xhtml:div>
+                  <xhtml:div class="description">The organization or person responsible for the version of the work. If the attribute "agentIdentifier" is used, "typeOfAgentIdentifier" should also be provided. An agent may be an organization or individual. Use "isPersistantIdentifier" (true|false) to indicate if this is intended to be a persistant identifier. Use "agentType" to indicate if the agent is an organization or an individual.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
