@@ -1127,14 +1127,15 @@ for more details.
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
                   <xhtml:div class="description">
-                     <xhtml:p>This field allows the creation of multiple polygons to describe in a more detailed manner the geographic area covered by the dataset. It should only be used to define the outer boundaries of a covered area. For example, in the United States, such polygons can be created to define boundaries for Hawaii, Alaska, and the continental United States, but not interior boundaries for the contiguous states. This field is used to refine a coordinate-based search, not to actually map an area. </xhtml:p>
-                     <xhtml:p>If the boundPoly element is used, then geoBndBox MUST be present, and all points enclosed by the boundPoly MUST be contained within the geoBndBox. Elements westBL, eastBL, southBL, and northBL of the geoBndBox should each be represented in at least one point of the boundPoly description. </xhtml:p>
+                     <xhtml:p>This field allows the creation of multiple polygons to describe in a more detailed manner the geographic area covered by the dataset. It should only be used to define the outer boundaries of a covered area. For example, in the United States, such polygons can be created to define boundaries for Hawaii, Alaska, and the continental United States, but not interior boundaries for the contiguous states. This field is used to refine a coordinate-based search, not to actually map an area. It is also useful in identifying the boundaries of non-contiguous countries or data collection areas within a larger bounding box. Note that in this case each combined geogCover and boundPoly should appear in a separate sumDscr to clearly associate the name of the geographic area and it's polygon description.</xhtml:p>
+                     <xhtml:p>If the boundPoly element is used, then geoBndBox MUST be present, and all points enclosed by the boundPoly MUST be contained within the geoBndBox. Elements westBL, eastBL, southBL, and northBL of the geoBndBox should each be represented in at least one point of the boundPoly description.</xhtml:p>
                   </xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
                   <xhtml:div class="example">
                      <xhtml:samp class="xml_sample"><![CDATA[
+                     <sumDscr>
                         <geogCover>Nevada State</geogCover>
                      ]]></xhtml:samp>
                      <xhtml:samp class="xml_sample"><![CDATA[
@@ -1178,8 +1179,10 @@ for more details.
                               </point>
                            </polygon>
                         </boundPoly>
+                     </sumDscr>   
                      ]]></xhtml:samp>
                      <xhtml:samp class="xml_sample"><![CDATA[
+                     <sumDscr>
                         <geogCover>Norway</geogCover>
                      ]]></xhtml:samp>
                      <xhtml:samp class="xml_sample"><![CDATA[
@@ -1251,6 +1254,7 @@ for more details.
                               </point>
                            </polygon>
                         </boundPoly>
+                     </sumDscr>   
                      ]]></xhtml:samp>
                   </xhtml:div>
                </xhtml:div>
@@ -4478,32 +4482,40 @@ for more details.
                <xhtml:h1 class="element_title">Geographic Bounding Box</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">The fundamental geometric description for any dataset that models geography. GeoBndBox is the minimum box, defined by west and east longitudes and north and south latitudes, that includes the largest geographic extent of the dataset's geographic coverage. This element is used in the first pass of a coordinate-based search. If the boundPoly element is included, then the geoBndBox element MUST be included.</xhtml:div>
+                  <xhtml:div class="description">
+                  <xhtml:p>The fundamental geometric description for any dataset that models geography. GeoBndBox is the minimum box, defined by west and east longitudes and north and south latitudes, that includes the largest geographic extent of the dataset's geographic coverage. This element is used in the first pass of a coordinate-based search. If the boundPoly element is included, then the geoBndBox element MUST be included.</xhtml:p>
+                  <xhtml:p>Replication of the element geoBndBox is NOT recommended. The purpose of a bounding box is to support high level geographic point search systems. Most search systems of this type do not handle multiple instances of a bounding box. The bounding box should represent the full geographic coverage extent of the of the overall datasets being described by the Codebook instance. If there is a desire to provide the equivilent of a bounding box for each of multiple summary descriptions, use of the boundPoly is recommended. First provide a geoBndBox for the full area covered by the study. Then provide a boundPoly for each geographic area defined with a separate sumDscr. Note that when describing a bounding box using a boundPoly description the four corner points are described. The starting point and end point should match (closing the polygon).</xhtml:p>
+                  <xhtml:p>The examples shown here show bounding box specifications for the coverage of two different data files.</xhtml:p>
+                  </xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
                   <xhtml:div class="example">
                      <xhtml:samp class="xml_sample"><![CDATA[
-                        <geogCover>Nevada State</geogCover>
+                     <stdyInfo>
+                        <sumDscr>
+                           <geogCover>Nevada State</geogCover>
+                           <geoBndBox>
+                              <westBL>-120.005729004</westBL>
+                              <eastBL>-114.039663</eastBL>
+                              <southBL>35.00208499998</southBL>
+                              <northBL>42.002207</northBL>
+                           </geoBndBox>
+                        </sumDscr>
+                     </stdyInfo>   
                      ]]></xhtml:samp>
                      <xhtml:samp class="xml_sample"><![CDATA[
-                        <geoBndBox>
-                           <westBL>-120.005729004</westBL>
-                           <eastBL>-114.039663</eastBL>
-                           <southBL>35.00208499998</southBL>
-                           <northBL>42.002207</northBL>
-                        </geoBndBox>
-                     ]]></xhtml:samp>
-                     <xhtml:samp class="xml_sample"><![CDATA[
-                        <geogCover>Norway</geogCover>
-                     ]]></xhtml:samp>
-                     <xhtml:samp class="xml_sample"><![CDATA[
-                        <geoBndBox>
-                           <westBL>4.789583</westBL>
-                           <eastBL>33.637497</eastBL>
-                           <southBL>57.987915</southBL>
-                           <northBL>80.76416</northBL>
-                        </geoBndBox>
+                     <stdyInfo>
+                        <sumDscr>
+                           <geogCover>Norway</geogCover>
+                           <geoBndBox>
+                              <westBL>4.789583</westBL>
+                              <eastBL>33.637497</eastBL>
+                              <southBL>57.987915</southBL>
+                              <northBL>80.76416</northBL>
+                           </geoBndBox>
+                        </sumDscr>
+                     </stdyInfo>   
                      ]]></xhtml:samp>
                   </xhtml:div>
                </xhtml:div>
@@ -4557,7 +4569,11 @@ for more details.
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
                   <xhtml:div class="example">
                      <xhtml:samp class="xml_sample"><![CDATA[
+                     <sumDscr>
                         <geogCover>State of California</geogCover>
+                     </sumDscr>   
+                     ]]></xhtml:samp>
+                     <xhtml:samp class="xml_sample"><![CDATA[
                      ]]></xhtml:samp>
                   </xhtml:div>
                </xhtml:div>
@@ -4592,6 +4608,8 @@ for more details.
       <xs:complexContent>
          <xs:extension base="simpleTextType">
             <xs:attribute name="agency" type="xs:string"/>
+            <xs:attribute name="fundingProgram" type="xs:string"/>
+            <xs:attribute name="grantName" type="xs:string"/>
             <xs:attribute name="role" type="xs:string"/>
          </xs:extension>
       </xs:complexContent>
@@ -4604,14 +4622,17 @@ for more details.
                <xhtml:h1 class="element_title">Grant Number</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">The grant/contract number of the project that sponsored the effort. If more than one, indicate the appropriate agency using the "agency" attribute. If different funding agencies sponsored different stages of the production process, use the "role" attribute to distinguish the grant numbers. </xhtml:div>
+                  <xhtml:div class="description">The grant/contract number of the project that sponsored the effort. If more than one, indicate the appropriate agency using the "agency" attribute. "fundingProgram" is used to list the program within an agency ifappropriate. If there is a specific grant name list it in grantName. Note that regional and country differences may make direct comparison difficult. These attributes are intended to allow for differences in grant organization in different countries. If different funding agencies sponsored different stages of the production process, use the "role" attribute to distinguish the grant numbers. </xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
                   <xhtml:div class="example">
                      <xhtml:samp class="xml_sample"><![CDATA[
                         <grantNo agency="Bureau of Justice Statistics">J-LEAA-018-77</grantNo>
-                     ]]></xhtml:samp>
+                        ]]></xhtml:samp>
+                     <xhtml:samp class="xml_sample"><![CDATA[
+						<grantNo agency="Academy of Finland. Strategic Research Council" fundingProgramme="SRC 2016 Health, welfare and lifestyles" grantName="Inclusive Promotion of Health and Wellbeing">303654</grantNo>
+					 ]]></xhtml:samp>
                   </xhtml:div>
                </xhtml:div>
             </xhtml:div>
@@ -5576,8 +5597,8 @@ for more details.
                      <xhtml:p>File: nCube from a single file in a multifile study.</xhtml:p>
                      <xhtml:p>Other: nCubes that do not fit easily into any of the categories listed above, e.g., a group of nCubes whose documentation is in another language. A term from a controlled vocabulary may be placed into the otherType attribute if this value is used.</xhtml:p>
                      <xhtml:p>The otherType attribute should only be used when applying a controlled vocabulary, and when the type attribute has been given a value of "other". Use the complex element controlledVocabUsed to identify the controlled vocabulary to which the selected term belongs.</xhtml:p>
-                     <xhtml:p>The "nCube" attribute is used to reference all the IDs of the nCubes belonging to the group.</xhtml:p>
-                     <xhtml:p>The "nCubeGrp" attribute is used to reference all the subsidiary nCube groups which nest underneath the current nCubeGrp. This allows for encoding of a hierarchical structure of nCube groups.</xhtml:p>
+                     <xhtml:p>The "nCube" attribute is of the type IDRefs and is intended to contain a space delimited list of the IDs of all the nCubes that are immediate children of the nCube group.</xhtml:p>
+                     <xhtml:p>The "nCubeGrp" attributed is of the type IDRefs and is intended to contain a space delimited list of the IDs of all the nCube groups that are immediate children of the nCube group. The inclusion of a nCubeGrp brings in all of its members. Members of the included nCubeGrp should not be separately listed in either "nCube" or "nCubeGrp".</xhtml:p>
                      <xhtml:p>The attribute "name" provides a name, or short label, for the group.</xhtml:p>
                      <xhtml:p>The "sdatrefs" are summary data description references that record the ID values of all elements within the summary data description section of the Study Description that might apply to the group. These elements include: time period covered, date of collection, nation or country, geographic coverage, geographic unit, unit of analysis, universe, and kind of data.</xhtml:p>
                      <xhtml:p>The "methrefs" are methodology and processing references which record the ID values of all elements within the study methodology and processing section of the Study Description which might apply to the group. These elements include information on data collection and data appraisal (e.g., sampling, sources, weighting, data cleaning, response rates, and sampling error estimates).</xhtml:p>
@@ -5596,12 +5617,12 @@ for more details.
             <xs:attribute name="vocab" type="xs:string"/>
             <xs:attribute name="vocabURI" type="xs:string"/>
             <xs:attribute name="vocabInstanceURI" type="xs:string"/>
-			<xs:attribute name="vocabID" type="xs:string"/>
-			<xs:attribute name="vocabAgencyName" type="xs:string"/>
-			<xs:attribute name="vocabVersionID" type="xs:string"/>
-			<xs:attribute name="otherValue" type="xs:string"/>
-			<xs:attribute name="vocabSchemeURN" type="xs:string"/>
-			<xs:attribute name="vocabInstanceCodeTerm" type="xs:string"/>
+	    <xs:attribute name="vocabID" type="xs:string"/>
+	    <xs:attribute name="vocabAgencyName" type="xs:string"/>
+	    <xs:attribute name="vocabVersionID" type="xs:string"/>
+	    <xs:attribute name="otherValue" type="xs:string"/>
+	    <xs:attribute name="vocabSchemeURN" type="xs:string"/>
+	    <xs:attribute name="vocabInstanceCodeTerm" type="xs:string"/>
             <xs:attribute name="abbr" type="xs:string"/>
          </xs:extension>
       </xs:complexContent>
@@ -6221,7 +6242,10 @@ for more details.
                <xhtml:h1 class="element_title">PreQuestion Text</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Text describing a set of conditions under which a question might be asked.</xhtml:div>
+                  <xhtml:div class="description">
+                  <xhtml:p>Text describing a set of conditions under which a question might be asked.</xhtml:p>
+                  <xhtml:p>Instructions on cardinality and routing may also be located here, in particular when these instructions are to be read by the interviewee (self-administered questionnaire). The second two examples show this usage.</xhtml:p>
+                  </xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -6230,6 +6254,20 @@ for more details.
                         <var>
                            <qstn>
                               <preQTxt>For those who did not go away on a holiday of four days or more in 1985...</preQTxt>
+                           </qstn>
+                        </var>
+                     ]]></xhtml:samp> 
+                     <xhtml:samp class="xml_sample"><![CDATA[
+                        <var>
+                           <qstn>
+                              <preQTxt>Select only one option.</preQTxt>
+                           </qstn>
+                        </var>
+                     ]]></xhtml:samp> 
+                     <xhtml:samp class="xml_sample"><![CDATA[
+                        <var>
+                           <qstn>
+                              <preQTxt>Answer question number 10, only if Finnish is not your mother tongue.</preQTxt>
                            </qstn>
                         </var>
                      ]]></xhtml:samp> 
@@ -8131,9 +8169,10 @@ for more details.
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
                   <xhtml:div class="description">
-                     <xhtml:p>Information about the and geographic coverage of the study and unit of analysis.</xhtml:p>
+                     <xhtml:p>Information about the collection situation, data format, universe, geographic coverage of the study, and unit of analysis.</xhtml:p>
                      <xhtml:p>Replication of the element geoBndBox is NOT recommended. The purpose of a bounding box is to support high level geographic point search systems. Most search systems of this type do not handle multiple instances of a bounding box. The bounding box should represent the full geographic coverage extent of the of the overall datasets being described by the Codebook instance. If there is a desire to provide the equivilent of a bounding box for each of multiple summary descriptions, use of the boundPoly is recommended. First provide a geoBndBox for the full area covered by the study. Then provide a boundPoly for each geographic area defined with a separate sumDscr. Note that when describing a bounding box using a boundPoly description the four corner points are described. The starting point and end point should match (closing the polygon).</xhtml:p>
                      <xhtml:p>Replication of sumDscr within the parent stdyInfo is useful when bundling specifics like timePrd, nation, and universe for specific samples within a larger project. A clear example of this is description for the various IPUMS project that harmonize multiple samples of census, health, and related data. IPUMS identified the coverage of individual samples within a project using a combination of these three elements to be able to differentiate between samples.</xhtml:p>
+                     <xhtml:p>The examples in this description show the use of sumDscr to bundle specifics regarding timePrd, nation, and universe. A new sumDscr is used for each bundle.</xhtml:p>
                    </xhtml:div>
                 </xhtml:div>
                 <xhtml:div>
@@ -9104,8 +9143,8 @@ for more details.
                      <xhtml:p>File: Variable from a single file in a multifile study.</xhtml:p>
                      <xhtml:p>Randomized: Variables generated by CAI surveys produced by one or more random number variables together with a response variable, e.g, random variable X which could equal 1 or 2 (at random) which in turn would control whether Q.23 is worded "men" or "women", e.g., would you favor helping [men/women] laid off from a factory obtain training for a new job?</xhtml:p>
                      <xhtml:p>Other: Variables which do not fit easily into any of the categories listed above, e.g., a group of variables whose documentation is in another language.</xhtml:p>
-                     <xhtml:p>The "var" attribute is used to reference all the constituent variable IDs in the group.</xhtml:p>
-                     <xhtml:p>The "varGrp" attribute is used to reference all the subsidiary variable groups which nest underneath the current varGrp. This allows for encoding of a hierarchical structure of variable groups. </xhtml:p>
+                     <xhtml:p>The "var" attribute is of the type IDRefs and is intended to contain a space delimited list of the IDs of all the variables that are immediate children of the variable group.</xhtml:p>
+                     <xhtml:p>The "varGrp" attributed is of the type IDRefs and is intended to contain a space delimited list of the IDs of all the variable groups that are immediate children of the variable group. The inclusion of a varGrp brings in all of its members. Members of the included varGrp should not be separately listed in either "var" or "varGrp".</xhtml:p>
                      <xhtml:p>The attribute "name" provides a name, or short label, for the group.</xhtml:p>
                      <xhtml:p>The "sdatrefs" are summary data description references that record the ID values of all elements within the summary data description section of the Study Description that might apply to the group. These elements include: time period covered, date of collection, nation or country, geographic coverage, geographic unit, unit of analysis, universe, and kind of data.</xhtml:p>
                      <xhtml:p>The "methrefs" are methodology and processing references which record the ID values of all elements within the study methodology and processing section of the Study Description which might apply to the group. These elements include information on data collection and data appraisal (e.g., sampling, sources, weighting, data cleaning, response rates, and sampling error estimates).</xhtml:p>
