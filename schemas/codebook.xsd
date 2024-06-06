@@ -939,28 +939,27 @@ for more details.
             <xhtml:div>
                <xhtml:h1 class="element_title">Analysis Unit</xhtml:h1>
                <xhtml:div>
-                  <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Provides information regarding whom or what the variable/nCube describes. The element may be repeated only to support multiple language expressions of the content.</xhtml:div>
-               </xhtml:div>
-               <xhtml:div>
-                  <xhtml:h2 class="section_header">Example</xhtml:h2>
-                  <xhtml:div class="example">
-                     <xhtml:samp class="xml_sample"><![CDATA[
-                        <var>
-                           <anlysUnit>This variable reports election returns at the constituency level.</anlysUnit>
-                        </var>
-                     ]]></xhtml:samp> 
-                     <xhtml:samp class="xml_sample"><![CDATA[
-                        <nCube>
-                           <anlysUnit>Household</anlysUnit>
-                        </nCube>
-                     ]]></xhtml:samp>
-                  </xhtml:div>
-               </xhtml:div>
-            </xhtml:div>
-         </xs:documentation>
-      </xs:annotation>
-   </xs:element>
+class="section_header">Description</xhtml:div>
+						<xhtml:div class="description">Provides information regarding whom or what the variable/nCube describes. PLEASE NOTE A CHANGE IN USAGE INSTRUCTIONS: The string content of "concept" now contains the language specific label obtained from the controlled vocabulary. This allows for multiple languages through the repeated entry of the "concept" element. The attribute "vocabInstanceCodeTerm" has been added to accommodate the code term as it appears in the controlled vocabulary. See the high level documentation for a complete description of usage. The full element may be repeated only to support multiple language expressions of the content.</xhtml:div>
+					</xhtml:div>
+					<xhtml:div>
+											<xhtml:h2 class="section_header">Example</xhtml:h2>
+											<xhtml:div class="example">
+												<xhtml:samp class="xml_sample"><![CDATA[
+					                        <var>
+					                           <anlysUnit><concept vocabInstanceCodeTerm="constituency">constituency level</concept>This variable reports election returns at the constituency level.</anlysUnit>
+					                        </var>
+					                     ]]></xhtml:samp>
+												<xhtml:samp class="xml_sample"><![CDATA[
+					                        <nCube>
+					                           <anlysUnit>Household</anlysUnit>
+					                        </nCube>
+					                     ]]></xhtml:samp>
+											</xhtml:div>
+										</xhtml:div>
+								</xs:documentation>
+							</xs:annotation>
+	</xs:element>
    
    <xs:complexType name="AuthEntyType" mixed="true">
       <xs:complexContent>
@@ -1809,11 +1808,11 @@ for more details.
       <xs:annotation>
          <xs:documentation>
             <xhtml:div>
-               <xhtml:h1 class="element_title">Mode of Data Collection</xhtml:h1>
-               <xhtml:div>
-                  <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">The method used to collect the data; instrumentation characteristics. As of version 2.6 this element is a conceptualtext type and supports the use of a controlled vocabulary. XHTML formatting may be used in the txt element for forward-compatibility with DDI Lifecycle.</xhtml:div>
-               </xhtml:div>
+	    					<xhtml:h1 class="element_title">Mode of Data Collection</xhtml:h1>
+	    					<xhtml:div>
+	    						<xhtml:h2 class="section_header">Description</xhtml:h2>
+	    						<xhtml:div class="description">The method used to collect the data; instrumentation characteristics. As of version 2.6 this element is a conceptualtext type and supports the use of a controlled vocabulary. To specify the use of a Controlled Vocabulary or standard concept use the internal element "concept". If multiple concepts are needed the parent element should be replicated. Internal text related to each concept should be allocated to accompany the relevent concept.XHTML formatting may be used in the txt element for forward-compatibility with DDI Lifecycle.</xhtml:div>
+					</xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
                   <xhtml:div class="example">
@@ -1821,7 +1820,7 @@ for more details.
                         <collMode>telephone interviews</collMode>
                      ]]></xhtml:samp> 
                      <xhtml:samp class="xml_sample"><![CDATA[
-                        <collMode><concept vocab="ModeOfCollection" vocabURI="urn:ddi:int.ddi.cv:ModeOfCollection:3.0">Interview.FaceToFace</concept>face-to-face interviews</collMode>
+                        <collMode><concept vocab="ModeOfCollection" vocabURI="http://rdf-vocabulary.ddialliance.org/cv/ModeOfCollection:3.0" vocabInstanceCodeTerm="Interview.FaceToFace">Face-to-Face Interview</concept></collMode>
                      ]]></xhtml:samp> 
                      <xhtml:samp class="xml_sample"><![CDATA[
                         <collMode>mail questionnaires</collMode>
@@ -1982,7 +1981,7 @@ for more details.
                      ]]></xhtml:samp>
                      <xhtml:samp class="xml_sample"><![CDATA[
                         <var>
-                           <concept vocab="LCSH" vocabURI="http://lcweb.loc.gov/catdir/cpso/lcco/lcco.html" vocabInstanceURI="http://lcweb.loc.gov/catdir/cpso/lcco#SF311-312" source="archive">SF: 311-312 draft horses</concept>
+                           <concept vocab="LCSH" vocabURI="http://lcweb.loc.gov/catdir/cpso/lcco/lcco.html" vocabInstanceURI="http://lcweb.loc.gov/catdir/cpso/lcco#SF311-312" vocabInstanceCodeTerm="SF311-312" source="archive">Draft Horses</concept>
                         </var>
                      ]]></xhtml:samp> 
                   </xhtml:div>
@@ -2466,18 +2465,19 @@ for more details.
    </xs:complexType>
    
    <xs:element name="dataAccs" type="dataAccsType">
-      <xs:annotation>
-         <xs:documentation>
-            <xhtml:div>
-               <xhtml:h1 class="element_title">Data Access</xhtml:h1>
-               <xhtml:div>
-                  <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">This section describes access conditions and terms of use for the data collection. In cases where access conditions differ across individual files or variables, multiple access conditions can be specified. In cases where access conditions differ across individual files, variables, or categories multiple access conditions can be specified. The access conditions applying to a study, file, variable group, variable or category can be indicated by an IDREF attribute on the study, file, variable group, nCube group, variable, category, or data item elements called "access". "typeOfAccss" is provided in order to provide a specific type of access. Use of a external controlled vocabulary is strongly recommended. Repeat if multiple language labels are being provided directly within the documentation.</xhtml:div>
-               </xhtml:div>
-            </xhtml:div>
-         </xs:documentation>
-      </xs:annotation>
-   </xs:element>
+   		<xs:annotation>
+   			<xs:documentation>
+   				<xhtml:div>
+   					<xhtml:h1 class="element_title">Data Access</xhtml:h1>
+   					<xhtml:div>
+   						<xhtml:h2 class="section_header">Description</xhtml:h2>
+   						<xhtml:div class="description">This section describes access conditions and terms of use for the data collection. In cases where access conditions differ across individual files or variables, multiple access conditions can be specified. In cases where access conditions differ across individual files, variables, or categories multiple access conditions can be specified. The access conditions applying to a study, file, variable group, variable or category can be indicated by an IDREF attribute on the study, file, variable group, nCube group, variable, category, or data item elements called "access". The member element "typeOfAccss" is of the type "concept" and is intended to provide a specific type of access. PLEASE NOTE A CHANGE IN USAGE INSTRUCTIONS: The string content of "concept" now contains the language specific label obtained from the controlled vocabulary. This allows for multiple languages through the repeated entry of the "concept" element. The attribute "vocabInstanceCodeTerm" has been added to accommodate the code term as it appears in the controlled vocabulary. See the high level documentation for a complete description of usage.
+   </xhtml:div>
+   					</xhtml:div>
+   				</xhtml:div>
+   			</xs:documentation>
+   		</xs:annotation>
+	</xs:element>
    
    <xs:complexType name="dataApprType" mixed="true">
       <xs:complexContent>
@@ -2500,7 +2500,7 @@ for more details.
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
                   <xhtml:div class="example">
                      <xhtml:samp class="xml_sample"><![CDATA[
-                        <dataAppr><concept vocab="IPUMS">ProducerAppraised</concept>These data files were obtained from the United States House of Representatives, who received them from the Census Bureau accompanied by the following caveats: "The numbers contained herein are not official 1990 decennial Census counts. The numbers represent estimates of the population based on a statistical adjustment method applied to the official 1990 Census figures using a sample survey intended to measure overcount or undercount in the Census results. On July 15, 1991, the Secretary of Commerce decided not to adjust the official 1990 decennial Census counts (see 56 Fed. Reg. 33582, July 22, 1991). In reaching his decision, the Secretary determined that there was not sufficient evidence that the adjustment method accurately distributed the population across and within states. The numbers contained in these tapes, which had to be produced prior to the Secretary's decision, are now known to be biased. Moreover, the tapes do not satisfy standards for the publication of Federal statistics, as established in Statistical Policy Directive No. 2, 1978, Office of Federal Statistical Policy and Standards. Accordingly, the Department of Commerce deems that these numbers cannot be used for any purpose that legally requires use of data from the decennial Census and assumes no responsibility for the accuracy of the data for any purpose whatsoever. The Department will provide no assistance in interpretation or use of these numbers."</dataAppr>
+                        <dataAppr><concept vocab="IPUMS" vocabInstanceCodeType="ProducerAppraised">Appraised by Producer</concept>These data files were obtained from the United States House of Representatives, who received them from the Census Bureau accompanied by the following caveats: "The numbers contained herein are not official 1990 decennial Census counts. The numbers represent estimates of the population based on a statistical adjustment method applied to the official 1990 Census figures using a sample survey intended to measure overcount or undercount in the Census results. On July 15, 1991, the Secretary of Commerce decided not to adjust the official 1990 decennial Census counts (see 56 Fed. Reg. 33582, July 22, 1991). In reaching his decision, the Secretary determined that there was not sufficient evidence that the adjustment method accurately distributed the population across and within states. The numbers contained in these tapes, which had to be produced prior to the Secretary's decision, are now known to be biased. Moreover, the tapes do not satisfy standards for the publication of Federal statistics, as established in Statistical Policy Directive No. 2, 1978, Office of Federal Statistical Policy and Standards. Accordingly, the Department of Commerce deems that these numbers cannot be used for any purpose that legally requires use of data from the decennial Census and assumes no responsibility for the accuracy of the data for any purpose whatsoever. The Department will provide no assistance in interpretation or use of these numbers."</dataAppr>
                      ]]></xhtml:samp>
                   </xhtml:div>
                </xhtml:div>
@@ -2525,10 +2525,7 @@ for more details.
                         <dataChck>The archive produced a codebook for this collection.</dataChck>
                      ]]></xhtml:samp>
                      <xhtml:samp class="xml_sample"><![CDATA[
-                        <dataChck>Consistency checks were performed by Data Producer/ Principal  Investigator.</dataChck>
-                     ]]></xhtml:samp>
-                     <xhtml:samp class="xml_sample"><![CDATA[
-                        <dataChck>Consistency checks performed by the archive.</dataChck>
+		                             <dataChck><concept vocabID="GSBPM" vocabAgency="UNECE" vocabVersionID="5.1" vocabInstanceCodeTerm="5.3">Review &amp; validate</concept>Consistency checks were performed by Data Producer/ Principal Investigator.</dataChck>
                      ]]></xhtml:samp>
                      <xhtml:samp class="xml_sample"><![CDATA[
                         <dataChck>The archive generated SAS and/or SPSS data definition  statements for this collection.</dataChck>
@@ -2558,7 +2555,7 @@ for more details.
                         <dataChck>Checks for undocumented codes were performed by the archive.</dataChck>
                      ]]></xhtml:samp>
                      <xhtml:samp class="xml_sample"><![CDATA[
-                        <dataChck><concept vocab="EOSDIS" vocabURI="https://ghrc.nsstc.nasa.gov/uso/proc_level.html">2</concept>Derived geophysical variables at the same resolution and location as the Level 1 source data.</dataChck>
+                        <dataChck><concept vocabName="EOSDIS" vocabURI="https://ghrc.nsstc.nasa.gov/uso/proc_level.html" vocabInstanceCodeTerm="2">Level 2</concept>Derived geophysical variables at the same resolution and location as the Level 1 source data.</dataChck>
                      ]]></xhtml:samp>
                   </xhtml:div>
                </xhtml:div>
@@ -2790,17 +2787,16 @@ for more details.
 					<xhtml:h1 class="element_title">Unit Type</xhtml:h1>
 
 					<xhtml:div>
-						<xhtml:h2 class="section_header">Description</xhtml:h2>
-						<xhtml:div class="description">Describes the type of sampling frame unit using a conceptualText structure supporting a description and the use of an external controlled Vocabulary. The attribute "numberOfUnits" provides the number of units in the sampling frame.</xhtml:div>
+						<xhtml:div class="description">Describes the type of sampling frame unit using a conceptualText structure supporting a description and the use of an external controlled Vocabulary. PLEASE NOTE A CHANGE IN USAGE INSTRUCTIONS: The string content of "concept" now contains the language specific label obtained from the controlled vocabulary. This allows for multiple languages through the repeated entry of the "concept" element. The attribute "vocabInstanceCodeTerm" has been added to accommodate the code term as it appears in the controlled vocabulary. See the high level documentation for a complete description of usage. The attribute "numberOfUnits" provides the number of units in the sampling frame.</xhtml:div>
 					</xhtml:div>
 
 					<xhtml:div>
 						<xhtml:h2 class="section_header">Example</xhtml:h2>
 						<xhtml:div class="example">
-							<xhtml:samp class="xml_sample"><![CDATA[
-                               <unitType numberOfUnits="150000"><concept vocab="SampleFrame_UnitType">telephoneNumber</concept>Primary listed owners of published phone numbers in the City of St. Paul</unitType>
-                            ]]>
-							</xhtml:samp>
+													<xhtml:samp class="xml_sample"><![CDATA[
+												<unitType numberOfUnits=150000"><concept vocabName="SampleFrame_UnitType" vocabInstanceCodeTerm="telephoneNumber">Telephone Number</concept>Primary listed owners of published phone numbers in the City of St. Paul</unitType>
+												]]>
+					</xhtml:samp>
 						</xhtml:div>
 					</xhtml:div>
 				</xhtml:div>
@@ -4337,7 +4333,7 @@ for more details.
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
                   <xhtml:div class="example">
                      <xhtml:samp class="xml_sample"><![CDATA[
-                        <format vocab="EU Vocabularies: File Type" vocabURI="http://publications.europa.eu/resource/authority/file-type” vocabInstanceURI="http://publications.europa.eu/resource/authority/file-type/CSV">CSV</format>
+                          <format vocabName="EU Vocabularies: File Type" vocabURI="http://publications.europa.eu/resource/authority/file-type” vocabINstanceURI="http://publications.europa.eu/resource/authority/file-type/CSV" vocabIntanceCodeTerm="CSV" xml:lang="en">Comma separated values</format>
                      ]]></xhtml:samp> 
                   </xhtml:div>
                </xhtml:div>
@@ -4563,24 +4559,29 @@ for more details.
                <xhtml:h1 class="element_title">Geographic Coverage</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Information on the geographic coverage of the data. Includes the total geographic scope of the data, and any additional levels of geographic coding provided in the variables. Maps to Dublin Core Coverage element. Inclusion of this element in the codebook is recommended. Fpor forward-compatibility, DDI Lifecycle XHTML tags may be used in this element.</xhtml:div>
+                  <xhtml:div class="description">Information on the geographic coverage of the data. Includes the total geographic scope of the data, and any additional levels of geographic coding provided in the variables. Maps to Dublin Core Coverage element. Inclusion of this element in the codebook is recommended. To specify the use of a Controlled Vocabulary or standard concept use the internal element "concept". If multiple concepts are needed the parent element should be replicated. Internal text related to each concept should be allocated to accompany the relevent concept. For forward-compatibility, DDI Lifecycle XHTML tags may be used in this element.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
-                  <xhtml:div class="example">
-                     <xhtml:samp class="xml_sample"><![CDATA[
-                     <sumDscr>
-                        <geogCover>State of California</geogCover>
-                     </sumDscr>   
-                     ]]></xhtml:samp>
-                     <xhtml:samp class="xml_sample"><![CDATA[
-                     ]]></xhtml:samp>
-                  </xhtml:div>
-               </xhtml:div>
-            </xhtml:div>
-         </xs:documentation>
-      </xs:annotation>
-   </xs:element>
+		  						<xhtml:div class="example">
+		  							<xhtml:samp class="xml_sample"><![CDATA[
+		                       <sumDscr>
+		                          <geogCover>State of California</geogCover>
+		                       </sumDscr>   
+		                       ]]></xhtml:samp>
+		  							<xhtml:samp class="xml_sample"><![CDATA[
+		                       <sumDscr>
+		                          <geogCover><concept vocabID="USPS" vocabInstanceCodeTerm="CA">California</concept></geogCover>
+		                       </sumDscr>   
+		                       ]]></xhtml:samp>
+		  							<xhtml:samp class="xml_sample"><![CDATA[
+		                       ]]></xhtml:samp>
+		  						</xhtml:div>
+		  					</xhtml:div>
+		  				</xhtml:div>
+		  			</xs:documentation>
+		  		</xs:annotation>
+	</xs:element>
 
    <xs:element name="geogUnit" type="conceptualTextType">
       <xs:annotation>
@@ -5275,14 +5276,14 @@ for more details.
          <xs:documentation>
             <xhtml:div>
                <xhtml:h1 class="element_title">Metadata Access</xhtml:h1>
-               <xhtml:div>
-                  <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">This section describes access conditions and terms of use for the metadata. In cases where access conditions differ across individual files, variables, or categories multiple access conditions can be specified. The access conditions applying to a study, file, variable group, variable or category can be indicated by an IDREF attribute on the study, file, variable group, nCube group, variable, category, or data item elements called "access". "typeOfAccss" is provided in order to provide a specific type of access. Use of a external controlled vocabulary is strongly recommended. Repeat if multiple language labels are being provided directly within the documentation.</xhtml:div>
-               </xhtml:div>
-            </xhtml:div>
-         </xs:documentation>
-      </xs:annotation>
-   </xs:element>
+	       					<xhtml:div>
+	       						<xhtml:h2 class="section_header">Description</xhtml:h2>
+	       						<xhtml:div class="description">This section describes access conditions and terms of use for the metadata. In cases where access conditions differ across individual files, variables, or categories multiple access conditions can be specified. The access conditions applying to a study, file, variable group, variable or category can be indicated by an IDREF attribute on the study, file, variable group, nCube group, variable, category, or data item elements called "access". The member element "typeOfAccss" is of the type "concept" and is intended to provide a specific type of access. PLEASE NOTE A CHANGE IN USAGE INSTRUCTIONS: The string content of "concept" now contains the language specific label obtained from the controlled vocabulary. This allows for multiple languages through the repeated entry of the "concept" element. The attribute "vocabInstanceCodeTerm" has been added to accommodate the code term as it appears in the controlled vocabulary. See the high level documentation for a complete description of usage.</xhtml:div>
+	       					</xhtml:div>
+	       				</xhtml:div>
+	       			</xs:documentation>
+	       		</xs:annotation>
+	</xs:element>
 
    <xs:complexType name="methodType">
       <xs:complexContent>
@@ -5638,20 +5639,20 @@ for more details.
                   <xhtml:div class="description">Indicates the country or countries covered in the file. Attribute "abbr" may be used to list common abbreviations; use of ISO country codes is recommended. Use vocab, vocabURI, and vocabInstanceURI to identify the use of a controlled vocabulary. Maps to Dublin Core Coverage element. Inclusion of this element is recommended. For forward-compatibility, DDI Lifecycle XHTML tags may be used in this element. In addition, you may use a "vocabID" for another form of identification (useful for other forms of publication), an "vocabAgencyName" and "vocabAgencyID" to specify the agency managing the controlled vocabulary, a "vocabVersionID" if needed, and the "vocabSchemeURN". If the controlled vocabulary term is "other" you may provide a more specific value in "otherValue". PLEASE NOTE A CHANGE IN USAGE INSTRUCTIONS: The string content of "concept" now contains the language specific label obtained from the controlled vocabulary. This allows for multiple languages through the repeated entry of the "concept" element. The attribute "vocabInstanceCodeTerm" has been added to accommodate the code term as it appears in the controlled vocabulary. See the high level documentation for a complete description of usage.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
-                  <xhtml:h2 class="section_header">Example</xhtml:h2>
-                  <xhtml:div class="example">
-                     <xhtml:samp class="xml_sample"><![CDATA[
-                        <nation vocab="ISO 3166-1 alpha-2"" vocabURI="http://www.iso.org/ISO_3166-1/alpha-2" vocabInstanceURI="http://www.iso.org/ISO_3166-1/alpha-2#FI" abbr="FI" xml:lang="en">Finland</nation>
-                     ]]></xhtml:samp> 
-                     <xhtml:samp class="xml_sample"><![CDATA[
-                        <nation vocab="ISO 3166-1 alpha-2" vocabURI="http://www.iso.org/ISO_3166-1/alpha-2" vocabInstanceURI="http://www.iso.org/ISO_3166-1/alpha-2#FI "abbr="FI" xml:lang="fi">Suomi</nation> 
-                     ]]></xhtml:samp> 
-                  </xhtml:div>
-               </xhtml:div>
-            </xhtml:div>
-         </xs:documentation>
-      </xs:annotation>
-   </xs:element>
+	       						<xhtml:h2 class="section_header">Example</xhtml:h2>
+	       						<xhtml:div class="example">
+	       							<xhtml:samp class="xml_sample"><![CDATA[
+	                               <nation vocab="ISO 3166-1 alpha-2" vocabURI="http://www.iso.org/ISO_3166-1/alpha-2" vocabInstanceURI="http://www.iso.org/ISO_3166-1/alpha-2#FI" vocabInstanceCodeTerm="FI" abbr="FI" xml:lang="en">Finland</nation>
+	                            ]]></xhtml:samp>
+	       							<xhtml:samp class="xml_sample"><![CDATA[
+	                               <nation vocab="ISO 3166-1 alpha-2" vocabURI="http://www.iso.org/ISO_3166-1/alpha-2" vocabInstanceURI="http://www.iso.org/ISO_3166-1/alpha-2#FI" vocabInstanceCodeTerm="FI" abbr="FI" xml:lang="fi">Suomi</nation> 
+	                            ]]></xhtml:samp>
+	       						</xhtml:div>
+	       					</xhtml:div>
+	       				</xhtml:div>
+	       			</xs:documentation>
+	       		</xs:annotation>
+	</xs:element>
 
    <xs:element name="northBL" type="phraseType">
       <xs:annotation>
@@ -6871,7 +6872,7 @@ for more details.
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
                   <xhtml:div class="example">
                      <xhtml:samp class="xml_sample"><![CDATA[
-                        <resInstru><concept vocab="TypeOfInstrument" vocabURI="http://www.ddialiance.org/Specification/DDI-CV/TypeOfInstruent_1.1.html" vocabInstanceURI="http://www.ddialiance.org/Specification/DDI-CV/TypeOfInstruent_1.1.html#Questionnaire.Structured">Questionnaire.Structured</concept>structured</resInstru>
+                        <resInstru><concept vocab="TypeOfInstrument" vocabURI="http://www.ddialiance.org/Specification/DDI-CV/TypeOfInstruent_1.1.html"  vocabInstanceCodeTerm="Questionnaire.Structured" xml:lang="it">Questionario strutturato</concept>A structured questionnaire developed by ISTAT</resInstru>
                      ]]></xhtml:samp>
                   </xhtml:div>
                </xhtml:div>
@@ -6912,14 +6913,14 @@ for more details.
                <xhtml:h1 class="element_title">Response Unit</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Provides information regarding who provided the information contained within the variable/nCube, e.g., respondent, proxy, interviewer. This element may be repeated only to support multiple language expressions of the content.</xhtml:div>
+                  <xhtml:div class="description">Provides information regarding who is intended to provide the information contained within the variable/nCube, e.g., respondent, proxy, interviewer. This element contains the sub-element "concept". PLEASE NOTE A CHANGE IN USAGE INSTRUCTIONS: The string content of "concept" now contains the language specific label obtained from the controlled vocabulary. This allows for multiple languages through the repeated entry of the "concept" element. The attribute "vocabInstanceCodeTerm" has been added to accommodate the code term as it appears in the controlled vocabulary. See the high level documentation for a complete description of usage. Additional textual description is enteted in the mixed text content or using the sub-element "txt".</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
                   <xhtml:div class="example">
                      <xhtml:samp class="xml_sample"><![CDATA[
                         <var>
-                           <respUnit>Head of household</respUnit>
+                           <respUnit><concept vocabID="IPUMS_ResponseUnit" vocabAgency="IPUMS" vocabInstanceCodeTerm="HouseholdHead">Head of household</concept>If the Head of Household is unavailable the information may be provided by the proxy respondent.</respUnit>
                         </var>
                      ]]></xhtml:samp>
                      <xhtml:samp class="xml_sample"><![CDATA[
@@ -7021,7 +7022,7 @@ for more details.
                <xhtml:h1 class="element_title">Sampling Procedure</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">The type of sample and sample design used to select the survey respondents to represent the population. May include reference to the target sample size and the sampling fraction.</xhtml:div>
+                  <xhtml:div class="description">The type of sample and sample design used to select the survey respondents to represent the population. May include reference to the target sample size and the sampling fraction.To specify the use of a Controlled Vocabulary or standard concept use the internal element "concept". If multiple concepts are needed the parent element should be replicated. Internal text related to each concept should be allocated to accompany the relevent concept.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -7030,7 +7031,7 @@ for more details.
                         <sampProc>National multistage area probability sample</sampProc>
                      ]]></xhtml:samp>
                      <xhtml:samp class="xml_sample"><![CDATA[
-                        <sampProc>Simple random sample</sampProc>
+                        <sampProc><concept vocabID="SamplingProcedure" vocabAgency="DDI" vocabURI="http://rdf-vocabulary.ddialliance.org/cv/SamplingProcedure" vocabInstanceCodeTerm="Probability.SimpleRandom">Simple random sample</concept></sampProc>
                      ]]></xhtml:samp>
                      <xhtml:samp class="xml_sample"><![CDATA[
                         <sampProc>Stratified random sample</sampProc>
@@ -7431,7 +7432,7 @@ for more details.
                <xhtml:h1 class="element_title">Origins of Sources</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">For historical materials, information about the origin(s) of the sources and the rules followed in establishing the sources should be specified. May not be relevant to survey data. This element may be repeated to support multiple language expressions of the content.</xhtml:div>
+                  <xhtml:div class="description">For historical materials, information about the origin(s) of the sources and the rules followed in establishing the sources should be specified. May not be relevant to survey data. To specify the use of a Controlled Vocabulary or standard concept use the internal element "concept". If multiple concepts are needed the parent element should be replicated. Internal text related to each concept should be allocated to accompany the relevent concept. This element may be repeated to support multiple language expressions of the content.</xhtml:div>
                </xhtml:div>
             </xhtml:div>
          </xs:documentation>
@@ -8024,13 +8025,13 @@ for more details.
                <xhtml:h1 class="element_title">Evaluation Process</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Describes the evaluation process followed.</xhtml:div>
+                  <xhtml:div class="description">Describes the evaluation process followed. Use the contained "concept" element when a controlled vocaublary is used.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
                   <xhtml:div class="example">
                      <xhtml:samp class="xml_sample"><![CDATA[
-                        <evaluationProcess>In-depth review of pre-collection and collection procedures</evaluationProcess>
+                        <evaluationProcess><concept>meta-evaluation</concept>An evaluation of the quality of this series of evaluations and its adherence to established good practice in evaluation. It is based on and presents summaries of existing evaluations of each instrument.</evaluationProcess>
                      ]]></xhtml:samp> 
                   </xhtml:div>
                </xhtml:div>
@@ -8721,13 +8722,13 @@ for more details.
                <xhtml:h1 class="element_title">Universe</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">The group of persons or other elements that are the object of research and to which any analytic results refer. Age,nationality, and residence commonly help to delineate a given universe, but any of a number of factors may be involved, such as sex, race, income, veteran status, criminal convictions, etc. The universe may consist of elements other than persons, such as housing units, court cases, deaths, countries, etc. In general, it should be possible to tell from the description of the universe whether a given individual or element (hypothetical or real) is a member of the population under study. A "level" attribute is included to permit coding of the level to which universe applies, i.e., the study level, the file level (if different from study), the record group, the variable group, the nCube group, the variable, or the nCube level. The "clusion" attribute provides for specification of groups included (I) in or excluded (E) from the universe. If all the variables/nCubes described in the data documentation relate to the same population, e.g., the same set of survey respondents, this element would be unnecessary at data description level. In this case, universe can be fully described at the study level. For forward-compatibility, DDI Lifecycle XHTML tags may be used in this element. This element may be repeated only to support multiple language expressions of the content.</xhtml:div>
+                  <xhtml:div class="description">The group of persons or other elements that are the object of research and to which any analytic results refer. Age,nationality, and residence commonly help to delineate a given universe, but any of a number of factors may be involved, such as sex, race, income, veteran status, criminal convictions, etc. The universe may consist of elements other than persons, such as housing units, court cases, deaths, countries, etc. In general, it should be possible to tell from the description of the universe whether a given individual or element (hypothetical or real) is a member of the population under study. A "level" attribute is included to permit coding of the level to which universe applies, i.e., the study level, the file level (if different from study), the record group, the variable group, the nCube group, the variable, or the nCube level. The "clusion" attribute provides for specification of groups included (I) in or excluded (E) from the universe. If all the variables/nCubes described in the data documentation relate to the same population, e.g., the same set of survey respondents, this element would be unnecessary at data description level. In this case, universe can be fully described at the study level. For forward-compatibility, DDI Lifecycle XHTML tags may be used in this element. This element may be repeated only to support multiple language expressions of the content.  To specify the use of a Controlled Vocabulary or standard concept use the internal element "concept". If multiple concepts are needed the parent element should be replicated. Internal text related to each concept should be allocated to accompany the relevent concept.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
                   <xhtml:div class="example">
                      <xhtml:samp class="xml_sample"><![CDATA[
-                        <universe clusion="I">Individuals 15-19 years of age. </universe>
+                        <universe clusion="I"><concept>Persons</concept><concept>15-19 years of age</concept>Individuals 15-19 years of age.</universe>
                      ]]></xhtml:samp>
                      <xhtml:samp class="xml_sample"><![CDATA[
                         <universe clusion="E">Individuals younger than 15 and older than 19 years of age.</universe>
