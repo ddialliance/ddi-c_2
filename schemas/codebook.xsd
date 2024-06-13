@@ -360,7 +360,7 @@ for more details.
                <xhtml:h1 class="element_title">External Link</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">This element permits encoders to provide links from any arbitrary element containing ExtLink as a subelement to electronic resources outside the codebook. The use of ths element has be deprecated and the use of various othrMat types is recommended. A parent element can frequently use sdatrefs, methrefs, or pubrefs to refer to the appropriate other material type with which can hold the title, description, and URI for the external source.</xhtml:div>
+                  <xhtml:div class="description">This element permits encoders to provide links from any arbitrary element containing ExtLink as a subelement to electronic resources outside the codebook. The use of this element has be deprecated and the use of various othrMat types is recommended. A parent element can frequently use sdatrefs, methrefs, or pubrefs to refer to the appropriate other material type with which can hold the title, description, and URI for the external source.</xhtml:div>
                </xhtml:div>
             </xhtml:div>
          </xs:documentation>
@@ -384,7 +384,7 @@ for more details.
                <xhtml:h1 class="element_title">Link</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">This element permits encoders to provide links from any arbitrary element containing Link as a subelement to other elements in the codebook. The use of ths element has be deprecated and the use of provided object references such as varRefs, sdatrefs, methrefs, and pubrefs is recommended. Internal references within texts in structured content can be done with xhml options.</xhtml:div>
+                  <xhtml:div class="description">This element permits encoders to provide links from any arbitrary element containing Link as a subelement to other elements in the codebook. The use of this element has be deprecated and the use of provided object references such as varRefs, sdatrefs, methrefs, and pubrefs is recommended. Internal references within texts in structured content can be done with xhml options.</xhtml:div>
                </xhtml:div>
             </xhtml:div>
          </xs:documentation>
@@ -915,7 +915,7 @@ for more details.
                <xhtml:h1 class="element_title">Unit of Analysis</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Basic unit of analysis or observation that the file describes: individuals, families/households, groups, institutions/organizations, administrative units, etc. The "unit" attribute is included to permit the development of a controlled vocabulary for this element. This element has been changed into a conceptualTextType supporting the use of exernal controlled vocabularies. The use of attribute "unit" has been deprecated. Use the internal concept element to reference a controlled vocabulary.</xhtml:div>
+                  <xhtml:div class="description">Basic unit of analysis or observation that the file describes: individuals, families/households, groups, institutions/organizations, administrative units, etc. The "unit" attribute is included to permit the development of a controlled vocabulary for this element. This element has been changed into a conceptualTextType supporting the use of external controlled vocabularies. The use of attribute "unit" has been deprecated. Use the internal concept element to reference a controlled vocabulary.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -989,7 +989,7 @@ class="section_header">Description</xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
                   <xhtml:div class="description">
-                     <xhtml:p>The person, corporate body, or agency responsible for the work's substantive and intellectual content. Repeat the element for each author, and use "abbr" and/or "affiliation" attribute if available. Invert first and last name and use commas. Author of data collection (codeBook/stdyDscr/citation/rspStmt/AuthEnty) maps to Dublin Core Creator element. Inclusion of this element in codebook is recommended. If the attribute "agentIdentifier" is used, "typeOfAgentIdentifier" should also be provided. An agent may be an organization or individual. Use "isPersistantIdentifier" (true|false) to indicate if this is intended to be a persistant identifier. Use "agentType" to indicate if the agent is an organization or an individual.</xhtml:p>
+                     <xhtml:p>The person, corporate body, or agency responsible for the work's substantive and intellectual content. Repeat the element for each author, and use "abbr" and/or "affiliation" attribute if available. Invert first and last name and use commas. Author of data collection (codeBook/stdyDscr/citation/rspStmt/AuthEnty) maps to Dublin Core Creator element. Inclusion of this element in codebook is recommended. If the attribute "agentIdentifier" is used, "typeOfAgentIdentifier" should also be provided. An agent may be an organization or individual. Use "isPersistantIdentifier" (true|false) to indicate if this is intended to be a persistent identifier. Use "agentType" to indicate if the agent is an organization or an individual.</xhtml:p>
                      <xhtml:p>The "author" in the Document Description should be the individual(s) or organization(s) directly responsible for the intellectual content of the DDI version, as distinct from the person(s) or organization(s) responsible for the intellectual content of the earlier paper or electronic edition from which the DDI edition may have been derived.</xhtml:p>
                   </xhtml:div>
                </xhtml:div>
@@ -1099,7 +1099,7 @@ class="section_header">Description</xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
                   <xhtml:div class="example">
                      <xhtml:samp class="xml_sample"><![CDATA[
-                        <biblCit format="MRDF">Rabier, Jacques-Rene, and Ronald Inglehart. EURO-BAROMETER 11: YEAR OF  THE CHILD IN EUROPE, APRIL 1979 [Codebook file]. Conducted by Institut Francais D'Opinion Publique (IFOP), Paris, et al. ICPSR ed. Ann Arbor, MI: Inter-university Consortium for Political and Social Resarch [producer and distributor], 1981.</biblCit>
+                        <biblCit format="MRDF">Rabier, Jacques-Rene, and Ronald Inglehart. EURO-BAROMETER 11: YEAR OF  THE CHILD IN EUROPE, APRIL 1979 [Codebook file]. Conducted by Institut Francais D'Opinion Publique (IFOP), Paris, et al. ICPSR ed. Ann Arbor, MI: Inter-university Consortium for Political and Social Research [producer and distributor], 1981.</biblCit>
                      ]]></xhtml:samp>
                   </xhtml:div>
                </xhtml:div>
@@ -1331,7 +1331,7 @@ class="section_header">Description</xhtml:div>
                   <xhtml:p>In case 1, the tag can be used to mark up character data; tables can also be included in the actual markup. In cases 2 or 3, the element can be left empty and the "URI" attribute used to refer to the external object containing the information. </xhtml:p>
                   <xhtml:p>The attribute "type" indicates the type of statistics presented - frequency, percent, or crosstabulation. If a value of "other" is used for this attribute, the "otherType" attribute should take a value from a controlled vocabulary. This option should only be used when applying a controlled vocabulary to this attribute. Use the complex element controlledVocabUsed to identify the controlled vocabulary to which the selected term belongs. </xhtml:p>
                   <xhtml:p>The attribute "access" records the ID values of all elements in the Data Access and Metadata Access section that describe access conditions. </xhtml:p>
-                  <xhtml:p>The following attributes attributes provide information on the weighting used in creating the statistic: </xhtml:p>
+                  <xhtml:p>The following attributes provide information on the weighting used in creating the statistic: </xhtml:p>
                   <xhtml:p>"wgtd" expressed as wgtd or not-wgtd, </xhtml:p>
                   <xhtml:p>"wgt-var" a reference to the variable containing the weight used or </xhtml:p>
                   <xhtml:p>"wgt" the value of a standard weight.</xhtml:p>
@@ -1460,7 +1460,7 @@ class="section_header">Description</xhtml:div>
                      <xhtml:p>The attribute "missType" is used to specify the type of missing data, e.g., inap., don't know, no answer, etc. </xhtml:p>
                      <xhtml:p>The attribute "country" allows for the denotation of country-specific category values.</xhtml:p>
                      <xhtml:p>The "sdatrefs" attribute records the ID values of all elements within the  summary data description that apply to this category. </xhtml:p>
-                     <xhtml:p>The "access" attribute records the ID values of all elements within the Data Access and etadata Access sections description that apply to this category. </xhtml:p>
+                     <xhtml:p>The "access" attribute records the ID values of all elements within the Data Access and Metadata Access sections description that apply to this category. </xhtml:p>
                      <xhtml:p>The exclusiveness attribute ("excls") should be set to "false" if the category can appear in more than one place in the classification hierarchy.</xhtml:p>
                      <xhtml:p>The attribute "catgry" is an IDREFS referencing any child categories of this category element. Used to capture nested hierarchies of categories.</xhtml:p>
                      <xhtml:p>The attribute "level" is an IDREF referencing the catLevel ID in which this category exists.</xhtml:p>
@@ -1811,7 +1811,7 @@ class="section_header">Description</xhtml:div>
 	    					<xhtml:h1 class="element_title">Mode of Data Collection</xhtml:h1>
 	    					<xhtml:div>
 	    						<xhtml:h2 class="section_header">Description</xhtml:h2>
-	    						<xhtml:div class="description">The method used to collect the data; instrumentation characteristics. As of version 2.6 this element is a conceptualtext type and supports the use of a controlled vocabulary. To specify the use of a Controlled Vocabulary or standard concept use the internal element "concept". If multiple concepts are needed the parent element should be replicated. Internal text related to each concept should be allocated to accompany the relevent concept.XHTML formatting may be used in the txt element for forward-compatibility with DDI Lifecycle.</xhtml:div>
+	    						<xhtml:div class="description">The method used to collect the data; instrumentation characteristics. As of version 2.6 this element is a conceptualText type and supports the use of a controlled vocabulary. To specify the use of a Controlled Vocabulary or standard concept use the internal element "concept". If multiple concepts are needed the parent element should be replicated. Internal text related to each concept should be allocated to accompany the relevant concept.XHTML formatting may be used in the txt element for forward-compatibility with DDI Lifecycle.</xhtml:div>
 					</xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -1959,7 +1959,7 @@ class="section_header">Description</xhtml:div>
                <xhtml:h1 class="element_title">Concept</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">The general subject to which the parent element may be seen as pertaining. This element serves the same purpose as the keywords and topic classification elements, but at the data description level. The "vocab" attribute is provided to indicate the name of the controlled vocabulary, if any, used in the element, e.g., LCSH (Library of Congress Subject Headings), MeSH (Medical Subject Headings), etc. The "vocabURI" attribute specifies the location for the full controlled vocabulary. Use vocabInstanceURI to specify the identification URI of the term/code within the controlled vocabulary if available. In addition, you may use a "vocabID" for another form of identification (useful for other forms of publication), an "vocabAgencyName" and "vocabAgencyID" to specify the agency managing the controlled vocabulary, a "vocabVersionID" if needed, and the "vocabSchemeURN". If the controlled vocabulary term is "other" you may provide a more specific value in "otherValue". PLEASE NOTE A CHANGE IN USAGE INSTRUCTIONS: The string content of "concept" now contains the language specific label obtained from the controlled vocabulary. This allows for multiple languages through the repeated entry of the "concept" element. The attribute "vocabInstanceCodeTerm" has been added to accommodate the code term as it appears in the controlled vocabulary. See the high level documentation for a complete description of usage.</xhtml:div>
+                  <xhtml:div class="description">The general subject to which the parent element may be seen as pertaining. This element serves the same purpose as the keywords and topic classification elements, but at the data description level. The "vocab" attribute is provided to indicate the name of the controlled vocabulary, if any, used in the element, e.g., LCSH (Library of Congress Subject Headings), MeSH (Medical Subject Headings), etc. The "vocabURI" attribute specifies the location for the full controlled vocabulary. Use vocabInstanceURI to specify the identification URI of the term/code within the controlled vocabulary if available. In addition, you may use a "vocabID" for another form of identification (do not use for URI), an "vocabAgencyName" and "vocabAgencyID" to specify the agency managing the controlled vocabulary, a "vocabVersionID" if needed, and the "vocabSchemeURN". If the controlled vocabulary term is "other" you may provide a more specific value in "otherValue". PLEASE NOTE A CHANGE IN USAGE INSTRUCTIONS: The string content of "concept" now contains the language specific label obtained from the controlled vocabulary. This allows for multiple languages through the repeated entry of the "concept" element. The attribute "vocabInstanceCodeTerm" has been added to accommodate the code term as it appears in the controlled vocabulary. See the high level documentation for a complete description of usage.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -2083,7 +2083,7 @@ class="section_header">Description</xhtml:div>
                <xhtml:h1 class="element_title">Contact Persons</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Names and addresses of individuals responsible for the work. Individuals listed as contact persons will be used as resource persons regarding problems or questions raised by the user community. The URI attribute should be used to indicate a URN or URL for the homepage of  the contact individual. The email attribute is used to indicate an email address for the contact individual. If the attribute "agentIdentifier" is used, "typeOfAgentIdentifier" should also be provided. An agent may be an organization or individual. Use "isPersistantIdentifier" (true|false) to indicate if this is intended to be a persistant identifier. Use "agentType" to indicate if the agent is an organization or an individual.</xhtml:div>
+                  <xhtml:div class="description">Names and addresses of individuals responsible for the work. Individuals listed as contact persons will be used as resource persons regarding problems or questions raised by the user community. The URI attribute should be used to indicate a URN or URL for the homepage of  the contact individual. The email attribute is used to indicate an email address for the contact individual. If the attribute "agentIdentifier" is used, "typeOfAgentIdentifier" should also be provided. An agent may be an organization or individual. Use "isPersistantIdentifier" (true|false) to indicate if this is intended to be a persistent identifier. Use "agentType" to indicate if the agent is an organization or an individual.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -2151,7 +2151,7 @@ class="section_header">Description</xhtml:div>
                <xhtml:h1 class="element_title">Controlled Vocabulary Used</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Provides information on the use of a controlled vocabulary by the DDI instance. The controlled vocabualry is identified by a codelistID, codelistName, codelistAgencyName, codelistVersionID, codelistURN, and codelistSchemeURN. The use of the controlled vocabulary is defined by the usage element.</xhtml:div>
+                  <xhtml:div class="description">Provides information on the use of a controlled vocabulary by the DDI instance. The controlled vocabulary is identified by a codelistID, codelistName, codelistAgencyName, codelistVersionID, codelistURN, and codelistSchemeURN. The use of the controlled vocabulary is defined by the usage element.</xhtml:div>
                </xhtml:div>
             </xhtml:div>
          </xs:documentation>
@@ -2494,7 +2494,7 @@ class="section_header">Description</xhtml:div>
                <xhtml:h1 class="element_title">Other Forms of Data Appraisal</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Other issues pertaining to data appraisal. Describe here issues such as response variance, nonresponse rate and testing for bias, interviewer and response bias, confidence levels, question bias, etc. The use of the attribute "type" as a means of specifiying a controlled vocabulary concept is DEPRECATED. To specify the use of a Controlled Vocabulary or standard concept use the internal element "concept". If multiple concepts are needed the parent element should be replicated. Internal text related to each concept should be allocated to accompany the relevant concept.</xhtml:div>
+                  <xhtml:div class="description">Other issues pertaining to data appraisal. Describe here issues such as response variance, nonresponse rate and testing for bias, interviewer and response bias, confidence levels, question bias, etc. The use of the attribute "type" as a means of specifying a controlled vocabulary concept is DEPRECATED. To specify the use of a Controlled Vocabulary or standard concept use the internal element "concept". If multiple concepts are needed the parent element should be replicated. Internal text related to each concept should be allocated to accompany the relevant concept.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -2525,7 +2525,7 @@ class="section_header">Description</xhtml:div>
                         <dataChck>The archive produced a codebook for this collection.</dataChck>
                      ]]></xhtml:samp>
                      <xhtml:samp class="xml_sample"><![CDATA[
-		                             <dataChck><concept vocabID="GSBPM" vocabAgency="UNECE" vocabVersionID="5.1" vocabInstanceCodeTerm="5.3">Review &amp; validate</concept>Consistency checks were performed by Data Producer/ Principal Investigator.</dataChck>
+		                             <dataChck><concept vocab="GSBPM" vocabAgency="UNECE" vocabVersionID="5.1" vocabInstanceCodeTerm="5.3">Review &amp; validate</concept>Consistency checks were performed by Data Producer/ Principal Investigator.</dataChck>
                      ]]></xhtml:samp>
                      <xhtml:samp class="xml_sample"><![CDATA[
                         <dataChck>The archive generated SAS and/or SPSS data definition  statements for this collection.</dataChck>
@@ -2555,7 +2555,7 @@ class="section_header">Description</xhtml:div>
                         <dataChck>Checks for undocumented codes were performed by the archive.</dataChck>
                      ]]></xhtml:samp>
                      <xhtml:samp class="xml_sample"><![CDATA[
-                        <dataChck><concept vocabName="EOSDIS" vocabURI="https://ghrc.nsstc.nasa.gov/uso/proc_level.html" vocabInstanceCodeTerm="2">Level 2</concept>Derived geophysical variables at the same resolution and location as the Level 1 source data.</dataChck>
+                        <dataChck><concept vocab="EOSDIS" vocabURI="https://ghrc.nsstc.nasa.gov/uso/proc_level.html" vocabInstanceCodeTerm="2">Level 2</concept>Derived geophysical variables at the same resolution and location as the Level 1 source data.</dataChck>
                      ]]></xhtml:samp>
                   </xhtml:div>
                </xhtml:div>
@@ -2794,7 +2794,7 @@ class="section_header">Description</xhtml:div>
 						<xhtml:h2 class="section_header">Example</xhtml:h2>
 						<xhtml:div class="example">
 													<xhtml:samp class="xml_sample"><![CDATA[
-												<unitType numberOfUnits=150000"><concept vocabName="SampleFrame_UnitType" vocabInstanceCodeTerm="telephoneNumber">Telephone Number</concept>Primary listed owners of published phone numbers in the City of St. Paul</unitType>
+												<unitType numberOfUnits="150000"><concept vocab="SampleFrame_UnitType" vocabInstanceCodeTerm="telephoneNumber">Telephone Number</concept>Primary listed owners of published phone numbers in the City of St. Paul</unitType>
 												]]>
 					</xhtml:samp>
 						</xhtml:div>
@@ -2918,7 +2918,7 @@ class="section_header">Description</xhtml:div>
                <xhtml:h1 class="element_title">Instrument Development</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Describe any development work on the data collection instrument. The use of the attribute "type" as a means of specifiying a controlled vocabulary concept is DEPRECATED. To specify the use of a Controlled Vocabulary or standard concept use the internal element "concept". If multiple concepts are needed the parent element should be replicated. Internal text related to each concept should be allocated to accompany the relevent concept.</xhtml:div>
+                  <xhtml:div class="description">Describe any development work on the data collection instrument. The use of the attribute "type" as a means of specifying a controlled vocabulary concept is DEPRECATED. To specify the use of a Controlled Vocabulary or standard concept use the internal element "concept". If multiple concepts are needed the parent element should be replicated. Internal text related to each concept should be allocated to accompany the relevant concept.</xhtml:div>
                </xhtml:div>
 					<xhtml:div>
 						<xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -3015,7 +3015,7 @@ class="section_header">Description</xhtml:div>
 					<xhtml:h1 class="element_title">Collector Training</xhtml:h1>
 					<xhtml:div>
 						<xhtml:h2 class="section_header">Description</xhtml:h2>
-						<xhtml:div class="description">Describes the training provided to data collectors including internviewer training, process testing, compliance with standards etc. This is repeatable for language and to capture different aspects of the training process. The use of the attribute "type" as a means of specifiying a controlled vocabulary concept is DEPRECATED. To specify the use of a Controlled Vocabulary or standard concept use the internal element "concept". If multiple concepts are needed the parent element should be replicated. Internal text related to each concept should be allocated to accompany the relevent concept.</xhtml:div>
+						<xhtml:div class="description">Describes the training provided to data collectors including interviewer training, process testing, compliance with standards etc. This is repeatable for language and to capture different aspects of the training process. The use of the attribute "type" as a means of specifying a controlled vocabulary concept is DEPRECATED. To specify the use of a Controlled Vocabulary or standard concept use the internal element "concept". If multiple concepts are needed the parent element should be replicated. Internal text related to each concept should be allocated to accompany the relevant concept.</xhtml:div>
 					</xhtml:div>
 					<xhtml:div>
 						<xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -3164,7 +3164,7 @@ class="section_header">Description</xhtml:div>
                <xhtml:h1 class="element_title">Kind of Data</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">The type of data included in the file: survey data, census/enumeration data, aggregate data, clinical data, event/transaction data, program source code, machine-readable text, administrative records data, experimental data, psychological test, textual data, coded textual, coded documents, time budget diaries, observation data/ratings, process-produced data, etc. This element maps to Dublin Core Type element. The type attribute has been DEPRECATED. For consistant use of conceptualTextType use the included content "concept" and related attributes to provide a reference to a controlled vocabulary.</xhtml:div>
+                  <xhtml:div class="description">The type of data included in the file: survey data, census/enumeration data, aggregate data, clinical data, event/transaction data, program source code, machine-readable text, administrative records data, experimental data, psychological test, textual data, coded textual, coded documents, time budget diaries, observation data/ratings, process-produced data, etc. This element maps to Dublin Core Type element. The type attribute has been DEPRECATED. For consistent use of conceptualTextType use the included content "concept" and related attributes to provide a reference to a controlled vocabulary.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -3329,7 +3329,7 @@ class="section_header">Description</xhtml:div>
                <xhtml:h1 class="element_title">Depositor</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">The name of the person (or institution) who provided this work to the archive storing it. Attributes "abbr" and "affiliation" can be used to provide and abbreviation and affiliation of the depositor. If the attribute "agentIdentifier" is used, "typeOfAgentIdentifier" should also be provided. An agent may be an organization or individual. Use "isPersistantIdentifier" (true|false) to indicate if this is intended to be a persistant identifier. Use "agentType" to indicate if the agent is an organization or an individual.</xhtml:div>
+                  <xhtml:div class="description">The name of the person (or institution) who provided this work to the archive storing it. Attributes "abbr" and "affiliation" can be used to provide and abbreviation and affiliation of the depositor. If the attribute "agentIdentifier" is used, "typeOfAgentIdentifier" should also be provided. An agent may be an organization or individual. Use "isPersistantIdentifier" (true|false) to indicate if this is intended to be a persistent identifier. Use "agentType" to indicate if the agent is an organization or an individual.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -3371,7 +3371,7 @@ class="section_header">Description</xhtml:div>
                   <xhtml:div class="example">
                      <xhtml:samp class="xml_sample"><![CDATA[
                         <derivation var="V4 V9">
-                           <drvdesc>Taxible Income (V10) expressed as a combinaton of wage and salary income (V4) plus interest income (V9)</drvdesc>
+                           <drvdesc>Taxible Income (V10) expressed as a combination of wage and salary income (V4) plus interest income (V9)</drvdesc>
                            <drvcmd syntax="SPSS">V10=V4+V9</drvcmd>
                         </derivation>
                      ]]></xhtml:samp> 
@@ -3434,7 +3434,7 @@ class="section_header">Description</xhtml:div>
 						<xhtml:div class="example">
 							<xhtml:samp class="xml_sample"><![CDATA[
 <dataFingerprint type="data"><digitalFingerprintValue>UNF:3:DaYlT6QSX9r0D50ye+tXpA== </digitalFingerprintValue>
-<algorithmSpecification>UNF v5.0 Calculation Producture [http://thedata.org/book/unf-version-5-0]</algorithmSpecification><algorithmVersion>UNF V5</algorithmVersion></dataFingerprint>
+<algorithmSpecification>UNF v5.0 Calculation Production [http://thedata.org/book/unf-version-5-0]</algorithmSpecification><algorithmVersion>UNF V5</algorithmVersion></dataFingerprint>
 
 ]]>
 							</xhtml:samp>
@@ -3573,7 +3573,7 @@ class="section_header">Description</xhtml:div>
                <xhtml:h1 class="element_title">Distributor</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">The organization designated by the author or producer to generate copies of the particular work including any necessary editions or revisions. Names and addresses may be specified and other archives may be co-distributors. The attributes "abbr" and "affiliation" are provided and URI attribute is included to provide an URN or URL to the ordering service or download facility on a Web site. If the attribute "agentIdentifier" is used, "typeOfAgentIdentifier" should also be provided. An agent may be an organization or individual. Use "isPersistantIdentifier" (true|false) to indicate if this is intended to be a persistant identifier. Use "agentType" to indicate if the agent is an organization or an individual.</xhtml:div>
+                  <xhtml:div class="description">The organization designated by the author or producer to generate copies of the particular work including any necessary editions or revisions. Names and addresses may be specified and other archives may be co-distributors. The attributes "abbr" and "affiliation" are provided and URI attribute is included to provide an URN or URL to the ordering service or download facility on a Web site. If the attribute "agentIdentifier" is used, "typeOfAgentIdentifier" should also be provided. An agent may be an organization or individual. Use "isPersistantIdentifier" (true|false) to indicate if this is intended to be a persistent identifier. Use "agentType" to indicate if the agent is an organization or an individual.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -3915,7 +3915,7 @@ class="section_header">Description</xhtml:div>
                  <xhtml:div>
                     <xhtml:h2 class="section_header">Description</xhtml:h2>
                     <xhtml:div class="description">
-                       <xhtml:p>The element allows for the the description of the file command by capturing a textual description of the command including the capture of pseudo code in "drvdesc" as well as the specific command using "drvcmd". Follow the same convention as the variable derivation; source="producer" holds original and source="archive" holds the SDTD.</xhtml:p>
+                       <xhtml:p>The element allows for the description of the file command by capturing a textual description of the command including the capture of pseudo code in "drvdesc" as well as the specific command using "drvcmd". Follow the same convention as the variable derivation; source="producer" holds original and source="archive" holds the SDTD.</xhtml:p>
                        <xhtml:p>Provide linkage to source and target variables that were involved in this derivation command in "fileDerivationVars". Basically, any dropped variable from the source will only be identified and referenced here. A variable that is kept and unchanged, will have a derivation pointing to it source, but the specific command which led to its retention will only be identified here at the file level. Variables created by a file level command will be linked here, and their derivation elements will repeat the command.</xhtml:p>
                        <xhtml:p>If applicable, use the values "add" or "drop" in the attribute "fileDerivationCasesAction" if this command added or dropped cases from the referenced source files.</xhtml:p>
                     </xhtml:div>
@@ -3953,7 +3953,7 @@ class="section_header">Description</xhtml:div>
                  <xhtml:div>
                     <xhtml:h2 class="section_header">Description</xhtml:h2>
                     <xhtml:div class="description">
-                       <xhtml:p>The element allows for the the description of the file commands used to creation the file derivation. The attribute "sourceFiles" is used to provide a space delimited list of the "fileTxt" IDs used as the source(s) of the derivation.</xhtml:p>
+                       <xhtml:p>The element allows for the description of the file commands used to creation the file derivation. The attribute "sourceFiles" is used to provide a space delimited list of the "fileTxt" IDs used as the source(s) of the derivation.</xhtml:p>
                     </xhtml:div>
                  </xhtml:div>
                  <xhtml:div>
@@ -4327,13 +4327,13 @@ class="section_header">Description</xhtml:div>
                <xhtml:h1 class="element_title">Data Format</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Physical format of the data file: Logical record length format, card-image format (i.e., data with multiple records per case), delimited format, free format, etc. The element may be repeated to support multiple language expressions of the content. The use of a controlled vocabulary is supported with the use of attributes "vocab", "vocabURI", and "vocabInstanceURI". In addition, you may use a "vocabID" for another form of identification (useful for other forms of publication), an "vocabAgencyName" and "vocabAgencyID" to specify the agency managing the controlled vocabulary, a "vocabVersionID" if needed, and the "vocabSchemeURN". If the controlled vocabulary term is "other" you may provide a more specific value in "otherValue". PLEASE NOTE A CHANGE IN USAGE INSTRUCTIONS: The string content of "concept" now contains the language specific label obtained from the controlled vocabulary. This allows for multiple languages through the repeated entry of the "concept" element. The attribute "vocabInstanceCodeTerm" has been added to accommodate the code term as it appears in the controlled vocabulary. See the high level documentation for a complete description of usage.</xhtml:div>
+                  <xhtml:div class="description">Physical format of the data file: Logical record length format, card-image format (i.e., data with multiple records per case), delimited format, free format, etc. The element may be repeated to support multiple language expressions of the content. The use of a controlled vocabulary is supported with the use of attributes "vocab", "vocabURI", and "vocabInstanceURI". In addition, you may use a "vocabID" for another form of identification (do not use for URI), an "vocabAgencyName" and "vocabAgencyID" to specify the agency managing the controlled vocabulary, a "vocabVersionID" if needed, and the "vocabSchemeURN". If the controlled vocabulary term is "other" you may provide a more specific value in "otherValue". PLEASE NOTE A CHANGE IN USAGE INSTRUCTIONS: The string content of "concept" now contains the language specific label obtained from the controlled vocabulary. This allows for multiple languages through the repeated entry of the "concept" element. The attribute "vocabInstanceCodeTerm" has been added to accommodate the code term as it appears in the controlled vocabulary. See the high level documentation for a complete description of usage.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
                   <xhtml:div class="example">
                      <xhtml:samp class="xml_sample"><![CDATA[
-                          <format vocabName="EU Vocabularies: File Type" vocabURI="http://publications.europa.eu/resource/authority/file-type” vocabINstanceURI="http://publications.europa.eu/resource/authority/file-type/CSV" vocabIntanceCodeTerm="CSV" xml:lang="en">Comma separated values</format>
+                          <format vocab="EU Vocabularies: File Type" vocabURI="http://publications.europa.eu/resource/authority/file-type” vocabINstanceURI="http://publications.europa.eu/resource/authority/file-type/CSV" vocabIntanceCodeTerm="CSV" xml:lang="en">Comma separated values</format>
                      ]]></xhtml:samp> 
                   </xhtml:div>
                </xhtml:div>
@@ -4391,7 +4391,7 @@ class="section_header">Description</xhtml:div>
                <xhtml:h1 class="element_title">Frequency of Data Collection</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">For data collected at more than one point in time, the frequency with which the data were collected. The use of the attribute "freq" as a means of specifiying a controlled vocabulary concept is DEPRECATED. To specify the use of a Controlled Vocabulary or standard concept use the internal element "concept". If multiple concepts are needed the parent element should be replicated. Internal text related to each concept should be allocated to accompany the relevent concept.</xhtml:div>
+                  <xhtml:div class="description">For data collected at more than one point in time, the frequency with which the data were collected. The use of the attribute "freq" as a means of specifying a controlled vocabulary concept is DEPRECATED. To specify the use of a Controlled Vocabulary or standard concept use the internal element "concept". If multiple concepts are needed the parent element should be replicated. Internal text related to each concept should be allocated to accompany the relevant concept.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -4437,7 +4437,7 @@ class="section_header">Description</xhtml:div>
                <xhtml:h1 class="element_title">Funding Agency/Sponsor</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">The source(s) of funds for production of the work including abbreviation and affiliation. If different funding agencies sponsored different stages of the production process, use the "role" attribute to distinguish them. If the attribute "agentIdentifier" is used, "typeOfAgentIdentifier" should also be provided. An agent may be an organization or individual. Use "isPersistantIdentifier" (true|false) to indicate if this is intended to be a persistant identifier. Use "agentType" to indicate if the agent is an organization or an individual.</xhtml:div>
+                  <xhtml:div class="description">The source(s) of funds for production of the work including abbreviation and affiliation. If different funding agencies sponsored different stages of the production process, use the "role" attribute to distinguish them. If the attribute "agentIdentifier" is used, "typeOfAgentIdentifier" should also be provided. An agent may be an organization or individual. Use "isPersistantIdentifier" (true|false) to indicate if this is intended to be a persistent identifier. Use "agentType" to indicate if the agent is an organization or an individual.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -4480,7 +4480,7 @@ class="section_header">Description</xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
                   <xhtml:div class="description">
                   <xhtml:p>The fundamental geometric description for any dataset that models geography. GeoBndBox is the minimum box, defined by west and east longitudes and north and south latitudes, that includes the largest geographic extent of the dataset's geographic coverage. This element is used in the first pass of a coordinate-based search. If the boundPoly element is included, then the geoBndBox element MUST be included.</xhtml:p>
-                  <xhtml:p>Replication of the element geoBndBox is NOT recommended. The purpose of a bounding box is to support high level geographic point search systems. Most search systems of this type do not handle multiple instances of a bounding box. The bounding box should represent the full geographic coverage extent of the of the overall datasets being described by the Codebook instance. If there is a desire to provide the equivilent of a bounding box for each of multiple summary descriptions, use of the boundPoly is recommended. First provide a geoBndBox for the full area covered by the study. Then provide a boundPoly for each geographic area defined with a separate sumDscr. Note that when describing a bounding box using a boundPoly description the four corner points are described. The starting point and end point should match (closing the polygon).</xhtml:p>
+                  <xhtml:p>Replication of the element geoBndBox is NOT recommended. The purpose of a bounding box is to support high level geographic point search systems. Most search systems of this type do not handle multiple instances of a bounding box. The bounding box should represent the full geographic coverage extent of the of the overall datasets being described by the Codebook instance. If there is a desire to provide the equivalent of a bounding box for each of multiple summary descriptions, use of the boundPoly is recommended. First provide a geoBndBox for the full area covered by the study. Then provide a boundPoly for each geographic area defined with a separate sumDscr. Note that when describing a bounding box using a boundPoly description the four corner points are described. The starting point and end point should match (closing the polygon).</xhtml:p>
                   <xhtml:p>The examples shown here show bounding box specifications for the coverage of two different data files.</xhtml:p>
                   </xhtml:div>
                </xhtml:div>
@@ -4559,7 +4559,7 @@ class="section_header">Description</xhtml:div>
                <xhtml:h1 class="element_title">Geographic Coverage</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Information on the geographic coverage of the data. Includes the total geographic scope of the data, and any additional levels of geographic coding provided in the variables. Maps to Dublin Core Coverage element. Inclusion of this element in the codebook is recommended. To specify the use of a Controlled Vocabulary or standard concept use the internal element "concept". If multiple concepts are needed the parent element should be replicated. Internal text related to each concept should be allocated to accompany the relevent concept. For forward-compatibility, DDI Lifecycle XHTML tags may be used in this element.</xhtml:div>
+                  <xhtml:div class="description">Information on the geographic coverage of the data. Includes the total geographic scope of the data, and any additional levels of geographic coding provided in the variables. Maps to Dublin Core Coverage element. Inclusion of this element in the codebook is recommended. To specify the use of a Controlled Vocabulary or standard concept use the internal element "concept". If multiple concepts are needed the parent element should be replicated. Internal text related to each concept should be allocated to accompany the relevant concept. For forward-compatibility, DDI Lifecycle XHTML tags may be used in this element.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -4571,7 +4571,7 @@ class="section_header">Description</xhtml:div>
 		                       ]]></xhtml:samp>
 		  							<xhtml:samp class="xml_sample"><![CDATA[
 		                       <sumDscr>
-		                          <geogCover><concept vocabID="USPS" vocabInstanceCodeTerm="CA">California</concept></geogCover>
+		                          <geogCover><concept vocab="USPS" vocabInstanceCodeTerm="CA">California</concept></geogCover>
 		                       </sumDscr>   
 		                       ]]></xhtml:samp>
 		  							<xhtml:samp class="xml_sample"><![CDATA[
@@ -4623,7 +4623,7 @@ class="section_header">Description</xhtml:div>
                <xhtml:h1 class="element_title">Grant Number</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">The grant/contract number of the project that sponsored the effort. If more than one, indicate the appropriate agency using the "agency" attribute. "fundingProgram" is used to list the program within an agency ifappropriate. If there is a specific grant name list it in grantName. Note that regional and country differences may make direct comparison difficult. These attributes are intended to allow for differences in grant organization in different countries. If different funding agencies sponsored different stages of the production process, use the "role" attribute to distinguish the grant numbers. </xhtml:div>
+                  <xhtml:div class="description">The grant/contract number of the project that sponsored the effort. If more than one, indicate the appropriate agency using the "agency" attribute. "fundingProgram" is used to list the program within an agency if appropriate. If there is a specific grant name list it in grantName. Note that regional and country differences may make direct comparison difficult. These attributes are intended to allow for differences in grant organization in different countries. If different funding agencies sponsored different stages of the production process, use the "role" attribute to distinguish the grant numbers. </xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -4760,7 +4760,7 @@ class="section_header">Description</xhtml:div>
                <xhtml:h1 class="element_title">Identification Number</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Unique string or number (producer's or archive's number). An "agency" attribute is supplied to indicate the managing agency for the identifier. The "level" attribute allows specification of the level (study, file, or project) to which the identification number applies. If the identification number is a persistent identifer, set the attribute isPersistentIdentifier to "true". Identification Number of data collection maps to Dublin Core Identifier element.</xhtml:div>
+                  <xhtml:div class="description">Unique string or number (producer's or archive's number). An "agency" attribute is supplied to indicate the managing agency for the identifier. The "level" attribute allows specification of the level (study, file, or project) to which the identification number applies. If the identification number is a persistent identifier, set the attribute isPersistentIdentifier to "true". Identification Number of data collection maps to Dublin Core Identifier element.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -4966,7 +4966,7 @@ class="section_header">Description</xhtml:div>
                <xhtml:h1 class="element_title">Keywords</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Words or phrases that describe salient aspects of a data collection's content. Can be used for building keyword indexes and for classification and retrieval purposes. A controlled vocabulary can be employed. Maps to Dublin Core Subject element. The "vocab" attribute is provided for specification of the controlled vocabulary in use, e.g., LCSH, MeSH, etc. The "vocabURI" attribute specifies the location for the full controlled vocabulary.  Use vocabInstanceURI to specify the identification URI of the term/code within the controlled vocabulary if available.  In addition, you may use a "vocabID" for another form of identification (useful for other forms of publication), an "vocabAgencyName" and "vocabAgencyID" to specify the agency managing the controlled vocabulary, a "vocabVersionID" if needed, and the "vocabSchemeURN". If the controlled vocabulary term is "other" you may provide a more specific value in "otherValue". PLEASE NOTE A CHANGE IN USAGE INSTRUCTIONS: The string content of "concept" now contains the language specific label obtained from the controlled vocabulary. This allows for multiple languages through the repeated entry of the "concept" element. The attribute "vocabInstanceCodeTerm" has been added to accommodate the code term as it appears in the controlled vocabulary. See the high level documentation for a complete description of usage.</xhtml:div>
+                  <xhtml:div class="description">Words or phrases that describe salient aspects of a data collection's content. Can be used for building keyword indexes and for classification and retrieval purposes. A controlled vocabulary can be employed. Maps to Dublin Core Subject element. The "vocab" attribute is provided for specification of the controlled vocabulary in use, e.g., LCSH, MeSH, etc. The "vocabURI" attribute specifies the location for the full controlled vocabulary.  Use vocabInstanceURI to specify the identification URI of the term/code within the controlled vocabulary if available.  In addition, you may use a "vocabID" for another form of identification (do not use for URI), an "vocabAgencyName" and "vocabAgencyID" to specify the agency managing the controlled vocabulary, a "vocabVersionID" if needed, and the "vocabSchemeURN". If the controlled vocabulary term is "other" you may provide a more specific value in "otherValue". PLEASE NOTE A CHANGE IN USAGE INSTRUCTIONS: The string content of "concept" now contains the language specific label obtained from the controlled vocabulary. This allows for multiple languages through the repeated entry of the "concept" element. The attribute "vocabInstanceCodeTerm" has been added to accommodate the code term as it appears in the controlled vocabulary. See the high level documentation for a complete description of usage.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -5335,7 +5335,7 @@ class="section_header">Description</xhtml:div>
                <xhtml:h1 class="element_title">Coding Instructions</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Describe specific coding instructions used in data processing, cleaning, assession, or tabulation. The attribute "relatedProcesses" allows linking a coding instruction to one or more processes such as dataProcessing, dataAppr, cleanOps, etc. Use the txt element to describe instructions in a human readable form. The type attribute has been DEPRECATED. Use the typeOfCodingInstruction to indicate the type of instruction with or without the use of a controlled vocabulary. Repeat if multiple language labels are being provided directly within the documentation.</xhtml:div>
+                  <xhtml:div class="description">Describe specific coding instructions used in data processing, cleaning, acquisition, or tabulation. The attribute "relatedProcesses" allows linking a coding instruction to one or more processes such as dataProcessing, dataAppr, cleanOps, etc. Use the txt element to describe instructions in a human readable form. The type attribute has been DEPRECATED. Use the typeOfCodingInstruction to indicate the type of instruction with or without the use of a controlled vocabulary. Repeat if multiple language labels are being provided directly within the documentation.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -5400,7 +5400,7 @@ class="section_header">Description</xhtml:div>
 						<xhtml:h1 class="element_title">Data Processing</xhtml:h1>
 						<xhtml:div>
 							<xhtml:h2 class="section_header">Description</xhtml:h2>
-							<xhtml:div class="description">Describes various data processing procedures not captured elsewhere in the documentation, such as topcoding, recoding, suppression, tabulation, etc. The use of the attribute "type" as a means of specifiying a controlled vocabulary concept is DEPRECATED. To specify the use of a Controlled Vocabulary or standard concept use the internal element "concept". If multiple concepts are needed the parent element should be replicated. Internal text related to each concept should be allocated to accompany the relevent concept.</xhtml:div>
+							<xhtml:div class="description">Describes various data processing procedures not captured elsewhere in the documentation, such as topcoding, recoding, suppression, tabulation, etc. The use of the attribute "type" as a means of specifying a controlled vocabulary concept is DEPRECATED. To specify the use of a Controlled Vocabulary or standard concept use the internal element "concept". If multiple concepts are needed the parent element should be replicated. Internal text related to each concept should be allocated to accompany the relevant concept.</xhtml:div>
 						</xhtml:div>
 						<xhtml:div>
 							<xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -5431,7 +5431,7 @@ class="section_header">Description</xhtml:div>
                <xhtml:h1 class="element_title">Mathematical Identifier</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Token element containing the smallest unit in the mrow that carries meaning expressed by the attribute varRef. This is an element taked from MathML.</xhtml:div>
+                  <xhtml:div class="description">Token element containing the smallest unit in the mrow that carries meaning expressed by the attribute varRef. This is an element taken from MathML.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -5463,7 +5463,7 @@ class="section_header">Description</xhtml:div>
                <xhtml:h1 class="element_title">Mathematical Row</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">This element is a wrapper containing the presentation expression mi. It creates a single string without spaces consisting of the individual elements described within it. It can be used to create a single variable by concatenating other variables into a single string. It is used to create linking variables composed of multiple non-contiguous parts, or to define unique strings for various category values of a single variable. This is an element taked from MathML. The example shows the use of mrow in the context of a code based on two separate variables.</xhtml:div>
+                  <xhtml:div class="description">This element is a wrapper containing the presentation expression mi. It creates a single string without spaces consisting of the individual elements described within it. It can be used to create a single variable by concatenating other variables into a single string. It is used to create linking variables composed of multiple non-contiguous parts, or to define unique strings for various category values of a single variable. This is an element staked from MathML. The example shows the use of mrow in the context of a code based on two separate variables.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -5636,7 +5636,7 @@ class="section_header">Description</xhtml:div>
                <xhtml:h1 class="element_title">Country</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Indicates the country or countries covered in the file. Attribute "abbr" may be used to list common abbreviations; use of ISO country codes is recommended. Use vocab, vocabURI, and vocabInstanceURI to identify the use of a controlled vocabulary. Maps to Dublin Core Coverage element. Inclusion of this element is recommended. For forward-compatibility, DDI Lifecycle XHTML tags may be used in this element. In addition, you may use a "vocabID" for another form of identification (useful for other forms of publication), an "vocabAgencyName" and "vocabAgencyID" to specify the agency managing the controlled vocabulary, a "vocabVersionID" if needed, and the "vocabSchemeURN". If the controlled vocabulary term is "other" you may provide a more specific value in "otherValue". PLEASE NOTE A CHANGE IN USAGE INSTRUCTIONS: The string content of "concept" now contains the language specific label obtained from the controlled vocabulary. This allows for multiple languages through the repeated entry of the "concept" element. The attribute "vocabInstanceCodeTerm" has been added to accommodate the code term as it appears in the controlled vocabulary. See the high level documentation for a complete description of usage.</xhtml:div>
+                  <xhtml:div class="description">Indicates the country or countries covered in the file. Attribute "abbr" may be used to list common abbreviations; use of ISO country codes is recommended. Use vocab, vocabURI, and vocabInstanceURI to identify the use of a controlled vocabulary. Maps to Dublin Core Coverage element. Inclusion of this element is recommended. For forward-compatibility, DDI Lifecycle XHTML tags may be used in this element. In addition, you may use a "vocabID" for another form of identification (do not use for URI), an "vocabAgencyName" and "vocabAgencyID" to specify the agency managing the controlled vocabulary, a "vocabVersionID" if needed, and the "vocabSchemeURN". If the controlled vocabulary term is "other" you may provide a more specific value in "otherValue". PLEASE NOTE A CHANGE IN USAGE INSTRUCTIONS: The string content of "concept" now contains the language specific label obtained from the controlled vocabulary. This allows for multiple languages through the repeated entry of the "concept" element. The attribute "vocabInstanceCodeTerm" has been added to accommodate the code term as it appears in the controlled vocabulary. See the high level documentation for a complete description of usage.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
 	       						<xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -5890,7 +5890,7 @@ class="section_header">Description</xhtml:div>
                <xhtml:h1 class="element_title">Archive Where Study Originally Stored</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Archive from which the data collection was obtained; the originating archive. May provide "abbr", "affiliation", "URI", and "agentIdentifier" to aid in identification. If "agentIdentifier" is used "typeOfAgentIdentifier" should be used. An agent may be an organization or individual. Use "isPersistantIdentifier" (true|false) to indicate if this is intended to be a persistant identifier. Use "agentType" to indicate if the agent is an organization or an individual.</xhtml:div>
+                  <xhtml:div class="description">Archive from which the data collection was obtained; the originating archive. May provide "abbr", "affiliation", "URI", and "agentIdentifier" to aid in identification. If "agentIdentifier" is used "typeOfAgentIdentifier" should be used. An agent may be an organization or individual. Use "isPersistantIdentifier" (true|false) to indicate if this is intended to be a persistent identifier. Use "agentType" to indicate if the agent is an organization or an individual.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -5934,7 +5934,7 @@ class="section_header">Description</xhtml:div>
                <xhtml:h1 class="element_title">Other Identifications /Acknowledgments</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Statements of responsibility not recorded in the title and statement of responsibility areas (collaborators). Indicate here the persons or bodies connected with the work, or significant persons or bodies connected with previous editions and not already named in the description. For example, the name of the person who edited the marked-up documentation might be cited in codeBook/docDscr/rspStmt/othId, using the "role" and "affiliation" attributes. Other identifications/acknowledgments for data collection (codeBook/stdyDscr/citation/rspStmt/othId) maps to Dublin Core Contributor element. If the attribute "agentIdentifier" is used, "typeOfAgentIdentifier" should also be provided. An agent may be an organization or individual. Use "isPersistantIdentifier" (true|false) to indicate if this is intended to be a persistant identifier. Use "agentType" to indicate if the agent is an organization or an individual.</xhtml:div>
+                  <xhtml:div class="description">Statements of responsibility not recorded in the title and statement of responsibility areas (collaborators). Indicate here the persons or bodies connected with the work, or significant persons or bodies connected with previous editions and not already named in the description. For example, the name of the person who edited the marked-up documentation might be cited in codeBook/docDscr/rspStmt/othId, using the "role" and "affiliation" attributes. Other identifications/acknowledgments for data collection (codeBook/stdyDscr/citation/rspStmt/othId) maps to Dublin Core Contributor element. If the attribute "agentIdentifier" is used, "typeOfAgentIdentifier" should also be provided. An agent may be an organization or individual. Use "isPersistantIdentifier" (true|false) to indicate if this is intended to be a persistent identifier. Use "agentType" to indicate if the agent is an organization or an individual.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -6028,7 +6028,7 @@ class="section_header">Description</xhtml:div>
                   <xhtml:div class="description">
                      <xhtml:p>This section allows for the inclusion of other materials that are related to the study as identified and labeled by the DTD/Schema users (encoders). The materials may be entered as PCDATA (ASCII text) directly into the document (through use of the "txt" element). This section may also serve as a "container" for other electronic materials such as setup files by providing a brief description of the study-related materials accompanied by the attributes "type" and "level" defining the material further.  Note that the use of the attribute "type" has been DEPRECATED and the element "typeOfOtherMaterial" should be used instead. This element provide support for the use of a controlled vocabulary. The "URI" attribute may be used to indicate the location of the other study-related materials.</xhtml:p>
                      <xhtml:p>Other Study-Related Materials may include: questionnaires, coding notes, SPSS/SAS/Stata setup files (and others), user manuals, continuity guides, sample computer software programs, glossaries of terms, interviewer/project instructions, maps, database schema, data dictionaries, show cards, coding information, interview schedules, missing values information, frequency files, variable maps, etc.</xhtml:p>
-                     <xhtml:p>The "level" attribute is used to clarify the relationship of the other materials to components of the study. Suggested values for level include specifications of the item level to which the element applies: e.g., level= data; level=datafile; level=studydsc; level=study. The URI attribute need not be used in every case; it is intended for capturing references to other materials separate from the codebook itself. In Section 5, Other Material is recursively defined.</xhtml:p>
+                     <xhtml:p>The "level" attribute is used to clarify the relationship of the other materials to components of the study. Suggested values for level include specifications of the item level to which the element applies: e.g., level="data"; level="datafile"; level="studydsc"; level="study". The URI attribute need not be used in every case; it is intended for capturing references to other materials separate from the codebook itself. In Section 5, Other Material is recursively defined.</xhtml:p>
                   </xhtml:div>
                </xhtml:div>
             </xhtml:div>
@@ -6108,7 +6108,7 @@ class="section_header">Description</xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
                   <xhtml:div class="description">
-                     <xhtml:p>This is an empty element containing only the attributes listed below. Attributes include "type" (type of file structure: rectangular, hierarchical, two-dimensional, relational), "recRef" (IDREF link to the appropriate file or recGrp element within a file) which provides additional inforamtion about the record as a whole, "startPos" (starting position of variable or data item), "endPos" (ending position of variable or data item), and "width" (number of columns the variable/data item occupies)</xhtml:p>
+                     <xhtml:p>This is an empty element containing only the attributes listed below. Attributes include "type" (type of file structure: rectangular, hierarchical, two-dimensional, relational), "recRef" (IDREF link to the appropriate file or recGrp element within a file) which provides additional information about the record as a whole, "startPos" (starting position of variable or data item), "endPos" (ending position of variable or data item), and "width" (number of columns the variable/data item occupies)</xhtml:p>
                      <xhtml:p>Remarks: Where the same variable is coded in two different files, e.g., a fixed format file and a relational database file, simply repeat the physLoc element with the alternative location information. Note that if there is no width or ending position, then the starting position should be the ordinal position in the file, and the file would be described as free-format. New attributes will be added as other storage formats are described within the DDI.</xhtml:p>
                   </xhtml:div>
                </xhtml:div>
@@ -6408,7 +6408,7 @@ class="section_header">Description</xhtml:div>
                <xhtml:h1 class="element_title">Producer</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">The producer is the person or organization with the financial or administrative responsibility for the physical processes whereby the document was brought into existence. Use the "role" attribute to distinguish different stages of involvement in the production process, such as original producer. Producer of data collection (codeBook/stdyDscr/citation/prodStmt/producer) maps to Dublin Core Publisher element. The "producer" in the Document Description should be the agency or person that prepared the marked-up document. If the attribute "agentIdentifier" is used, "typeOfAgentIdentifier" should also be provided. An agent may be an organization or individual. Use "isPersistantIdentifier" (true|false) to indicate if this is intended to be a persistant identifier. Use "agentType" to indicate if the agent is an organization or an individual.</xhtml:div>
+                  <xhtml:div class="description">The producer is the person or organization with the financial or administrative responsibility for the physical processes whereby the document was brought into existence. Use the "role" attribute to distinguish different stages of involvement in the production process, such as original producer. Producer of data collection (codeBook/stdyDscr/citation/prodStmt/producer) maps to Dublin Core Publisher element. The "producer" in the Document Description should be the agency or person that prepared the marked-up document. If the attribute "agentIdentifier" is used, "typeOfAgentIdentifier" should also be provided. An agent may be an organization or individual. Use "isPersistantIdentifier" (true|false) to indicate if this is intended to be a persistent identifier. Use "agentType" to indicate if the agent is an organization or an individual.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -6417,7 +6417,7 @@ class="section_header">Description</xhtml:div>
                         <producer abbr="ICPSR" affiliation="Institute for Social Research">Inter-university Consortium for Political and Social Research</producer>
                      ]]></xhtml:samp>
                      <xhtml:samp class="xml_sample"><![CDATA[
-                        <producer abbr="MNPoll" affiliation="Minneapolis Star Tibune Newspaper" role="original producer">Star Tribune Minnesota Poll</producer>
+                        <producer abbr="MNPoll" affiliation="Minneapolis Star Tribune Newspaper" role="original producer">Star Tribune Minnesota Poll</producer>
                      ]]></xhtml:samp>
                      <xhtml:samp class="xml_sample"><![CDATA[
                         <producer abbr="MRDC" affiliation="University of Minnesota" role="final production">Machine Readable Data Center</producer>
@@ -6811,7 +6811,7 @@ class="section_header">Description</xhtml:div>
                <xhtml:h1 class="element_title">Related Publications</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Bibliographic and access information aboutvarticles and reports based on the data in this collection. Can take the form of bibliographic citations. </xhtml:div>
+                  <xhtml:div class="description">Bibliographic and access information about articles and reports based on the data in this collection. Can take the form of bibliographic citations. </xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -6866,7 +6866,7 @@ class="section_header">Description</xhtml:div>
                <xhtml:h1 class="element_title">Type of Research Instrument</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">The type of data collection instrument used. "Structured" indicates an instrument in which all respondents are asked the same questions/tests, possibly with precoded answers. If a small portion of such a questionnaire includes open-ended questions, provide appropriate comments. "Semi-structured" indicates that the research instrument contains mainly open-ended questions. "Unstructured" indicates that in-depth interviews were conducted. The use of the attribute "type" as a means of specifiying a controlled vocabulary concept is DEPRECATED. To specify the use of a Controlled Vocabulary or standard concept use the internal element "concept". If multiple concepts are needed the parent element should be replicated. Internal text related to each concept should be allocated to accompany the relevent concept.</xhtml:div>
+                  <xhtml:div class="description">The type of data collection instrument used. "Structured" indicates an instrument in which all respondents are asked the same questions/tests, possibly with precoded answers. If a small portion of such a questionnaire includes open-ended questions, provide appropriate comments. "Semi-structured" indicates that the research instrument contains mainly open-ended questions. "Unstructured" indicates that in-depth interviews were conducted. The use of the attribute "type" as a means of specifying a controlled vocabulary concept is DEPRECATED. To specify the use of a Controlled Vocabulary or standard concept use the internal element "concept". If multiple concepts are needed the parent element should be replicated. Internal text related to each concept should be allocated to accompany the relevant concept.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -6888,7 +6888,7 @@ class="section_header">Description</xhtml:div>
                <xhtml:h1 class="element_title">Response Rate</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">The percentage of sample members who provided information. This may include a broader description of stratified response rates, information affecting resonse rates etc.</xhtml:div>
+                  <xhtml:div class="description">The percentage of sample members who provided information. This may include a broader description of stratified response rates, information affecting response rates etc.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -6913,14 +6913,14 @@ class="section_header">Description</xhtml:div>
                <xhtml:h1 class="element_title">Response Unit</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Provides information regarding who is intended to provide the information contained within the variable/nCube, e.g., respondent, proxy, interviewer. This element contains the sub-element "concept". PLEASE NOTE A CHANGE IN USAGE INSTRUCTIONS: The string content of "concept" now contains the language specific label obtained from the controlled vocabulary. This allows for multiple languages through the repeated entry of the "concept" element. The attribute "vocabInstanceCodeTerm" has been added to accommodate the code term as it appears in the controlled vocabulary. See the high level documentation for a complete description of usage. Additional textual description is enteted in the mixed text content or using the sub-element "txt".</xhtml:div>
+                  <xhtml:div class="description">Provides information regarding who is intended to provide the information contained within the variable/nCube, e.g., respondent, proxy, interviewer. This element contains the sub-element "concept". PLEASE NOTE A CHANGE IN USAGE INSTRUCTIONS: The string content of "concept" now contains the language specific label obtained from the controlled vocabulary. This allows for multiple languages through the repeated entry of the "concept" element. The attribute "vocabInstanceCodeTerm" has been added to accommodate the code term as it appears in the controlled vocabulary. See the high level documentation for a complete description of usage. Additional textual description is entered in the mixed text content or using the sub-element "txt".</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
                   <xhtml:div class="example">
                      <xhtml:samp class="xml_sample"><![CDATA[
                         <var>
-                           <respUnit><concept vocabID="IPUMS_ResponseUnit" vocabAgency="IPUMS" vocabInstanceCodeTerm="HouseholdHead">Head of household</concept>If the Head of Household is unavailable the information may be provided by the proxy respondent.</respUnit>
+                           <respUnit><concept vocab="IPUMS_ResponseUnit" vocabAgency="IPUMS" vocabInstanceCodeTerm="HouseholdHead">Head of household</concept>If the Head of Household is unavailable the information may be provided by the proxy respondent.</respUnit>
                         </var>
                      ]]></xhtml:samp>
                      <xhtml:samp class="xml_sample"><![CDATA[
@@ -7022,7 +7022,7 @@ class="section_header">Description</xhtml:div>
                <xhtml:h1 class="element_title">Sampling Procedure</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">The type of sample and sample design used to select the survey respondents to represent the population. May include reference to the target sample size and the sampling fraction.To specify the use of a Controlled Vocabulary or standard concept use the internal element "concept". If multiple concepts are needed the parent element should be replicated. Internal text related to each concept should be allocated to accompany the relevent concept.</xhtml:div>
+                  <xhtml:div class="description">The type of sample and sample design used to select the survey respondents to represent the population. May include reference to the target sample size and the sampling fraction.To specify the use of a Controlled Vocabulary or standard concept use the internal element "concept". If multiple concepts are needed the parent element should be replicated. Internal text related to each concept should be allocated to accompany the relevant concept.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -7031,7 +7031,7 @@ class="section_header">Description</xhtml:div>
                         <sampProc>National multistage area probability sample</sampProc>
                      ]]></xhtml:samp>
                      <xhtml:samp class="xml_sample"><![CDATA[
-                        <sampProc><concept vocabID="SamplingProcedure" vocabAgency="DDI" vocabURI="http://rdf-vocabulary.ddialliance.org/cv/SamplingProcedure" vocabInstanceCodeTerm="Probability.SimpleRandom">Simple random sample</concept></sampProc>
+                        <sampProc><concept vocab="SamplingProcedure" vocabAgency="DDI" vocabURI="http://rdf-vocabulary.ddialliance.org/cv/SamplingProcedure" vocabInstanceCodeTerm="Probability.SimpleRandom">Simple random sample</concept></sampProc>
                      ]]></xhtml:samp>
                      <xhtml:samp class="xml_sample"><![CDATA[
                         <sampProc>Stratified random sample</sampProc>
@@ -7432,7 +7432,7 @@ class="section_header">Description</xhtml:div>
                <xhtml:h1 class="element_title">Origins of Sources</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">For historical materials, information about the origin(s) of the sources and the rules followed in establishing the sources should be specified. May not be relevant to survey data. To specify the use of a Controlled Vocabulary or standard concept use the internal element "concept". If multiple concepts are needed the parent element should be replicated. Internal text related to each concept should be allocated to accompany the relevent concept. This element may be repeated to support multiple language expressions of the content.</xhtml:div>
+                  <xhtml:div class="description">For historical materials, information about the origin(s) of the sources and the rules followed in establishing the sources should be specified. May not be relevant to survey data. To specify the use of a Controlled Vocabulary or standard concept use the internal element "concept". If multiple concepts are needed the parent element should be replicated. Internal text related to each concept should be allocated to accompany the relevant concept. This element may be repeated to support multiple language expressions of the content.</xhtml:div>
                </xhtml:div>
             </xhtml:div>
          </xs:documentation>
@@ -7487,7 +7487,7 @@ class="section_header">Description</xhtml:div>
                <xhtml:h1 class="element_title">Class of the Study</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Generally used to give the data archive's class or study status number, which indicates the processing status of the study. May also be used as a text field to describe processing status. This element may be repeated to support multiple language expressions of the content. The use of the attribute "type" as a means of specifiying a controlled vocabulary concept is DEPRECATED. To specify the use of a Controlled Vocabulary or standard concept use the internal element "concept". If multiple concepts are needed the parent element should be replicated. Internal text related to each concept should be allocated to accompany the relevent concept.</xhtml:div>
+                  <xhtml:div class="description">Generally used to give the data archive's class or study status number, which indicates the processing status of the study. May also be used as a text field to describe processing status. This element may be repeated to support multiple language expressions of the content. The use of the attribute "type" as a means of specifying a controlled vocabulary concept is DEPRECATED. To specify the use of a Controlled Vocabulary or standard concept use the internal element "concept". If multiple concepts are needed the parent element should be replicated. Internal text related to each concept should be allocated to accompany the relevant concept.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -7606,7 +7606,7 @@ class="section_header">Description</xhtml:div>
                <xhtml:h1 class="element_title">Development Activity</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Information on the development activity including a description, set of participants, resources used, and outcomes. Use of the "type" attribute has been DEPRECATED. Use the element typeOfSetAvailability shich supports the use of a controled vocabulary. Repeat if multiple language labels are being provided directly within the documentation.</xhtml:div>
+                  <xhtml:div class="description">Information on the development activity including a description, set of participants, resources used, and outcomes. Use of the "type" attribute has been DEPRECATED. Use the element typeOfSetAvailability which supports the use of a controlled vocabulary. Repeat if multiple language labels are being provided directly within the documentation.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -7627,7 +7627,7 @@ class="section_header">Description</xhtml:div>
                                  </holding>
                               </srcCitation>
                            </resource>
-                           <outcome>Translated question resulted in valid replication of original language in the round trip test. Translated question resulted in statistically similar results as original language question folling testing.</outcome>
+                           <outcome>Translated question resulted in valid replication of original language in the round trip test. Translated question resulted in statistically similar results as original language question following testing.</outcome>
                          </developmentActivity>
                      ]]></xhtml:samp> 
                   </xhtml:div>
@@ -7703,7 +7703,7 @@ class="section_header">Description</xhtml:div>
 								<xhtml:samp class="xml_sample"><![CDATA[
 <studyAuthorization date="2010-11-04">
 <authorizingAgency affiliation="University of Georgia" abbr="HSO">Human Subjects Office</authorizingAgency>
-<authorizationStatement>Statement of authorization issued bu OUHS on 2010-11-04</authorizationStatement></studyAuthorization>
+<authorizationStatement>Statement of authorization issued by OUHS on 2010-11-04</authorizationStatement></studyAuthorization>
 ]]>
 								</xhtml:samp>
 							</xhtml:div>
@@ -7740,7 +7740,7 @@ class="section_header">Description</xhtml:div>
 						<xhtml:h1 class="element_title">Authorizing Agency</xhtml:h1>
 						<xhtml:div>
 							<xhtml:h2 class="section_header">Description</xhtml:h2>
-							<xhtml:div class="description">Name of the agent or agency that authorized the study. The "affiliation" attribute indicates the institutional affiliation of the authorizing agent or agency. The "abbr" attribute holds the abbreviation of the authorizing agent's or agency's name. If the attribute "agentIdentifier" is used, "typeOfAgentIdentifier" should also be provided. An agent may be an organization or individual. Use "isPersistantIdentifier" (true|false) to indicate if this is intended to be a persistant identifier. Use "agentType" to indicate if the agent is an organization or an individual.</xhtml:div>
+							<xhtml:div class="description">Name of the agent or agency that authorized the study. The "affiliation" attribute indicates the institutional affiliation of the authorizing agent or agency. The "abbr" attribute holds the abbreviation of the authorizing agent's or agency's name. If the attribute "agentIdentifier" is used, "typeOfAgentIdentifier" should also be provided. An agent may be an organization or individual. Use "isPersistantIdentifier" (true|false) to indicate if this is intended to be a persistent identifier. Use "agentType" to indicate if the agent is an organization or an individual.</xhtml:div>
 						</xhtml:div>
 						<xhtml:div>
 							<xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -7954,7 +7954,7 @@ class="section_header">Description</xhtml:div>
                <xhtml:h1 class="element_title">Post Evaluation Procedures</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Use this section to describe evaluation procedures not address in data evaluation processes. These may include issues such as timing of the study, sequencing issues, cost/budget issues, relevance, instituional or legal arrangments etc. of the study. The completionDate attribute holds the date the evaluation was completed. The type attribute has been DEPRECATED. Use the element typeOfExPostEvaluation to identify the type of evaluation with or without the use of a controlled vocabulary.</xhtml:div>
+                  <xhtml:div class="description">Use this section to describe evaluation procedures not address in data evaluation processes. These may include issues such as timing of the study, sequencing issues, cost/budget issues, relevance, institutional or legal arrangements etc. of the study. The completionDate attribute holds the date the evaluation was completed. The type attribute has been DEPRECATED. Use the element typeOfExPostEvaluation to identify the type of evaluation with or without the use of a controlled vocabulary.</xhtml:div>
                </xhtml:div>
 					<xhtml:div>
 						<xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -8003,7 +8003,7 @@ class="section_header">Description</xhtml:div>
                <xhtml:h1 class="element_title">Evaluator Type</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">The evaluator element identifies persons or organizations involved in the evaluation. The affiliation attribute contains the affiliation of the individual or organization. The abbr attribute holds an abbreviation for the individual or organization. The role attribute indicates the role played by the individual or organization in the evaluation process. If the attribute "agentIdentifier" is used, "typeOfAgentIdentifier" should also be provided. An agent may be an organization or individual. Use "isPersistantIdentifier" (true|false) to indicate if this is intended to be a persistant identifier. Use "agentType" to indicate if the agent is an organization or an individual.</xhtml:div>
+                  <xhtml:div class="description">The evaluator element identifies persons or organizations involved in the evaluation. The affiliation attribute contains the affiliation of the individual or organization. The abbr attribute holds an abbreviation for the individual or organization. The role attribute indicates the role played by the individual or organization in the evaluation process. If the attribute "agentIdentifier" is used, "typeOfAgentIdentifier" should also be provided. An agent may be an organization or individual. Use "isPersistantIdentifier" (true|false) to indicate if this is intended to be a persistent identifier. Use "agentType" to indicate if the agent is an organization or an individual.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -8025,7 +8025,7 @@ class="section_header">Description</xhtml:div>
                <xhtml:h1 class="element_title">Evaluation Process</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Describes the evaluation process followed. Use the contained "concept" element when a controlled vocaublary is used.</xhtml:div>
+                  <xhtml:div class="description">Describes the evaluation process followed. Use the contained "concept" element when a controlled vocabulary is used.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -8171,7 +8171,7 @@ class="section_header">Description</xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
                   <xhtml:div class="description">
                      <xhtml:p>Information about the collection situation, data format, universe, geographic coverage of the study, and unit of analysis.</xhtml:p>
-                     <xhtml:p>Replication of the element geoBndBox is NOT recommended. The purpose of a bounding box is to support high level geographic point search systems. Most search systems of this type do not handle multiple instances of a bounding box. The bounding box should represent the full geographic coverage extent of the of the overall datasets being described by the Codebook instance. If there is a desire to provide the equivilent of a bounding box for each of multiple summary descriptions, use of the boundPoly is recommended. First provide a geoBndBox for the full area covered by the study. Then provide a boundPoly for each geographic area defined with a separate sumDscr. Note that when describing a bounding box using a boundPoly description the four corner points are described. The starting point and end point should match (closing the polygon).</xhtml:p>
+                     <xhtml:p>Replication of the element geoBndBox is NOT recommended. The purpose of a bounding box is to support high level geographic point search systems. Most search systems of this type do not handle multiple instances of a bounding box. The bounding box should represent the full geographic coverage extent of the of the overall datasets being described by the Codebook instance. If there is a desire to provide the equivalent of a bounding box for each of multiple summary descriptions, use of the boundPoly is recommended. First provide a geoBndBox for the full area covered by the study. Then provide a boundPoly for each geographic area defined with a separate sumDscr. Note that when describing a bounding box using a boundPoly description the four corner points are described. The starting point and end point should match (closing the polygon).</xhtml:p>
                      <xhtml:p>Replication of sumDscr within the parent stdyInfo is useful when bundling specifics like timePrd, nation, and universe for specific samples within a larger project. A clear example of this is description for the various IPUMS project that harmonize multiple samples of census, health, and related data. IPUMS identified the coverage of individual samples within a project using a combination of these three elements to be able to differentiate between samples.</xhtml:p>
                      <xhtml:p>The examples in this description show the use of sumDscr to bundle specifics regarding timePrd, nation, and universe. A new sumDscr is used for each bundle.</xhtml:p>
                    </xhtml:div>
@@ -8252,7 +8252,7 @@ class="section_header">Description</xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
                   <xhtml:div class="description">
-                     <xhtml:p>One or more statistical measures that describe the responses to a particular variable and may include one or more standard summaries, e.g., minimum and maximum values, median, mode, etc. The attribute "wgtd" indicates whether the statistics are weighted or not. The "weight" attribute is an IDREF(S) to the weight element(s) in the data collection description where mutiple variables use the same weight (such as a 10% sample).</xhtml:p>
+                     <xhtml:p>One or more statistical measures that describe the responses to a particular variable and may include one or more standard summaries, e.g., minimum and maximum values, median, mode, etc. The attribute "wgtd" indicates whether the statistics are weighted or not. The "weight" attribute is an IDREF(S) to the weight element(s) in the data collection description where multiple variables use the same weight (such as a 10% sample).</xhtml:p>
                      <xhtml:p>The attribute "type" denotes the type of statistics being shown: mean, median, mode, valid cases, invalid cases, minimum, maximum, or standard deviation. If a value of "other" is used here, a value taken from a controlled vocabulary should be put in the "otherType" attribute. This option should only be used when applying a controlled vocabulary to this attribute. Use the complex element controlledVocabUsed to identify the controlled vocabulary to which the selected term belongs. The attribute "access" records the ID values of all elements in the Data Access and Metadata Access section that describe access conditions for this statistic.</xhtml:p>
                   </xhtml:div>
                </xhtml:div>
@@ -8426,7 +8426,7 @@ class="section_header">Description</xhtml:div>
                <xhtml:h1 class="element_title">Time Method</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">The time method or time dimension of the data collection. The use of the attribute "method" as a means of specifiying a controlled vocabulary concept is DEPRECATED. To specify the use of a Controlled Vocabulary or standard concept use the internal element "concept". If multiple concepts are needed the parent element should be replicated. Internal text related to each concept should be allocated to accompany the relevent concept. For forward-compatibility, DDI Lifecycle XHTML tags may be used in this element.</xhtml:div>
+                  <xhtml:div class="description">The time method or time dimension of the data collection. The use of the attribute "method" as a means of specifying a controlled vocabulary concept is DEPRECATED. To specify the use of a Controlled Vocabulary or standard concept use the internal element "concept". If multiple concepts are needed the parent element should be replicated. Internal text related to each concept should be allocated to accompany the relevant concept. For forward-compatibility, DDI Lifecycle XHTML tags may be used in this element.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -8541,7 +8541,7 @@ class="section_header">Description</xhtml:div>
                <xhtml:h1 class="element_title">Title Statement</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Title statement covers title (titl), aubtitle (subTitl), alternative title (altTitl), parallel title (parTitl), and ID Number (IDNo). Title statement for the work at the appropriate level: marked-up document; marked-up document source; study; study description, other materials; other materials for study.</xhtml:div>
+                  <xhtml:div class="description">Title statement covers title (titl), subtitle (subTitl), alternative title (altTitl), parallel title (parTitl), and ID Number (IDNo). Title statement for the work at the appropriate level: marked-up document; marked-up document source; study; study description, other materials; other materials for study.</xhtml:div>
                </xhtml:div>
             </xhtml:div>
          </xs:documentation>
@@ -8555,7 +8555,7 @@ class="section_header">Description</xhtml:div>
                <xhtml:h1 class="element_title">Topic Classification</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">The classification field indicates the broad substantive topic(s) that the data cover. Library of Congress subject terms may be used here. The "vocab" attribute is provided for specification of the controlled vocabulary in use, e.g., LCSH, MeSH, etc. The "vocabURI" attribute specifies the location for the full controlled vocabulary. Use vocabInstanceURI to specify the identification URI of the term/code within the controlled vocabulary if available. Maps to Dublin Core Subject element. Inclusion of this element in the codebook is recommended. In addition, you may use a "vocabID" for another form of identification (useful for other forms of publication), an "vocabAgencyName" and "vocabAgencyID" to specify the agency managing the controlled vocabulary, a "vocabVersionID" if needed, and the "vocabSchemeURN". If the controlled vocabulary term is "other" you may provide a more specific value in "otherValue". PLEASE NOTE A CHANGE IN USAGE INSTRUCTIONS: The string content of "concept" now contains the language specific label obtained from the controlled vocabulary. This allows for multiple languages through the repeated entry of the "concept" element. The attribute "vocabInstanceCodeTerm" has been added to accommodate the code term as it appears in the controlled vocabulary. See the high level documentation for a complete description of usage.</xhtml:div>
+                  <xhtml:div class="description">The classification field indicates the broad substantive topic(s) that the data cover. Library of Congress subject terms may be used here. The "vocab" attribute is provided for specification of the controlled vocabulary in use, e.g., LCSH, MeSH, etc. The "vocabURI" attribute specifies the location for the full controlled vocabulary. Use vocabInstanceURI to specify the identification URI of the term/code within the controlled vocabulary if available. Maps to Dublin Core Subject element. Inclusion of this element in the codebook is recommended. In addition, you may use a "vocabID" for another form of identification (do not use for URI), an "vocabAgencyName" and "vocabAgencyID" to specify the agency managing the controlled vocabulary, a "vocabVersionID" if needed, and the "vocabSchemeURN". If the controlled vocabulary term is "other" you may provide a more specific value in "otherValue". PLEASE NOTE A CHANGE IN USAGE INSTRUCTIONS: The string content of "concept" now contains the language specific label obtained from the controlled vocabulary. This allows for multiple languages through the repeated entry of the "concept" element. The attribute "vocabInstanceCodeTerm" has been added to accommodate the code term as it appears in the controlled vocabulary. See the high level documentation for a complete description of usage.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -8722,7 +8722,7 @@ class="section_header">Description</xhtml:div>
                <xhtml:h1 class="element_title">Universe</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">The group of persons or other elements that are the object of research and to which any analytic results refer. Age,nationality, and residence commonly help to delineate a given universe, but any of a number of factors may be involved, such as sex, race, income, veteran status, criminal convictions, etc. The universe may consist of elements other than persons, such as housing units, court cases, deaths, countries, etc. In general, it should be possible to tell from the description of the universe whether a given individual or element (hypothetical or real) is a member of the population under study. A "level" attribute is included to permit coding of the level to which universe applies, i.e., the study level, the file level (if different from study), the record group, the variable group, the nCube group, the variable, or the nCube level. The "clusion" attribute provides for specification of groups included (I) in or excluded (E) from the universe. If all the variables/nCubes described in the data documentation relate to the same population, e.g., the same set of survey respondents, this element would be unnecessary at data description level. In this case, universe can be fully described at the study level. For forward-compatibility, DDI Lifecycle XHTML tags may be used in this element. This element may be repeated only to support multiple language expressions of the content.  To specify the use of a Controlled Vocabulary or standard concept use the internal element "concept". If multiple concepts are needed the parent element should be replicated. Internal text related to each concept should be allocated to accompany the relevent concept.</xhtml:div>
+                  <xhtml:div class="description">The group of persons or other elements that are the object of research and to which any analytic results refer. Age, nationality, and residence commonly help to delineate a given universe, but any of a number of factors may be involved, such as sex, race, income, veteran status, criminal convictions, etc. The universe may consist of elements other than persons, such as housing units, court cases, deaths, countries, etc. In general, it should be possible to tell from the description of the universe whether a given individual or element (hypothetical or real) is a member of the population under study. A "level" attribute is included to permit coding of the level to which universe applies, i.e., the study level, the file level (if different from study), the record group, the variable group, the nCube group, the variable, or the nCube level. The "clusion" attribute provides for specification of groups included (I) in or excluded (E) from the universe. If all the variables/nCubes described in the data documentation relate to the same population, e.g., the same set of survey respondents, this element would be unnecessary at data description level. In this case, universe can be fully described at the study level. For forward-compatibility, DDI Lifecycle XHTML tags may be used in this element. This element may be repeated only to support multiple language expressions of the content.  To specify the use of a Controlled Vocabulary or standard concept use the internal element "concept". If multiple concepts are needed the parent element should be replicated. Internal text related to each concept should be allocated to accompany the relevant concept.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -9142,7 +9142,7 @@ class="section_header">Description</xhtml:div>
                      <xhtml:p>Pragmatic: A variable group without shared properties.</xhtml:p>
                      <xhtml:p>Record: Variable from a single record in a hierarchical file.</xhtml:p>
                      <xhtml:p>File: Variable from a single file in a multifile study.</xhtml:p>
-                     <xhtml:p>Randomized: Variables generated by CAI surveys produced by one or more random number variables together with a response variable, e.g, random variable X which could equal 1 or 2 (at random) which in turn would control whether Q.23 is worded "men" or "women", e.g., would you favor helping [men/women] laid off from a factory obtain training for a new job?</xhtml:p>
+                     <xhtml:p>Randomized: Variables generated by CAI surveys produced by one or more random number variables together with a response variable, e.g., random variable X which could equal 1 or 2 (at random) which in turn would control whether Q.23 is worded "men" or "women", e.g., would you favor helping [men/women] laid off from a factory obtain training for a new job?</xhtml:p>
                      <xhtml:p>Other: Variables which do not fit easily into any of the categories listed above, e.g., a group of variables whose documentation is in another language.</xhtml:p>
                      <xhtml:p>The "var" attribute is of the type IDRefs and is intended to contain a space delimited list of the IDs of all the variables that are immediate children of the variable group.</xhtml:p>
                      <xhtml:p>The "varGrp" attributed is of the type IDRefs and is intended to contain a space delimited list of the IDs of all the variable groups that are immediate children of the variable group. The inclusion of a varGrp brings in all of its members. Members of the included varGrp should not be separately listed in either "var" or "varGrp".</xhtml:p>
@@ -9240,7 +9240,7 @@ class="section_header">Description</xhtml:div>
                <xhtml:h1 class="element_title">Version Responsibility Statement</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">The organization or person responsible for the version of the work. If the attribute "agentIdentifier" is used, "typeOfAgentIdentifier" should also be provided. An agent may be an organization or individual. Use "isPersistantIdentifier" (true|false) to indicate if this is intended to be a persistant identifier. Use "agentType" to indicate if the agent is an organization or an individual.</xhtml:div>
+                  <xhtml:div class="description">The organization or person responsible for the version of the work. If the attribute "agentIdentifier" is used, "typeOfAgentIdentifier" should also be provided. An agent may be an organization or individual. Use "isPersistantIdentifier" (true|false) to indicate if this is intended to be a persistent identifier. Use "agentType" to indicate if the agent is an organization or an individual.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -9368,7 +9368,7 @@ class="section_header">Description</xhtml:div>
                         <weight>The 1996 NES dataset includes two final person-level analysis weights which incorporate sampling, nonresponse, and post-stratification factors. One weight (variable #4) is for longitudinal micro-level analysis using the 1996 NES Panel. The other weight (variable #3) is for analysis of the 1996 NES combined sample (Panel component cases plus Cross-section supplement cases). In addition, a Time Series Weight (variable #5) which corrects for Panel attrition was constructed. This weight should be used in analyses which compare the 1996 NES to earlier unweighted National Election Study data collections.</weight>
                      ]]></xhtml:samp>
                      <xhtml:samp class="xml_sample"><![CDATA[
-                        <weight><concept>PropensityWeighting</concept>The weight was determined using the online opt-in sample, the entire population of a synthetic dataset, and a statistical model to estimate the probability of a case occuring in either the sythetic or opt-in dataset.</weight>
+                        <weight><concept>PropensityWeighting</concept>The weight was determined using the online opt-in sample, the entire population of a synthetic dataset, and a statistical model to estimate the probability of a case occurring in either the synthetic or opt-in dataset.</weight>
                      ]]></xhtml:samp>
                   </xhtml:div>
                </xhtml:div>
