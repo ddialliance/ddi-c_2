@@ -5052,8 +5052,11 @@ class="section_header">Description</xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
                   <xhtml:div class="example">
                      <xhtml:samp class="xml_sample"><![CDATA[
-                        <license type="metadata" scope="study" URI="https://creativecommons.org/licenses/by/4.0/legalcode">CC by 4.0</license>
-                     ]]></xhtml:samp> 
+                        <language typeOfLanguageCode="RFC5646" languageCode="en-CA">English as used in Canada</language>
+                     ]]></xhtml:samp>
+                     <xhtml:samp class="xml_sample"><![CDATA[
+                        <language typeOfLanguageCode="RFC5646" languageCode="fr-CA">French as used in Canada</language>
+                     ]]></xhtml:samp>
                   </xhtml:div>
                </xhtml:div>
             </xhtml:div>
@@ -5098,7 +5101,7 @@ class="section_header">Description</xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
                   <xhtml:div class="example">
                      <xhtml:samp class="xml_sample"><![CDATA[
-                        <license type="metadata" URI="https://creativecommons.org/licenses/by/4.0/legalcode">CC by 4.0</license>
+                        <license type="metadata" scope="study" URI="https://creativecommons.org/licenses/by/4.0/legalcode">CC by 4.0</license>
                      ]]></xhtml:samp> 
                   </xhtml:div>
                </xhtml:div>
