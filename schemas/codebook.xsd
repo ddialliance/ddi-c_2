@@ -2455,8 +2455,9 @@ class="section_header">Description</xhtml:div>
       <xs:complexContent>
          <xs:extension base="baseElementType">
             <xs:sequence>
-	           <xs:element name="typeOfAccess" type="conceptType" minOccurs="0" maxOccurs="unbounded"/>
+	       <xs:element name="typeOfAccess" type="conceptType" minOccurs="0" maxOccurs="unbounded"/>
                <xs:element ref="setAvail" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element ref="license" minOccurs="0" maxOccurs="unbounded"/>
                <xs:element ref="useStmt" minOccurs="0" maxOccurs="unbounded"/>
                <xs:element ref="notes" minOccurs="0" maxOccurs="unbounded"/>
             </xs:sequence>
@@ -2471,8 +2472,8 @@ class="section_header">Description</xhtml:div>
    					<xhtml:h1 class="element_title">Data Access</xhtml:h1>
    					<xhtml:div>
    						<xhtml:h2 class="section_header">Description</xhtml:h2>
-   						<xhtml:div class="description">This section describes access conditions and terms of use for the data collection. In cases where access conditions differ across individual files or variables, multiple access conditions can be specified. In cases where access conditions differ across individual files, variables, or categories multiple access conditions can be specified. The access conditions applying to a study, file, variable group, variable or category can be indicated by an IDREF attribute on the study, file, variable group, nCube group, variable, category, or data item elements called "access". The member element "typeOfAccss" is of the type "concept" and is intended to provide a specific type of access. PLEASE NOTE A CHANGE IN USAGE INSTRUCTIONS: The string content of "concept" now contains the language specific label obtained from the controlled vocabulary. This allows for multiple languages through the repeated entry of the "concept" element. The attribute "vocabInstanceCodeTerm" has been added to accommodate the code term as it appears in the controlled vocabulary. See the high level documentation for a complete description of usage.
-   </xhtml:div>
+   						<xhtml:div class="description">This section describes access conditions and terms of use for the data collection. In cases where access conditions differ across individual files or variables, multiple access conditions can be specified. In cases where access conditions differ across individual files, variables, or categories multiple access conditions can be specified. The access conditions applying to a study, file, variable group, variable or category can be indicated by an IDREF attribute on the study, file, variable group, nCube group, variable, category, or data item elements called "access". The member element "typeOfAccss" is of the type "concept" and is intended to provide a specific type of access. If a license applies to the data access, use the optional "license" element. PLEASE NOTE A CHANGE IN USAGE INSTRUCTIONS: The string content of "concept" now contains the language specific label obtained from the controlled vocabulary. This allows for multiple languages through the repeated entry of the "concept" element. The attribute "vocabInstanceCodeTerm" has been added to accommodate the code term as it appears in the controlled vocabulary. See the high level documentation for a complete description of usage.
+                                                </xhtml:div>
    					</xhtml:div>
    				</xhtml:div>
    			</xs:documentation>
@@ -5040,7 +5041,7 @@ class="section_header">Description</xhtml:div>
    
    <xs:element name="language" type="languageType">
       <xs:annotation>
-         <xs:documentation>
+        <xs:documentation>
             <xhtml:div>
                <xhtml:h1 class="element_title">Language</xhtml:h1>
                <xhtml:div>
@@ -5075,6 +5076,14 @@ class="section_header">Description</xhtml:div>
                 </xs:restriction>
               </xs:simpleType>
             </xs:attribute>
+	    <xs:attribute name="scope" use="optional">
+              <xs:simpleType>
+                <xs:restriction base="xs:NMTOKEN">
+                  <xs:enumeration value="study"/>
+                  <xs:enumeration value="question"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
          </xs:extension>
       </xs:complexContent>
    </xs:complexType>
@@ -5086,13 +5095,13 @@ class="section_header">Description</xhtml:div>
                <xhtml:h1 class="element_title">License</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">A legal document giving official permission to something with the resource. Recommendation is to provide the license document URI. Attribute type allows for specification of the licensing target [data | metadata]. Equates to https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/license/</xhtml:div>
+                  <xhtml:div class="description">A legal document giving official permission to something with the resource. Recommendation is to provide the license document URI. Attribute type allows for specification of the licensing target [data | metadata]. Attribute "scope" allows specification of the scope of the license [study | question]. If the scope is something else do not use this attribute. Equates to https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/license/</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
                   <xhtml:div class="example">
                      <xhtml:samp class="xml_sample"><![CDATA[
-                        <license type="metadata" URI="https://creativecommons.org/licenses/by/4.0/legalcode">CC by 4.0</license>
+                        <license type="metadata" scope="study" URI="https://creativecommons.org/licenses/by/4.0/legalcode">CC by 4.0</license>
                      ]]></xhtml:samp> 
                   </xhtml:div>
                </xhtml:div>
@@ -5263,7 +5272,8 @@ class="section_header">Description</xhtml:div>
       <xs:complexContent>
          <xs:extension base="baseElementType">
             <xs:sequence>
-	           <xs:element name="typeOfAccess" type="conceptType" minOccurs="0" maxOccurs="unbounded"/>
+	       <xs:element name="typeOfAccess" type="conceptType" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element ref="license" minOccurs="0" maxOccurs="unbounded"/>
                <xs:element ref="useStmt" minOccurs="0" maxOccurs="unbounded"/>
                <xs:element ref="notes" minOccurs="0" maxOccurs="unbounded"/>
             </xs:sequence>
@@ -5278,7 +5288,7 @@ class="section_header">Description</xhtml:div>
                <xhtml:h1 class="element_title">Metadata Access</xhtml:h1>
 	       					<xhtml:div>
 	       						<xhtml:h2 class="section_header">Description</xhtml:h2>
-	       						<xhtml:div class="description">This section describes access conditions and terms of use for the metadata. In cases where access conditions differ across individual files, variables, or categories multiple access conditions can be specified. The access conditions applying to a study, file, variable group, variable or category can be indicated by an IDREF attribute on the study, file, variable group, nCube group, variable, category, or data item elements called "access". The member element "typeOfAccss" is of the type "concept" and is intended to provide a specific type of access. PLEASE NOTE A CHANGE IN USAGE INSTRUCTIONS: The string content of "concept" now contains the language specific label obtained from the controlled vocabulary. This allows for multiple languages through the repeated entry of the "concept" element. The attribute "vocabInstanceCodeTerm" has been added to accommodate the code term as it appears in the controlled vocabulary. See the high level documentation for a complete description of usage.</xhtml:div>
+	       						<xhtml:div class="description">This section describes access conditions and terms of use for the metadata. In cases where access conditions differ across individual files, variables, or categories multiple access conditions can be specified. The access conditions applying to a study, file, variable group, variable or category can be indicated by an IDREF attribute on the study, file, variable group, nCube group, variable, category, or data item elements called "access". The member element "typeOfAccss" is of the type "concept" and is intended to provide a specific type of access.  If a license applies to the data access, use the optional "license" element. PLEASE NOTE A CHANGE IN USAGE INSTRUCTIONS: The string content of "concept" now contains the language specific label obtained from the controlled vocabulary. This allows for multiple languages through the repeated entry of the "concept" element. The attribute "vocabInstanceCodeTerm" has been added to accommodate the code term as it appears in the controlled vocabulary. See the high level documentation for a complete description of usage.</xhtml:div>
 	       					</xhtml:div>
 	       				</xhtml:div>
 	       			</xs:documentation>
