@@ -915,7 +915,7 @@ for more details.
                <xhtml:h1 class="element_title">Unit of Analysis</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Basic unit of analysis or observation that the file describes: individuals, families/households, groups, institutions/organizations, administrative units, etc. The "unit" attribute is included to permit the development of a controlled vocabulary for this element. This element has been changed into a conceptualTextType supporting the use of external controlled vocabularies. The use of attribute "unit" has been deprecated. Use the internal concept element to reference a controlled vocabulary.</xhtml:div>
+                  <xhtml:div class="description">Basic unit of analysis or observation that the file describes: individuals, families/households, groups, institutions/organizations, administrative units, etc. The "unit" attribute is included to permit the development of a controlled vocabulary for this element. This element has been changed into a conceptualTextType supporting the use of external controlled vocabularies. The use of attribute "unit" has been deprecated. Use the internal concept element to reference a controlled vocabulary. DDI provides a Controlled Vocabulary for this location: "AnalysisUnit"</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -940,7 +940,7 @@ for more details.
                <xhtml:h1 class="element_title">Analysis Unit</xhtml:h1>
                <xhtml:div>
 class="section_header">Description</xhtml:div>
-						<xhtml:div class="description">Provides information regarding whom or what the variable/nCube describes. PLEASE NOTE A CHANGE IN USAGE INSTRUCTIONS: The string content of "concept" now contains the language specific label obtained from the controlled vocabulary. This allows for multiple languages through the repeated entry of the "concept" element. The attribute "vocabInstanceCodeTerm" has been added to accommodate the code term as it appears in the controlled vocabulary. See the high level documentation for a complete description of usage. The full element may be repeated only to support multiple language expressions of the content.</xhtml:div>
+						<xhtml:div class="description">Provides information regarding whom or what the variable/nCube describes. DDI provides a Controlled Vocabulary for this location: "AnalysisUnit" PLEASE NOTE A CHANGE IN USAGE INSTRUCTIONS: The string content of "concept" now contains the language specific label obtained from the controlled vocabulary. This allows for multiple languages through the repeated entry of the "concept" element. The attribute "vocabInstanceCodeTerm" has been added to accommodate the code term as it appears in the controlled vocabulary. See the high level documentation for a complete description of usage. The full element may be repeated only to support multiple language expressions of the content.</xhtml:div>
 					</xhtml:div>
 					<xhtml:div>
 											<xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -1329,7 +1329,7 @@ class="section_header">Description</xhtml:div>
                   <xhtml:p>2. non-parseable character data (e.g., the statistics), or </xhtml:p>
                   <xhtml:p>3. some other form of external information (table, image, etc.) </xhtml:p>
                   <xhtml:p>In case 1, the tag can be used to mark up character data; tables can also be included in the actual markup. In cases 2 or 3, the element can be left empty and the "URI" attribute used to refer to the external object containing the information. </xhtml:p>
-                  <xhtml:p>The attribute "type" indicates the type of statistics presented - frequency, percent, or crosstabulation. If a value of "other" is used for this attribute, the "otherType" attribute should take a value from a controlled vocabulary. This option should only be used when applying a controlled vocabulary to this attribute. Use the complex element controlledVocabUsed to identify the controlled vocabulary to which the selected term belongs. </xhtml:p>
+                  <xhtml:p>The attribute "type" indicates the type of statistics presented - frequency, percent, or crosstabulation. If a value of "other" is used for this attribute, the "otherType" attribute should take a value from a controlled vocabulary. This option should only be used when applying a controlled vocabulary to this attribute. Use the complex element controlledVocabUsed to identify the controlled vocabulary to which the selected term belongs.</xhtml:p>
                   <xhtml:p>The attribute "access" records the ID values of all elements in the Data Access and Metadata Access section that describe access conditions. </xhtml:p>
                   <xhtml:p>The following attributes provide information on the weighting used in creating the statistic: </xhtml:p>
                   <xhtml:p>"wgtd" expressed as wgtd or not-wgtd, </xhtml:p>
@@ -1811,7 +1811,7 @@ class="section_header">Description</xhtml:div>
 	    					<xhtml:h1 class="element_title">Mode of Data Collection</xhtml:h1>
 	    					<xhtml:div>
 	    						<xhtml:h2 class="section_header">Description</xhtml:h2>
-	    						<xhtml:div class="description">The method used to collect the data; instrumentation characteristics. As of version 2.6 this element is a conceptualText type and supports the use of a controlled vocabulary. To specify the use of a Controlled Vocabulary or standard concept use the internal element "concept". If multiple concepts are needed the parent element should be replicated. Internal text related to each concept should be allocated to accompany the relevant concept.XHTML formatting may be used in the txt element for forward-compatibility with DDI Lifecycle.</xhtml:div>
+	    						<xhtml:div class="description">The method used to collect the data; instrumentation characteristics. As of version 2.6 this element is a conceptualText type and supports the use of a controlled vocabulary. To specify the use of a Controlled Vocabulary or standard concept use the internal element "concept". DDI provides a Controlled Vocabulary for this location: "ModeOfCollection". If multiple concepts are needed the parent element should be replicated. Internal text related to each concept should be allocated to accompany the relevant concept.XHTML formatting may be used in the txt element for forward-compatibility with DDI Lifecycle.</xhtml:div>
 					</xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -2889,7 +2889,7 @@ class="section_header">Description</xhtml:div>
                <xhtml:h1 class="element_title">General Data Format</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Expresses the variety of data formats covered i.e. Numeric, Text, Audio, Visual, Geospatial, StillImage, Software, 3D, other. Supports the use of an external controlled vocabulary. The DDI Alliance has provided a controlled vocabulary (GeneralDataFormat) to support this element at http://www.ddialliance.org/controlled-vocabularies</xhtml:div>
+                  <xhtml:div class="description">Expresses the variety of data formats covered i.e. Numeric, Text, Audio, Visual, Geospatial, StillImage, Software, 3D, other. Supports the use of an external controlled vocabulary. DDI provides a Controlled Vocabulary for this location: "GeneralDataFormat"</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -4306,7 +4306,7 @@ class="section_header">Description</xhtml:div>
                <xhtml:h1 class="element_title">Type of File</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Types of data files include raw data (ASCII, EBCDIC, etc.) and software-dependent files such as SAS datasets, SPSS export files, etc. If the data are of mixed types (e.g., ASCII and packed decimal), state that here. Note that the element varFormat permits specification of the data format at the variable level. The "charset" attribute allows one to specify the character set used in the file, e.g., US-ASCII, EBCDIC, UNICODE UTF-8, etc. The element may be repeated to support multiple language expressions of the content.</xhtml:div>
+                  <xhtml:div class="description">Types of data files include raw data (ASCII, EBCDIC, etc.) and software-dependent files such as SAS datasets, SPSS export files, etc. If the data are of mixed types (e.g., ASCII and packed decimal), state that here. Note that the element varFormat permits specification of the data format at the variable level. The "charset" attribute allows one to specify the character set used in the file, e.g., US-ASCII, EBCDIC, UNICODE UTF-8, etc. The element may be repeated to support multiple language expressions of the content. While not supporting a controlled vocabulary it is advised to use a standard term. DDI provides a Controlled Vocabulary for this location: "CharacterSet"</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -4392,7 +4392,7 @@ class="section_header">Description</xhtml:div>
                <xhtml:h1 class="element_title">Frequency of Data Collection</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">For data collected at more than one point in time, the frequency with which the data were collected. The use of the attribute "freq" as a means of specifying a controlled vocabulary concept is DEPRECATED. To specify the use of a Controlled Vocabulary or standard concept use the internal element "concept". If multiple concepts are needed the parent element should be replicated. Internal text related to each concept should be allocated to accompany the relevant concept.</xhtml:div>
+                  <xhtml:div class="description">For data collected at more than one point in time, the frequency with which the data were collected. The use of the attribute "freq" as a means of specifying a controlled vocabulary concept is DEPRECATED. To specify the use of a Controlled Vocabulary or standard concept use the internal element "concept". DDI provides a Controlled Vocabulary for this location: "TypeOfFrequency". If multiple concepts are needed the parent element should be replicated. Internal text related to each concept should be allocated to accompany the relevant concept.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -5253,7 +5253,7 @@ class="section_header">Description</xhtml:div>
                <xhtml:h1 class="element_title">Measure</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Measure is an empty element that includes the following attributes: "varRef" is an IDREF; "aggrMeth" indicates the type of aggregation method used, for example 'sum', 'average', 'count'; if a value of "other" is used for the aggrMeth attribute, a term from a controlled vocabulary should be placed in the "otherAggrMeth" attribute (the complex element controlledVocabUsed should be used to specify the controlled vocabulary); "measUnit" records the measurement unit, for example 'km', 'miles', etc.; "scale" records unit of scale, for example 'x1', 'x1000'; "origin" records the point of origin for anchored scales;"additivity" indicates whether an aggregate is a stock (like the population at a given point in time) or a flow (like the number of births or deaths over a certain period of time). The non-additive flag is to be used for measures that for logical reasons cannot be aggregated to a higher level - for instance, data that only make sense at a certain level of aggregation, like a classification. Two nCubes may be identical except for their measure - for example, a count of persons by age and percent of persons by age.</xhtml:div>
+                  <xhtml:div class="description">Measure is an empty element that includes the following attributes: "varRef" is an IDREF; "aggrMeth" indicates the type of aggregation method used, for example 'sum', 'average', 'count'; if a value of "other" is used for the aggrMeth attribute, a term from a controlled vocabulary should be placed in the "otherAggrMeth" attribute (the complex element controlledVocabUsed should be used to specify the controlled vocabulary) DDI provides a Controlled Vocabulary for this location: "AggregationMethod"; "measUnit" records the measurement unit, for example 'km', 'miles', etc.; "scale" records unit of scale, for example 'x1', 'x1000'; "origin" records the point of origin for anchored scales;"additivity" indicates whether an aggregate is a stock (like the population at a given point in time) or a flow (like the number of births or deaths over a certain period of time). The non-additive flag is to be used for measures that for logical reasons cannot be aggregated to a higher level - for instance, data that only make sense at a certain level of aggregation, like a classification. Two nCubes may be identical except for their measure - for example, a count of persons by age and percent of persons by age.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -5410,7 +5410,7 @@ class="section_header">Description</xhtml:div>
 						<xhtml:h1 class="element_title">Data Processing</xhtml:h1>
 						<xhtml:div>
 							<xhtml:h2 class="section_header">Description</xhtml:h2>
-							<xhtml:div class="description">Describes various data processing procedures not captured elsewhere in the documentation, such as topcoding, recoding, suppression, tabulation, etc. The use of the attribute "type" as a means of specifying a controlled vocabulary concept is DEPRECATED. To specify the use of a Controlled Vocabulary or standard concept use the internal element "concept". If multiple concepts are needed the parent element should be replicated. Internal text related to each concept should be allocated to accompany the relevant concept.</xhtml:div>
+							<xhtml:div class="description">Describes various data processing procedures not captured elsewhere in the documentation, such as topcoding, recoding, suppression, tabulation, etc. The use of the attribute "type" as a means of specifying a controlled vocabulary concept is DEPRECATED. To specify the use of a Controlled Vocabulary or standard concept use the internal element "concept". If the dataProcessing involves translations, DDI provides a Controlled Vocabulary for this location: "TypeOfTranslationMethod". If multiple concepts are needed the parent element should be replicated. Internal text related to each concept should be allocated to accompany the relevant concept.</xhtml:div>
 						</xhtml:div>
 						<xhtml:div>
 							<xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -5473,7 +5473,7 @@ class="section_header">Description</xhtml:div>
                <xhtml:h1 class="element_title">Mathematical Row</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">This element is a wrapper containing the presentation expression mi. It creates a single string without spaces consisting of the individual elements described within it. It can be used to create a single variable by concatenating other variables into a single string. It is used to create linking variables composed of multiple non-contiguous parts, or to define unique strings for various category values of a single variable. This is an element staked from MathML. The example shows the use of mrow in the context of a code based on two separate variables.</xhtml:div>
+                  <xhtml:div class="description">This element is a wrapper containing the presentation expression mi. It creates a single string without spaces consisting of the individual elements described within it. It can be used to create a single variable by concatenating other variables into a single string. It is used to create linking variables composed of multiple non-contiguous parts, or to define unique strings for various category values of a single variable. This is an element taken from MathML. The example shows the use of mrow in the context of a code based on two separate variables.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -5710,6 +5710,7 @@ class="section_header">Description</xhtml:div>
                   <xhtml:div class="description">
                      <xhtml:p>For clarifying information/annotation regarding the parent element.</xhtml:p>
                      <xhtml:p>The attributes for notes permit a controlled vocabulary to be developed ("type" and "subject"), indicate the "level" of the DDI to which the note applies (study, file, variable, etc.), and identify the author of the note ("resp").</xhtml:p>
+                     <xhtml:p>Note that "type" uses the complex element controlledVocabUsed to identify the controlled vocabulary to which the selected term belongs. DDI provides a Controlled Vocabulary for this location: "TypeOfNote".</xhtml:p>
                      <xhtml:p>The parent attribute is used to support capturing information obtained while preparing files for translation to DDI Lifecycle. It provides the ID(s) of the element this note is structurally related to by nesting.</xhtml:p>
                      <xhtml:p>The sameNote attribute is used to provide information for the translation of codebook content to DDI Lifecycle. If the same note is used multiple times all the parent IDs can be captured in a single note and all duplicate notes can reference the note containing the related to references in the attribute sameNote.</xhtml:p>
                   </xhtml:div>
@@ -5944,7 +5945,7 @@ class="section_header">Description</xhtml:div>
                <xhtml:h1 class="element_title">Other Identifications /Acknowledgments</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Statements of responsibility not recorded in the title and statement of responsibility areas (collaborators). Indicate here the persons or bodies connected with the work, or significant persons or bodies connected with previous editions and not already named in the description. For example, the name of the person who edited the marked-up documentation might be cited in codeBook/docDscr/rspStmt/othId, using the "role" and "affiliation" attributes. Other identifications/acknowledgments for data collection (codeBook/stdyDscr/citation/rspStmt/othId) maps to Dublin Core Contributor element. If the attribute "agentIdentifier" is used, "typeOfAgentIdentifier" should also be provided. An agent may be an organization or individual. Use "isPersistantIdentifier" (true|false) to indicate if this is intended to be a persistent identifier. Use "agentType" to indicate if the agent is an organization or an individual.</xhtml:div>
+                  <xhtml:div class="description">Statements of responsibility not recorded in the title and statement of responsibility areas (collaborators). Indicate here the persons or bodies connected with the work, or significant persons or bodies connected with previous editions and not already named in the description. For example, the name of the person who edited the marked-up documentation might be cited in codeBook/docDscr/rspStmt/othId, using the "role" and "affiliation" attributes. DDI provides a Controlled Vocabulary for the attriubte "role": "ContributorRole". Other identifications/acknowledgments for data collection (codeBook/stdyDscr/citation/rspStmt/othId) maps to Dublin Core Contributor element. If the attribute "agentIdentifier" is used, "typeOfAgentIdentifier" should also be provided. An agent may be an organization or individual. Use "isPersistantIdentifier" (true|false) to indicate if this is intended to be a persistent identifier. Use "agentType" to indicate if the agent is an organization or an individual.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -6227,7 +6228,7 @@ class="section_header">Description</xhtml:div>
                <xhtml:h1 class="element_title">PostQuestion Text</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Text describing what occurs after the literal question has been asked.</xhtml:div>
+                  <xhtml:div class="description">Text describing what occurs after the literal question has been asked. This may include forward routing information.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -6236,6 +6237,13 @@ class="section_header">Description</xhtml:div>
                         <var>
                            <qstn>
                               <postQTxt>The next set of questions will ask about your financial situation.</postQTxt> 
+                           </qstn>
+                        </var>
+                     ]]></xhtml:samp> 
+                     <xhtml:samp class="xml_sample"><![CDATA[
+                        <var>
+                           <qstn>
+                              <postQTxt>If you answered "NO" skip questions 11-14 and go to question 15.</postQTxt>
                            </qstn>
                         </var>
                      ]]></xhtml:samp> 
@@ -6253,9 +6261,7 @@ class="section_header">Description</xhtml:div>
                <xhtml:h1 class="element_title">PreQuestion Text</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">
-                  <xhtml:p>Text describing a set of conditions under which a question might be asked.</xhtml:p>
-                  <xhtml:p>Instructions on cardinality and routing may also be located here, in particular when these instructions are to be read by the interviewee (self-administered questionnaire). The second two examples show this usage.</xhtml:p>
+                  <xhtml:div class="description">Text describing a set of conditions under which a question might be asked. Instructions on cardinality and routing may also be located here, in particular when these instructions are to be read by the interviewee (self-administered questionnaire). The second two examples show this usage.
                   </xhtml:div>
                </xhtml:div>
                <xhtml:div>
@@ -6753,25 +6759,6 @@ class="section_header">Description</xhtml:div>
                </xhtml:div>
             </xhtml:div>
          </xs:documentation>
-         <xs:documentation>
-            <xhtml:div>
-               <xhtml:h1 class="element_title">Records per Case</xhtml:h1>
-               <xhtml:div>
-                  <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Records per case in the file. This element   should be used for card-image data or other files in which there are multiple records per case.</xhtml:div>
-               </xhtml:div>
-               <xhtml:div>
-                  <xhtml:h2 class="section_header">Example</xhtml:h2>
-                  <xhtml:div class="example">
-                     <xhtml:samp class="xml_sample"><![CDATA[
-                        <dimensns>
-                           <recPrCas>5</recPrCas>
-                        </dimensns>
-                     ]]></xhtml:samp> 
-                  </xhtml:div>
-               </xhtml:div>
-            </xhtml:div>
-         </xs:documentation>
       </xs:annotation>
    </xs:element>
    
@@ -6876,7 +6863,7 @@ class="section_header">Description</xhtml:div>
                <xhtml:h1 class="element_title">Type of Research Instrument</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">The type of data collection instrument used. "Structured" indicates an instrument in which all respondents are asked the same questions/tests, possibly with precoded answers. If a small portion of such a questionnaire includes open-ended questions, provide appropriate comments. "Semi-structured" indicates that the research instrument contains mainly open-ended questions. "Unstructured" indicates that in-depth interviews were conducted. The use of the attribute "type" as a means of specifying a controlled vocabulary concept is DEPRECATED. To specify the use of a Controlled Vocabulary or standard concept use the internal element "concept". If multiple concepts are needed the parent element should be replicated. Internal text related to each concept should be allocated to accompany the relevant concept.</xhtml:div>
+                  <xhtml:div class="description">The type of data collection instrument used. "Structured" indicates an instrument in which all respondents are asked the same questions/tests, possibly with precoded answers. If a small portion of such a questionnaire includes open-ended questions, provide appropriate comments. "Semi-structured" indicates that the research instrument contains mainly open-ended questions. "Unstructured" indicates that in-depth interviews were conducted. The use of the attribute "type" as a means of specifying a controlled vocabulary concept is DEPRECATED. To specify the use of a Controlled Vocabulary or standard concept use the internal element "concept". DDI provides a Controlled Vocabulary for this location: "TypeOfInstrument". If multiple concepts are needed the parent element should be replicated. Internal text related to each concept should be allocated to accompany the relevant concept.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -6923,7 +6910,7 @@ class="section_header">Description</xhtml:div>
                <xhtml:h1 class="element_title">Response Unit</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Provides information regarding who is intended to provide the information contained within the variable/nCube, e.g., respondent, proxy, interviewer. This element contains the sub-element "concept". PLEASE NOTE A CHANGE IN USAGE INSTRUCTIONS: The string content of "concept" now contains the language specific label obtained from the controlled vocabulary. This allows for multiple languages through the repeated entry of the "concept" element. The attribute "vocabInstanceCodeTerm" has been added to accommodate the code term as it appears in the controlled vocabulary. See the high level documentation for a complete description of usage. Additional textual description is entered in the mixed text content or using the sub-element "txt".</xhtml:div>
+                  <xhtml:div class="description">Provides information regarding who is intended to provide the information contained within the variable/nCube, e.g., respondent, proxy, interviewer. This element contains the sub-element "concept". DDI provides a Controlled Vocabulary for this location: "ResponseUnit". PLEASE NOTE A CHANGE IN USAGE INSTRUCTIONS: The string content of "concept" now contains the language specific label obtained from the controlled vocabulary. This allows for multiple languages through the repeated entry of the "concept" element. The attribute "vocabInstanceCodeTerm" has been added to accommodate the code term as it appears in the controlled vocabulary. See the high level documentation for a complete description of usage. Additional textual description is entered in the mixed text content or using the sub-element "txt".</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -7032,7 +7019,7 @@ class="section_header">Description</xhtml:div>
                <xhtml:h1 class="element_title">Sampling Procedure</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">The type of sample and sample design used to select the survey respondents to represent the population. May include reference to the target sample size and the sampling fraction.To specify the use of a Controlled Vocabulary or standard concept use the internal element "concept". If multiple concepts are needed the parent element should be replicated. Internal text related to each concept should be allocated to accompany the relevant concept.</xhtml:div>
+                  <xhtml:div class="description">The type of sample and sample design used to select the survey respondents to represent the population. May include reference to the target sample size and the sampling fraction.To specify the use of a Controlled Vocabulary or standard concept use the internal element "concept". DDI provides a Controlled Vocabulary for this location: "SamplingProcedure". If multiple concepts are needed the parent element should be replicated. Internal text related to each concept should be allocated to accompany the relevant concept.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -7206,8 +7193,9 @@ class="section_header">Description</xhtml:div>
 
    <xs:complexType name="softwareType" mixed="true">
       <xs:complexContent>
-         <xs:extension base="simpleTextAndDateType">
+         <xs:extension base="conceptType">
             <xs:attribute name="version" type="xs:string"/>
+            <xs:attribute name="date" type="xs:string" use="optional"/>
          </xs:extension>
       </xs:complexContent>
    </xs:complexType>
@@ -7219,7 +7207,7 @@ class="section_header">Description</xhtml:div>
                <xhtml:h1 class="element_title">Software used in Production</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Software used to produce the work. A "version" attribute permits specification of the software version number. The "date" attribute is provided to enable specification of the date (if any) for the software release. The ISO standard for dates (YYYY-MM-DD) is recommended for use with the date attribute.</xhtml:div>
+                  <xhtml:div class="description">Software used to produce the work. Supprts the use of an external controlled vocabulary. DDI provides a Controlled Vocabulary for this location: "SoftwarePackage". A "version" attribute permits specification of the software version number. The "date" attribute is provided to enable specification of the date (if any) for the software release. The ISO standard for dates (YYYY-MM-DD) is recommended for use with the date attribute.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -7297,7 +7285,7 @@ class="section_header">Description</xhtml:div>
                <xhtml:h1 class="element_title">Sources Statement</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Description of sources used for the data collection. The element is nestable so that the sources statement might encompass a series of discrete source statements, each of which could contain the facts about an individual source. Provides the type of data source used such as Register Records Accounts, Research Data, Biological Samples, etc. Use of an external controlled vocabulary is recommended. DDI provides Data Source Type. This element maps to Dublin Core Source element.</xhtml:div>
+                  <xhtml:div class="description">Description of sources used for the data collection. The element is nestable so that the sources statement might encompass a series of discrete source statements, each of which could contain the facts about an individual source. Provides the type of data source used such as Register Records Accounts, Research Data, Biological Samples, etc. Use of an external controlled vocabulary is recommended. DDI provides a Controlled Vocabulary for this location: "DataSourceType". This element maps to Dublin Core Source element.</xhtml:div>
                </xhtml:div>
             </xhtml:div>
          </xs:documentation>
@@ -7684,7 +7672,19 @@ class="section_header">Description</xhtml:div>
       </xs:complexContent>
    </xs:complexType>
 
-   <xs:element name="resource" type="resourceType"/>
+   <xs:element name="resource" type="resourceType">
+      <xs:annotation>
+         <xs:documentation>
+            <xhtml:div>
+               <xhtml:h1 class="element_title">Resource</xhtml:h1>
+               <xhtml:div>
+                  <xhtml:h2 class="section_header">Description</xhtml:h2>
+                  <xhtml:div class="description">Resource provides the means of describing an external data source including a "typeOfDataSrc" which supports othe use of an external controllec vocabulary. DDI provides a Controlled Vocabulary for this location: "DataSourceType". Describe the data source using the "dataSrc" field, describe the original data source in "dataOrig" for secondary use data, source characteristics in "scrChar" to identify any particularities of the data source that may affect analysis, and the ability to provide the document source in "srcDocu".</xhtml:div>
+               </xhtml:div>
+	        </xhtml:div>
+         </xs:documentation>
+      </xs:annotation>
+   </xs:element>
 
    <xs:complexType name="studyAuthorizationType">
       <xs:complexContent>
@@ -7824,8 +7824,7 @@ class="section_header">Description</xhtml:div>
          <xs:extension base="baseElementType">
             <xs:sequence>
                <xs:element ref="standardsCompliance" minOccurs="0" maxOccurs="unbounded"/>
-               <xs:element name="otherQualityStatement" type="simpleTextType" minOccurs="0"
-                           maxOccurs="unbounded"/>
+               <xs:element name="otherQualityStatement" type="simpleTextType" minOccurs="0" maxOccurs="unbounded"/>
             </xs:sequence>
          </xs:extension>
       </xs:complexContent>
@@ -8263,7 +8262,7 @@ class="section_header">Description</xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
                   <xhtml:div class="description">
                      <xhtml:p>One or more statistical measures that describe the responses to a particular variable and may include one or more standard summaries, e.g., minimum and maximum values, median, mode, etc. The attribute "wgtd" indicates whether the statistics are weighted or not. The "weight" attribute is an IDREF(S) to the weight element(s) in the data collection description where multiple variables use the same weight (such as a 10% sample).</xhtml:p>
-                     <xhtml:p>The attribute "type" denotes the type of statistics being shown: mean, median, mode, valid cases, invalid cases, minimum, maximum, or standard deviation. If a value of "other" is used here, a value taken from a controlled vocabulary should be put in the "otherType" attribute. This option should only be used when applying a controlled vocabulary to this attribute. Use the complex element controlledVocabUsed to identify the controlled vocabulary to which the selected term belongs. The attribute "access" records the ID values of all elements in the Data Access and Metadata Access section that describe access conditions for this statistic.</xhtml:p>
+                     <xhtml:p>The attribute "type" denotes the type of statistics being shown: mean, median, mode, valid cases, invalid cases, minimum, maximum, or standard deviation. If a value of "other" is used here, a value taken from a controlled vocabulary should be put in the "otherType" attribute. This option should only be used when applying a controlled vocabulary to this attribute. DDI provides a Controlled Vocabulary for this location: "SummaryStatisticType". Use the complex element controlledVocabUsed to identify the controlled vocabulary to which the selected term belongs. The attribute "access" records the ID values of all elements in the Data Access and Metadata Access section that describe access conditions for this statistic.</xhtml:p>
                   </xhtml:div>
                </xhtml:div>
                <xhtml:div>
@@ -8436,7 +8435,7 @@ class="section_header">Description</xhtml:div>
                <xhtml:h1 class="element_title">Time Method</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">The time method or time dimension of the data collection. The use of the attribute "method" as a means of specifying a controlled vocabulary concept is DEPRECATED. To specify the use of a Controlled Vocabulary or standard concept use the internal element "concept". If multiple concepts are needed the parent element should be replicated. Internal text related to each concept should be allocated to accompany the relevant concept. For forward-compatibility, DDI Lifecycle XHTML tags may be used in this element.</xhtml:div>
+                  <xhtml:div class="description">The time method or time dimension of the data collection. The use of the attribute "method" as a means of specifying a controlled vocabulary concept is DEPRECATED. To specify the use of a Controlled Vocabulary or standard concept use the internal element "concept". If multiple concepts are needed the parent element should be replicated. Internal text related to each concept should be allocated to accompany the relevant concept. DDI provides a Controlled Vocabulary for this location: "TimeMethod". For forward-compatibility, DDI Lifecycle XHTML tags may be used in this element.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -8991,7 +8990,7 @@ class="section_header">Description</xhtml:div>
                      <xhtml:p>The "pubrefs" attribute provides a link to publication/citation references and records the ID values of all citations elements within Other Study Description Materials or Other Study-Related Materials that pertain to this variable. </xhtml:p>
                      <xhtml:p>The attribute "access" records the ID values of all elements in the Data Access and Metadata Access section that describe access conditions for this variable. </xhtml:p>
                      <xhtml:p>The "aggrMeth" attribute indicates the type of aggregation method used, for example 'sum', 'average', 'count'. If a value of "other" is given a term from a controlled vocabulary should be used in the "otherAggrMeth" attribute.</xhtml:p>
-                     <xhtml:p>The "otherAggrMeth" attribute holds a value from a controlled vocabulary when the aggrMeth attribute has a value of "other".This option should only be used when applying a controlled vocabulary to this attribute. Use the complex element controlledVocabUsed to identify the controlled vocabulary to which the selected term belongs.</xhtml:p>
+                     <xhtml:p>The "otherAggrMeth" attribute holds a value from a controlled vocabulary when the aggrMeth attribute has a value of "other".This option should only be used when applying a controlled vocabulary to this attribute. Use the complex element controlledVocabUsed to identify the controlled vocabulary to which the selected term belongs. DDI provides a Controlled Vocabulary for this location: "AggregationMethod"</xhtml:p>
                      <xhtml:p>The attribute "measUnit" records the measurement unit, for example 'km', 'miles', etc. </xhtml:p>
                      <xhtml:p>The "scale" attribute records unit of scale, for example 'x1', 'x1000', etc.</xhtml:p>
                      <xhtml:p>The attribute "origin" records the point of origin for anchored scales.</xhtml:p>
@@ -9061,7 +9060,7 @@ class="section_header">Description</xhtml:div>
                <xhtml:h1 class="element_title">Variable Format</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">The technical format of the variable in question. Attributes for this element include: "type," which indicates if the variable is character or numeric; "formatname," which in some cases may provide the name of the particular, proprietary format actually used; "schema," which identifies the vendor or standards body that defined the format (acceptable choices are SAS, SPSS, IBM, ANSI, ISO, XML-data or other); "category," which describes what kind of data the format represents, and includes date, time, currency, or "other" conceptual possibilities; and "URI," which supplies a network identifier for the format definition. If the "other" value is used for the schema attribute, a value from a controlled vocabulary must be used with the "otherSchema" attribute, and the complex element controlledVocabUsed should be used to identify the controlled vocabulary to which the selected term belongs. For the category attribute, a value from a controlled vocabulary may be provided if the "other" value is chosen. In this case, the term from the controlled vocabulary should be placed in the "otherCategory" attribute, and the controlledVocabUsed element should also be filled in.</xhtml:div>
+                  <xhtml:div class="description">The technical format of the variable in question. Attributes for this element include: "type," which indicates if the variable is character or numeric; "formatname," which in some cases may provide the name of the particular, proprietary format actually used; "schema," which identifies the vendor or standards body that defined the format (acceptable choices are SAS, SPSS, IBM, ANSI, ISO, XML-data or other); "category," which describes what kind of data the format represents, and includes date, time, currency, or "other" conceptual possibilities; and "URI," which supplies a network identifier for the format definition. If the "other" value is used for the schema attribute, a value from a controlled vocabulary must be used with the "otherSchema" attribute, and the complex element controlledVocabUsed should be used to identify the controlled vocabulary to which the selected term belongs. For the category attribute, a value from a controlled vocabulary may be provided if the "other" value is chosen. In this case, the term from the controlled vocabulary should be placed in the "otherCategory" attribute, and the controlledVocabUsed element should also be filled in. DDI provides several Controlled Vocabularies for this location dependent upon the data being described: "DataType", "DateType", and "NumericType".</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
