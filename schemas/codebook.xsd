@@ -4054,7 +4054,7 @@ class="section_header">Description</xhtml:div>
                <xhtml:h1 class="element_title">Contents of Files</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Abstract or description of the file. A summary describing the purpose, nature, and scope of the data file, special characteristics of its contents, major subject areas covered, and what questions the PIs attempted to answer when they created the file. A listing of major variables in the file is important here. In the case of multi-file collections, this uniquely describes the contents of each file.</xhtml:div>
+                  <xhtml:div class="description">Abstract or description of the file. A summary describing the purpose, nature, and scope of the data file, special characteristics of its contents, major subject areas covered, and what questions the PIs attempted to answer when they created the file. A listing of major variables in the file is important here. In the case of multi-file collections, this uniquely describes the contents of each file. The element may be repeated to support multiple language expressions of the content.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -4227,7 +4227,7 @@ class="section_header">Description</xhtml:div>
                <xs:element ref="fileName" minOccurs="0" maxOccurs="unbounded"/>
                <xs:element ref="fileCitation" minOccurs="0"/>
                <xs:element ref="dataFingerprint" minOccurs="0" maxOccurs="unbounded"/>
-               <xs:element ref="fileCont" minOccurs="0"/>
+               <xs:element ref="fileCont" minOccurs="0" maxOccurs="unbounded"/>
                <xs:element ref="fileStrc" minOccurs="0"/>
                <xs:element ref="dimensns" minOccurs="0"/>
                <xs:element ref="fileType" minOccurs="0" maxOccurs="unbounded"/>
