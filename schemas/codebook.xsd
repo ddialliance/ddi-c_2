@@ -2140,7 +2140,7 @@ class="section_header">Description</xhtml:div>
                <xs:element ref="codeListAgencyName" minOccurs="0"/>
                <xs:element ref="codeListVersionID" minOccurs="0"/>
                <xs:element ref="codeListURN" minOccurs="0"/>
-               <xs:element name="codeListSchemeURN" minOccurs="0"/>
+               <xs:element ref="codeListSchemeURN" minOccurs="0"/>
                <xs:element ref="usage" minOccurs="1" maxOccurs="unbounded"/>
             </xs:sequence>
          </xs:extension>
@@ -7671,7 +7671,7 @@ class="section_header">Description</xhtml:div>
          <xs:extension base="baseElementType">
             <xs:sequence>
                <xs:element name="typeOfDataSrc" type="conceptType" minOccurs="0" maxOccurs="unbounded"/>
-               <xs:element name="dataSrc" type="simpleTextType" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element ref="dataSrc" minOccurs="0" maxOccurs="unbounded"/>
                <xs:element ref="srcOrig" minOccurs="0" maxOccurs="unbounded"/>
                <xs:element ref="srcChar" minOccurs="0" maxOccurs="unbounded"/>
                <xs:element ref="srcDocu" minOccurs="0" maxOccurs="unbounded"/>
