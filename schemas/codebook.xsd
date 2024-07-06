@@ -640,85 +640,6 @@ for more details.
                </xhtml:div>
             </xhtml:div>
          </xs:documentation>
-         <xs:documentation>
-            <xhtml:div>
-               <xhtml:h1 class="element_title">Label</xhtml:h1>
-               <xhtml:div>
-                  <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">A short description of the parent element. Attribute "level" indicates the level to which the element applies (variable group, nCube group, variable, etc.). The "vendor" attribute allows for specification of different labels for use with different vendors' software. Attribute "country" allows specification of a different label by country for the same element to which it applies. Attribute "sdatrefs" allows pointing to specific dates, universes, or other information encoded in the study description. The attributes "country" and "sdatrefs" are intended to cover instances of comparative data, by retaining consistency in some elements over time and geography, but altering, as appropriate, information pertaining to date, language, and/or location.</xhtml:div>
-               </xhtml:div>
-               <xhtml:div>
-                  <xhtml:h2 class="section_header">Example</xhtml:h2>
-                  <xhtml:div class="example">
-                     <xhtml:samp class="xml_sample"><![CDATA[
-                        <recGrp rectype="A" keyvar="H-SEQ" recidvar="PRECORD"> 
-                           <labl>Person (A) Record</labl> 
-                        </recGrp>
-                     ]]></xhtml:samp>
-                     <xhtml:samp class="xml_sample"><![CDATA[
-                        <varGrp>
-                           <labl>Study Procedure Information</labl>
-                        </varGrp>
-                     ]]></xhtml:samp>
-                     <xhtml:samp class="xml_sample"><![CDATA[
-                        <varGrp>
-                           <labl>Political Involvement and National Goals</labl>
-                        </varGrp>
-                     ]]></xhtml:samp> 
-                     <xhtml:samp class="xml_sample"><![CDATA[
-                        <varGrp>
-                           <labl>Household Variable Section</labl>
-                        </varGrp>
-                     ]]></xhtml:samp>
-                     <xhtml:samp class="xml_sample"><![CDATA[
-                        <nCubeGrp>
-                           <labl>Sex by Work Experience in 1999 by Income in 1999</labl>
-                        </nCubeGrp>
-                     ]]></xhtml:samp>
-                     <xhtml:samp class="xml_sample"><![CDATA[
-                        <nCubeGrp>
-                           <labl>Tenure by Age of Householder</labl>
-                        </nCubeGrp>
-                     ]]></xhtml:samp>
-                     <xhtml:samp class="xml_sample"><![CDATA[
-                        <var>
-                           <labl>Why No Holiday-No Money</labl>
-                        </var>
-                     ]]></xhtml:samp>
-                     <xhtml:samp class="xml_sample"><![CDATA[
-                        <catgryGrp>
-                           <labl>Other Agricultural and Related Occupations</labl>
-                        </catgryGrp>
-                     ]]></xhtml:samp>
-                     <xhtml:samp class="xml_sample"><![CDATA[
-                        <catgry>
-                           <labl>Better</labl>
-                        </catgry>
-                     ]]></xhtml:samp>
-                     <xhtml:samp class="xml_sample"><![CDATA[
-                        <catgry>
-                           <labl>About the same</labl> 
-                        </catgry>
-                     ]]></xhtml:samp>
-                     <xhtml:samp class="xml_sample"><![CDATA[
-                        <catgry>
-                           <labl>Inap.</labl> 
-                        </catgry>
-                     ]]></xhtml:samp>
-                     <xhtml:samp class="xml_sample"><![CDATA[
-                        <nCube>
-                           <labl>Age by Sex by Poverty Status</labl>
-                        </nCube>
-                     ]]></xhtml:samp>
-                     <xhtml:samp class="xml_sample"><![CDATA[
-                        <otherMat type="SAS data definition statements" level="study" URI="http:// www.icpsr.umich.edu">
-                           <labl>SAS Data Definition Statements for  ICPSR 6837</labl>
-                        </otherMat>
-                     ]]></xhtml:samp>
-                  </xhtml:div>
-               </xhtml:div>
-            </xhtml:div>
-         </xs:documentation>
       </xs:annotation>
    </xs:element>
    
@@ -5019,6 +4940,41 @@ class="section_header">Description</xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
                   <xhtml:div class="example">
+                     <xhtml:samp class="xml_sample"><![CDATA[
+                        <recGrp rectype="A" keyvar="H-SEQ" recidvar="PRECORD"> 
+                           <labl>Person (A) Record</labl> 
+                        </recGrp>
+                     ]]></xhtml:samp>
+                     <xhtml:samp class="xml_sample"><![CDATA[
+                        <varGrp>
+                           <labl>Study Procedure Information</labl>
+                        </varGrp>
+                     ]]></xhtml:samp>
+                     <xhtml:samp class="xml_sample"><![CDATA[
+                        <nCubeGrp>
+                           <labl>Tenure by Age of Householder</labl>
+                        </nCubeGrp>
+                     ]]></xhtml:samp>
+                     <xhtml:samp class="xml_sample"><![CDATA[
+                        <var>
+                           <labl>Why No Holiday-No Money</labl>
+                        </var>
+                     ]]></xhtml:samp>
+                     <xhtml:samp class="xml_sample"><![CDATA[
+                        <catgryGrp>
+                           <labl>Other Agricultural and Related Occupations</labl>
+                        </catgryGrp>
+                     ]]></xhtml:samp>
+                     <xhtml:samp class="xml_sample"><![CDATA[
+                        <catgry>
+                           <labl>Better</labl>
+                        </catgry>
+                     ]]></xhtml:samp>
+                     <xhtml:samp class="xml_sample"><![CDATA[
+                        <otherMat type="SAS data definition statements" level="study" URI="http:// www.icpsr.umich.edu">
+                           <labl>SAS Data Definition Statements for ICPSR 6837</labl>
+                        </otherMat>
+                     ]]></xhtml:samp>
                      <xhtml:samp class="xml_sample"><![CDATA[
                      <catgry>
                         <labl level="catgry" country="US">Pharmacist</labl>
