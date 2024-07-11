@@ -640,85 +640,6 @@ for more details.
                </xhtml:div>
             </xhtml:div>
          </xs:documentation>
-         <xs:documentation>
-            <xhtml:div>
-               <xhtml:h1 class="element_title">Label</xhtml:h1>
-               <xhtml:div>
-                  <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">A short description of the parent element. Attribute "level" indicates the level to which the element applies (variable group, nCube group, variable, etc.). The "vendor" attribute allows for specification of different labels for use with different vendors' software. Attribute "country" allows specification of a different label by country for the same element to which it applies. Attribute "sdatrefs" allows pointing to specific dates, universes, or other information encoded in the study description. The attributes "country" and "sdatrefs" are intended to cover instances of comparative data, by retaining consistency in some elements over time and geography, but altering, as appropriate, information pertaining to date, language, and/or location.</xhtml:div>
-               </xhtml:div>
-               <xhtml:div>
-                  <xhtml:h2 class="section_header">Example</xhtml:h2>
-                  <xhtml:div class="example">
-                     <xhtml:samp class="xml_sample"><![CDATA[
-                        <recGrp rectype="A" keyvar="H-SEQ" recidvar="PRECORD"> 
-                           <labl>Person (A) Record</labl> 
-                        </recGrp>
-                     ]]></xhtml:samp>
-                     <xhtml:samp class="xml_sample"><![CDATA[
-                        <varGrp>
-                           <labl>Study Procedure Information</labl>
-                        </varGrp>
-                     ]]></xhtml:samp>
-                     <xhtml:samp class="xml_sample"><![CDATA[
-                        <varGrp>
-                           <labl>Political Involvement and National Goals</labl>
-                        </varGrp>
-                     ]]></xhtml:samp> 
-                     <xhtml:samp class="xml_sample"><![CDATA[
-                        <varGrp>
-                           <labl>Household Variable Section</labl>
-                        </varGrp>
-                     ]]></xhtml:samp>
-                     <xhtml:samp class="xml_sample"><![CDATA[
-                        <nCubeGrp>
-                           <labl>Sex by Work Experience in 1999 by Income in 1999</labl>
-                        </nCubeGrp>
-                     ]]></xhtml:samp>
-                     <xhtml:samp class="xml_sample"><![CDATA[
-                        <nCubeGrp>
-                           <labl>Tenure by Age of Householder</labl>
-                        </nCubeGrp>
-                     ]]></xhtml:samp>
-                     <xhtml:samp class="xml_sample"><![CDATA[
-                        <var>
-                           <labl>Why No Holiday-No Money</labl>
-                        </var>
-                     ]]></xhtml:samp>
-                     <xhtml:samp class="xml_sample"><![CDATA[
-                        <catgryGrp>
-                           <labl>Other Agricultural and Related Occupations</labl>
-                        </catgryGrp>
-                     ]]></xhtml:samp>
-                     <xhtml:samp class="xml_sample"><![CDATA[
-                        <catgry>
-                           <labl>Better</labl>
-                        </catgry>
-                     ]]></xhtml:samp>
-                     <xhtml:samp class="xml_sample"><![CDATA[
-                        <catgry>
-                           <labl>About the same</labl> 
-                        </catgry>
-                     ]]></xhtml:samp>
-                     <xhtml:samp class="xml_sample"><![CDATA[
-                        <catgry>
-                           <labl>Inap.</labl> 
-                        </catgry>
-                     ]]></xhtml:samp>
-                     <xhtml:samp class="xml_sample"><![CDATA[
-                        <nCube>
-                           <labl>Age by Sex by Poverty Status</labl>
-                        </nCube>
-                     ]]></xhtml:samp>
-                     <xhtml:samp class="xml_sample"><![CDATA[
-                        <otherMat type="SAS data definition statements" level="study" URI="http:// www.icpsr.umich.edu">
-                           <labl>SAS Data Definition Statements for  ICPSR 6837</labl>
-                        </otherMat>
-                     ]]></xhtml:samp>
-                  </xhtml:div>
-               </xhtml:div>
-            </xhtml:div>
-         </xs:documentation>
       </xs:annotation>
    </xs:element>
    
@@ -822,14 +743,14 @@ for more details.
       </xs:annotation>
    </xs:element>
    
-   <xs:element name="actMin" type="simpleTextType">
+   <xs:element name="actMin" type="conceptualTextType">
       <xs:annotation>
          <xs:documentation>
             <xhtml:div>
                <xhtml:h1 class="element_title">Actions to Minimize Losses</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Summary of actions taken to minimize data loss. Includes information on actions such as follow-up visits, supervisory checks, historical matching, estimation, etc.</xhtml:div>
+                  <xhtml:div class="description">Summary of actions taken to minimize data loss. Includes information on actions such as follow-up visits, supervisory checks, historical matching, estimation, etc. This element contains the sub-element "concept" to support the use of an external controlled vocabulary. PLEASE NOTE A CHANGE IN USAGE INSTRUCTIONS: The string content of "concept" now contains the language specific label obtained from the controlled vocabulary. This allows for multiple languages through the repeated entry of the "concept" element. The attribute "vocabInstanceCodeTerm" has been added to accommodate the code term as it appears in the controlled vocabulary. See the high level documentation for a complete description of usage. Additional textual description is entered in the mixed text content or using the sub-element "txt".</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -1015,20 +936,23 @@ class="section_header">Description</xhtml:div>
       </xs:annotation>
    </xs:element>
  
-   <xs:element name="avlStatus" type="simpleTextType">
+   <xs:element name="avlStatus" type="conceptualTextType">
       <xs:annotation>
          <xs:documentation>
             <xhtml:div>
                <xhtml:h1 class="element_title">Availability Status</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Statement of collection availability. An archive may need to indicate that a collection is unavailable because it is embargoed for a period of time, because it has been superseded, because a new edition is imminent, etc. It is anticipated that a controlled vocabulary will be developed for this element.</xhtml:div>
+                  <xhtml:div class="description">Statement of collection availability. An archive may need to indicate that a collection is unavailable because it is embargoed for a period of time, because it has been superseded, because a new edition is imminent, etc. It is anticipated that a controlled vocabulary will be developed for this element. This element contains the sub-element "concept" to support the use of an external controlled vocabulary. PLEASE NOTE A CHANGE IN USAGE INSTRUCTIONS: The string content of "concept" now contains the language specific label obtained from the controlled vocabulary. This allows for multiple languages through the repeated entry of the "concept" element. The attribute "vocabInstanceCodeTerm" has been added to accommodate the code term as it appears in the controlled vocabulary. See the high level documentation for a complete description of usage. Additional textual description is entered in the mixed text content or using the sub-element "txt".</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
                   <xhtml:div class="example">
                      <xhtml:samp class="xml_sample"><![CDATA[
                         <avlStatus>This collection is superseded by CENSUS OF POPULATION, 1880 [UNITED STATES]: PUBLIC USE SAMPLE (ICPSR 6460).</avlStatus>
+                     ]]></xhtml:samp>
+                     <xhtml:samp class="xml_sample"><![CDATA[
+                        <avlStatus><concept vocab="ICPSR_Access_Restricted" vocabURI="https://www.icpsr.umich.edu/web/pages/ICPSR/access/restricted/"  vocabInstanceCodeTerm="1">Secure Download</concept>Upon approval, researchers will receive an encrypted file via e-mail which they may download to the secure location specified in the application.</avlStatus>
                      ]]></xhtml:samp>
                  </xhtml:div>
                </xhtml:div>
@@ -1914,14 +1838,14 @@ class="section_header">Description</xhtml:div>
       </xs:annotation>
    </xs:element>
    
-   <xs:element name="complete" type="simpleTextType">
+   <xs:element name="complete" type="conceptType">
       <xs:annotation>
          <xs:documentation>
             <xhtml:div>
                <xhtml:h1 class="element_title">Completeness of Study Stored</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">This item indicates the relationship of the data collected to the amount of data coded and stored in the data collection. Information as to why certain items of collected information were not included in the data file stored by the archive should be provided. </xhtml:div>
+                  <xhtml:div class="description">This item indicates the relationship of the data collected to the amount of data coded and stored in the data collection. Information as to why certain items of collected information were not included in the data file stored by the archive should be provided. This supports the use of a controlled vocabulary. PLEASE NOTE A CHANGE IN USAGE INSTRUCTIONS: The string content of "concept" now contains the language specific label obtained from the controlled vocabulary. This allows for multiple languages through the repeated entry of the "concept" element. The attribute "vocabInstanceCodeTerm" has been added to accommodate the code term as it appears in the controlled vocabulary. See the high level documentation for a complete description of usage.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -2137,7 +2061,7 @@ class="section_header">Description</xhtml:div>
                <xs:element ref="codeListAgencyName" minOccurs="0"/>
                <xs:element ref="codeListVersionID" minOccurs="0"/>
                <xs:element ref="codeListURN" minOccurs="0"/>
-               <xs:element name="codeListSchemeURN" minOccurs="0"/>
+               <xs:element ref="codeListSchemeURN" minOccurs="0"/>
                <xs:element ref="usage" minOccurs="1" maxOccurs="unbounded"/>
             </xs:sequence>
          </xs:extension>
@@ -2935,14 +2859,14 @@ class="section_header">Description</xhtml:div>
       </xs:annotation>
    </xs:element>
    
-   <xs:element name="updateProcedure" type="simpleTextType">
+   <xs:element name="updateProcedure" type="conceptualTextType">
       <xs:annotation>
          <xs:documentation>
             <xhtml:div>
                <xhtml:h1 class="element_title">Instrument Development</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Description of how and with what frequency the sample frame is updated.</xhtml:div>
+                  <xhtml:div class="description">Description of how and with what frequency the sample frame is updated. This element contains the sub-element "concept" to support the use of an external controlled vocabulary. PLEASE NOTE A CHANGE IN USAGE INSTRUCTIONS: The string content of "concept" now contains the language specific label obtained from the controlled vocabulary. This allows for multiple languages through the repeated entry of the "concept" element. The attribute "vocabInstanceCodeTerm" has been added to accommodate the code term as it appears in the controlled vocabulary. See the high level documentation for a complete description of usage. Additional textual description is entered in the mixed text content or using the sub-element "txt".</xhtml:div>
                </xhtml:div>
 					<xhtml:div>
 						<xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -3692,14 +3616,14 @@ class="section_header">Description</xhtml:div>
       </xs:annotation>
    </xs:element>
 
-   <xs:element name="docStatus" type="simpleTextType">
+   <xs:element name="docStatus" type="conceptType">
       <xs:annotation>
          <xs:documentation>
             <xhtml:div>
                <xhtml:h1 class="element_title">Documentation Status</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Use this field to indicate if the documentation is being presented/distributed before it has been finalized. Some data producers and social science data archives employ data processing strategies that provide for release of data and documentation at various stages of processing. The element may be repeated to support multiple language expressions of the content.</xhtml:div>
+                  <xhtml:div class="description">Use this field to indicate if the documentation is being presented/distributed before it has been finalized. Some data producers and social science data archives employ data processing strategies that provide for release of data and documentation at various stages of processing. The element may be repeated to support multiple language expressions of the content. This supports the use of a controlled vocabulary. PLEASE NOTE A CHANGE IN USAGE INSTRUCTIONS: The string content of "concept" now contains the language specific label obtained from the controlled vocabulary. This allows for multiple languages through the repeated entry of the "concept" element. The attribute "vocabInstanceCodeTerm" has been added to accommodate the code term as it appears in the controlled vocabulary. See the high level documentation for a complete description of usage.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -4051,7 +3975,7 @@ class="section_header">Description</xhtml:div>
                <xhtml:h1 class="element_title">Contents of Files</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Abstract or description of the file. A summary describing the purpose, nature, and scope of the data file, special characteristics of its contents, major subject areas covered, and what questions the PIs attempted to answer when they created the file. A listing of major variables in the file is important here. In the case of multi-file collections, this uniquely describes the contents of each file.</xhtml:div>
+                  <xhtml:div class="description">Abstract or description of the file. A summary describing the purpose, nature, and scope of the data file, special characteristics of its contents, major subject areas covered, and what questions the PIs attempted to answer when they created the file. A listing of major variables in the file is important here. In the case of multi-file collections, this uniquely describes the contents of each file. The element may be repeated to support multiple language expressions of the content.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -4224,7 +4148,7 @@ class="section_header">Description</xhtml:div>
                <xs:element ref="fileName" minOccurs="0" maxOccurs="unbounded"/>
                <xs:element ref="fileCitation" minOccurs="0"/>
                <xs:element ref="dataFingerprint" minOccurs="0" maxOccurs="unbounded"/>
-               <xs:element ref="fileCont" minOccurs="0"/>
+               <xs:element ref="fileCont" minOccurs="0" maxOccurs="unbounded"/>
                <xs:element ref="fileStrc" minOccurs="0"/>
                <xs:element ref="dimensns" minOccurs="0"/>
                <xs:element ref="fileType" minOccurs="0" maxOccurs="unbounded"/>
@@ -4782,14 +4706,14 @@ class="section_header">Description</xhtml:div>
       </xs:annotation>
    </xs:element>
 
-   <xs:element name="imputation" type="simpleTextType">
+   <xs:element name="imputation" type="conceptType">
       <xs:annotation>
          <xs:documentation>
             <xhtml:div>
                <xhtml:h1 class="element_title">Imputation</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">According to the Statistical Terminology glossary maintained by the National Science Foundation, this is "the process by which one estimates missing values for items that a survey respondent failed to provide," and if applicable in this context, it refers to the type of procedure used. When applied to an nCube, imputation takes into consideration all of the dimensions that are part of that nCube. This element may be repeated to support multiple language expressions of the content.</xhtml:div>
+                  <xhtml:div class="description">According to the Statistical Terminology glossary maintained by the National Science Foundation, this is "the process by which one estimates missing values for items that a survey respondent failed to provide," and if applicable in this context, it refers to the type of procedure used. When applied to an nCube, imputation takes into consideration all of the dimensions that are part of that nCube. This element may be repeated to support multiple language expressions of the content. This supports the use of a controlled vocabulary. PLEASE NOTE A CHANGE IN USAGE INSTRUCTIONS: The string content of "concept" now contains the language specific label obtained from the controlled vocabulary. This allows for multiple languages through the repeated entry of the "concept" element. The attribute "vocabInstanceCodeTerm" has been added to accommodate the code term as it appears in the controlled vocabulary. See the high level documentation for a complete description of usage.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -4797,6 +4721,11 @@ class="section_header">Description</xhtml:div>
                      <xhtml:samp class="xml_sample"><![CDATA[
                         <var>
                            <imputation>This variable contains values that were derived by substitution.</imputation>
+                        </var>
+                     ]]></xhtml:samp> 
+                     <xhtml:samp class="xml_sample"><![CDATA[
+                        <var>
+                           <imputation vocab="The Analysis Factor" vocabURI="https://www.theanalysisfactor.com/seven-ways-to-make-up-data-common-methods-to-imputing-missing-data/" vocabInstanceTerm="Substitution">Substitution</imputation>
                         </var>
                      ]]></xhtml:samp> 
                   </xhtml:div>
@@ -5011,6 +4940,41 @@ class="section_header">Description</xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
                   <xhtml:div class="example">
+                     <xhtml:samp class="xml_sample"><![CDATA[
+                        <recGrp rectype="A" keyvar="H-SEQ" recidvar="PRECORD"> 
+                           <labl>Person (A) Record</labl> 
+                        </recGrp>
+                     ]]></xhtml:samp>
+                     <xhtml:samp class="xml_sample"><![CDATA[
+                        <varGrp>
+                           <labl>Study Procedure Information</labl>
+                        </varGrp>
+                     ]]></xhtml:samp>
+                     <xhtml:samp class="xml_sample"><![CDATA[
+                        <nCubeGrp>
+                           <labl>Tenure by Age of Householder</labl>
+                        </nCubeGrp>
+                     ]]></xhtml:samp>
+                     <xhtml:samp class="xml_sample"><![CDATA[
+                        <var>
+                           <labl>Why No Holiday-No Money</labl>
+                        </var>
+                     ]]></xhtml:samp>
+                     <xhtml:samp class="xml_sample"><![CDATA[
+                        <catgryGrp>
+                           <labl>Other Agricultural and Related Occupations</labl>
+                        </catgryGrp>
+                     ]]></xhtml:samp>
+                     <xhtml:samp class="xml_sample"><![CDATA[
+                        <catgry>
+                           <labl>Better</labl>
+                        </catgry>
+                     ]]></xhtml:samp>
+                     <xhtml:samp class="xml_sample"><![CDATA[
+                        <otherMat type="SAS data definition statements" level="study" URI="http:// www.icpsr.umich.edu">
+                           <labl>SAS Data Definition Statements for ICPSR 6837</labl>
+                        </otherMat>
+                     ]]></xhtml:samp>
                      <xhtml:samp class="xml_sample"><![CDATA[
                      <catgry>
                         <labl level="catgry" country="US">Pharmacist</labl>
@@ -6295,14 +6259,14 @@ class="section_header">Description</xhtml:div>
       </xs:annotation>
    </xs:element>
 
-   <xs:element name="ProcStat" type="simpleTextType">
+   <xs:element name="ProcStat" type="conceptType">
       <xs:annotation>
          <xs:documentation>
             <xhtml:div>
                <xhtml:h1 class="element_title">Processing Status</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Processing status of the file. Some data producers and social science data archives employ data processing strategies that provide for release of data and documentation at various stages of processing.</xhtml:div>
+                  <xhtml:div class="description">Processing status of the file. Some data producers and social science data archives employ data processing strategies that provide for release of data and documentation at various stages of processing. This supports the use of a controlled vocabulary. PLEASE NOTE A CHANGE IN USAGE INSTRUCTIONS: The string content of "concept" now contains the language specific label obtained from the controlled vocabulary. This allows for multiple languages through the repeated entry of the "concept" element. The attribute "vocabInstanceCodeTerm" has been added to accommodate the code term as it appears in the controlled vocabulary. See the high level documentation for a complete description of usage.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -6903,7 +6867,7 @@ class="section_header">Description</xhtml:div>
       </xs:annotation>
    </xs:element>
 
-   <xs:element name="respUnit" type="simpleTextType">
+   <xs:element name="respUnit" type="conceptualTextType">
       <xs:annotation>
          <xs:documentation>
             <xhtml:div>
@@ -7663,7 +7627,7 @@ class="section_header">Description</xhtml:div>
          <xs:extension base="baseElementType">
             <xs:sequence>
                <xs:element name="typeOfDataSrc" type="conceptType" minOccurs="0" maxOccurs="unbounded"/>
-               <xs:element name="dataSrc" type="simpleTextType" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element ref="dataSrc" minOccurs="0" maxOccurs="unbounded"/>
                <xs:element ref="srcOrig" minOccurs="0" maxOccurs="unbounded"/>
                <xs:element ref="srcChar" minOccurs="0" maxOccurs="unbounded"/>
                <xs:element ref="srcDocu" minOccurs="0" maxOccurs="unbounded"/>
