@@ -910,7 +910,7 @@ class="section_header">Description</xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
                   <xhtml:div class="description">
-                     <xhtml:p>The person, corporate body, or agency responsible for the work's substantive and intellectual content. Repeat the element for each author, and use "abbr" and/or "affiliation" attribute if available. Invert first and last name and use commas. Author of data collection (codeBook/stdyDscr/citation/rspStmt/AuthEnty) maps to Dublin Core Creator element. Inclusion of this element in codebook is recommended. If the attribute "agentIdentifier" is used, "typeOfAgentIdentifier" should also be provided. An agent may be an organization or individual. Use "isPersistantIdentifier" (true|false) to indicate if this is intended to be a persistent identifier. Use "agentType" to indicate if the agent is an organization or an individual.</xhtml:p>
+                     <xhtml:p>The person, corporate body, or agency responsible for the work's substantive and intellectual content. Repeat the element for each author, and use "abbr" and/or "affiliation" attribute if available. Invert first and last name and use commas. Author of data collection (codeBook/stdyDscr/citation/rspStmt/AuthEnty) maps to Dublin Core Creator element. Inclusion of this element in codebook is recommended. If the attribute "agentIdentifier" is used, "typeOfAgentIdentifier" should also be provided. Use "isPersistantIdentifier" (true|false) to indicate if this is intended to be a persistent identifier. Use "agentType" to indicate if the agent is an organization or an individual.</xhtml:p>
                      <xhtml:p>The "author" in the Document Description should be the individual(s) or organization(s) directly responsible for the intellectual content of the DDI version, as distinct from the person(s) or organization(s) responsible for the intellectual content of the earlier paper or electronic edition from which the DDI edition may have been derived.</xhtml:p>
                   </xhtml:div>
                </xhtml:div>
@@ -927,7 +927,7 @@ class="section_header">Description</xhtml:div>
                         <AuthEnty affiliation="European Commission">Rabier, Jacques-Rene</AuthEnty>
                      ]]></xhtml:samp> 
                      <xhtml:samp class="xml_sample"><![CDATA[
-                        <AuthEnty personalID="0000-0002-4402-9644" typeOfPersonalID="ORCID">Shepherdson, John</AuthEnty>
+                        <AuthEnty agentIdentifier="0000-0002-4402-9644" typeOfAgentIdentifier="ORCID">Shepherdson, John</AuthEnty>
                      ]]></xhtml:samp> 
                   </xhtml:div>
                </xhtml:div>
@@ -1482,7 +1482,7 @@ class="section_header">Description</xhtml:div>
                <xhtml:h1 class="element_title">Category Group</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">A description of response categories that might be grouped together. The attribute "missing" indicates whether this category group contains missing data or not. The attribute "missType" is used to specify the type of missing data, e.g., inap., don't know, no answer, etc. The attribute catGrp is used to indicate all the subsidiary category groups which nest underneath the current category group. This allows for the encoding of a hierarchical structure of category groups. The "levelno" attribute allows the addition of a level number, and "levelnm" allows the addition of a level name to the category group. The completeness attribute ("compl") should be set to "false" if the category group is incomplete (not a complete aggregate of all sub-nodes or children). The exclusiveness attribute ("excls") should be set to "false" if the category group can appear in more than one place in the classification hierarchy.</xhtml:div>
+                  <xhtml:div class="description">A description of response categories that might be grouped together. The attribute "missing" indicates whether this category group contains missing data or not. The attribute "missType" is used to specify the type of missing data, e.g., inap., don't know, no answer, etc. Use the attribute "catgry" (IDREFS type) to provide a space delimited list of the ID of each category in the parent category group. The attribute "catGrp" (IDREFS type) is used to indicate all the subsidiary category groups which nest underneath the current category group. This allows for the encoding of a hierarchical structure of category groups. Do not list the categories contained in a listed "catGrp" within the attribute "catgry". These two IDREFS attributes should list ONLY the direct children of the parent category group. The "levelno" attribute allows the addition of a level number, and "levelnm" allows the addition of a level name to the category group. The completeness attribute "compl" should be set to "false" if the category group is incomplete (not a complete aggregate of all sub-nodes or children). The exclusiveness attribute "excls" should be set to "false" if the category group can appear in more than one place in the classification hierarchy.</xhtml:div>
                </xhtml:div>
             </xhtml:div>
          </xs:documentation>
@@ -1845,7 +1845,7 @@ class="section_header">Description</xhtml:div>
                <xhtml:h1 class="element_title">Completeness of Study Stored</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">This item indicates the relationship of the data collected to the amount of data coded and stored in the data collection. Information as to why certain items of collected information were not included in the data file stored by the archive should be provided. This supports the use of a controlled vocabulary. PLEASE NOTE A CHANGE IN USAGE INSTRUCTIONS: The string content of "concept" now contains the language specific label obtained from the controlled vocabulary. This allows for multiple languages through the repeated entry of the "concept" element. The attribute "vocabInstanceCodeTerm" has been added to accommodate the code term as it appears in the controlled vocabulary. See the high level documentation for a complete description of usage.</xhtml:div>
+                  <xhtml:div class="description">This item indicates the relationship of the data collected to the amount of data coded and stored in the data collection. Information as to why certain items of collected information were not included in the data file stored by the archive should be provided. This supports the use of a controlled vocabulary. PLEASE NOTE A CHANGE IN USAGE INSTRUCTIONS: The string content of the element now contains the language specific label obtained from the controlled vocabulary. This allows for multiple languages through the repeated entry of the "concept" element. The attribute "vocabInstanceCodeTerm" has been added to accommodate the code term as it appears in the controlled vocabulary. See the high level documentation for a complete description of usage.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -1883,7 +1883,7 @@ class="section_header">Description</xhtml:div>
                <xhtml:h1 class="element_title">Concept</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">The general subject to which the parent element may be seen as pertaining. This element serves the same purpose as the keywords and topic classification elements, but at the data description level. The "vocab" attribute is provided to indicate the name of the controlled vocabulary, if any, used in the element, e.g., LCSH (Library of Congress Subject Headings), MeSH (Medical Subject Headings), etc. The "vocabURI" attribute specifies the location for the full controlled vocabulary. Use vocabInstanceURI to specify the identification URI of the term/code within the controlled vocabulary if available. In addition, you may use a "vocabID" for another form of identification (do not use for URI), an "vocabAgencyName" and "vocabAgencyID" to specify the agency managing the controlled vocabulary, a "vocabVersionID" if needed, and the "vocabSchemeURN". If the controlled vocabulary term is "other" you may provide a more specific value in "otherValue". PLEASE NOTE A CHANGE IN USAGE INSTRUCTIONS: The string content of "concept" now contains the language specific label obtained from the controlled vocabulary. This allows for multiple languages through the repeated entry of the "concept" element. The attribute "vocabInstanceCodeTerm" has been added to accommodate the code term as it appears in the controlled vocabulary. See the high level documentation for a complete description of usage.</xhtml:div>
+                  <xhtml:div class="description">The general subject to which the parent element may be seen as pertaining. This element serves the same purpose as the keywords and topic classification elements, but at the data description level. The "vocab" attribute is provided to indicate the name of the controlled vocabulary, if any, used in the element, e.g., LCSH (Library of Congress Subject Headings), MeSH (Medical Subject Headings), etc. The "vocabURI" attribute specifies the location for the full controlled vocabulary. Use vocabInstanceURI to specify the identification URI of the term/code within the controlled vocabulary if available. In addition, you may use a "vocabID" for another form of identification (do not use for URI), a "vocabAgencyName" to specify the agency managing the controlled vocabulary, a "vocabVersionID" if needed, and the "vocabSchemeURN". If the controlled vocabulary term is "other" you may provide a more specific value in "otherValue". PLEASE NOTE A CHANGE IN USAGE INSTRUCTIONS: The string content of the element now contains the language specific label obtained from the controlled vocabulary. This allows for multiple languages through the repeated entry of the "concept" element. The attribute "vocabInstanceCodeTerm" has been added to accommodate the code term as it appears in the controlled vocabulary. See the high level documentation for a complete description of usage.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -2007,13 +2007,13 @@ class="section_header">Description</xhtml:div>
                <xhtml:h1 class="element_title">Contact Persons</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Names and addresses of individuals responsible for the work. Individuals listed as contact persons will be used as resource persons regarding problems or questions raised by the user community. The URI attribute should be used to indicate a URN or URL for the homepage of  the contact individual. The email attribute is used to indicate an email address for the contact individual. If the attribute "agentIdentifier" is used, "typeOfAgentIdentifier" should also be provided. An agent may be an organization or individual. Use "isPersistantIdentifier" (true|false) to indicate if this is intended to be a persistent identifier. Use "agentType" to indicate if the agent is an organization or an individual.</xhtml:div>
+                  <xhtml:div class="description">Names and addresses of individuals responsible for the work. Individuals listed as contact persons will be used as resource persons regarding problems or questions raised by the user community. The URI attribute should be used to indicate a URN or URL for the homepage of  the contact individual. The email attribute is used to indicate an email address for the contact individual. If the attribute "agentIdentifier" is used, "typeOfAgentIdentifier" should also be provided. Use "isPersistantIdentifier" (true|false) to indicate if this is intended to be a persistent identifier. Use "agentType" to indicate if the agent is an organization or an individual.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
                   <xhtml:div class="example">
                      <xhtml:samp class="xml_sample"><![CDATA[
-                        <contact affiliation="University of Wisconsin" email="jsmith@wisc.edu" URI="wisc.edu" personalID="0000-0003-1294-0000" typeOfPersonalID="orchid">Jane Smith</contact>
+                        <contact affiliation="University of Wisconsin" email="jsmith@wisc.edu" URI="wisc.edu" agentIdentifier="0000-0003-1294-0000" typeOfAgentIdentifier="orchid">Jane Smith</contact>
                      ]]></xhtml:samp> 
                   </xhtml:div>
                </xhtml:div>
@@ -2379,7 +2379,7 @@ class="section_header">Description</xhtml:div>
       <xs:complexContent>
          <xs:extension base="baseElementType">
             <xs:sequence>
-	       <xs:element name="typeOfAccess" type="conceptType" minOccurs="0" maxOccurs="unbounded"/>
+	       <xs:element ref="typeOfAccess" minOccurs="0" maxOccurs="unbounded"/>
                <xs:element ref="setAvail" minOccurs="0" maxOccurs="unbounded"/>
                <xs:element ref="license" minOccurs="0" maxOccurs="unbounded"/>
                <xs:element ref="useStmt" minOccurs="0" maxOccurs="unbounded"/>
@@ -2396,8 +2396,7 @@ class="section_header">Description</xhtml:div>
    					<xhtml:h1 class="element_title">Data Access</xhtml:h1>
    					<xhtml:div>
    						<xhtml:h2 class="section_header">Description</xhtml:h2>
-   						<xhtml:div class="description">This section describes access conditions and terms of use for the data collection. In cases where access conditions differ across individual files or variables, multiple access conditions can be specified. In cases where access conditions differ across individual files, variables, or categories multiple access conditions can be specified. The access conditions applying to a study, file, variable group, variable or category can be indicated by an IDREF attribute on the study, file, variable group, nCube group, variable, category, or data item elements called "access". The member element "typeOfAccss" is of the type "concept" and is intended to provide a specific type of access. If a license applies to the data access, use the optional "license" element. PLEASE NOTE A CHANGE IN USAGE INSTRUCTIONS: The string content of "concept" now contains the language specific label obtained from the controlled vocabulary. This allows for multiple languages through the repeated entry of the "concept" element. The attribute "vocabInstanceCodeTerm" has been added to accommodate the code term as it appears in the controlled vocabulary. See the high level documentation for a complete description of usage.
-                                                </xhtml:div>
+   						<xhtml:div class="description">This section describes access conditions and terms of use for the data collection. In cases where access conditions differ across individual files or variables, multiple access conditions can be specified. In cases where access conditions differ across individual files, variables, or categories multiple access conditions can be specified. The access conditions applying to a study, file, variable group, variable or category can be indicated by an IDREF attribute on the study, file, variable group, nCube group, variable, category, or data item elements called "access". The member element "typeOfAccess" is of the type "concept" and is intended to provide a specific type of access. If a license applies to the data access, use the optional "license" element.</xhtml:div>
    					</xhtml:div>
    				</xhtml:div>
    			</xs:documentation>
@@ -3190,7 +3189,7 @@ class="section_header">Description</xhtml:div>
                <xhtml:h1 class="element_title">Date of Deposit</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">The date that the work was deposited with the archive that originally received it. The ISO standard for dates (YYYY-MM-DD) is recommended for use with the "date" attribute. The term “archive that originally received it” differentiates between the designated depository and any locally held copies obtained to support local use.”</xhtml:div>
+                  <xhtml:div class="description">The date that the work was deposited with the archive that originally received it. The ISO standard for dates (YYYY-MM-DD) is recommended for use with the "date" attribute. The focus of this element is on the original archive, differentiating between the designated depository and any locally held copies obtained to support local use.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -3254,7 +3253,7 @@ class="section_header">Description</xhtml:div>
                <xhtml:h1 class="element_title">Depositor</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">The name of the person (or institution) who provided this work to the archive storing it. Attributes "abbr" and "affiliation" can be used to provide and abbreviation and affiliation of the depositor. If the attribute "agentIdentifier" is used, "typeOfAgentIdentifier" should also be provided. An agent may be an organization or individual. Use "isPersistantIdentifier" (true|false) to indicate if this is intended to be a persistent identifier. Use "agentType" to indicate if the agent is an organization or an individual.</xhtml:div>
+                  <xhtml:div class="description">The name of the person (or institution) who provided this work to the archive storing it. Attributes "abbr" and "affiliation" can be used to provide and abbreviation and affiliation of the depositor. If the attribute "agentIdentifier" is used, "typeOfAgentIdentifier" should also be provided. Use "isPersistantIdentifier" (true|false) to indicate if this is intended to be a persistent identifier. Use "agentType" to indicate if the agent is an organization or an individual.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -3352,7 +3351,7 @@ class="section_header">Description</xhtml:div>
                <xhtml:h1 class="element_title">Data Fingerprint</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Allows for assigning a hash value (digital fingerprint) to the data or data file. Set the attribute flag to "data" when the hash value provides a digital fingerprint to the data contained in the file regardless of the storage format (ASCII, SAS, binary, etc.). One approach to compute a data fingerprint is the Universal Numerical Fingerprint (UNF). Set the attribute flag to "dataFile" if the digital fingerprint is only for the data file in its current storage format. Provide the digital fingerprint in digitalFingerprintValue and identify the algorithm specification used (add version as a separate entry if it is not part of the specification entry).</xhtml:div>
+                  <xhtml:div class="description">Allows for assigning a hash value (digital fingerprint) to the data or data file.  Set the attribute flag to "data" when the hash value provides a digital fingerprint to the data contained in the file regardless of the storage format (ASCII, SAS, binary, etc.). One approach to compute a data fingerprint is the Universal Numerical Fingerprint (UNF). Set the attribute flag to "dataFile" if the digital fingerprint is only for the data file in its current storage format. Provide the digital fingerprint in "digitalFingerprintValue" and identify the algorithm specification used in "algorithmSpecification" (adding a version number in "algorithmVersion" as a separate entry if it is not part of the specification entry).</xhtml:div>
                </xhtml:div>
 					<xhtml:div>
 						<xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -3498,7 +3497,7 @@ class="section_header">Description</xhtml:div>
                <xhtml:h1 class="element_title">Distributor</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">The organization designated by the author or producer to generate copies of the particular work including any necessary editions or revisions. Names and addresses may be specified and other archives may be co-distributors. The attributes "abbr" and "affiliation" are provided and URI attribute is included to provide an URN or URL to the ordering service or download facility on a Web site. If the attribute "agentIdentifier" is used, "typeOfAgentIdentifier" should also be provided. An agent may be an organization or individual. Use "isPersistantIdentifier" (true|false) to indicate if this is intended to be a persistent identifier. Use "agentType" to indicate if the agent is an organization or an individual.</xhtml:div>
+                  <xhtml:div class="description">The organization designated by the author or producer to generate copies of the particular work including any necessary editions or revisions. Names and addresses may be specified and other archives may be co-distributors. The attributes "abbr" and "affiliation" are provided and URI attribute is included to provide an URN or URL to the ordering service or download facility on a Web site. If the attribute "agentIdentifier" is used, "typeOfAgentIdentifier" should also be provided. Use "isPersistantIdentifier" (true|false) to indicate if this is intended to be a persistent identifier. Use "agentType" to indicate if the agent is an organization or an individual.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -3507,7 +3506,7 @@ class="section_header">Description</xhtml:div>
                         <distrbtr abbr="ICPSR" affiliation="Institute for Social Research" URI="http://www.icpsr.umich.edu">Ann Arbor, MI: Inter-university Consortium for Political and Social Research</distrbtr>
                      ]]></xhtml:samp> 
                      <xhtml:samp class="xml_sample"><![CDATA[
-                        <distrbtr abbr="UMICH" URI="https://www.umich.edu/" personalID="grid.214458.e" typeOfPersonalID="GRID">University of Michigan - Ann Arbor</distrbtr>
+                        <distrbtr abbr="UMICH" URI="https://www.umich.edu/" agentIdentifier="grid.214458.e" typeOfAgentIdentifier="GRID">University of Michigan - Ann Arbor</distrbtr>
                      ]]></xhtml:samp> 
                   </xhtml:div>
                </xhtml:div>
@@ -3623,7 +3622,7 @@ class="section_header">Description</xhtml:div>
                <xhtml:h1 class="element_title">Documentation Status</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Use this field to indicate if the documentation is being presented/distributed before it has been finalized. Some data producers and social science data archives employ data processing strategies that provide for release of data and documentation at various stages of processing. The element may be repeated to support multiple language expressions of the content. This supports the use of a controlled vocabulary. PLEASE NOTE A CHANGE IN USAGE INSTRUCTIONS: The string content of "concept" now contains the language specific label obtained from the controlled vocabulary. This allows for multiple languages through the repeated entry of the "concept" element. The attribute "vocabInstanceCodeTerm" has been added to accommodate the code term as it appears in the controlled vocabulary. See the high level documentation for a complete description of usage.</xhtml:div>
+                  <xhtml:div class="description">Use this field to indicate if the documentation is being presented/distributed before it has been finalized. Some data producers and social science data archives employ data processing strategies that provide for release of data and documentation at various stages of processing. The element may be repeated to support multiple language expressions of the content. This supports the use of a controlled vocabulary. PLEASE NOTE A CHANGE IN USAGE INSTRUCTIONS: The string content of the element now contains the language specific label obtained from the controlled vocabulary. This allows for multiple languages through the repeated entry of the "concept" element. The attribute "vocabInstanceCodeTerm" has been added to accommodate the code term as it appears in the controlled vocabulary. See the high level documentation for a complete description of usage.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -4252,7 +4251,7 @@ class="section_header">Description</xhtml:div>
                <xhtml:h1 class="element_title">Data Format</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Physical format of the data file: Logical record length format, card-image format (i.e., data with multiple records per case), delimited format, free format, etc. The element may be repeated to support multiple language expressions of the content. The use of a controlled vocabulary is supported with the use of attributes "vocab", "vocabURI", and "vocabInstanceURI". In addition, you may use a "vocabID" for another form of identification (do not use for URI), an "vocabAgencyName" and "vocabAgencyID" to specify the agency managing the controlled vocabulary, a "vocabVersionID" if needed, and the "vocabSchemeURN". If the controlled vocabulary term is "other" you may provide a more specific value in "otherValue". PLEASE NOTE A CHANGE IN USAGE INSTRUCTIONS: The string content of "concept" now contains the language specific label obtained from the controlled vocabulary. This allows for multiple languages through the repeated entry of the "concept" element. The attribute "vocabInstanceCodeTerm" has been added to accommodate the code term as it appears in the controlled vocabulary. See the high level documentation for a complete description of usage.</xhtml:div>
+                  <xhtml:div class="description">Physical format of the data file: Logical record length format, card-image format (i.e., data with multiple records per case), delimited format, free format, etc. The element may be repeated to support multiple language expressions of the content. The use of a controlled vocabulary is supported with the use of attributes "vocab", "vocabURI", and "vocabInstanceURI". In addition, you may use a "vocabID" for another form of identification (do not use for URI), a "vocabAgencyName" to specify the agency managing the controlled vocabulary, a "vocabVersionID" if needed, and the "vocabSchemeURN". If the controlled vocabulary term is "other" you may provide a more specific value in "otherValue". PLEASE NOTE A CHANGE IN USAGE INSTRUCTIONS: The string content of the element now contains the language specific label obtained from the controlled vocabulary. This allows for multiple languages through the repeated entry of the "concept" element. The attribute "vocabInstanceCodeTerm" has been added to accommodate the code term as it appears in the controlled vocabulary. See the high level documentation for a complete description of usage.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -4362,7 +4361,7 @@ class="section_header">Description</xhtml:div>
                <xhtml:h1 class="element_title">Funding Agency/Sponsor</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">The source(s) of funds for production of the work including abbreviation and affiliation. If different funding agencies sponsored different stages of the production process, use the "role" attribute to distinguish them. If the attribute "agentIdentifier" is used, "typeOfAgentIdentifier" should also be provided. An agent may be an organization or individual. Use "isPersistantIdentifier" (true|false) to indicate if this is intended to be a persistent identifier. Use "agentType" to indicate if the agent is an organization or an individual.</xhtml:div>
+                  <xhtml:div class="description">The source(s) of funds for production of the work including abbreviation and affiliation. If different funding agencies sponsored different stages of the production process, use the "role" attribute to distinguish them. If the attribute "agentIdentifier" is used, "typeOfAgentIdentifier" should also be provided. Use "isPersistantIdentifier" (true|false) to indicate if this is intended to be a persistent identifier. Use "agentType" to indicate if the agent is an organization or an individual.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -4713,7 +4712,7 @@ class="section_header">Description</xhtml:div>
                <xhtml:h1 class="element_title">Imputation</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">According to the Statistical Terminology glossary maintained by the National Science Foundation, this is "the process by which one estimates missing values for items that a survey respondent failed to provide," and if applicable in this context, it refers to the type of procedure used. When applied to an nCube, imputation takes into consideration all of the dimensions that are part of that nCube. This element may be repeated to support multiple language expressions of the content. This supports the use of a controlled vocabulary. PLEASE NOTE A CHANGE IN USAGE INSTRUCTIONS: The string content of "concept" now contains the language specific label obtained from the controlled vocabulary. This allows for multiple languages through the repeated entry of the "concept" element. The attribute "vocabInstanceCodeTerm" has been added to accommodate the code term as it appears in the controlled vocabulary. See the high level documentation for a complete description of usage.</xhtml:div>
+                  <xhtml:div class="description">According to the Statistical Terminology glossary maintained by the National Science Foundation, this is "the process by which one estimates missing values for items that a survey respondent failed to provide," and if applicable in this context, it refers to the type of procedure used. When applied to an nCube, imputation takes into consideration all of the dimensions that are part of that nCube. This element may be repeated to support multiple language expressions of the content. This supports the use of a controlled vocabulary. PLEASE NOTE A CHANGE IN USAGE INSTRUCTIONS: The string content of the element now contains the language specific label obtained from the controlled vocabulary. This allows for multiple languages through the repeated entry of the "concept" element. The attribute "vocabInstanceCodeTerm" has been added to accommodate the code term as it appears in the controlled vocabulary. See the high level documentation for a complete description of usage.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -4896,7 +4895,7 @@ class="section_header">Description</xhtml:div>
                <xhtml:h1 class="element_title">Keywords</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Words or phrases that describe salient aspects of a data collection's content. Can be used for building keyword indexes and for classification and retrieval purposes. A controlled vocabulary can be employed. Maps to Dublin Core Subject element. The "vocab" attribute is provided for specification of the controlled vocabulary in use, e.g., LCSH, MeSH, etc. The "vocabURI" attribute specifies the location for the full controlled vocabulary.  Use vocabInstanceURI to specify the identification URI of the term/code within the controlled vocabulary if available.  In addition, you may use a "vocabID" for another form of identification (do not use for URI), an "vocabAgencyName" and "vocabAgencyID" to specify the agency managing the controlled vocabulary, a "vocabVersionID" if needed, and the "vocabSchemeURN". If the controlled vocabulary term is "other" you may provide a more specific value in "otherValue". PLEASE NOTE A CHANGE IN USAGE INSTRUCTIONS: The string content of "concept" now contains the language specific label obtained from the controlled vocabulary. This allows for multiple languages through the repeated entry of the "concept" element. The attribute "vocabInstanceCodeTerm" has been added to accommodate the code term as it appears in the controlled vocabulary. See the high level documentation for a complete description of usage.</xhtml:div>
+                  <xhtml:div class="description">Words or phrases that describe salient aspects of a data collection's content. Can be used for building keyword indexes and for classification and retrieval purposes. A controlled vocabulary can be employed. Maps to Dublin Core Subject element. The "vocab" attribute is provided for specification of the controlled vocabulary in use, e.g., LCSH, MeSH, etc. The "vocabURI" attribute specifies the location for the full controlled vocabulary.  Use vocabInstanceURI to specify the identification URI of the term/code within the controlled vocabulary if available.  In addition, you may use a "vocabID" for another form of identification (do not use for URI), a "vocabAgencyName" to specify the agency managing the controlled vocabulary, a "vocabVersionID" if needed, and the "vocabSchemeURN". If the controlled vocabulary term is "other" you may provide a more specific value in "otherValue". PLEASE NOTE A CHANGE IN USAGE INSTRUCTIONS: The string content of the element now contains the language specific label obtained from the controlled vocabulary. This allows for multiple languages through the repeated entry of the "concept" element. The attribute "vocabInstanceCodeTerm" has been added to accommodate the code term as it appears in the controlled vocabulary. See the high level documentation for a complete description of usage.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -5236,7 +5235,7 @@ class="section_header">Description</xhtml:div>
       <xs:complexContent>
          <xs:extension base="baseElementType">
             <xs:sequence>
-	       <xs:element name="typeOfAccess" type="conceptType" minOccurs="0" maxOccurs="unbounded"/>
+	       <xs:element ref="typeOfAccess" minOccurs="0" maxOccurs="unbounded"/>
                <xs:element ref="license" minOccurs="0" maxOccurs="unbounded"/>
                <xs:element ref="useStmt" minOccurs="0" maxOccurs="unbounded"/>
                <xs:element ref="notes" minOccurs="0" maxOccurs="unbounded"/>
@@ -5252,7 +5251,7 @@ class="section_header">Description</xhtml:div>
                <xhtml:h1 class="element_title">Metadata Access</xhtml:h1>
 	       					<xhtml:div>
 	       						<xhtml:h2 class="section_header">Description</xhtml:h2>
-	       						<xhtml:div class="description">This section describes access conditions and terms of use for the metadata. In cases where access conditions differ across individual files, variables, or categories multiple access conditions can be specified. The access conditions applying to a study, file, variable group, variable or category can be indicated by an IDREF attribute on the study, file, variable group, nCube group, variable, category, or data item elements called "access". The member element "typeOfAccss" is of the type "concept" and is intended to provide a specific type of access.  If a license applies to the data access, use the optional "license" element. PLEASE NOTE A CHANGE IN USAGE INSTRUCTIONS: The string content of "concept" now contains the language specific label obtained from the controlled vocabulary. This allows for multiple languages through the repeated entry of the "concept" element. The attribute "vocabInstanceCodeTerm" has been added to accommodate the code term as it appears in the controlled vocabulary. See the high level documentation for a complete description of usage.</xhtml:div>
+	       						<xhtml:div class="description">This section describes access conditions and terms of use for the metadata. In cases where access conditions differ across individual files, variables, or categories multiple access conditions can be specified. The access conditions applying to a study, file, variable group, variable or category can be indicated by an IDREF attribute on the study, file, variable group, nCube group, variable, category, or data item elements called "access". The member element "typeOfAccess" is of the type "concept" and is intended to provide a specific type of access.  If a license applies to the data access, use the optional "license" element.</xhtml:div>
 	       					</xhtml:div>
 	       				</xhtml:div>
 	       			</xs:documentation>
@@ -5292,7 +5291,7 @@ class="section_header">Description</xhtml:div>
       <xs:complexContent>
          <xs:extension base="baseElementType">
             <xs:sequence>
-               <xs:element name="typeOfCodingInstruction" type="conceptType" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element ref="typeOfCodingInstruction" minOccurs="0" maxOccurs="unbounded"/>
                <xs:element ref="txt" minOccurs="0" maxOccurs="unbounded"/>
                <xs:element ref="command" minOccurs="0" maxOccurs="unbounded"/>
             </xs:sequence>
@@ -5610,7 +5609,7 @@ class="section_header">Description</xhtml:div>
                <xhtml:h1 class="element_title">Country</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Indicates the country or countries covered in the file. Attribute "abbr" may be used to list common abbreviations; use of ISO country codes is recommended. Use vocab, vocabURI, and vocabInstanceURI to identify the use of a controlled vocabulary. Maps to Dublin Core Coverage element. Inclusion of this element is recommended. For forward-compatibility, DDI Lifecycle XHTML tags may be used in this element. In addition, you may use a "vocabID" for another form of identification (do not use for URI), an "vocabAgencyName" and "vocabAgencyID" to specify the agency managing the controlled vocabulary, a "vocabVersionID" if needed, and the "vocabSchemeURN". If the controlled vocabulary term is "other" you may provide a more specific value in "otherValue". PLEASE NOTE A CHANGE IN USAGE INSTRUCTIONS: The string content of "concept" now contains the language specific label obtained from the controlled vocabulary. This allows for multiple languages through the repeated entry of the "concept" element. The attribute "vocabInstanceCodeTerm" has been added to accommodate the code term as it appears in the controlled vocabulary. See the high level documentation for a complete description of usage.</xhtml:div>
+                  <xhtml:div class="description">Indicates the country or countries covered in the file. Attribute "abbr" may be used to list common abbreviations; use of ISO country codes is recommended. Use vocab, vocabURI, and vocabInstanceURI to identify the use of a controlled vocabulary. Maps to Dublin Core Coverage element. Inclusion of this element is recommended. For forward-compatibility, DDI Lifecycle XHTML tags may be used in this element. In addition, you may use a "vocabID" for another form of identification (do not use for URI), a "vocabAgencyName" to specify the agency managing the controlled vocabulary, a "vocabVersionID" if needed, and the "vocabSchemeURN". If the controlled vocabulary term is "other" you may provide a more specific value in "otherValue". PLEASE NOTE A CHANGE IN USAGE INSTRUCTIONS: The string content of "concept" now contains the language specific label obtained from the controlled vocabulary. This allows for multiple languages through the repeated entry of the "concept" element. The attribute "vocabInstanceCodeTerm" has been added to accommodate the code term as it appears in the controlled vocabulary. See the high level documentation for a complete description of usage.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
 	       						<xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -5865,13 +5864,13 @@ class="section_header">Description</xhtml:div>
                <xhtml:h1 class="element_title">Archive Where Study Originally Stored</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Archive from which the data collection was obtained; the originating archive. May provide "abbr", "affiliation", "URI", and "agentIdentifier" to aid in identification. If "agentIdentifier" is used "typeOfAgentIdentifier" should be used. An agent may be an organization or individual. Use "isPersistantIdentifier" (true|false) to indicate if this is intended to be a persistent identifier. Use "agentType" to indicate if the agent is an organization or an individual.</xhtml:div>
+                  <xhtml:div class="description">Archive from which the data collection was obtained; the originating archive. May provide "abbr", "affiliation", "URI", and "agentIdentifier" to aid in identification. If "agentIdentifier" is used "typeOfAgentIdentifier" should be used. Use "isPersistantIdentifier" (true|false) to indicate if this is intended to be a persistent identifier. Use "agentType" to indicate if the agent is an organization or an individual.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
                   <xhtml:div class="example">
                      <xhtml:samp class="xml_sample"><![CDATA[
-                        <origArch abbr="GESIS" URI="gesis.org" personalID="018afyw53" typeOfPersonalID="ROR">GESIS Leibniz-Institut für Sozialwissenschaften</origArch>
+                        <origArch abbr="GESIS" URI="gesis.org" agentIdentifier="018afyw53" typeOfAgentIdentifier="ROR">GESIS Leibniz-Institut für Sozialwissenschaften</origArch>
                      ]]></xhtml:samp>
                   </xhtml:div>
                </xhtml:div>
@@ -5909,13 +5908,13 @@ class="section_header">Description</xhtml:div>
                <xhtml:h1 class="element_title">Other Identifications /Acknowledgments</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Statements of responsibility not recorded in the title and statement of responsibility areas (collaborators). Indicate here the persons or bodies connected with the work, or significant persons or bodies connected with previous editions and not already named in the description. For example, the name of the person who edited the marked-up documentation might be cited in codeBook/docDscr/rspStmt/othId, using the "role" and "affiliation" attributes. DDI provides a Controlled Vocabulary for the attriubte "role": "ContributorRole". Other identifications/acknowledgments for data collection (codeBook/stdyDscr/citation/rspStmt/othId) maps to Dublin Core Contributor element. If the attribute "agentIdentifier" is used, "typeOfAgentIdentifier" should also be provided. An agent may be an organization or individual. Use "isPersistantIdentifier" (true|false) to indicate if this is intended to be a persistent identifier. Use "agentType" to indicate if the agent is an organization or an individual.</xhtml:div>
+                  <xhtml:div class="description">Statements of responsibility not recorded in the title and statement of responsibility areas (collaborators). Indicate here the persons or bodies connected with the work, or significant persons or bodies connected with previous editions and not already named in the description. For example, the name of the person who edited the marked-up documentation might be cited in codeBook/docDscr/rspStmt/othId, using the "role" and "affiliation" attributes. DDI provides a Controlled Vocabulary for the attriubte "role": "ContributorRole". Other identifications/acknowledgments for data collection (codeBook/stdyDscr/citation/rspStmt/othId) maps to Dublin Core Contributor element. If the attribute "agentIdentifier" is used, "typeOfAgentIdentifier" should also be provided. Use "isPersistantIdentifier" (true|false) to indicate if this is intended to be a persistent identifier. Use "agentType" to indicate if the agent is an organization or an individual.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
                   <xhtml:div class="example">
                      <xhtml:samp class="xml_sample"><![CDATA[
-                         <othId role="editor" affiliation="INRA" personalID="0000-0003-1294-0000" typeOfPersonalID="orcid">Jane Smith</othId>
+                         <othId role="editor" affiliation="INRA" agentIdentifier="0000-0003-1294-0000" typeOfAgentIdentifier="orcid">Jane Smith</othId>
                      ]]></xhtml:samp> 
                   </xhtml:div>
                </xhtml:div>
@@ -5977,7 +5976,7 @@ class="section_header">Description</xhtml:div>
          <xs:extension base="baseElementType">
             <xs:choice>
                <xs:sequence>
-                  <xs:element name="typeOfOtherMaterial" type="conceptType" minOccurs="0" maxOccurs="unbounded"/>
+                  <xs:element ref="typeOfOtherMaterial" minOccurs="0" maxOccurs="unbounded"/>
                   <xs:element ref="labl" minOccurs="0" maxOccurs="unbounded"/>
                   <xs:element ref="txt" minOccurs="0" maxOccurs="unbounded"/>
                   <xs:element ref="notes" minOccurs="0" maxOccurs="unbounded"/>
@@ -6266,7 +6265,7 @@ class="section_header">Description</xhtml:div>
                <xhtml:h1 class="element_title">Processing Status</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Processing status of the file. Some data producers and social science data archives employ data processing strategies that provide for release of data and documentation at various stages of processing. This supports the use of a controlled vocabulary. PLEASE NOTE A CHANGE IN USAGE INSTRUCTIONS: The string content of "concept" now contains the language specific label obtained from the controlled vocabulary. This allows for multiple languages through the repeated entry of the "concept" element. The attribute "vocabInstanceCodeTerm" has been added to accommodate the code term as it appears in the controlled vocabulary. See the high level documentation for a complete description of usage.</xhtml:div>
+                  <xhtml:div class="description">Processing status of the file. Some data producers and social science data archives employ data processing strategies that provide for release of data and documentation at various stages of processing. This supports the use of a controlled vocabulary. PLEASE NOTE A CHANGE IN USAGE INSTRUCTIONS: The string content of element now contains the language specific label obtained from the controlled vocabulary. This allows for multiple languages through the repeated entry of the "concept" element. The attribute "vocabInstanceCodeTerm" has been added to accommodate the code term as it appears in the controlled vocabulary. See the high level documentation for a complete description of usage.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -6388,7 +6387,7 @@ class="section_header">Description</xhtml:div>
                <xhtml:h1 class="element_title">Producer</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">The producer is the person or organization with the financial or administrative responsibility for the physical processes whereby the document was brought into existence. Use the "role" attribute to distinguish different stages of involvement in the production process, such as original producer. Producer of data collection (codeBook/stdyDscr/citation/prodStmt/producer) maps to Dublin Core Publisher element. The "producer" in the Document Description should be the agency or person that prepared the marked-up document. If the attribute "agentIdentifier" is used, "typeOfAgentIdentifier" should also be provided. An agent may be an organization or individual. Use "isPersistantIdentifier" (true|false) to indicate if this is intended to be a persistent identifier. Use "agentType" to indicate if the agent is an organization or an individual.</xhtml:div>
+                  <xhtml:div class="description">The producer is the person or organization with the financial or administrative responsibility for the physical processes whereby the document was brought into existence. Use the "role" attribute to distinguish different stages of involvement in the production process, such as original producer. Producer of data collection (codeBook/stdyDscr/citation/prodStmt/producer) maps to Dublin Core Publisher element. The "producer" in the Document Description should be the agency or person that prepared the marked-up document. If the attribute "agentIdentifier" is used, "typeOfAgentIdentifier" should also be provided. Use "isPersistantIdentifier" (true|false) to indicate if this is intended to be a persistent identifier. Use "agentType" to indicate if the agent is an organization or an individual.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -7124,7 +7123,7 @@ class="section_header">Description</xhtml:div>
       <xs:complexContent>
          <xs:extension base="baseElementType">
             <xs:sequence>
-               <xs:element name="typeOfSetAvailability" type="conceptType" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element ref="typeOfSetAvailability" minOccurs="0" maxOccurs="unbounded"/>
                <xs:element ref="accsPlac" minOccurs="0" maxOccurs="unbounded"/>
                <xs:element ref="origArch" minOccurs="0" maxOccurs="unbounded"/>
                <xs:element ref="avlStatus" minOccurs="0" maxOccurs="unbounded"/>
@@ -7171,7 +7170,7 @@ class="section_header">Description</xhtml:div>
                <xhtml:h1 class="element_title">Software used in Production</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Software used to produce the work. Supprts the use of an external controlled vocabulary. DDI provides a Controlled Vocabulary for this location: "SoftwarePackage". A "version" attribute permits specification of the software version number. The "date" attribute is provided to enable specification of the date (if any) for the software release. The ISO standard for dates (YYYY-MM-DD) is recommended for use with the date attribute.</xhtml:div>
+                  <xhtml:div class="description">Software used to produce the work. Supports the use of an external controlled vocabulary. DDI provides a Controlled Vocabulary for this location: "SoftwarePackage". A "version" attribute permits specification of the software version number. The "date" attribute is provided to enable specification of the date (if any) for the software release. The ISO standard for dates (YYYY-MM-DD) is recommended for use with the date attribute.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -7229,7 +7228,7 @@ class="section_header">Description</xhtml:div>
          <xs:extension base="baseElementType">
             <xs:choice>
                <xs:sequence>
-                  <xs:element name="typeOfDataSrc" type="conceptType" minOccurs="0" maxOccurs="unbounded"/>
+                  <xs:element ref="typeOfDataSrc" minOccurs="0" maxOccurs="unbounded"/>
                   <xs:element ref="dataSrc" minOccurs="0" maxOccurs="unbounded"/>
                   <xs:element ref="sourceCitation" minOccurs="0" maxOccurs="unbounded"/>
                   <xs:element ref="srcOrig" minOccurs="0" maxOccurs="unbounded"/>
@@ -7550,7 +7549,7 @@ class="section_header">Description</xhtml:div>
       <xs:complexContent>
          <xs:extension base="baseElementType">
             <xs:sequence>
-               <xs:element name="typeOfDevelopmentActivity" type="conceptType" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element ref="typeOfDevelopmentActivity" minOccurs="0" maxOccurs="unbounded"/>
                <xs:element name="description" type="simpleTextType" minOccurs="0" maxOccurs="unbounded"/>
                <xs:element ref="participant" minOccurs="0" maxOccurs="unbounded"/>
                <xs:element ref="resource" minOccurs="0" maxOccurs="unbounded"/>
@@ -7568,7 +7567,7 @@ class="section_header">Description</xhtml:div>
                <xhtml:h1 class="element_title">Development Activity</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Information on the development activity including a description, set of participants, resources used, and outcomes. Use of the "type" attribute has been DEPRECATED. Use the element typeOfSetAvailability which supports the use of a controlled vocabulary. Repeat if multiple language labels are being provided directly within the documentation.</xhtml:div>
+                  <xhtml:div class="description">Information on the development activity including a "description" of the activity, name of each "participant", each "resource" used, and each "outcome" of the activity. Use of the "type" attribute has been DEPRECATED. Use the element "typeOfSetAvailability" which supports the use of a controlled vocabulary. Repeat if multiple language labels are being provided directly within the documentation.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -7620,13 +7619,25 @@ class="section_header">Description</xhtml:div>
       </xs:simpleContent>
    </xs:complexType>
 
-   <xs:element name="participant" type="participantType"/>
+   <xs:element name="participant" type="participantType">
+      <xs:annotation>
+         <xs:documentation>
+            <xhtml:div>
+               <xhtml:h1 class="element_title">Participant</xhtml:h1>
+               <xhtml:div>
+                  <xhtml:h2 class="section_header">Description</xhtml:h2>
+                  <xhtml:div class="description">Name of "participant" in the activity being described in the parent element. The "affiliation" attribute indicates the institutional affiliation of the participant. The "abbr" attribute holds the abbreviation of the participant's affiliation. Use "role" to specify the role of the participant if relevent. If the attribute "agentIdentifier" is used, "typeOfAgentIdentifier" should also be provided. Use "isPersistantIdentifier" (true|false) to indicate if this is intended to be a persistent identifier. Use "agentType" to indicate if the agent is an organization or an individual.</xhtml:div>
+               </xhtml:div>
+	        </xhtml:div>
+         </xs:documentation>
+      </xs:annotation>
+   </xs:element>
 
    <xs:complexType name="resourceType">
       <xs:complexContent>
          <xs:extension base="baseElementType">
             <xs:sequence>
-               <xs:element name="typeOfDataSrc" type="conceptType" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element ref="typeOfDataSrc" minOccurs="0" maxOccurs="unbounded"/>
                <xs:element ref="dataSrc" minOccurs="0" maxOccurs="unbounded"/>
                <xs:element ref="srcOrig" minOccurs="0" maxOccurs="unbounded"/>
                <xs:element ref="srcChar" minOccurs="0" maxOccurs="unbounded"/>
@@ -7676,8 +7687,9 @@ class="section_header">Description</xhtml:div>
 							<xhtml:div class="example">
 								<xhtml:samp class="xml_sample"><![CDATA[
 <studyAuthorization date="2010-11-04">
-<authorizingAgency affiliation="University of Georgia" abbr="HSO">Human Subjects Office</authorizingAgency>
-<authorizationStatement>Statement of authorization issued by OUHS on 2010-11-04</authorizationStatement></studyAuthorization>
+  <authorizingAgency affiliation="University of Georgia" abbr="HSO">Human Subjects Office</authorizingAgency>
+  <authorizationStatement>Statement of authorization issued by OUHS on 2010-11-04</authorizationStatement>
+</studyAuthorization>
 ]]>
 								</xhtml:samp>
 							</xhtml:div>
@@ -7714,7 +7726,7 @@ class="section_header">Description</xhtml:div>
 						<xhtml:h1 class="element_title">Authorizing Agency</xhtml:h1>
 						<xhtml:div>
 							<xhtml:h2 class="section_header">Description</xhtml:h2>
-							<xhtml:div class="description">Name of the agent or agency that authorized the study. The "affiliation" attribute indicates the institutional affiliation of the authorizing agent or agency. The "abbr" attribute holds the abbreviation of the authorizing agent's or agency's name. If the attribute "agentIdentifier" is used, "typeOfAgentIdentifier" should also be provided. An agent may be an organization or individual. Use "isPersistantIdentifier" (true|false) to indicate if this is intended to be a persistent identifier. Use "agentType" to indicate if the agent is an organization or an individual.</xhtml:div>
+							<xhtml:div class="description">Name of the agent or agency that authorized the study. The "affiliation" attribute indicates the institutional affiliation of the authorizing agent or agency. The "abbr" attribute holds the abbreviation of the authorizing agent's or agency's name. If the attribute "agentIdentifier" is used, "typeOfAgentIdentifier" should also be provided. Use "isPersistantIdentifier" (true|false) to indicate if this is intended to be a persistent identifier. Use "agentType" to indicate if the agent is an organization or an individual.</xhtml:div>
 						</xhtml:div>
 						<xhtml:div>
 							<xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -7801,7 +7813,7 @@ class="section_header">Description</xhtml:div>
                <xhtml:h1 class="element_title">Quality Statement</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">This structure consists of two parts, standardsCompliance and otherQualityStatements. In standardsCompliance list all specific standards complied with during the execution of this study. Note the standard name and producer and how the study complied with the standard. Enter any additional quality statements in otherQualityStatements.</xhtml:div>
+                  <xhtml:div class="description">This structure consists of two parts, "standardsCompliance" and "otherQualityStatements". In "standardsCompliance" list all specific standards complied with during the execution of this study. Note the standard name and producer and how the study complied with the standard. Enter any additional quality statements in "otherQualityStatement".</xhtml:div>
                </xhtml:div>
             </xhtml:div>
          </xs:documentation>
@@ -7826,16 +7838,18 @@ class="section_header">Description</xhtml:div>
 						<xhtml:h1 class="element_title">Standards Compliance</xhtml:h1>
 						<xhtml:div>
 							<xhtml:h2 class="section_header">Description</xhtml:h2>
-							<xhtml:div class="description">This section lists all specific standards complied with during the execution of this study. Specify the standard(s)' name(s) and producer(s) and describe how the study complied with each standard in complianceDescription. Enter any additional quality statements in otherQualityStatement.</xhtml:div>
+							<xhtml:div class="description">This section lists all specific standards complied with during the execution of this study. Specify the standard(s)' name(s) and producer(s) in the complex element "standard" and describe how the study complied with each standard in "complianceDescription". Enter any additional quality statements in "otherQualityStatement" of the parent element.</xhtml:div>
 						</xhtml:div>
 						<xhtml:div>
 							<xhtml:h2 class="section_header">Example</xhtml:h2>
 							<xhtml:div class="example">
 								<xhtml:samp class="xml_sample"><![CDATA[
-<standardsCompliance><standard>
-<standardName>Data Documentation Initiative</standardName>
-<producer>DDI Alliance</producer></standard>
-<complianceDescription>Study metadata was created in compliance with the Data Documentation Initiative (DDI) standard</complianceDescription>
+<standardsCompliance>
+  <standard>
+    <standardName>Data Documentation Initiative</standardName>
+    <producer>DDI Alliance</producer>
+  </standard>
+  <complianceDescription>Study metadata was created in compliance with the Data Documentation Initiative (DDI) standard</complianceDescription>
 </standardsCompliance>
 ]]>
 								</xhtml:samp>
@@ -7865,7 +7879,7 @@ class="section_header">Description</xhtml:div>
 					<xhtml:h1 class="element_title">Standard</xhtml:h1>
 					<xhtml:div>
 						<xhtml:h2 class="section_header">Description</xhtml:h2>
-						<xhtml:div class="description">Describes a standard with which the study complies.</xhtml:div>
+						<xhtml:div class="description">Describes a standard with which the study complies. Specify the name of the standard using "standardName" and producer of the standard with "producer.</xhtml:div>
 					</xhtml:div>
 				</xhtml:div>
 			</xs:documentation>
@@ -7909,7 +7923,7 @@ class="section_header">Description</xhtml:div>
       <xs:complexContent>
          <xs:extension base="baseElementType">
             <xs:sequence>
-               <xs:element name="typeOfExPostEvaluation" type="conceptType" minOccurs="0" maxOccurs="unbounded"/>
+               <xs:element ref="typeOfExPostEvaluation" minOccurs="0" maxOccurs="unbounded"/>
                <xs:element ref="evaluator" minOccurs="0" maxOccurs="unbounded"/>
                <xs:element ref="evaluationProcess" minOccurs="0" maxOccurs="unbounded"/>
                <xs:element ref="outcomes" minOccurs="0" maxOccurs="unbounded"/>
@@ -7976,7 +7990,7 @@ class="section_header">Description</xhtml:div>
                <xhtml:h1 class="element_title">Evaluator Type</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">The evaluator element identifies persons or organizations involved in the evaluation. The affiliation attribute contains the affiliation of the individual or organization. The abbr attribute holds an abbreviation for the individual or organization. The role attribute indicates the role played by the individual or organization in the evaluation process. If the attribute "agentIdentifier" is used, "typeOfAgentIdentifier" should also be provided. An agent may be an organization or individual. Use "isPersistantIdentifier" (true|false) to indicate if this is intended to be a persistent identifier. Use "agentType" to indicate if the agent is an organization or an individual.</xhtml:div>
+                  <xhtml:div class="description">The evaluator element identifies persons or organizations involved in the evaluation. The affiliation attribute contains the affiliation of the individual or organization. The abbr attribute holds an abbreviation for the individual or organization. The role attribute indicates the role played by the individual or organization in the evaluation process. If the attribute "agentIdentifier" is used, "typeOfAgentIdentifier" should also be provided. Use "isPersistantIdentifier" (true|false) to indicate if this is intended to be a persistent identifier. Use "agentType" to indicate if the agent is an organization or an individual.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -8528,7 +8542,7 @@ class="section_header">Description</xhtml:div>
                <xhtml:h1 class="element_title">Topic Classification</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">The classification field indicates the broad substantive topic(s) that the data cover. Library of Congress subject terms may be used here. The "vocab" attribute is provided for specification of the controlled vocabulary in use, e.g., LCSH, MeSH, etc. The "vocabURI" attribute specifies the location for the full controlled vocabulary. Use vocabInstanceURI to specify the identification URI of the term/code within the controlled vocabulary if available. Maps to Dublin Core Subject element. Inclusion of this element in the codebook is recommended. In addition, you may use a "vocabID" for another form of identification (do not use for URI), an "vocabAgencyName" and "vocabAgencyID" to specify the agency managing the controlled vocabulary, a "vocabVersionID" if needed, and the "vocabSchemeURN". If the controlled vocabulary term is "other" you may provide a more specific value in "otherValue". PLEASE NOTE A CHANGE IN USAGE INSTRUCTIONS: The string content of "concept" now contains the language specific label obtained from the controlled vocabulary. This allows for multiple languages through the repeated entry of the "concept" element. The attribute "vocabInstanceCodeTerm" has been added to accommodate the code term as it appears in the controlled vocabulary. See the high level documentation for a complete description of usage.</xhtml:div>
+                  <xhtml:div class="description">The classification field indicates the broad substantive topic(s) that the data cover. Library of Congress subject terms may be used here. The "vocab" attribute is provided for specification of the controlled vocabulary in use, e.g., LCSH, MeSH, etc. The "vocabURI" attribute specifies the location for the full controlled vocabulary. Use vocabInstanceURI to specify the identification URI of the term/code within the controlled vocabulary if available. Maps to Dublin Core Subject element. Inclusion of this element in the codebook is recommended. In addition, you may use a "vocabID" for another form of identification (do not use for URI), a "vocabAgencyName" to specify the agency managing the controlled vocabulary, a "vocabVersionID" if needed, and the "vocabSchemeURN". If the controlled vocabulary term is "other" you may provide a more specific value in "otherValue". PLEASE NOTE A CHANGE IN USAGE INSTRUCTIONS: The string content of the element now contains the language specific label obtained from the controlled vocabulary. This allows for multiple languages through the repeated entry of the "concept" element. The attribute "vocabInstanceCodeTerm" has been added to accommodate the code term as it appears in the controlled vocabulary. See the high level documentation for a complete description of usage.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -8642,6 +8656,104 @@ class="section_header">Description</xhtml:div>
                         </otherMat>
                      ]]></xhtml:samp>
                   </xhtml:div>
+               </xhtml:div>
+            </xhtml:div>
+         </xs:documentation>
+      </xs:annotation>
+   </xs:element>
+
+   <xs:element name="typeOfAccess" type="conceptType">
+      <xs:annotation>
+         <xs:documentation>
+            <xhtml:div>
+               <xhtml:h1 class="element_title">Type of Access</xhtml:h1>
+               <xhtml:div>
+                  <xhtml:h2 class="section_header">Description</xhtml:h2>
+                  <xhtml:div class="description">The applied use of the element is found in the parent item. The "vocab" attribute is provided to indicate the name of the controlled vocabulary, if any, used in the element, e.g., LCSH (Library of Congress Subject Headings), MeSH (Medical Subject Headings), etc. The "vocabURI" attribute specifies the location for the full controlled vocabulary. Use vocabInstanceURI to specify the identification URI of the term/code within the controlled vocabulary if available. In addition, you may use a "vocabID" for another form of identification (do not use for URI), a "vocabAgencyName" to specify the agency managing the controlled vocabulary, a "vocabVersionID" if needed, and the "vocabSchemeURN". If the controlled vocabulary term is "other" you may provide a more specific value in "otherValue". PLEASE NOTE A CHANGE IN USAGE INSTRUCTIONS: The string content of element now contains the language specific label obtained from the controlled vocabulary. This allows for multiple languages through the repeated entry of the "concept" element. The attribute "vocabInstanceCodeTerm" has been added to accommodate the code term as it appears in the controlled vocabulary. See the high level documentation for a complete description of usage.</xhtml:div>
+               </xhtml:div>
+            </xhtml:div>
+         </xs:documentation>
+      </xs:annotation>
+   </xs:element>
+
+   <xs:element name="typeOfCodingInstruction" type="conceptType">
+      <xs:annotation>
+         <xs:documentation>
+            <xhtml:div>
+               <xhtml:h1 class="element_title">Type of Codeing Instruction</xhtml:h1>
+               <xhtml:div>
+                  <xhtml:h2 class="section_header">Description</xhtml:h2>
+                  <xhtml:div class="description">The applied use of the element is found in the parent item. The "vocab" attribute is provided to indicate the name of the controlled vocabulary, if any, used in the element, e.g., LCSH (Library of Congress Subject Headings), MeSH (Medical Subject Headings), etc. The "vocabURI" attribute specifies the location for the full controlled vocabulary. Use vocabInstanceURI to specify the identification URI of the term/code within the controlled vocabulary if available. In addition, you may use a "vocabID" for another form of identification (do not use for URI), a "vocabAgencyName" to specify the agency managing the controlled vocabulary, a "vocabVersionID" if needed, and the "vocabSchemeURN". If the controlled vocabulary term is "other" you may provide a more specific value in "otherValue". PLEASE NOTE A CHANGE IN USAGE INSTRUCTIONS: The string content of the element now contains the language specific label obtained from the controlled vocabulary. This allows for multiple languages through the repeated entry of the "concept" element. The attribute "vocabInstanceCodeTerm" has been added to accommodate the code term as it appears in the controlled vocabulary. See the high level documentation for a complete description of usage.</xhtml:div>
+               </xhtml:div>
+            </xhtml:div>
+         </xs:documentation>
+      </xs:annotation>
+   </xs:element>
+
+   <xs:element name="typeOfDataSrc" type="conceptType">
+      <xs:annotation>
+         <xs:documentation>
+            <xhtml:div>
+               <xhtml:h1 class="element_title">Type of Data Source</xhtml:h1>
+               <xhtml:div>
+                  <xhtml:h2 class="section_header">Description</xhtml:h2>
+                  <xhtml:div class="description">The applied use of the element is found in the parent item. The "vocab" attribute is provided to indicate the name of the controlled vocabulary, if any, used in the element, e.g., LCSH (Library of Congress Subject Headings), MeSH (Medical Subject Headings), etc. The "vocabURI" attribute specifies the location for the full controlled vocabulary. Use vocabInstanceURI to specify the identification URI of the term/code within the controlled vocabulary if available. In addition, you may use a "vocabID" for another form of identification (do not use for URI), a "vocabAgencyName" to specify the agency managing the controlled vocabulary, a "vocabVersionID" if needed, and the "vocabSchemeURN". If the controlled vocabulary term is "other" you may provide a more specific value in "otherValue". PLEASE NOTE A CHANGE IN USAGE INSTRUCTIONS: The string content of the element now contains the language specific label obtained from the controlled vocabulary. This allows for multiple languages through the repeated entry of the "concept" element. The attribute "vocabInstanceCodeTerm" has been added to accommodate the code term as it appears in the controlled vocabulary. See the high level documentation for a complete description of usage.</xhtml:div>
+               </xhtml:div>
+            </xhtml:div>
+         </xs:documentation>
+      </xs:annotation>
+   </xs:element>
+
+   <xs:element name="typeOfDevelopmentActivity" type="conceptType">
+      <xs:annotation>
+         <xs:documentation>
+            <xhtml:div>
+               <xhtml:h1 class="element_title">Type of Development Activity</xhtml:h1>
+               <xhtml:div>
+                  <xhtml:h2 class="section_header">Description</xhtml:h2>
+                  <xhtml:div class="description">The applied use of the element is found in the parent item. The "vocab" attribute is provided to indicate the name of the controlled vocabulary, if any, used in the element, e.g., LCSH (Library of Congress Subject Headings), MeSH (Medical Subject Headings), etc. The "vocabURI" attribute specifies the location for the full controlled vocabulary. Use vocabInstanceURI to specify the identification URI of the term/code within the controlled vocabulary if available. In addition, you may use a "vocabID" for another form of identification (do not use for URI), a "vocabAgencyName" to specify the agency managing the controlled vocabulary, a "vocabVersionID" if needed, and the "vocabSchemeURN". If the controlled vocabulary term is "other" you may provide a more specific value in "otherValue". PLEASE NOTE A CHANGE IN USAGE INSTRUCTIONS: The string content of the element now contains the language specific label obtained from the controlled vocabulary. This allows for multiple languages through the repeated entry of the "concept" element. The attribute "vocabInstanceCodeTerm" has been added to accommodate the code term as it appears in the controlled vocabulary. See the high level documentation for a complete description of usage.</xhtml:div>
+               </xhtml:div>
+            </xhtml:div>
+         </xs:documentation>
+      </xs:annotation>
+   </xs:element>
+
+   <xs:element name="typeOfExPostEvaluation" type="conceptType">
+      <xs:annotation>
+         <xs:documentation>
+            <xhtml:div>
+               <xhtml:h1 class="element_title">Type of ExPost Evaluation</xhtml:h1>
+               <xhtml:div>
+                  <xhtml:h2 class="section_header">Description</xhtml:h2>
+                  <xhtml:div class="description">The applied use of the element is found in the parent item. The "vocab" attribute is provided to indicate the name of the controlled vocabulary, if any, used in the element, e.g., LCSH (Library of Congress Subject Headings), MeSH (Medical Subject Headings), etc. The "vocabURI" attribute specifies the location for the full controlled vocabulary. Use vocabInstanceURI to specify the identification URI of the term/code within the controlled vocabulary if available. In addition, you may use a "vocabID" for another form of identification (do not use for URI), a "vocabAgencyName" to specify the agency managing the controlled vocabulary, a "vocabVersionID" if needed, and the "vocabSchemeURN". If the controlled vocabulary term is "other" you may provide a more specific value in "otherValue". PLEASE NOTE A CHANGE IN USAGE INSTRUCTIONS: The string content of the element now contains the language specific label obtained from the controlled vocabulary. This allows for multiple languages through the repeated entry of the "concept" element. The attribute "vocabInstanceCodeTerm" has been added to accommodate the code term as it appears in the controlled vocabulary. See the high level documentation for a complete description of usage.</xhtml:div>
+               </xhtml:div>
+            </xhtml:div>
+         </xs:documentation>
+      </xs:annotation>
+   </xs:element>
+
+   <xs:element name="typeOfOtherMaterial" type="conceptType">
+      <xs:annotation>
+         <xs:documentation>
+            <xhtml:div>
+               <xhtml:h1 class="element_title">Type of Other Material</xhtml:h1>
+               <xhtml:div>
+                  <xhtml:h2 class="section_header">Description</xhtml:h2>
+                  <xhtml:div class="description">The applied use of the element is found in the parent item. The "vocab" attribute is provided to indicate the name of the controlled vocabulary, if any, used in the element, e.g., LCSH (Library of Congress Subject Headings), MeSH (Medical Subject Headings), etc. The "vocabURI" attribute specifies the location for the full controlled vocabulary. Use vocabInstanceURI to specify the identification URI of the term/code within the controlled vocabulary if available. In addition, you may use a "vocabID" for another form of identification (do not use for URI), a "vocabAgencyName" to specify the agency managing the controlled vocabulary, a "vocabVersionID" if needed, and the "vocabSchemeURN". If the controlled vocabulary term is "other" you may provide a more specific value in "otherValue". PLEASE NOTE A CHANGE IN USAGE INSTRUCTIONS: The string content of the element now contains the language specific label obtained from the controlled vocabulary. This allows for multiple languages through the repeated entry of the "concept" element. The attribute "vocabInstanceCodeTerm" has been added to accommodate the code term as it appears in the controlled vocabulary. See the high level documentation for a complete description of usage.</xhtml:div>
+               </xhtml:div>
+            </xhtml:div>
+         </xs:documentation>
+      </xs:annotation>
+   </xs:element>
+
+   <xs:element name="typeOfSetAvailability" type="conceptType">
+      <xs:annotation>
+         <xs:documentation>
+            <xhtml:div>
+               <xhtml:h1 class="element_title">Type of Set Availability</xhtml:h1>
+               <xhtml:div>
+                  <xhtml:h2 class="section_header">Description</xhtml:h2>
+                  <xhtml:div class="description">The applied use of the element is found in the parent item. The "vocab" attribute is provided to indicate the name of the controlled vocabulary, if any, used in the element, e.g., LCSH (Library of Congress Subject Headings), MeSH (Medical Subject Headings), etc. The "vocabURI" attribute specifies the location for the full controlled vocabulary. Use vocabInstanceURI to specify the identification URI of the term/code within the controlled vocabulary if available. In addition, you may use a "vocabID" for another form of identification (do not use for URI), a "vocabAgencyName" to specify the agency managing the controlled vocabulary, a "vocabVersionID" if needed, and the "vocabSchemeURN". If the controlled vocabulary term is "other" you may provide a more specific value in "otherValue". PLEASE NOTE A CHANGE IN USAGE INSTRUCTIONS: The string content of the element now contains the language specific label obtained from the controlled vocabulary. This allows for multiple languages through the repeated entry of the "concept" element. The attribute "vocabInstanceCodeTerm" has been added to accommodate the code term as it appears in the controlled vocabulary. See the high level documentation for a complete description of usage.</xhtml:div>
                </xhtml:div>
             </xhtml:div>
          </xs:documentation>
@@ -9213,7 +9325,7 @@ class="section_header">Description</xhtml:div>
                <xhtml:h1 class="element_title">Version Responsibility Statement</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">The organization or person responsible for the version of the work. If the attribute "agentIdentifier" is used, "typeOfAgentIdentifier" should also be provided. An agent may be an organization or individual. Use "isPersistantIdentifier" (true|false) to indicate if this is intended to be a persistent identifier. Use "agentType" to indicate if the agent is an organization or an individual.</xhtml:div>
+                  <xhtml:div class="description">The organization or person responsible for the version of the work. If the attribute "agentIdentifier" is used, "typeOfAgentIdentifier" should also be provided. Use "isPersistantIdentifier" (true|false) to indicate if this is intended to be a persistent identifier. Use "agentType" to indicate if the agent is an organization or an individual.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
