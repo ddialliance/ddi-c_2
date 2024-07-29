@@ -2013,7 +2013,7 @@ class="section_header">Description</xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
                   <xhtml:div class="example">
                      <xhtml:samp class="xml_sample"><![CDATA[
-                        <contact affiliation="University of Wisconsin" email="jsmith@wisc.edu" URI="wisc.edu" agentIdentifier="0000-0003-1294-0000" typeOfAgentIdentifier="orchid">Jane Smith</contact>
+                        <contact affiliation="University of Wisconsin" email="jsmith@wisc.edu" URI="wisc.edu" agentIdentifier="0000-0003-1294-0000" typeOfAgentIdentifier="orcid">Jane Smith</contact>
                      ]]></xhtml:samp> 
                   </xhtml:div>
                </xhtml:div>
@@ -4229,7 +4229,7 @@ class="section_header">Description</xhtml:div>
                <xhtml:h1 class="element_title">Type of File</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Types of data files include raw data (ASCII, EBCDIC, etc.) and software-dependent files such as SAS datasets, SPSS export files, etc. If the data are of mixed types (e.g., ASCII and packed decimal), state that here. Note that the element varFormat permits specification of the data format at the variable level. The "charset" attribute allows one to specify the character set used in the file, e.g., US-ASCII, EBCDIC, UNICODE UTF-8, etc. The element may be repeated to support multiple language expressions of the content. While not supporting a controlled vocabulary it is advised to use a standard term. DDI provides a Controlled Vocabulary for this location: "CharacterSet"</xhtml:div>
+                  <xhtml:div class="description">Types of data files include raw data (ASCII, EBCDIC, etc.) and software-dependent files such as SAS datasets, SPSS export files, etc. If the data are of mixed types (e.g., ASCII and packed decimal), state that here. Note that the element varFormat permits specification of the data format at the variable level. The "charset" attribute allows one to specify the character set used in the file, e.g., US-ASCII, EBCDIC, UNICODE UTF-8, etc. The element may be repeated to support multiple language expressions of the content. The use a standard term from a controlled vocabulary for the attribute "charset" is recommended even though the attribute structure does not allow for the declaration of the controlled vocabulary used. DDI provides a Controlled Vocabulary for this location: "CharacterSet"</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -6498,7 +6498,14 @@ class="section_header">Description</xhtml:div>
                <xhtml:h1 class="element_title">Question</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">The question element may have mixed content. The element itself may contain text for the question, with the subelements being used to provide further information about the question. Alternatively, the question element may be empty and only the subelements used. The element has a unique question ID attribute which can be used to link a variable with other variables where the same question has been asked. This would allow searching for all variables that share the same question ID, perhaps because the questions was asked several times in a panel design. The "ID" attribute contains a unique identifier for the question. "Var" references the ID(s) of the variable(s) relating to the question. The attribute "seqNo" refers to the sequence number of the question. The attribute "sdatrefs" may be used to reference elements in the summary data description section of the Study Description which might apply to this question. The attribute "access" records the ID values of all elements in the Data Access and Metadata Access section that describe access conditions for this question. These elements include: time period covered, date of collection, nation or country, geographic coverage, geographic unit, unit of analysis, universe, and kind of data. The responseDomainType attribute was added to capture the specific DDI Lifecycle response domain type to facilitate translation between DDI 2 and DDI Lifecycle. If this is given a value of "other" then a term from a controlled vocabulary should be put into the "otherResponseDomainType" attribute.</xhtml:div>
+                  <xhtml:div class="description"><xhtml:p>The question element may have mixed content. The element itself may contain text for the question, with the sub-elements being used to provide further information about the question. Alternatively, the question element may be empty and only the sub-elements used. This is the recommended approach.</xhtml:p>
+                  <xhtml:p>The attribute "ID" (common to all elements) contains a unique identifier for the question. Use of the "ID" is required if you make use of any attribute "qstn" to support a reference from multiple variables, or the backward or forward flow of a questionnaire.</xhtml:p> 
+                  <xhtml:p>The attribute "qstn" is an IDREF and can be used to directly reference a description of the question if entered in another variable.</xhtml:p>
+                  <xhtml:p>The attribute "var" is an IDREFS and is used to list the IDs of variables resulting from the question.</xhtml:p>
+                  <xhtml:p>The attribute "seqNo" refers to the sequence number of the question.</xhtml:p>
+                  <xhtml:p>The attribute "sdatrefs" may be used to reference elements in the summary data description section of the Study Description which might apply to this question.</xhtml:p>
+                  <xhtml:p>The attribute "access" records the ID values of all elements in the Data Access and Metadata Access section that describe access conditions for this question. These elements include: time period covered, date of collection, nation or country, geographic coverage, geographic unit, unit of analysis, universe, and kind of data.</xhtml:p> 
+                  <xhtml:p>The "responseDomainType" attribute was added to capture the specific DDI Lifecycle response domain type to facilitate translation between DDI 2 and DDI Lifecycle. If this is given a value of "other" then a term from a controlled vocabulary should be put into the "otherResponseDomainType" attribute.</xhtml:p></xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -7147,7 +7154,7 @@ class="section_header">Description</xhtml:div>
                <xhtml:h1 class="element_title">Data Set Availability</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">Information on availability and storage of the collection. The "media" attribute may be used in combination with any of the subelements. See Location of Data Collection. Use of the "type" attribute has been DEPRECATED. Use the element typeOfSetAvailability.</xhtml:div>
+                  <xhtml:div class="description">Information on availability and storage of the collection. The "media" attribute may be used in combination with any of the sub-elements. See Location of Data Collection. Use of the "type" attribute has been DEPRECATED. Use the element typeOfSetAvailability.</xhtml:div>
                </xhtml:div>
             </xhtml:div>
          </xs:documentation>
@@ -9055,7 +9062,7 @@ class="section_header">Description</xhtml:div>
                      <xhtml:p>The attribute "wgt" indicates whether the variable is a weight. </xhtml:p>
                      <xhtml:p>The attribute "wgt-var" references the weight variable(s) for this variable. </xhtml:p>
                      <xhtml:p>The attribute "weight" references the weight description(s) from dataColl for this variable. Use when a specific overall weight is designated such as with a 10% sample where all items are weighted x10. </xhtml:p>
-                     <xhtml:p>The attribute "qstn" is a reference to the question ID for the variable. </xhtml:p>
+                     <xhtml:p>The attribute "qstn" is a reference to the question ID when the question itself is entered in another variable.</xhtml:p>
                      <xhtml:p>The attribute "files" is the IDREF identifying the file(s) to which the variable belongs. </xhtml:p>
                      <xhtml:p>The attribute "vendor" is the origin of the proprietary format and includes SAS, SPSS, ANSI, and ISO. </xhtml:p>
                      <xhtml:p>The attribute "dcml" refers to the number of decimal points in the variable. </xhtml:p>
