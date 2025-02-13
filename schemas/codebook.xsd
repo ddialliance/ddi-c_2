@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 
-Copyright (c) 2024 DDI Alliance, DDI-Codebook 2.6 final review, 2024-12-11
+Copyright (c) 2025 DDI Alliance, DDI-Codebook 2.6 final review, 2025-02-13
 
 This file is part of DDI-Codebook 2.6 XML Schema. Final Review Edition for final review
 
@@ -934,7 +934,7 @@ for more details.
                   </xs:documentation>
                </xs:annotation>
             </xs:attribute>
-            <xs:attribute name="isPersistantIdentifier" type="xs:boolean" use="optional">
+            <xs:attribute name="isPersistentIdentifier" type="xs:boolean" use="optional">
                <xs:annotation>
                   <xs:documentation>
                      <xhtml:div class="description">Indicate if the agent identifier is intended to be a persistent identifier</xhtml:div>
@@ -2343,7 +2343,7 @@ for more details.
                   </xs:documentation>
                </xs:annotation>
             </xs:attribute>
-            <xs:attribute name="isPersistantIdentifier" type="xs:boolean" use="optional">
+            <xs:attribute name="isPersistentIdentifier" type="xs:boolean" use="optional">
                <xs:annotation>
                   <xs:documentation>
                      <xhtml:div class="description">Indicate if the agent identifier is intended to be a persistent identifier</xhtml:div>
@@ -3353,7 +3353,7 @@ for more details.
                   </xs:documentation>
                </xs:annotation>
             </xs:attribute>
-            <xs:attribute name="isPersistantIdentifier" type="xs:boolean" use="optional">
+            <xs:attribute name="isPersistentIdentifier" type="xs:boolean" use="optional">
                <xs:annotation>
                   <xs:documentation>
                      <xhtml:div class="description">Indicate if the agent identifier is intended to be a persistent identifier</xhtml:div>
@@ -3476,7 +3476,7 @@ for more details.
                   </xs:documentation>
                </xs:annotation>
             </xs:attribute>
-            <xs:attribute name="isPersistantIdentifier" type="xs:boolean" use="optional">
+            <xs:attribute name="isPersistentIdentifier" type="xs:boolean" use="optional">
                <xs:annotation>
                   <xs:documentation>
                      <xhtml:div class="description">Indicate if the agent identifier is intended to be a persistent identifier</xhtml:div>
@@ -3814,7 +3814,7 @@ for more details.
                   </xs:documentation>
                </xs:annotation>
             </xs:attribute>
-            <xs:attribute name="isPersistantIdentifier" type="xs:boolean" use="optional">
+            <xs:attribute name="isPersistentIdentifier" type="xs:boolean" use="optional">
                <xs:annotation>
                   <xs:documentation>
                      <xhtml:div class="description">Indicate if the agent identifier is intended to be a persistent identifier</xhtml:div>
@@ -4115,7 +4115,7 @@ for more details.
                   </xs:documentation>
                </xs:annotation>
             </xs:attribute>
-            <xs:attribute name="isPersistantIdentifier" type="xs:boolean" use="optional">
+            <xs:attribute name="isPersistentIdentifier" type="xs:boolean" use="optional">
                <xs:annotation>
                   <xs:documentation>
                      <xhtml:div class="description">Indicate if the agent identifier is intended to be a persistent identifier</xhtml:div>
@@ -5158,7 +5158,7 @@ for more details.
                   </xs:documentation>
                </xs:annotation>
             </xs:attribute>
-            <xs:attribute name="isPersistantIdentifier" type="xs:boolean" use="optional">
+            <xs:attribute name="isPersistentIdentifier" type="xs:boolean" use="optional">
                <xs:annotation>
                   <xs:documentation>
                      <xhtml:div class="description">Indicate if the agent identifier is intended to be a persistent identifier</xhtml:div>
@@ -7132,7 +7132,7 @@ for more details.
                   </xs:documentation>
                </xs:annotation>
             </xs:attribute>
-            <xs:attribute name="isPersistantIdentifier" type="xs:boolean" use="optional">
+            <xs:attribute name="isPersistentIdentifier" type="xs:boolean" use="optional">
                <xs:annotation>
                   <xs:documentation>
                      <xhtml:div class="description">Indicate if the agent identifier is intended to be a persistent identifier</xhtml:div>
@@ -7223,7 +7223,7 @@ for more details.
                   </xs:documentation>
                </xs:annotation>
             </xs:attribute>
-            <xs:attribute name="isPersistantIdentifier" type="xs:boolean" use="optional">
+            <xs:attribute name="isPersistentIdentifier" type="xs:boolean" use="optional">
                <xs:annotation>
                   <xs:documentation>
                      <xhtml:div class="description">Indicate if the agent identifier is intended to be a persistent identifier</xhtml:div>
@@ -7794,7 +7794,7 @@ for more details.
                   </xs:documentation>
                </xs:annotation>
             </xs:attribute>
-            <xs:attribute name="isPersistantIdentifier" type="xs:boolean" use="optional">
+            <xs:attribute name="isPersistentIdentifier" type="xs:boolean" use="optional">
                <xs:annotation>
                   <xs:documentation>
                      <xhtml:div class="description">Indicate if the agent identifier is intended to be a persistent identifier</xhtml:div>
@@ -7825,7 +7825,7 @@ for more details.
                <xhtml:h1 class="element_title">Producer</xhtml:h1>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Description</xhtml:h2>
-                  <xhtml:div class="description">The producer is the person or organization with the financial or administrative responsibility for the physical processes whereby the document was brought into existence. Use the "role" attribute to distinguish different stages of involvement in the production process, such as original producer. Producer of data collection (codeBook/stdyDscr/citation/prodStmt/producer) maps to Dublin Core Publisher element. The "producer" in the Document Description should be the agency or person that prepared the marked-up document. If the attribute "agentIdentifier" is used, "typeOfAgentIdentifier" should also be provided. Use "isPersistantIdentifier" (true|false) to indicate if this is intended to be a persistent identifier. Use "agentType" to indicate if the agent is an organization or an individual.</xhtml:div>
+                  <xhtml:div class="description">The producer is the person or organization with the financial or administrative responsibility for the physical processes whereby the document was brought into existence. Use the "role" attribute to distinguish different stages of involvement in the production process, such as original producer. Producer of data collection (codeBook/stdyDscr/citation/prodStmt/producer) maps to Dublin Core Publisher element. The "producer" in the Document Description should be the agency or person that prepared the marked-up document. If the attribute "agentIdentifier" is used, "typeOfAgentIdentifier" should also be provided. Use "isPersistentIdentifier" (true|false) to indicate if this is intended to be a persistent identifier. Use "agentType" to indicate if the agent is an organization or an individual.</xhtml:div>
                </xhtml:div>
                <xhtml:div>
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
@@ -9326,7 +9326,7 @@ for more details.
                   </xs:documentation>
                </xs:annotation>
             </xs:attribute>
-            <xs:attribute name="isPersistantIdentifier" type="xs:boolean" use="optional">
+            <xs:attribute name="isPersistentIdentifier" type="xs:boolean" use="optional">
                <xs:annotation>
                   <xs:documentation>
                      <xhtml:div class="description">Indicate if the agent identifier is intended to be a persistent identifier</xhtml:div>
@@ -9466,7 +9466,7 @@ for more details.
                   </xs:documentation>
                </xs:annotation>
             </xs:attribute>
-            <xs:attribute name="isPersistantIdentifier" type="xs:boolean" use="optional">
+            <xs:attribute name="isPersistentIdentifier" type="xs:boolean" use="optional">
                <xs:annotation>
                   <xs:documentation>
                      <xhtml:div class="description">Indicate if the agent identifier is intended to be a persistent identifier</xhtml:div>
@@ -9797,7 +9797,7 @@ for more details.
                   </xs:documentation>
                </xs:annotation>
             </xs:attribute>
-            <xs:attribute name="isPersistantIdentifier" type="xs:boolean" use="optional">
+            <xs:attribute name="isPersistentIdentifier" type="xs:boolean" use="optional">
                <xs:annotation>
                   <xs:documentation>
                      <xhtml:div class="description">Indicate if the agent identifier is intended to be a persistent identifier</xhtml:div>
@@ -11493,7 +11493,7 @@ for more details.
                   </xs:documentation>
                </xs:annotation>
             </xs:attribute>
-            <xs:attribute name="isPersistantIdentifier" type="xs:boolean" use="optional">
+            <xs:attribute name="isPersistentIdentifier" type="xs:boolean" use="optional">
                <xs:annotation>
                   <xs:documentation>
                      <xhtml:div class="description">Indicate if the agent identifier is intended to be a persistent identifier</xhtml:div>
