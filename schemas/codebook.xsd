@@ -5392,6 +5392,13 @@ for more details.
                   </xs:documentation>
                </xs:annotation>
             </xs:attribute>
+            <xs:attribute name="URI" type="xs:string">
+               <xs:annotation>
+                  <xs:documentation>
+                     <xhtml:div class="description">URN or URL for the agency or specific funding program. If both are available provide the more specific, funding program URI.</xhtml:div>
+                  </xs:documentation>
+               </xs:annotation>
+            </xs:attribute>
             <xs:attribute name="grantName" type="xs:string">
                <xs:annotation>
                   <xs:documentation>
