@@ -1,4 +1,4 @@
-This is DDI-Codebook version 2.6 submitted for final review 2024-12-11.
+This is DDI-Codebook version 2.6 submitted for final review 2025-11-05.
 
 THIS IS A REVISION of 2.5.1 and is backward compatible with 2.5 (a valid instance of DDI-Codebook 2.5 will 
 validate against version 2.6).
