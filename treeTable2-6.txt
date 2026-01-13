@@ -2,7 +2,7 @@
 
 - Field Name (min-max) [attributes] 
 
-- Heavily repeated (GLOBAL) attributes have not been inlcluded in the tree description
+- Heavily repeated (GLOBAL) attributes have not been included in the tree description
 
 - All elements support a basic set of attributes including: ID, xml:lang, source, elementVersion, elementVersionDate, DDILifecycleUrn, DDICodebookUrn
 
