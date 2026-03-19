@@ -10366,25 +10366,25 @@ for more details.
                   <xhtml:div class="example">
                      <xhtml:samp class="xml_sample"><![CDATA[
 <timeMeth>
-   <concept vocab="TimeMethod" vocabURI="http://www.ddialliance.org/Specification/DDI-CV/TimeMethod_1.2_Genericode1.0_DDI-CVProfile1.0.xml" vocabInstanceURI="http://www.ddialliance.org/Specification/DDI-CV/TimeMethod_1.2_Genericode1.0_DDI-CVProfile1.0#Longitudinal.Panel">Longitudinal.Panel>Longitudinal: Panel</concept>
+   <concept vocab="TimeMethod" vocabURI="http://rdf-vocabulary.ddialliance.org/cv/TimeMethod/1.2.3/" vocabInstanceURI="http://rdf-vocabulary.ddialliance.org/cv/TimeMethod/1.2.3/91403e2" vocabInstanceCode="Longitudinal.Panel">Longitudinal: Panel</concept>
    panel survey
 </timeMeth>
                      ]]></xhtml:samp>
                      <xhtml:samp class="xml_sample"><![CDATA[
 <timeMeth>
-   <concept vocab="TimeMethod" vocabURI="http://www.ddialliance.org/Specification/DDI-CV/TimeMethod_1.2_Genericode1.0_DDI-CVProfile1.0.xml" vocabInstanceURI="http://www.ddialliance.org/Specification/DDI-CV/TimeMethod_1.2_Genericode1.0_DDI-CVProfile1.0#CrossSection" vocabInstanceCode="CrossSection">Cross-Section</concept>
+   <concept vocab="TimeMethod" vocabURI="http://rdf-vocabulary.ddialliance.org/cv/TimeMethod/1.2.3/" vocabInstanceURI="http://rdf-vocabulary.ddialliance.org/cv/TimeMethod/1.2.3/01558f3" vocabInstanceCode="CrossSection">Cross-Section</concept>
    cross-section
 </timeMeth>
                      ]]></xhtml:samp>
                      <xhtml:samp class="xml_sample"><![CDATA[
 <timeMeth>
-   <concept vocab="TimeMethod" vocabURI="http://www.ddialliance.org/Specification/DDI-CV/TimeMethod_1.2_Genericode1.0_DDI-CVProfile1.0.xml" vocabInstanceURI="http://www.ddialliance.org/Specification/DDI-CV/TimeMethod_1.2_Genericode1.0_DDI-CVProfile1.0#Longitudinal.TrendRepeatedCrossSection" vocabInstanceCode="Longitudinal.TrendRepeatedCrossSection">Longitudinal: Trend/Repeated cross-section</concept>
+   <concept vocab="TimeMethod" vocabURI="http://rdf-vocabulary.ddialliance.org/cv/TimeMethod/1.2.3/" vocabInstanceURI="http://rdf-vocabulary.ddialliance.org/cv/TimeMethod/1.2.3/8470cc4" vocabInstanceCode="Longitudinal.TrendRepeatedCrossSection">Longitudinal: Trend/Repeated cross-section</concept>
    trend study
 </timeMeth>
                      ]]></xhtml:samp>
                      <xhtml:samp class="xml_sample"><![CDATA[
 <timeMeth>
-   <concept vocab="TimeMethod" vocabURI="http://www.ddialliance.org/Specification/DDI-CV/TimeMethod_1.2_Genericode1.0_DDI-CVProfile1.0.xml" vocabInstanceURI="http://www.ddialliance.org/Specification/DDI-CV/TimeMethod_1.2_Genericode1.0_DDI-CVProfile1.0#TimeSeries">Time Series</concept>
+   <concept vocab="TimeMethod" vocabURI="http://rdf-vocabulary.ddialliance.org/cv/TimeMethod/1.2.3/" vocabInstanceURI="http://rdf-vocabulary.ddialliance.org/cv/TimeMethod/1.2.3/c4efcd7" vocabInstanceCode="TimeSeries">Time Series</concept>
    time-series
 </timeMeth>
                      ]]></xhtml:samp>
