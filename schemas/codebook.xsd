@@ -3299,7 +3299,7 @@ for more details.
                   <xhtml:h2 class="section_header">Example</xhtml:h2>
                   <xhtml:div class="example">
                      <xhtml:samp class="xml_sample"><![CDATA[
-<generalDataFormat vocab="GeneralDataFormat" vocabURI="urn:ddi:int.ddi.cv:GeneralDataFormat:2.0" vocabInstanceURI="urn:ddi:int.ddi.cv:GeneralDataFormat:2.0">Geospatial</generalDataFormat>
+<generalDataFormat vocab="GeneralDataFormat" vocabURI="urn:ddi:int.ddi.cv:GeneralDataFormat:2.0.3" vocabInstanceURI="http://rdf-vocabulary.ddialliance.org/cv/GeneralDataFormat/2.0.3/c9347b7">Geospatial</generalDataFormat>
                      ]]></xhtml:samp>
                   </xhtml:div>
                </xhtml:div>
@@ -8488,7 +8488,7 @@ for more details.
                   <xhtml:div class="example">
                      <xhtml:samp class="xml_sample"><![CDATA[
 <resInstru>
-   <concept vocab="TypeOfInstrument" vocabURI="http://www.ddialiance.org/Specification/DDI-CV/TypeOfInstruent_1.1.html" vocabInstanceCodeTerm="Questionnaire.Structured" xml:lang="it">Questionario strutturato</concept>
+   <concept vocab="TypeOfInstrument" vocabURI="http://rdf-vocabulary.ddialliance.org/cv/TypeOfInstrument/1.1.2/" vocabInstanceCodeTerm="Questionnaire.Structured" xml:lang="it">Questionario strutturato</concept>
    A structured questionnaire developed by ISTAT
 </resInstru>
                      ]]></xhtml:samp>
@@ -8650,7 +8650,7 @@ for more details.
                      ]]></xhtml:samp>
                      <xhtml:samp class="xml_sample"><![CDATA[
 <sampProc>
-   <concept vocab="SamplingProcedure" vocabAgency="DDI" vocabURI="http://rdf-vocabulary.ddialliance.org/cv/SamplingProcedure" vocabInstanceCodeTerm="Probability.SimpleRandom">Simple random sample</concept>
+   <concept vocab="SamplingProcedure" vocabAgency="DDI" vocabURI="http://rdf-vocabulary.ddialliance.org/cv/SamplingProcedure/1.1.4/" vocabInstanceCodeTerm="Probability.SimpleRandom">Simple random sample</concept>
 </sampProc>
                      ]]></xhtml:samp>
                      <xhtml:samp class="xml_sample"><![CDATA[
@@ -9332,7 +9332,7 @@ for more details.
                   <xhtml:div class="example">
                      <xhtml:samp class="xml_sample"><![CDATA[
 <developmentActivity>
-   <typeOfDevelopmentActivity vocab="LifecycleEventType" vocabURI="https://www.ddialliance.org/Specification/DDI-CV/LifecycleEventType_1.0.html">QuestionnaireTranslation</typeOfDevelopmentActivity>
+   <typeOfDevelopmentActivity vocab="LifecycleEventType" vocabURI="http://rdf-vocabulary.ddialliance.org/cv/LifecycleEventType/1.0.2/">QuestionnaireTranslation</typeOfDevelopmentActivity>
    <typeOfDevelopmentActivity vocab="DIME Questionnaire Translation" vocabURI="https://dimewiki.worldbank.org/index.php?title=Questionnaire_Translation&amp;oldid=8152">Forward Translation</typeOfDevelopmentActivity>
    <description>Translation from language A to language B of question and response text. Language experts are used. Translation is tested through round-trip translation practices. Translated question will be tested for response consistency with original language text.</description>
    <participant affiliation="ISRDI" role="language exert">Ragi Yousef</participant>
