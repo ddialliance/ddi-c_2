@@ -2,9 +2,9 @@ name: Validate Codebook XSD Schema
 
 on:
   push:
-    branches: [ main, master ]
+    paths: [ '**/*.xsd' ]
   pull_request:
-    branches: [ main, master ]
+    paths: [ '**/*.xsd' ]
 
 jobs:
   validate:
