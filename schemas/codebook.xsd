@@ -685,6 +685,11 @@ for more details.
       <xs:complexContent>
          <xs:extension base="simpleTextAndDateType">
             <xs:attribute name="contentType" use="optional">
+               <xs:annotation>
+                  <xs:documentation>
+                     <xhtml:div class="description">Provides forward-compatibility with DDI Lifecycle by describing where the content fits in that structure, or if is "mixed" in terms of what is contained.</xhtml:div>
+                  </xs:documentation>
+               </xs:annotation>
                <xs:simpleType>
                   <xs:restriction base="xs:NMTOKEN">
                      <xs:enumeration value="abstract"/>
@@ -692,11 +697,6 @@ for more details.
                      <xs:enumeration value="mixed"/>
                   </xs:restriction>
                </xs:simpleType>
-               <xs:annotation>
-                  <xs:documentation>
-                     <xhtml:div class="description">Provides forward-compatibility with DDI Lifecycle by describing where the content fits in that structure, or if is "mixed" in terms of what is contained.</xhtml:div>
-                  </xs:documentation>
-               </xs:annotation>
             </xs:attribute>
          </xs:extension>
       </xs:complexContent>
@@ -727,7 +727,7 @@ for more details.
    <xs:complexType name="accsPlacType" mixed="true">
       <xs:complexContent>
          <xs:extension base="simpleTextType">
-            <xs:attribute name="URI" type="xs:string" use="optional"/>
+            <xs:attribute name="URI" type="xs:string" use="optional">
                <xs:annotation>
                   <xs:documentation>
                      <xhtml:div class="description">The URI of the access location.</xhtml:div>
@@ -770,17 +770,17 @@ for more details.
                </xs:annotation>
             </xs:attribute>
             <xs:attribute name="agentType" use="optional">
+               <xs:annotation>
+                  <xs:documentation>
+                     <xhtml:div class="description">Type of authoring entity: organization or individual.</xhtml:div>
+                  </xs:documentation>
+               </xs:annotation>
                <xs:simpleType>
                   <xs:restriction base="xs:NMTOKEN">
                      <xs:enumeration value="organization"/>
                      <xs:enumeration value="individual"/>
                   </xs:restriction>
                </xs:simpleType>
-               <xs:annotation>
-                  <xs:documentation>
-                     <xhtml:div class="description">Type of authoring entity: organization or individual.</xhtml:div>
-                  </xs:documentation>
-               </xs:annotation>
             </xs:attribute>
          </xs:extension>
       </xs:complexContent>
@@ -996,17 +996,17 @@ for more details.
                </xs:annotation>
             </xs:attribute>
             <xs:attribute name="agentType" use="optional">
+               <xs:annotation>
+                  <xs:documentation>
+                     <xhtml:div class="description">Type of authoring entity: organization or individual.</xhtml:div>
+                  </xs:documentation>
+               </xs:annotation>
                <xs:simpleType>
                   <xs:restriction base="xs:NMTOKEN">
                      <xs:enumeration value="organization"/>
                      <xs:enumeration value="individual"/>
                   </xs:restriction>
                </xs:simpleType>
-               <xs:annotation>
-                  <xs:documentation>
-                     <xhtml:div class="description">Type of authoring entity: organization or individual.</xhtml:div>
-                  </xs:documentation>
-               </xs:annotation>
             </xs:attribute>
          </xs:extension>
       </xs:complexContent>
@@ -1334,6 +1334,11 @@ for more details.
       <xs:complexContent>
          <xs:extension base="simpleTextType">
             <xs:attribute name="type" default="freq">
+               <xs:annotation>
+                  <xs:documentation>
+                     <xhtml:div class="description">Indicates the type of statistics presented - frequency, percent, or crosstabulation.</xhtml:div>
+                  </xs:documentation>
+               </xs:annotation>
                <xs:simpleType>
                   <xs:restriction base="xs:NMTOKEN">
                      <xs:enumeration value="freq"/>
@@ -1342,11 +1347,6 @@ for more details.
                      <xs:enumeration value="other"/>
                   </xs:restriction>
                </xs:simpleType>
-               <xs:annotation>
-                  <xs:documentation>
-                     <xhtml:div class="description">Indicates the type of statistics presented - frequency, percent, or crosstabulation.</xhtml:div>
-                  </xs:documentation>
-               </xs:annotation>
             </xs:attribute>
             <xs:attribute name="otherType" type="xs:NMTOKEN" use="optional">
                <xs:annotation>
@@ -1370,17 +1370,17 @@ for more details.
                </xs:annotation>
             </xs:attribute>
             <xs:attribute name="wgtd" default="not-wgtd">
+               <xs:annotation>
+                  <xs:documentation>
+                     <xhtml:div class="description">Type of statistic: weighted or not weighted.</xhtml:div>
+                  </xs:documentation>
+               </xs:annotation>
                <xs:simpleType>
                   <xs:restriction base="xs:NMTOKEN">
                      <xs:enumeration value="wgtd"/>
                      <xs:enumeration value="not-wgtd"/>
                   </xs:restriction>
                </xs:simpleType>
-               <xs:annotation>
-                  <xs:documentation>
-                     <xhtml:div class="description">Type of statistic: weighted or not weighted.</xhtml:div>
-                  </xs:documentation>
-               </xs:annotation>
             </xs:attribute>
             <xs:attribute name="wgt-var" type="xs:IDREFS" use="optional">
                <xs:annotation>
@@ -1526,17 +1526,17 @@ for more details.
                <xs:element ref="mrow" minOccurs="0"/>
             </xs:sequence>
             <xs:attribute name="missing" default="N">
+               <xs:annotation>
+                  <xs:documentation>
+                     <xhtml:div class="description">Indicates whether this category group contains missing data or not.</xhtml:div>
+                  </xs:documentation>
+               </xs:annotation>
                <xs:simpleType>
                   <xs:restriction base="xs:NMTOKEN">
                      <xs:enumeration value="Y"/>
                      <xs:enumeration value="N"/>
                   </xs:restriction>
                </xs:simpleType>
-               <xs:annotation>
-                  <xs:documentation>
-                     <xhtml:div class="description">Indicates whether this category group contains missing data or not.</xhtml:div>
-                  </xs:documentation>
-               </xs:annotation>
             </xs:attribute>
             <xs:attribute name="missType" type="xs:string" use="optional">
                <xs:annotation>
@@ -1567,17 +1567,17 @@ for more details.
                </xs:annotation>
             </xs:attribute>
             <xs:attribute name="excls" default="true">
+               <xs:annotation>
+                  <xs:documentation>
+                     <xhtml:div class="description">Exclusiveness, should be set to "false" if the category can appear in more than one place in the classification hierarchy.</xhtml:div>
+                  </xs:documentation>
+               </xs:annotation>
                <xs:simpleType>
                   <xs:restriction base="xs:NMTOKEN">
                      <xs:enumeration value="true"/>
                      <xs:enumeration value="false"/>
                   </xs:restriction>
                </xs:simpleType>
-               <xs:annotation>
-                  <xs:documentation>
-                     <xhtml:div class="description">Exclusiveness, should be set to "false" if the category can appear in more than one place in the classification hierarchy.</xhtml:div>
-                  </xs:documentation>
-               </xs:annotation>
             </xs:attribute>
             <xs:attribute name="catgry" type="xs:IDREFS" use="optional">
                <xs:annotation>
@@ -1658,17 +1658,17 @@ for more details.
                <xs:element ref="txt" minOccurs="0" maxOccurs="unbounded"/>
             </xs:sequence>
             <xs:attribute name="missing" default="N">
+               <xs:annotation>
+                  <xs:documentation>
+                     <xhtml:div class="description">Indicates whether this category group contains missing data or not</xhtml:div>
+                  </xs:documentation>
+               </xs:annotation>
                <xs:simpleType>
                   <xs:restriction base="xs:NMTOKEN">
                      <xs:enumeration value="Y"/>
                      <xs:enumeration value="N"/>
                   </xs:restriction>
                </xs:simpleType>
-               <xs:annotation>
-                  <xs:documentation>
-                     <xhtml:div class="description">Indicates whether this category group contains missing data or not</xhtml:div>
-                  </xs:documentation>
-               </xs:annotation>
             </xs:attribute>
             <xs:attribute name="missType" type="xs:string" use="optional">
                <xs:annotation>
@@ -1706,30 +1706,30 @@ for more details.
                </xs:annotation>
             </xs:attribute>
             <xs:attribute name="compl" default="true">
-               <xs:simpleType>
-                  <xs:restriction base="xs:NMTOKEN">
-                     <xs:enumeration value="true"/>
-                     <xs:enumeration value="false"/>
-                  </xs:restriction>
-               </xs:simpleType>
                <xs:annotation>
                   <xs:documentation>
                      <xhtml:div class="description">Completeness, should be set to "false" if the category group is incomplete (not a complete aggregate of all sub-nodes or children).</xhtml:div>
                   </xs:documentation>
                </xs:annotation>
-            </xs:attribute>
-            <xs:attribute name="excls" default="true">
                <xs:simpleType>
                   <xs:restriction base="xs:NMTOKEN">
                      <xs:enumeration value="true"/>
                      <xs:enumeration value="false"/>
                   </xs:restriction>
                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="excls" default="true">
                <xs:annotation>
                   <xs:documentation>
                      <xhtml:div class="description">Exclusiveness, should be set to "false" if the category group can appear in more than one place in the classification hierarchy.</xhtml:div>
                   </xs:documentation>
                </xs:annotation>
+               <xs:simpleType>
+                  <xs:restriction base="xs:NMTOKEN">
+                     <xs:enumeration value="true"/>
+                     <xs:enumeration value="false"/>
+                  </xs:restriction>
+               </xs:simpleType>
             </xs:attribute>
          </xs:extension>
       </xs:complexContent>
@@ -1991,6 +1991,11 @@ for more details.
       <xs:complexContent>
          <xs:extension base="simpleTextAndDateType">
             <xs:attribute name="event" default="single">
+               <xs:annotation>
+                  <xs:documentation>
+                     <xhtml:div class="description">Specify "start", "end", or "single" for each date entered.</xhtml:div>
+                  </xs:documentation>
+               </xs:annotation>
                <xs:simpleType>
                   <xs:restriction base="xs:NMTOKEN">
                      <xs:enumeration value="start"/>
@@ -1998,11 +2003,6 @@ for more details.
                      <xs:enumeration value="single"/>
                   </xs:restriction>
                </xs:simpleType>
-               <xs:annotation>
-                  <xs:documentation>
-                     <xhtml:div class="description">Specify "start", "end", or "single" for each date entered.</xhtml:div>
-                  </xs:documentation>
-               </xs:annotation>
             </xs:attribute>
             <xs:attribute name="cycle" type="xs:string" use="optional">
                <xs:annotation>
@@ -2304,17 +2304,17 @@ for more details.
       <xs:complexContent>
          <xs:extension base="simpleTextType">
             <xs:attribute name="required" default="yes">
+               <xs:annotation>
+                  <xs:documentation>
+                     <xhtml:div class="description">Aids machine processing of this element, default specification is "yes".</xhtml:div>
+                  </xs:documentation>
+               </xs:annotation>
                <xs:simpleType>
                   <xs:restriction base="xs:NMTOKEN">
                      <xs:enumeration value="yes"/>
                      <xs:enumeration value="no"/>
                   </xs:restriction>
                </xs:simpleType>
-               <xs:annotation>
-                  <xs:documentation>
-                     <xhtml:div class="description">Aids machine processing of this element, default specification is "yes".</xhtml:div>
-                  </xs:documentation>
-               </xs:annotation>
             </xs:attribute>
             <xs:attribute name="formNo" type="xs:string">
                <xs:annotation>
@@ -2405,17 +2405,17 @@ for more details.
                </xs:annotation>
             </xs:attribute>
             <xs:attribute name="agentType" use="optional">
+               <xs:annotation>
+                  <xs:documentation>
+                     <xhtml:div class="description">Type of authoring entity: organization or individual.</xhtml:div>
+                  </xs:documentation>
+               </xs:annotation>
                <xs:simpleType>
                   <xs:restriction base="xs:NMTOKEN">
                      <xs:enumeration value="organization"/>
                      <xs:enumeration value="individual"/>
                   </xs:restriction>
                </xs:simpleType>
-               <xs:annotation>
-                  <xs:documentation>
-                     <xhtml:div class="description">Type of authoring entity: organization or individual.</xhtml:div>
-                  </xs:documentation>
-               </xs:annotation>
             </xs:attribute>
          </xs:extension>
       </xs:complexContent>
@@ -3415,17 +3415,17 @@ for more details.
                </xs:annotation>
             </xs:attribute>
             <xs:attribute name="agentType" use="optional">
+               <xs:annotation>
+                  <xs:documentation>
+                     <xhtml:div class="description">Type of custodian: organization or individual.</xhtml:div>
+                  </xs:documentation>
+               </xs:annotation>
                <xs:simpleType>
                   <xs:restriction base="xs:NMTOKEN">
                      <xs:enumeration value="organization"/>
                      <xs:enumeration value="individual"/>
                   </xs:restriction>
                </xs:simpleType>
-               <xs:annotation>
-                  <xs:documentation>
-                     <xhtml:div class="description">Type of custodian: organization or individual.</xhtml:div>
-                  </xs:documentation>
-               </xs:annotation>
             </xs:attribute>
          </xs:extension>
       </xs:simpleContent>
@@ -3538,17 +3538,17 @@ for more details.
                </xs:annotation>
             </xs:attribute>
             <xs:attribute name="agentType" use="optional">
+               <xs:annotation>
+                  <xs:documentation>
+                     <xhtml:div class="description">Type of data collector: organization or individual.</xhtml:div>
+                  </xs:documentation>
+               </xs:annotation>
                <xs:simpleType>
                   <xs:restriction base="xs:NMTOKEN">
                      <xs:enumeration value="organization"/>
                      <xs:enumeration value="individual"/>
                   </xs:restriction>
                </xs:simpleType>
-               <xs:annotation>
-                  <xs:documentation>
-                     <xhtml:div class="description">Type of data collector: organization or individual.</xhtml:div>
-                  </xs:documentation>
-               </xs:annotation>
             </xs:attribute>
          </xs:extension>
       </xs:complexContent>
@@ -3876,17 +3876,17 @@ for more details.
                </xs:annotation>
             </xs:attribute>
             <xs:attribute name="agentType" use="optional">
+               <xs:annotation>
+                  <xs:documentation>
+                     <xhtml:div class="description">Type of depositor: organization or individual.</xhtml:div>
+                  </xs:documentation>
+               </xs:annotation>
                <xs:simpleType>
                   <xs:restriction base="xs:NMTOKEN">
                      <xs:enumeration value="organization"/>
                      <xs:enumeration value="individual"/>
                   </xs:restriction>
                </xs:simpleType>
-               <xs:annotation>
-                  <xs:documentation>
-                     <xhtml:div class="description">Type of depositor: organization or individual.</xhtml:div>
-                  </xs:documentation>
-               </xs:annotation>
             </xs:attribute>
          </xs:extension>
       </xs:complexContent>
@@ -3987,12 +3987,6 @@ for more details.
          <xs:element name="algorithmVersion" type="xs:string" minOccurs="0"/>
       </xs:sequence>
       <xs:attribute name="type" use="required">
-         <xs:simpleType>
-            <xs:restriction base="xs:NMTOKEN">
-               <xs:enumeration value="data"/>
-               <xs:enumeration value="dataFile"/>
-            </xs:restriction>
-         </xs:simpleType>
          <xs:annotation>
             <xs:documentation>
                <xhtml:div class="description">
@@ -4002,6 +3996,12 @@ for more details.
                </xhtml:div>
             </xs:documentation>
          </xs:annotation>
+         <xs:simpleType>
+            <xs:restriction base="xs:NMTOKEN">
+               <xs:enumeration value="data"/>
+               <xs:enumeration value="dataFile"/>
+            </xs:restriction>
+         </xs:simpleType>
       </xs:attribute>
    </xs:complexType>
 
@@ -4177,17 +4177,17 @@ for more details.
                </xs:annotation>
             </xs:attribute>
             <xs:attribute name="agentType" use="optional">
+               <xs:annotation>
+                  <xs:documentation>
+                     <xhtml:div class="description">Type of distributor: organization or individual.</xhtml:div>
+                  </xs:documentation>
+               </xs:annotation>
                <xs:simpleType>
                   <xs:restriction base="xs:NMTOKEN">
                      <xs:enumeration value="organization"/>
                      <xs:enumeration value="individual"/>
                   </xs:restriction>
                </xs:simpleType>
-               <xs:annotation>
-                  <xs:documentation>
-                     <xhtml:div class="description">Type of distributor: organization or individual.</xhtml:div>
-                  </xs:documentation>
-               </xs:annotation>
             </xs:attribute>
          </xs:extension>
       </xs:complexContent>
@@ -4450,17 +4450,17 @@ for more details.
       <xs:complexContent>
          <xs:extension base="simpleTextAndDateType">
             <xs:attribute name="event" default="notBefore">
+               <xs:annotation>
+                  <xs:documentation>
+                     <xhtml:div class="description">Specifies when will the embargo end, or begin its effect.</xhtml:div>
+                  </xs:documentation>
+               </xs:annotation>
                <xs:simpleType>
                   <xs:restriction base="xs:NMTOKEN">
                      <xs:enumeration value="notBefore"/>
                      <xs:enumeration value="notAfter"/>
                   </xs:restriction>
                </xs:simpleType>
-               <xs:annotation>
-                  <xs:documentation>
-                     <xhtml:div class="description">Specifies when will the embargo end, or begin its effect.</xhtml:div>
-                  </xs:documentation>
-               </xs:annotation>
             </xs:attribute>
             <xs:attribute name="format" type="xs:string">
                <xs:annotation>
@@ -4595,17 +4595,17 @@ for more details.
                <xs:element ref="fileDerivationVars" minOccurs="0"/>
             </xs:sequence>
             <xs:attribute name="fileDerivationCasesAction">
+               <xs:annotation>
+                  <xs:documentation>
+                     <xhtml:div class="description">If applicable, provide information about added or dropped cases from the referenced source files.</xhtml:div>
+                  </xs:documentation>
+               </xs:annotation>
                <xs:simpleType>
                   <xs:restriction base="xs:NMTOKEN">
                   <xs:enumeration value="add"/>
                   <xs:enumeration value="drop"/>
                   </xs:restriction>
                </xs:simpleType>
-               <xs:annotation>
-                  <xs:documentation>
-                     <xhtml:div class="description">If applicable, provide information about added or dropped cases from the referenced source files.</xhtml:div>
-                  </xs:documentation>
-               </xs:annotation>
             </xs:attribute>
          </xs:extension>
       </xs:complexContent>
@@ -4906,6 +4906,11 @@ for more details.
                <xs:element ref="notes" minOccurs="0" maxOccurs="unbounded"/>
             </xs:sequence>
             <xs:attribute name="type" default="rectangular">
+               <xs:annotation>
+                  <xs:documentation>
+                     <xhtml:div class="description">Type of structure, predefined options.</xhtml:div>
+                  </xs:documentation>
+               </xs:annotation>
                <xs:simpleType>
                   <xs:restriction base="xs:NMTOKEN">
                      <xs:enumeration value="rectangular"/>
@@ -4915,11 +4920,6 @@ for more details.
                      <xs:enumeration value="other"/>
                   </xs:restriction>
                </xs:simpleType>
-               <xs:annotation>
-                  <xs:documentation>
-                     <xhtml:div class="description">Type of structure, predefined options.</xhtml:div>
-                  </xs:documentation>
-               </xs:annotation>
             </xs:attribute>
             <xs:attribute name="otherType" type="xs:NMTOKEN" use="optional">
                <xs:annotation>
@@ -5220,17 +5220,17 @@ for more details.
                </xs:annotation>
             </xs:attribute>
             <xs:attribute name="agentType" use="optional">
+               <xs:annotation>
+                  <xs:documentation>
+                     <xhtml:div class="description">Type of funding agency: organization or individual.</xhtml:div>
+                  </xs:documentation>
+               </xs:annotation>
                <xs:simpleType>
                   <xs:restriction base="xs:NMTOKEN">
                      <xs:enumeration value="organization"/>
                      <xs:enumeration value="individual"/>
                   </xs:restriction>
                </xs:simpleType>
-               <xs:annotation>
-                  <xs:documentation>
-                     <xhtml:div class="description">Type of funding agency: organization or individual.</xhtml:div>
-                  </xs:documentation>
-               </xs:annotation>
             </xs:attribute>
          </xs:extension>
       </xs:complexContent>
@@ -5639,6 +5639,11 @@ for more details.
                </xs:annotation>
             </xs:attribute>
             <xs:attribute name="level">
+               <xs:annotation>
+                  <xs:documentation>
+                     <xhtml:div class="description">Specifies the level (study, file, or project) to which the identification number applies.</xhtml:div>
+                  </xs:documentation>
+               </xs:annotation>
                <xs:simpleType>
                   <xs:restriction base="xs:NMTOKEN">
                      <xs:enumeration value="study"/>
@@ -5646,11 +5651,6 @@ for more details.
                      <xs:enumeration value="project"/>
                   </xs:restriction>
                </xs:simpleType>
-               <xs:annotation>
-                  <xs:documentation>
-                     <xhtml:div class="description">Specifies the level (study, file, or project) to which the identification number applies.</xhtml:div>
-                  </xs:documentation>
-               </xs:annotation>
             </xs:attribute>
          </xs:extension>
       </xs:complexContent>
@@ -5767,17 +5767,17 @@ for more details.
       <xs:complexContent>
          <xs:extension base="baseElementType">
             <xs:attribute name="UNITS" default="INT">
+               <xs:annotation>
+                  <xs:documentation>
+                     <xhtml:div class="description">Specifies if numbers are integer or real.</xhtml:div>
+                  </xs:documentation>
+               </xs:annotation>
                <xs:simpleType>
                   <xs:restriction base="xs:NMTOKEN">
                      <xs:enumeration value="INT"/>
                      <xs:enumeration value="REAL"/>
                   </xs:restriction>
                </xs:simpleType>
-               <xs:annotation>
-                  <xs:documentation>
-                     <xhtml:div class="description">Specifies if numbers are integer or real.</xhtml:div>
-                  </xs:documentation>
-               </xs:annotation>
             </xs:attribute>
             <xs:attribute name="VALUE" type="xs:string" use="required">
                <xs:annotation>
@@ -6070,30 +6070,30 @@ for more details.
                </xs:annotation>
             </xs:attribute>
             <xs:attribute name="type" use="optional">
+               <xs:annotation>
+                  <xs:documentation>
+                     <xhtml:div class="description">Licensing target.</xhtml:div>
+                  </xs:documentation>
+               </xs:annotation>
                <xs:simpleType>
                   <xs:restriction base="xs:NMTOKEN">
                      <xs:enumeration value="data"/>
                      <xs:enumeration value="metadata"/>
                   </xs:restriction>
                </xs:simpleType>
-               <xs:annotation>
-                  <xs:documentation>
-                     <xhtml:div class="description">Licensing target.</xhtml:div>
-                  </xs:documentation>
-               </xs:annotation>
             </xs:attribute>
             <xs:attribute name="scope" use="optional">
+               <xs:annotation>
+                  <xs:documentation>
+                     <xhtml:div class="description">Allows specification of the scope of the license. If the scope is something else do not use this attribute</xhtml:div>
+                  </xs:documentation>
+               </xs:annotation>
                <xs:simpleType>
                   <xs:restriction base="xs:NMTOKEN">
                      <xs:enumeration value="study"/>
                      <xs:enumeration value="question"/>
                   </xs:restriction>
                </xs:simpleType>
-               <xs:annotation>
-                  <xs:documentation>
-                     <xhtml:div class="description">Allows specification of the scope of the license. If the scope is something else do not use this attribute</xhtml:div>
-                  </xs:documentation>
-               </xs:annotation>
             </xs:attribute>
          </xs:extension>
       </xs:complexContent>
@@ -6268,6 +6268,11 @@ for more details.
                </xs:annotation>
             </xs:attribute>
             <xs:attribute name="aggrMeth">
+               <xs:annotation>
+                  <xs:documentation>
+                     <xhtml:div class="description">Indicates the type of aggregation method used.</xhtml:div>
+                  </xs:documentation>
+               </xs:annotation>
                <xs:simpleType>
                   <xs:restriction base="xs:NMTOKEN">
                      <xs:enumeration value="sum"/>
@@ -6281,11 +6286,6 @@ for more details.
                      <xs:enumeration value="other"/>
                   </xs:restriction>
                </xs:simpleType>
-               <xs:annotation>
-                  <xs:documentation>
-                     <xhtml:div class="description">Indicates the type of aggregation method used.</xhtml:div>
-                  </xs:documentation>
-               </xs:annotation>
             </xs:attribute>
             <xs:attribute name="otherAggrMeth" type="xs:NMTOKEN" use="optional">
                <xs:annotation>
@@ -6316,6 +6316,11 @@ for more details.
                </xs:annotation>
             </xs:attribute>
             <xs:attribute name="additivity">
+               <xs:annotation>
+                  <xs:documentation>
+                     <xhtml:div class="description">Indicates whether an aggregate is a stock (like the population at a given point in time) or a flow (like the number of births or deaths over a certain period of time). The non-additive flag is to be used for measures that for logical reasons cannot be aggregated to a higher level - for instance, data that only make sense at a certain level of aggregation, like a classification.</xhtml:div>
+                  </xs:documentation>
+               </xs:annotation>
                <xs:simpleType>
                   <xs:restriction base="xs:NMTOKEN">
                      <xs:enumeration value="stock"/>
@@ -6323,11 +6328,6 @@ for more details.
                      <xs:enumeration value="non-additive"/>
                   </xs:restriction>
                </xs:simpleType>
-               <xs:annotation>
-                  <xs:documentation>
-                     <xhtml:div class="description">Indicates whether an aggregate is a stock (like the population at a given point in time) or a flow (like the number of births or deaths over a certain period of time). The non-additive flag is to be used for measures that for logical reasons cannot be aggregated to a higher level - for instance, data that only make sense at a certain level of aggregation, like a classification.</xhtml:div>
-                  </xs:documentation>
-               </xs:annotation>
             </xs:attribute>
          </xs:extension>
       </xs:complexContent>
@@ -6704,6 +6704,20 @@ for more details.
                <xs:element ref="notes" minOccurs="0" maxOccurs="unbounded"/>
             </xs:sequence>
             <xs:attribute name="type" default="other">
+               <xs:annotation>
+                  <xs:documentation>
+                     <xhtml:div class="description">
+                        <xhtml:p>General type of grouping of the nCubes. Specific nCube Groups, included within the 'type' attribute, are:</xhtml:p>
+                        <xhtml:p>- display: nCubes that are part of the same presentation table.</xhtml:p>
+                        <xhtml:p>- subject: nCubes that address a common topic or subject, e.g., income, poverty, children.</xhtml:p>
+                        <xhtml:p>- iteration: nCubes that appear in different sections of the data file measuring a common subject in different ways, e.g., using different universes, units of measurement, etc.</xhtml:p>
+                        <xhtml:p>- pragmatic: An nCube group without shared properties.</xhtml:p>
+                        <xhtml:p>- record: nCubes from a single record in a hierarchical file.</xhtml:p>
+                        <xhtml:p>- file: nCube from a single file in a multifile study.</xhtml:p>
+                        <xhtml:p>- other: nCubes that do not fit easily into any of the categories listed above, e.g., a group of nCubes whose documentation is in another language. A term from a controlled vocabulary may be placed into the otherType attribute if this value is used.</xhtml:p>
+                     </xhtml:div>
+                  </xs:documentation>
+               </xs:annotation>
                <xs:simpleType>
                   <xs:restriction base="xs:NMTOKEN">
                      <xs:enumeration value="section"/>
@@ -6722,20 +6736,6 @@ for more details.
                      <xs:enumeration value="other"/>
                   </xs:restriction>
                </xs:simpleType>
-               <xs:annotation>
-                  <xs:documentation>
-                     <xhtml:div class="description">
-                        <xhtml:p>General type of grouping of the nCubes. Specific nCube Groups, included within the 'type' attribute, are:</xhtml:p>
-                        <xhtml:p>- display: nCubes that are part of the same presentation table.</xhtml:p>
-                        <xhtml:p>- subject: nCubes that address a common topic or subject, e.g., income, poverty, children.</xhtml:p>
-                        <xhtml:p>- iteration: nCubes that appear in different sections of the data file measuring a common subject in different ways, e.g., using different universes, units of measurement, etc.</xhtml:p>
-                        <xhtml:p>- pragmatic: An nCube group without shared properties.</xhtml:p>
-                        <xhtml:p>- record: nCubes from a single record in a hierarchical file.</xhtml:p>
-                        <xhtml:p>- file: nCube from a single file in a multifile study.</xhtml:p>
-                        <xhtml:p>- other: nCubes that do not fit easily into any of the categories listed above, e.g., a group of nCubes whose documentation is in another language. A term from a controlled vocabulary may be placed into the otherType attribute if this value is used.</xhtml:p>
-                     </xhtml:div>
-                  </xs:documentation>
-               </xs:annotation>
             </xs:attribute>
             <xs:attribute name="otherType" type="xs:NMTOKEN" use="optional">
                <xs:annotation>
@@ -7208,17 +7208,17 @@ for more details.
                </xs:annotation>
             </xs:attribute>
             <xs:attribute name="agentType" use="optional">
+               <xs:annotation>
+                  <xs:documentation>
+                     <xhtml:div class="description">Type of originating archive: organization or individual.</xhtml:div>
+                  </xs:documentation>
+               </xs:annotation>
                <xs:simpleType>
                   <xs:restriction base="xs:NMTOKEN">
                      <xs:enumeration value="organization"/>
                      <xs:enumeration value="individual"/>
                   </xs:restriction>
                </xs:simpleType>
-               <xs:annotation>
-                  <xs:documentation>
-                     <xhtml:div class="description">Type of originating archive: organization or individual.</xhtml:div>
-                  </xs:documentation>
-               </xs:annotation>
             </xs:attribute>
          </xs:extension>
       </xs:complexContent>
@@ -7299,17 +7299,17 @@ for more details.
                </xs:annotation>
             </xs:attribute>
             <xs:attribute name="agentType" use="optional">
+               <xs:annotation>
+                  <xs:documentation>
+                     <xhtml:div class="description">Type of authoring entity: organization or individual.</xhtml:div>
+                  </xs:documentation>
+               </xs:annotation>
                <xs:simpleType>
                   <xs:restriction base="xs:NMTOKEN">
                      <xs:enumeration value="organization"/>
                      <xs:enumeration value="individual"/>
                   </xs:restriction>
                </xs:simpleType>
-               <xs:annotation>
-                  <xs:documentation>
-                     <xhtml:div class="description">Type of authoring entity: organization or individual.</xhtml:div>
-                  </xs:documentation>
-               </xs:annotation>
             </xs:attribute>
          </xs:extension>
       </xs:complexContent>
@@ -7870,17 +7870,17 @@ for more details.
                </xs:annotation>
             </xs:attribute>
             <xs:attribute name="agentType" use="optional">
+               <xs:annotation>
+                  <xs:documentation>
+                     <xhtml:div class="description">Type of producer: organization or individual.</xhtml:div>
+                  </xs:documentation>
+               </xs:annotation>
                <xs:simpleType>
                   <xs:restriction base="xs:NMTOKEN">
                      <xs:enumeration value="organization"/>
                      <xs:enumeration value="individual"/>
                   </xs:restriction>
                </xs:simpleType>
-               <xs:annotation>
-                  <xs:documentation>
-                     <xhtml:div class="description">Type of producer: organization or individual.</xhtml:div>
-                  </xs:documentation>
-               </xs:annotation>
             </xs:attribute>
          </xs:extension>
       </xs:complexContent>
@@ -8025,6 +8025,11 @@ for more details.
                </xs:annotation>
             </xs:attribute>
             <xs:attribute name="responseDomainType" use="optional">
+               <xs:annotation>
+                  <xs:documentation>
+                     <xhtml:div class="description">Added to capture the specific DDI Lifecycle response domain type to facilitate translation between DDI 2 and DDI Lifecycle.</xhtml:div>
+                  </xs:documentation>
+               </xs:annotation>
                <xs:simpleType>
                   <xs:restriction base="xs:NMTOKEN">
                      <xs:enumeration value="text"/>
@@ -8045,11 +8050,6 @@ for more details.
                      <xs:enumeration value="other"/>
                   </xs:restriction>
                </xs:simpleType>
-               <xs:annotation>
-                  <xs:documentation>
-                     <xhtml:div class="description">Added to capture the specific DDI Lifecycle response domain type to facilitate translation between DDI 2 and DDI Lifecycle.</xhtml:div>
-                  </xs:documentation>
-               </xs:annotation>
             </xs:attribute>
             <xs:attribute name="otherResponseDomainType" type="xs:NMTOKEN" use="optional">
                <xs:annotation>
@@ -8127,17 +8127,17 @@ for more details.
       <xs:complexContent>
          <xs:extension base="baseElementType">
             <xs:attribute name="UNITS" default="INT">
+               <xs:annotation>
+                  <xs:documentation>
+                     <xhtml:div class="description">Integer or real numbers</xhtml:div>
+                  </xs:documentation>
+               </xs:annotation>
                <xs:simpleType>
                   <xs:restriction base="xs:NMTOKEN">
                      <xs:enumeration value="INT"/>
                      <xs:enumeration value="REAL"/>
                   </xs:restriction>
                </xs:simpleType>
-               <xs:annotation>
-                  <xs:documentation>
-                     <xhtml:div class="description">Integer or real numbers</xhtml:div>
-                  </xs:documentation>
-               </xs:annotation>
             </xs:attribute>
             <xs:attribute name="min" type="xs:string">
                <xs:annotation>
@@ -8272,17 +8272,17 @@ for more details.
                </xs:annotation>
             </xs:attribute>
             <xs:attribute name="rtypevtype" default="numeric">
+               <xs:annotation>
+                  <xs:documentation>
+                     <xhtml:div class="description">Type of the indicator variable.</xhtml:div>
+                  </xs:documentation>
+               </xs:annotation>
                <xs:simpleType>
                   <xs:restriction base="xs:NMTOKEN">
                      <xs:enumeration value="numeric"/>
                      <xs:enumeration value="character"/>
                   </xs:restriction>
                </xs:simpleType>
-               <xs:annotation>
-                  <xs:documentation>
-                     <xhtml:div class="description">Type of the indicator variable.</xhtml:div>
-                  </xs:documentation>
-               </xs:annotation>
             </xs:attribute>
             <xs:attribute name="recidvar" type="xs:string">
                <xs:annotation>
@@ -9023,17 +9023,17 @@ for more details.
       <xs:complexContent>
          <xs:extension base="simpleTextType">
             <xs:attribute name="required" default="yes">
+               <xs:annotation>
+                  <xs:documentation>
+                     <xhtml:div class="description">Facilitates machine processing of this element</xhtml:div>
+                  </xs:documentation>
+               </xs:annotation>
                <xs:simpleType>
                   <xs:restriction base="xs:NMTOKEN">
                      <xs:enumeration value="yes"/>
                      <xs:enumeration value="no"/>
                   </xs:restriction>
                </xs:simpleType>
-               <xs:annotation>
-                  <xs:documentation>
-                     <xhtml:div class="description">Facilitates machine processing of this element</xhtml:div>
-                  </xs:documentation>
-               </xs:annotation>
             </xs:attribute>
             <xs:attribute name="formNo" type="xs:string">
                <xs:annotation>
@@ -9402,17 +9402,17 @@ for more details.
                </xs:annotation>
             </xs:attribute>
             <xs:attribute name="agentType" use="optional">
+               <xs:annotation>
+                  <xs:documentation>
+                     <xhtml:div class="description">Type of participant: organization or individual.</xhtml:div>
+                  </xs:documentation>
+               </xs:annotation>
                <xs:simpleType>
                   <xs:restriction base="xs:NMTOKEN">
                      <xs:enumeration value="organization"/>
                      <xs:enumeration value="individual"/>
                   </xs:restriction>
                </xs:simpleType>
-               <xs:annotation>
-                  <xs:documentation>
-                     <xhtml:div class="description">Type of participant: organization or individual.</xhtml:div>
-                  </xs:documentation>
-               </xs:annotation>
             </xs:attribute>
          </xs:extension>
       </xs:simpleContent>
@@ -9542,17 +9542,17 @@ for more details.
                </xs:annotation>
             </xs:attribute>
             <xs:attribute name="agentType" use="optional">
+               <xs:annotation>
+                  <xs:documentation>
+                     <xhtml:div class="description">Type of authorizing agency: organization or individual.</xhtml:div>
+                  </xs:documentation>
+               </xs:annotation>
                <xs:simpleType>
                   <xs:restriction base="xs:NMTOKEN">
                      <xs:enumeration value="organization"/>
                      <xs:enumeration value="individual"/>
                   </xs:restriction>
                </xs:simpleType>
-               <xs:annotation>
-                  <xs:documentation>
-                     <xhtml:div class="description">Type of authorizing agency: organization or individual.</xhtml:div>
-                  </xs:documentation>
-               </xs:annotation>
             </xs:attribute>
          </xs:extension>
       </xs:simpleContent>
@@ -9873,17 +9873,17 @@ for more details.
                </xs:annotation>
             </xs:attribute>
             <xs:attribute name="agentType" use="optional">
+               <xs:annotation>
+                  <xs:documentation>
+                     <xhtml:div class="description">Type of evaluator: organization or individual.</xhtml:div>
+                  </xs:documentation>
+               </xs:annotation>
                <xs:simpleType>
                   <xs:restriction base="xs:NMTOKEN">
                      <xs:enumeration value="organization"/>
                      <xs:enumeration value="individual"/>
                   </xs:restriction>
                </xs:simpleType>
-               <xs:annotation>
-                  <xs:documentation>
-                     <xhtml:div class="description">Type of evaluator: organization or individual.</xhtml:div>
-                  </xs:documentation>
-               </xs:annotation>
             </xs:attribute>
          </xs:extension>
       </xs:simpleContent>
@@ -10108,17 +10108,17 @@ for more details.
       <xs:complexContent>
          <xs:extension base="simpleTextType">
             <xs:attribute name="wgtd" default="not-wgtd">
+               <xs:annotation>
+                  <xs:documentation>
+                     <xhtml:div class="description">Statistics are weighted or not.</xhtml:div>
+                  </xs:documentation>
+               </xs:annotation>
                <xs:simpleType>
                   <xs:restriction base="xs:NMTOKEN">
                      <xs:enumeration value="wgtd"/>
                      <xs:enumeration value="not-wgtd"/>
                   </xs:restriction>
                </xs:simpleType>
-               <xs:annotation>
-                  <xs:documentation>
-                     <xhtml:div class="description">Statistics are weighted or not.</xhtml:div>
-                  </xs:documentation>
-               </xs:annotation>
             </xs:attribute>
             <xs:attribute name="wgt-var" type="xs:IDREFS">
                <xs:annotation>
@@ -10135,6 +10135,11 @@ for more details.
                </xs:annotation>
             </xs:attribute>
             <xs:attribute name="type" use="required">
+               <xs:annotation>
+                  <xs:documentation>
+                     <xhtml:div class="description">Type of statistics being shown: mean, median, mode, valid cases, invalid cases, minimum, maximum, or standard deviation.</xhtml:div>
+                  </xs:documentation>
+               </xs:annotation>
                <xs:simpleType>
                   <xs:restriction base="xs:NMTOKEN">
                      <xs:enumeration value="mean"/>
@@ -10148,11 +10153,6 @@ for more details.
                      <xs:enumeration value="other"/>
                   </xs:restriction>
                </xs:simpleType>
-               <xs:annotation>
-                  <xs:documentation>
-                     <xhtml:div class="description">Type of statistics being shown: mean, median, mode, valid cases, invalid cases, minimum, maximum, or standard deviation.</xhtml:div>
-                  </xs:documentation>
-               </xs:annotation>
             </xs:attribute>
             <xs:attribute name="access" type="xs:IDREFS" use="optional">
                <xs:annotation>
@@ -10399,6 +10399,11 @@ for more details.
       <xs:complexContent>
          <xs:extension base="simpleTextAndDateType">
             <xs:attribute name="event" default="single">
+               <xs:annotation>
+                  <xs:documentation>
+                     <xhtml:div class="description">Type of event.</xhtml:div>
+                  </xs:documentation>
+               </xs:annotation>
                <xs:simpleType>
                   <xs:restriction base="xs:NMTOKEN">
                      <xs:enumeration value="start"/>
@@ -10406,11 +10411,6 @@ for more details.
                      <xs:enumeration value="single"/>
                   </xs:restriction>
                </xs:simpleType>
-               <xs:annotation>
-                  <xs:documentation>
-                     <xhtml:div class="description">Type of event.</xhtml:div>
-                  </xs:documentation>
-               </xs:annotation>
             </xs:attribute>
             <xs:attribute name="cycle" type="xs:string">
                <xs:annotation>
@@ -10776,17 +10776,17 @@ for more details.
                </xs:annotation>
             </xs:attribute>
             <xs:attribute name="clusion" default="I">
+               <xs:annotation>
+                  <xs:documentation>
+                     <xhtml:div class="description">Groups included (I) in or excluded (E) from the universe.</xhtml:div>
+                  </xs:documentation>
+               </xs:annotation>
                <xs:simpleType>
                   <xs:restriction base="xs:NMTOKEN">
                      <xs:enumeration value="I"/>
                      <xs:enumeration value="E"/>
                   </xs:restriction>
                </xs:simpleType>
-               <xs:annotation>
-                  <xs:documentation>
-                     <xhtml:div class="description">Groups included (I) in or excluded (E) from the universe.</xhtml:div>
-                  </xs:documentation>
-               </xs:annotation>
             </xs:attribute>
          </xs:extension>
       </xs:complexContent>
@@ -10943,17 +10943,17 @@ for more details.
                </xs:annotation>
             </xs:attribute>
             <xs:attribute name="wgt" default="not-wgt">
+               <xs:annotation>
+                  <xs:documentation>
+                     <xhtml:div class="description">Whether the variable is a weight.</xhtml:div>
+                  </xs:documentation>
+               </xs:annotation>
                <xs:simpleType>
                   <xs:restriction base="xs:NMTOKEN">
                      <xs:enumeration value="wgt"/>
                      <xs:enumeration value="not-wgt"/>
                   </xs:restriction>
                </xs:simpleType>
-               <xs:annotation>
-                  <xs:documentation>
-                     <xhtml:div class="description">Whether the variable is a weight.</xhtml:div>
-                  </xs:documentation>
-               </xs:annotation>
             </xs:attribute>
             <xs:attribute name="wgt-var" type="xs:IDREFS">
                <xs:annotation>
@@ -10998,17 +10998,17 @@ for more details.
                </xs:annotation>
             </xs:attribute>
             <xs:attribute name="intrvl" default="discrete">
+               <xs:annotation>
+                  <xs:documentation>
+                     <xhtml:div class="description">Interval type; options are discrete or continuous.</xhtml:div>
+                  </xs:documentation>
+               </xs:annotation>
                <xs:simpleType>
                   <xs:restriction base="xs:NMTOKEN">
                      <xs:enumeration value="contin"/>
                      <xs:enumeration value="discrete"/>
                   </xs:restriction>
                </xs:simpleType>
-               <xs:annotation>
-                  <xs:documentation>
-                     <xhtml:div class="description">Interval type; options are discrete or continuous.</xhtml:div>
-                  </xs:documentation>
-               </xs:annotation>
             </xs:attribute>
             <xs:attribute name="rectype" type="xs:string">
                <xs:annotation>
@@ -11046,6 +11046,11 @@ for more details.
                </xs:annotation>
             </xs:attribute>
             <xs:attribute name="aggrMeth">
+               <xs:annotation>
+                  <xs:documentation>
+                     <xhtml:div class="description">Type of aggregation method used, for example 'sum', 'average', 'count'. If a value of "other" is given a term from a controlled vocabulary should be used in the "otherAggrMeth" attribute.</xhtml:div>
+                  </xs:documentation>
+               </xs:annotation>
                <xs:simpleType>
                   <xs:restriction base="xs:NMTOKEN">
                      <xs:enumeration value="sum"/>
@@ -11059,11 +11064,6 @@ for more details.
                      <xs:enumeration value="other"/>
                   </xs:restriction>
                </xs:simpleType>
-               <xs:annotation>
-                  <xs:documentation>
-                     <xhtml:div class="description">Type of aggregation method used, for example 'sum', 'average', 'count'. If a value of "other" is given a term from a controlled vocabulary should be used in the "otherAggrMeth" attribute.</xhtml:div>
-                  </xs:documentation>
-               </xs:annotation>
             </xs:attribute>
             <xs:attribute name="otherAggrMeth" type="xs:NMTOKEN" use="optional">
                <xs:annotation>
@@ -11094,6 +11094,11 @@ for more details.
                </xs:annotation>
             </xs:attribute>
             <xs:attribute name="nature">
+               <xs:annotation>
+                  <xs:documentation>
+                     <xhtml:div class="description">Nature  (measurement level) of the variable.</xhtml:div>
+                  </xs:documentation>
+               </xs:annotation>
                <xs:simpleType>
                   <xs:restriction base="xs:NMTOKEN">
                      <xs:enumeration value="nominal"/>
@@ -11104,11 +11109,6 @@ for more details.
                      <xs:enumeration value="other"/>
                   </xs:restriction>
                </xs:simpleType>
-               <xs:annotation>
-                  <xs:documentation>
-                     <xhtml:div class="description">Nature  (measurement level) of the variable.</xhtml:div>
-                  </xs:documentation>
-               </xs:annotation>
             </xs:attribute>
             <xs:attribute name="otherNature" type="xs:string">
                <xs:annotation>
@@ -11118,6 +11118,11 @@ for more details.
                </xs:annotation>
             </xs:attribute>
             <xs:attribute name="additivity">
+               <xs:annotation>
+                  <xs:documentation>
+                     <xhtml:div class="description">Type of additivity</xhtml:div>
+                  </xs:documentation>
+               </xs:annotation>
                <xs:simpleType>
                   <xs:restriction base="xs:NMTOKEN">
                      <xs:enumeration value="stock"/>
@@ -11126,11 +11131,6 @@ for more details.
                      <xs:enumeration value="other"/>
                   </xs:restriction>
                </xs:simpleType>
-               <xs:annotation>
-                  <xs:documentation>
-                     <xhtml:div class="description">Type of additivity</xhtml:div>
-                  </xs:documentation>
-               </xs:annotation>
             </xs:attribute>
             <xs:attribute name="otherAdditivity" type="xs:NMTOKEN" use="optional">
                <xs:annotation>
@@ -11140,30 +11140,30 @@ for more details.
                </xs:annotation>
             </xs:attribute>
             <xs:attribute name="temporal" default="N">
-               <xs:simpleType>
-                  <xs:restriction base="xs:NMTOKEN">
-                     <xs:enumeration value="Y"/>
-                     <xs:enumeration value="N"/>
-                  </xs:restriction>
-               </xs:simpleType>
                <xs:annotation>
                   <xs:documentation>
                      <xhtml:div class="description">Whether the variable relays time-related information.</xhtml:div>
                   </xs:documentation>
                </xs:annotation>
-            </xs:attribute>
-            <xs:attribute name="geog" default="N">
                <xs:simpleType>
                   <xs:restriction base="xs:NMTOKEN">
                      <xs:enumeration value="Y"/>
                      <xs:enumeration value="N"/>
                   </xs:restriction>
                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="geog" default="N">
                <xs:annotation>
                   <xs:documentation>
                      <xhtml:div class="description">Whether the variable relays geographic information.</xhtml:div>
                   </xs:documentation>
                </xs:annotation>
+               <xs:simpleType>
+                  <xs:restriction base="xs:NMTOKEN">
+                     <xs:enumeration value="Y"/>
+                     <xs:enumeration value="N"/>
+                  </xs:restriction>
+               </xs:simpleType>
             </xs:attribute>
             <xs:attribute name="geoVocab" type="xs:string">
                <xs:annotation>
@@ -11180,6 +11180,11 @@ for more details.
                </xs:annotation>
             </xs:attribute>
             <xs:attribute name="representationType">
+               <xs:annotation>
+                  <xs:documentation>
+                     <xhtml:div class="description">Captures the specific DDI Lifecycle representation type to facilitate translation between DDI 2 and DDI Lifecycle. If the "other" value is used, a term from a controlled vocabulary may be supplied in the otherRepresentationType attribute.</xhtml:div>
+                  </xs:documentation>
+               </xs:annotation>
                <xs:simpleType>
                   <xs:restriction base="xs:NMTOKEN">
                      <xs:enumeration value="text"/>
@@ -11192,11 +11197,6 @@ for more details.
                      <xs:enumeration value="other"/>
                   </xs:restriction>
                </xs:simpleType>
-               <xs:annotation>
-                  <xs:documentation>
-                     <xhtml:div class="description">Captures the specific DDI Lifecycle representation type to facilitate translation between DDI 2 and DDI Lifecycle. If the "other" value is used, a term from a controlled vocabulary may be supplied in the otherRepresentationType attribute.</xhtml:div>
-                  </xs:documentation>
-               </xs:annotation>
             </xs:attribute>
             <xs:attribute name="otherRepresentationType" type="xs:NMTOKEN" use="optional">
                <xs:annotation>
@@ -11227,17 +11227,17 @@ for more details.
       <xs:complexContent>
          <xs:extension base="simpleTextType">
             <xs:attribute name="type" default="numeric">
+               <xs:annotation>
+                  <xs:documentation>
+                     <xhtml:div class="description">Indicates if the variable is character or numeric.</xhtml:div>
+                  </xs:documentation>
+               </xs:annotation>
                <xs:simpleType>
                   <xs:restriction base="xs:NMTOKEN">
                      <xs:enumeration value="character"/>
                      <xs:enumeration value="numeric"/>
                   </xs:restriction>
                </xs:simpleType>
-               <xs:annotation>
-                  <xs:documentation>
-                     <xhtml:div class="description">Indicates if the variable is character or numeric.</xhtml:div>
-                  </xs:documentation>
-               </xs:annotation>
             </xs:attribute>
             <xs:attribute name="formatname" type="xs:string">
                <xs:annotation>
@@ -11247,6 +11247,11 @@ for more details.
                </xs:annotation>
             </xs:attribute>
             <xs:attribute name="schema" default="ISO">
+               <xs:annotation>
+                  <xs:documentation>
+                     <xhtml:div class="description">Identifies the vendor or standards body that defined the format.</xhtml:div>
+                  </xs:documentation>
+               </xs:annotation>
                <xs:simpleType>
                   <xs:restriction base="xs:NMTOKEN">
                      <xs:enumeration value="SAS"/>
@@ -11258,11 +11263,6 @@ for more details.
                      <xs:enumeration value="other"/>
                   </xs:restriction>
                </xs:simpleType>
-               <xs:annotation>
-                  <xs:documentation>
-                     <xhtml:div class="description">Identifies the vendor or standards body that defined the format.</xhtml:div>
-                  </xs:documentation>
-               </xs:annotation>
             </xs:attribute>
             <xs:attribute name="otherSchema" type="xs:NMTOKEN" use="optional">
                <xs:annotation>
@@ -11272,6 +11272,11 @@ for more details.
                </xs:annotation>
             </xs:attribute>
             <xs:attribute name="category" default="other">
+               <xs:annotation>
+                  <xs:documentation>
+                     <xhtml:div class="description">Describes what kind of data the format represents.</xhtml:div>
+                  </xs:documentation>
+               </xs:annotation>
                <xs:simpleType>
                   <xs:restriction base="xs:NMTOKEN">
                      <xs:enumeration value="date"/>
@@ -11280,11 +11285,6 @@ for more details.
                      <xs:enumeration value="other"/>
                   </xs:restriction>
                </xs:simpleType>
-               <xs:annotation>
-                  <xs:documentation>
-                     <xhtml:div class="description">Describes what kind of data the format represents.</xhtml:div>
-                  </xs:documentation>
-               </xs:annotation>
             </xs:attribute>
             <xs:attribute name="otherCategory" type="xs:NMTOKEN" use="optional">
                <xs:annotation>
@@ -11345,24 +11345,6 @@ for more details.
                <xs:element ref="notes" minOccurs="0" maxOccurs="unbounded"/>
             </xs:sequence>
             <xs:attribute name="type" default="other">
-               <xs:simpleType>
-                  <xs:restriction base="xs:NMTOKEN">
-                     <xs:enumeration value="section"/>
-                     <xs:enumeration value="multipleResp"/>
-                     <xs:enumeration value="grid"/>
-                     <xs:enumeration value="display"/>
-                     <xs:enumeration value="repetition"/>
-                     <xs:enumeration value="subject"/>
-                     <xs:enumeration value="version"/>
-                     <xs:enumeration value="iteration"/>
-                     <xs:enumeration value="analysis"/>
-                     <xs:enumeration value="pragmatic"/>
-                     <xs:enumeration value="record"/>
-                     <xs:enumeration value="file"/>
-                     <xs:enumeration value="randomized"/>
-                     <xs:enumeration value="other"/>
-                  </xs:restriction>
-               </xs:simpleType>
                <xs:annotation>
                   <xs:documentation>
                      <xhtml:div class="description">
@@ -11385,6 +11367,24 @@ for more details.
                      </xhtml:div>
                   </xs:documentation>
                </xs:annotation>
+               <xs:simpleType>
+                  <xs:restriction base="xs:NMTOKEN">
+                     <xs:enumeration value="section"/>
+                     <xs:enumeration value="multipleResp"/>
+                     <xs:enumeration value="grid"/>
+                     <xs:enumeration value="display"/>
+                     <xs:enumeration value="repetition"/>
+                     <xs:enumeration value="subject"/>
+                     <xs:enumeration value="version"/>
+                     <xs:enumeration value="iteration"/>
+                     <xs:enumeration value="analysis"/>
+                     <xs:enumeration value="pragmatic"/>
+                     <xs:enumeration value="record"/>
+                     <xs:enumeration value="file"/>
+                     <xs:enumeration value="randomized"/>
+                     <xs:enumeration value="other"/>
+                  </xs:restriction>
+               </xs:simpleType>
             </xs:attribute>
             <xs:attribute name="otherType" type="xs:NMTOKEN" use="optional">
                <xs:annotation>
@@ -11569,17 +11569,17 @@ for more details.
                </xs:annotation>
             </xs:attribute>
             <xs:attribute name="agentType" use="optional">
+               <xs:annotation>
+                  <xs:documentation>
+                     <xhtml:div class="description">Type of authoring entity: organization or individual.</xhtml:div>
+                  </xs:documentation>
+               </xs:annotation>
                <xs:simpleType>
                   <xs:restriction base="xs:NMTOKEN">
                      <xs:enumeration value="organization"/>
                      <xs:enumeration value="individual"/>
                   </xs:restriction>
                </xs:simpleType>
-               <xs:annotation>
-                  <xs:documentation>
-                     <xhtml:div class="description">Type of authoring entity: organization or individual.</xhtml:div>
-                  </xs:documentation>
-               </xs:annotation>
             </xs:attribute>
          </xs:extension>
       </xs:complexContent>
