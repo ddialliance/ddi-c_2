@@ -1,0 +1,22 @@
+name: Validate Codebook XSD Schema
+
+on:
+  push:
+    paths: [ '**/*.xsd' ]
+  pull_request:
+    paths: [ '**/*.xsd' ]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout git repository
+        uses: actions/checkout@v6
+
+      - name: Install xmllint
+        run: sudo apt-get update && sudo apt-get install -y libxml2-utils
+
+      - name: Validate Codebook XSD schema
+        run: |
+          xmllint --noout --schema http://www.w3.org/2001/XMLSchema.xsd schemas/codebook.xsd
