@@ -189,16 +189,17 @@
 2.6.2.6                  complete (0-n) [vocab, vocabURI, vocabInstanceURI, vocabID, vocabAgencyName, vocabVersionID, otherValue, vocabSchemeURN, vocabInstanceCodeTerm]
 2.6.2.7                  fileQnty (0-n)
 2.6.2.8                  notes (0-n) [type, subject, level, resp, sdatrefs, parent, sameNote]
-2.6.3                 useStmt (0-n)
-2.6.3.1                  confDec (0-n) [required, formNo, URI]
-2.6.3.2                  specPerm (0-n) [required, formNo, URI]
-2.6.3.3                  restrctn (0-n)
-2.6.3.4                  contact (0-n) [affiliation, URI, email, agentIdentifier, typeOfAgentIdentifier, isPersistentIdentifier, agentType]
-2.6.3.5                  citReq (0-n)
-2.6.3.6                  deposReq (0-n)
-2.6.3.7                  conditions (0-n)
-2.6.3.8                  disclaimer (0-n)
-2.6.4                 notes (0-n) [type, subject, level, resp, sdatrefs, parent, sameNote]
+2.6.3                 license (0-n) [URI, type, scope]
+2.6.4                 useStmt (0-n)
+2.6.4.1                  confDec (0-n) [required, formNo, URI]
+2.6.4.2                  specPerm (0-n) [required, formNo, URI]
+2.6.4.3                  restrctn (0-n)
+2.6.4.4                  contact (0-n) [affiliation, URI, email, agentIdentifier, typeOfAgentIdentifier, isPersistentIdentifier, agentType]
+2.6.4.5                  citReq (0-n)
+2.6.4.6                  deposReq (0-n)
+2.6.4.7                  conditions (0-n)
+2.6.4.8                  disclaimer (0-n)
+2.6.5                 notes (0-n) [type, subject, level, resp, sdatrefs, parent, sameNote]
 2.7                metadataAccs (0-n)
 2.7.1                 typeOfAccess (0-1) [vocab, vocabURI, vocabInstanceURI, vocabID, vocabAgencyName, vocabVersionID, otherValue, vocabSchemeURN, vocabInstanceCodeTerm]
 2.7.2                 license (0-n) [URI, type, scope]
