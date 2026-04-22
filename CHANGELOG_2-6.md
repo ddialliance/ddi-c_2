@@ -1,6 +1,6 @@
 # Change Log
 
-*This change log intended to assist reviewers in assessing the changes made between Codebook Version 2.5 and Version 2.6. The list has been broken into Changes to existing elements, Enumeration list enhancements (additions to internal controlled vocabularies captured as enumerations), and new content. Note that all changes are backward compatible in that an instance of Codebook Version 2.5 will validate against Version 2.6. However, changes made to improve consistency in the use of external controlled vocabularies through broader use of the element ‘concept’ resulted in a change in best practices, in particular shifting from the use of an attribute to capture the term of a controlled vocabulary to the use of a structured ‘concept’ that supports direct attribution to the external controlled vocabulary. This was needed to provide support the resolution of entries to their external controlled vocabularies.*
+*This change log is intended to assist reviewers in assessing the changes made between Codebook Version 2.5 and Version 2.6. The list has been broken into Changes to existing elements, Enumeration list enhancements (additions to internal controlled vocabularies captured as enumerations), and new content. Note that all changes are backward compatible in that an instance of Codebook Version 2.5 will validate against Version 2.6. However, changes made to improve consistency in the use of external controlled vocabularies through broader use of the element ‘concept’ resulted in a change in best practices, in particular shifting from the use of an attribute to capture the term of a controlled vocabulary to the use of a structured ‘concept’ that supports direct attribution to the external controlled vocabulary. This was needed to provide support the resolution of entries to their external controlled vocabularies.*
 
 # Summary
 
@@ -26,17 +26,18 @@ Changes were made to better support:
 * **Item 16:** adds mimeType to fileType  
 * **Items 17-18** change simpleTextTypes to conceptualTextTypes or conceptTypes, each of which support the use of a concept element  
 * **Item 19** changes keywork and topcClas to conceptType as it now contains the same structure as a concept
-* 
+* **Item 20** add translation information to all textual types
+*
 
 | **No** | **ISSUUE**  | **OBJECT** | **ADDITION** | **CHANGE** |
 | :---- | :---- | :---- | :---- | :---- |
 | **1** | 84 | Link ExtLink |  | Use is deprecated. Use various available othrMatType and associated references to relate an element to the related material. |
-| **2** | 42, 60, 67, 75 | AuthEntry contact custodian dataCollector depositr distrbtr fundingAg othId producer participant authorizingAgency evaluator verResp  | agentIdentifier (xs:string) typeOfAgentIdentifier (xs:string) isPersistentIdentifier (xs:Boolean) | Provides consistent information on agentIdentifier, typeOfAgentIdentifier, isPersistentIdentifier, role, affiliation, and abbreviation |
+| **2** | 42, 60, 67, 75, 551 | AuthEntry accsPlac contact custodian dataCollector depositr distrbtr fundAg othId producer participant authorizingAgency evaluator verResp  | agentType (xs:string) agentIdentifier (xs:string) typeOfAgentIdentifier (xs:string) isPersistentIdentifier (xs:Boolean) | Provides consistent information on agentIdentifier, typeOfAgentIdentifier, isPersistentIdentifier, role (if applicable), affiliation, and abbreviation |
 | **3** | 42, 60, 67, 75 | custodian | role (xs:string) |  |
-| **4** | 42, 60, 67, 75 | AuthEntry othId | abbr (xs:string) |  |
-| **5** | 42, 60, 67, 75 | fundingAg | affiliation (xs:string) |  |
-| **6** | 81 | origArch | affiliation (xs:string) abbr (xs:string) URI (xs:string) agentIdentifier (xs:string) typeOfAgentIdentifier (xs:string)  |  |
-| **7** | 72 | catgry catStat dataItem invalrng stdCatgry sumStat valrng | access (IDREFS) | Supports the ability to reference once or more access statements from specific levels within the variable allowing finer grained distinctions |
+| **4** | 42, 60, 67, 75, 551 | AuthEntry othId | abbr (xs:string) |  |
+| **5** | 42, 60, 67, 75 | fundAg | affiliation (xs:string) |  |
+| **6** | 81 | accsPlac origArch | affiliation (xs:string) abbr (xs:string) URI (xs:string) agentIdentifier (xs:string) typeOfAgentIdentifier (xs:string)  |  |
+| **7** | 72 | catgry catStat codeBook dataDscr dataItem docDscr fileDscr invalrng nCube qstn stdCatgry sumStat valrng | access (IDREFS) | Supports the ability to reference once or more access statements from specific levels within the variable allowing finer grained distinctions |
 | **8** | 49 | othrMat setAvailability | typeOfSetAvailability (conceptType) | Added the element typeOfXxxx to several complex descriptions to support the use of controlled vocabularies |
 | **9** | 49 | exPostEvaluation | typeOfExPostEvaluation (conceptType) |  |
 | **10** | 49 | developmentActivity | typeOfDevelopmentActivity (conceptType) |  |
@@ -44,11 +45,12 @@ Changes were made to better support:
 | **12** | 49 | dataAccess | typeOfDataAccess (conceptType) |  |
 | **13** | 49 | codingIntruction | typeOfCodingInstruction (conceptType) |  |
 | **14** | 42 | IDNo | isPersistentIdentifier (xs:boolean) | Short cut to identifying persistent identifiers without having to know the various persistent ID types |
-| **15** | 79 | concept | vocabInstanceURI (xs:string) | Supports reference to a specific term in a Controlled Vocabulary allows for validation and resolution |
+| **15** | 79 | concept nation | vocabInstanceURI (xs:string) | Supports reference to a specific term in a Controlled Vocabulary allows for validation and resolution |
 | **16** | 534 | fileTxt | Attribute: mimeType (xs:string) | Adds ability to designate mime type to fileTxt |
 | **17** | 79, 542 | unit instrumentDevelopment collectorTraining dataProcessing stdyClas dataAppr dataChck frequenc weight actMin avlStatus respUnit updateProcedure |  | FROM extension base simpleTextType TO conceptualTextType ADDS an option for concept and txt to the existing PHRASE, FORM, and xhtml:BlkNoForm.mix to support the use of an external controlled vocabulary  |
 | **18** | 79, 541, 542 | Format Software complete docStatus imputation ProcStat |  | FROM simpleTextType TO conceptType ADDS vocab, vocabURI, and vocabInstanceURI to support the use of an external controlled vocabulary |
 | **19** | 79 | Keyword topcClas |  | FROM former structure TO conceptType \[no content change as conceptType is the equivalent of former structure plus vocabInstanceURI\] |
+| **20** | 88 | abstractTextType | isTranslated (xs:boolean) isTranslatable (xs:boolean) translationSourceLanguage (xs:string) translationDate (xs:date) | Adds translation information to all textual types using abstractTextType as an extension base. These include: simpleTextType conceptualTextType tableAndTextType materialReferenceType stringType integerType dateType formType othRefsType qstnType |
 
 # Enumeration list enhancements
 
@@ -70,11 +72,14 @@ The new content covers:
 | No | JIRA ISSUE | NEW CONTENT ADDED TO: | NEW CONTENT | CHANGE |
 | :---- | :---- | :---- | :---- | :---- |
 | 1 | 68 | sumDscr | generalDataFormat \[0..n\] | generalDataFormat (type="concept") |
-| 2 | 62 | stdyDscr | metadataAccsType \[0..n\] | metadataAccsType     extension base: baseElementType     typeOfMetadataAccs \[type="concept"\]     element: useStmt \[0..n\] \[reused from 2.5\]     element: notes \[0..n\] |
+| 2a | 62 | stdyDscr | metadataAccsType \[0..n\] | metadataAccsType     extension base: baseElementType     typeOfMetadataAccs \[type="concept"\]     element: useStmt \[0..n\] \[reused from 2.5\]     element: notes \[0..n\] |
+| 2b | 62 | dataAccs | license \[0..n\] | See No. 3b for content |
 | 3a | 43 | prodStmt | language \[0..n\] | languageType     extension base: simpleTextType     attribute: typeOfLanguageCode     attribute: languageCode |
 | 3b | 61 | prodStmt | license \[0..n\] | licenseType     extension base: simpleTextType     attribute: URI     attribute: type \[data | metadata\] |
 | 4 | 76 | derivation | varRange \[0..n\] | varRangeType     extension base: baseElementType     attribute: start \[xs:IDREF\]     attribute: end \[xs:IDREF\] |
 | 5 | 74 | fileDscr | fileDerivation \[0..1\]  | fileDerivationType     extension base: baseElementType     element:  fileCommand \[0..n\]         drvdesc \[0..1\] \[reused from 2.5\]         drvcmd \[1..n\] \[reused from 2.5\]         fileDerivationVars \[0..n\]            attribute: keep \[0..1\] \[xs:IDREFS\]            attribute: drop \[0..1\] \[xs:IDREFS\]             attribute:add \[0..1\] \[xs:IDREFS\]     attribute: sourceFiles \[xs:IDREFS\] |
+| 6 | 45,.61 | grantNo | fundAg (xs:IDREFS) URI (xs:anyURI) | Supports a reference to the agency providing the specific grant and aility to provide a grant specific URL|
+| 7 | 34 | stdCatgry | URI (xs:anyURI | Changed from xs:string |
 
 # Documentation
 
@@ -83,7 +88,7 @@ The new content covers:
 * Action: Attribution documentation moved to complexType from element. Element documentation reformated for consistency and clarity.  
 * Action: Review and update of all field level documentation, adding examples  
 * Issues covered: 42, 47, 48, 50, 55, 63, 70, 71, 82  
-* GitHub issues covered: 11, 12, 14, 15, 16, 17, 18, 19, 20, 22, 23, 24, 25, 26, 27, 29, 30, 31, 32, 33, 34, 35, 36, 37  
+* GitHub issues covered: 11, 12, 14, 15, 16, 17, 18, 19, 20, 22, 23, 24, 25, 26, 27, 29, 30, 31, 32, 33, 34, 35, 36, 37 
 * Revisions of documentation after review of 2.6 draft: 533, 535, 539, 540, 542, 543, 544, 545, 549, 551
 
 ## High Level:
