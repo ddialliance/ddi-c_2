@@ -27,9 +27,9 @@ Changes were made to better support:
 * **Items 17-18** change simpleTextTypes to conceptualTextTypes or conceptTypes, each of which support the use of a concept element  
 * **Item 19** changes keywork and topcClas to conceptType as it now contains the same structure as a concept
 * **Item 20** add translation information to all textual types
-*
 
-| **No** | **ISSUUE**  | **OBJECT** | **ADDITION** | **CHANGE** |
+
+| **No** | **ISSUE**  | **OBJECT** | **ADDITION** | **CHANGE** |
 | :---- | :---- | :---- | :---- | :---- |
 | **1** | 84 | Link ExtLink |  | Use is deprecated. Use various available othrMatType and associated references to relate an element to the related material. |
 | **2** | 42, 60, 67, 75, 551 | AuthEntry accsPlac contact custodian dataCollector depositr distrbtr fundAg othId producer participant authorizingAgency evaluator verResp  | agentType (xs:string) agentIdentifier (xs:string) typeOfAgentIdentifier (xs:string) isPersistentIdentifier (xs:Boolean) | Provides consistent information on agentIdentifier, typeOfAgentIdentifier, isPersistentIdentifier, role (if applicable), affiliation, and abbreviation |
